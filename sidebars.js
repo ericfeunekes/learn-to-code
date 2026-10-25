@@ -1,14 +1,13 @@
 export default {
   course: [
-    { type: 'doc', id: 'welcome', label: 'Start here' },
-    { type: 'doc', id: 'course/OVERVIEW', label: 'Course overview' },
+    { type: 'doc', id: 'course/OVERVIEW', label: 'Start here' },
     { type: 'doc', id: 'course/CURRICULUM', label: 'Learning path' },
+    { type: 'doc', id: 'course/testing-and-qa', label: '1. Testing and QA' },
     {
       type: 'category',
-      label: 'Core modules',
-      collapsed: false,
+      label: 'Future modules · being built',
+      collapsed: true,
       items: [
-        'course/testing-and-qa',
         'course/error-handling-and-recovery',
         'course/persistence-and-shared-state',
         'course/modeling-data-and-behavior',

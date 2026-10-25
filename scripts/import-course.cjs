@@ -4,11 +4,7 @@ const matter = require('gray-matter');
 
 // This positive allowlist excludes learner records, logs, research and archives.
 const pages = [
-  [
-    'OVERVIEW.md',
-    '/start',
-    'Course outcomes and a useful project to begin with.',
-  ],
+  ['OVERVIEW.md', '/', 'Course outcomes and a useful project to begin with.'],
   [
     'CURRICULUM.md',
     '/learning-path',
@@ -108,13 +104,17 @@ async function main() {
         `${file}: excluded private reference; review the source before publishing`,
       );
     }
+    content = content.replace(/\bEric\b/g, 'the course author');
     const title = content.match(/^# (.+)$/m)?.[1];
     if (!title) throw new Error(`${file}: missing title`);
     rendered.push([
       file,
       matter.stringify(content.trim() + '\n', {
         title,
-        description,
+        description:
+          content.includes('**Being built**') && /^0[2-7]-/.test(file)
+            ? `Being built — outline only. ${description}`
+            : description,
         slug,
         source_file: file,
       }) +

@@ -23,6 +23,9 @@ it.
 Exports are generated into ignored `.generated/` before `npm start` and
 `npm run build`. Restart development after editing reading content to refresh
 search and text exports. The production preview always uses the built exports.
+The overview supplies the homepage; the former `/start/` address redirects there
+in production. The old raw introduction address provides a pointer to the
+canonical overview.
 
 ## Add admitted content
 

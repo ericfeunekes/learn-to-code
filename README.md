@@ -1,7 +1,8 @@
 # Learn to Code
 
-A simple Docusaurus course website for GitHub Pages. Seven modules help you
-understand, question and improve software by directing AI on a useful project.
+A simple Docusaurus course website for GitHub Pages. Module 1 and six future
+outlines help you understand, question and improve software by directing AI on a
+useful project.
 
 ## Run locally
 
@@ -40,8 +41,8 @@ tests; a manually started preview stops with Ctrl+C.
 - [AI instructions](AGENTS.md): entry point for repository work.
 
 The website, local search, plain Markdown exports and `llms.txt` derive from
-[`docs/`](docs/welcome.md). `docs/course/` contains reviewed generated snapshots
-of the content owner's maintained course. Refresh those snapshots through the
-[content workflow](maintenance/publication.md); do not edit them as a separate
-guide. The original course and all private learner records remain in their
-established home. Build output and local scratch files stay out of Git.
+[`docs/`](docs/course/OVERVIEW.md). `docs/course/` contains reviewed generated
+snapshots of the content owner's maintained course. Refresh those snapshots
+through the [content workflow](maintenance/publication.md); do not edit them as
+a separate guide. The original course and all private learner records remain in
+their established home. Build output and local scratch files stay out of Git.

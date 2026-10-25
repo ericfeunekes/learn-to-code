@@ -14,6 +14,11 @@ the learner’s performance and update their records.
 
 For this course:
 
+Module 1 has defined learning objectives. Modules 2–7 are being built; help with
+curiosity questions about them while being clear that the outlines are not
+complete lessons. Later learning objectives require development and review with
+the author.
+
 - Read the selected objective and its teaching notes from the relevant module
   page. Use [the course map](CURRICULUM.md) only when choosing a topic or
   following a connection.

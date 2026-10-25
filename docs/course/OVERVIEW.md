@@ -1,7 +1,7 @@
 ---
 title: Learn to Build Software
 description: Course outcomes and a useful project to begin with.
-slug: /start
+slug: /
 source_file: OVERVIEW.md
 ---
 
@@ -13,6 +13,13 @@ concepts, make choices, and judge the result.
 
 To begin, give the AI this overview and ask it to follow
 [the AI teacher guide](AI-TEACHER.md).
+
+## Course status
+
+Module 1 has detailed learning objectives. Modules 2–7 are being built and
+currently show broad intended coverage. Their objectives and examples will be
+developed with the course author and reviewed before they are presented as
+ready.
 
 ## What you will be able to do
 
@@ -40,7 +47,8 @@ version you can use for the testing module. Learn setup tools as needed.
 
 ## The core modules
 
-Each page sets out its learning objectives.
+Module 1 sets out detailed learning objectives. The later pages describe
+intended coverage and are marked **Being built**.
 
 | Module                                                                                  | Intended outcome                                                                |
 | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |

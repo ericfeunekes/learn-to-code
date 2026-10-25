@@ -57,6 +57,10 @@ async function main() {
       '',
     ].join('\n'),
   );
+  await fs.writeFile(
+    path.join(outDir, 'raw/welcome.md'),
+    '# Start here\n\nThis introduction has been merged into [the course overview](course/OVERVIEW.md).\n',
+  );
   console.log(
     `Generated Markdown, reading index and search for ${entries.length} pages.`,
   );

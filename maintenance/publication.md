@@ -7,13 +7,19 @@ this project.
 
 ## Published content manifest
 
-- `docs/welcome.md` and `docs/for-ai.md`: original site and AI reading guides.
+- `docs/for-ai.md`: the original AI reading guide. The maintained course
+  overview supplies the single homepage; the earlier separate introduction is
+  retired.
 - `docs/course/OVERVIEW.md`, `CURRICULUM.md`, `PRACTICE.md` and `AI-TEACHER.md`:
   reviewed course outcomes, map and general practice/teaching context.
 - `docs/course/01-*.md` through `07-*.md`: the current seven module pages.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
+Module 1 retains its detailed material. Modules 2–7 are short **Being built**
+outlines; their detailed outcomes and examples require development and human
+review. The owner approved release of this current version on October 25, 2026.
+Teaching-skill licensing and public distribution remain separate and excluded.
 The ledger, teaching log, sessions, learner identities, personal details,
 private source links, research archives, books and earlier course snapshots are
 outside the public repository and its history.
@@ -32,10 +38,11 @@ npm run check
 
 The importer admits exactly eleven named general files. It removes private
 record/skill locations and private research provenance, adds website metadata,
-and adjusts one heading level. It does not revise learning objectives. The full
-reusable teaching skill is maintained separately and is not republished. The
-positive allowlist is not a substitute for reviewing new text and the diff:
-check examples, links, rights and personal information on every refresh.
+generalizes personal author-review references, and adjusts one heading level. It
+does not revise learning objectives. The full reusable teaching skill is
+maintained separately and is not republished. The positive allowlist is not a
+substitute for reviewing new text and the diff: check examples, links, rights
+and personal information on every refresh.
 
 ## Release and recovery
 

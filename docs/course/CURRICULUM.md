@@ -8,29 +8,35 @@ source_file: CURRICULUM.md
 # Learn to Build Software — Curriculum
 
 Start with [the overview](OVERVIEW.md) for the purpose and step zero: defining
-and outlining your project. Each module below has its own page of learning
-objectives. Those pages define what the learner should be able to explain,
-distinguish, decide, and direct AI to do; they are the substance of the course.
+and outlining your project. Module 1 contains the current detailed learning
+objectives. Modules 2–7 are being built: their pages describe broad intended
+coverage, with detailed objectives and examples to be developed with the course
+author and reviewed before readiness.
 
 ## Core modules
 
 Learn enough to explain and apply an idea, then revisit it for depth. A module
-can take more than one session. The teaching AI uses the specific objectives on
-the module page to choose explanations and assess understanding; it uses
-[the teaching guide](AI-TEACHER.md) for the shared method.
+can take more than one session. The teaching AI uses the defined objectives on
+the selected page to teach and assess understanding, and
+[the teaching guide](AI-TEACHER.md) for the shared method. A future outline is
+not a completed set of learning objectives.
 
 1. [Testing and QA](01-testing-and-qa.md)
-2. [Error handling and recovery](02-error-handling-and-recovery.md)
-3. [Persistence and shared state](03-persistence-and-shared-state.md)
-4. [Modeling data and behavior](04-modeling-data-and-behavior.md)
+2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Being
+   built**
+3. [Persistence and shared state](03-persistence-and-shared-state.md) — **Being
+   built**
+4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — **Being
+   built**
 5. [Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md)
-6. [Structuring a program](06-structuring-a-program.md)
-7. [Concurrency](07-concurrency.md)
+   — **Being built**
+6. [Structuring a program](06-structuring-a-program.md) — **Being built**
+7. [Concurrency](07-concurrency.md) — **Being built**
 
 ## Future directions
 
 Choose a direction when it serves your app or something you want to build next.
-These are starting points for your own learning plan.
+These are possible future directions, not developed modules.
 
 | Direction                                              | When it is useful                                                                              | What to understand or do                                                                                                                                                                                      |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

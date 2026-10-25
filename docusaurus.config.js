@@ -26,6 +26,12 @@ export default {
       },
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      { redirects: [{ from: '/start/', to: '/' }] },
+    ],
+  ],
   themeConfig: {
     colorMode: { respectPrefersColorScheme: true },
     navbar: {

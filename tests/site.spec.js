@@ -15,7 +15,7 @@ test('production pages load without broken assets or browser errors', async ({
       errors.push(`${response.status()} ${response.url()}`);
   });
   for (const [route, title] of [
-    ['', 'Understand what you build.'],
+    ['', 'Learn to Build Software'],
     ['learning-path/', 'Learn to Build Software — Curriculum'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
@@ -80,7 +80,7 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
-  await page.getByRole('link', { name: /Next Module 1/ }).click();
+  await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
     await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
@@ -123,7 +123,7 @@ test('search supports keyboard input, results and an empty state', async ({
   const input = page.getByRole('searchbox', { name: 'Search words' });
   await input.focus();
   await page.keyboard.type('Markdown');
-  await expect(page.getByRole('status')).toHaveText(/matching pages/);
+  await expect(page.getByRole('status')).toHaveText('1 matching page.');
   await expect(
     page
       .locator('.search-results')
@@ -165,7 +165,6 @@ test('served text exports come from the admitted Markdown', async ({
   expect(index.status()).toBe(200);
   const text = await index.text();
   const files = [
-    'welcome.md',
     'for-ai.md',
     ...[
       'OVERVIEW.md',
@@ -191,7 +190,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(13);
+  expect(entries).toHaveLength(12);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -199,4 +198,26 @@ test('served text exports come from the admitted Markdown', async ({
   expect(entries.map((entry) => entry.route)).toContain(
     `${base}modules/concurrency/`,
   );
+});
+
+test('merged entry keeps the old overview URL and marks future work', async ({
+  page,
+  request,
+}) => {
+  await page.goto('start/');
+  await expect(page).toHaveURL(new RegExp(`${base}$`));
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Learn to Build Software',
+  );
+  await expect(
+    page.getByRole('heading', { level: 2, name: /^Course status/ }),
+  ).toBeVisible();
+  await page.goto('modules/concurrency/');
+  await expect(
+    page.getByRole('main').getByText('Being built', { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3 })).toHaveCount(0);
+  const legacy = await request.get('raw/welcome.md');
+  expect(legacy.status()).toBe(200);
+  expect(await legacy.text()).toContain('course/OVERVIEW.md');
 });
