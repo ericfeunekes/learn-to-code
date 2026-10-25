@@ -1,0 +1,9 @@
+node_modules/
+build/
+.docusaurus/
+.generated/
+.scratch/
+playwright-report/
+test-results/
+.DS_Store
+.env*
