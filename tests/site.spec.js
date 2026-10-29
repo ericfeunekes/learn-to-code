@@ -4,6 +4,20 @@ import { readFile } from 'node:fs/promises';
 
 const base = process.env.BASE_URL || '/learn-to-code/';
 
+function sourceCodeBlocks(source) {
+  return [
+    ...source.matchAll(/^([ \t]*)```(?:text|sh)\n([\s\S]*?)^\1```/gm),
+  ].map(([, indent, body]) =>
+    body
+      .split('\n')
+      .map((line) =>
+        line.startsWith(indent) ? line.slice(indent.length) : line,
+      )
+      .join('\n')
+      .trimEnd(),
+  );
+}
+
 test('production pages load without broken assets or browser errors', async ({
   page,
 }, info) => {
@@ -16,6 +30,8 @@ test('production pages load without broken assets or browser errors', async ({
   });
   for (const [route, title] of [
     ['', 'Learn to Build Software'],
+    ['setup/', 'Set up your workspace'],
+    ['modules/project-and-git/', 'Module 0 — Git and GitHub for your work'],
     ['learning-path/', 'Learn to Build Software — Curriculum'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
@@ -80,6 +96,8 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
+  await page.getByRole('link', { name: /Next 0\. Git\/GitHub/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${base}modules/project-and-git/$`));
   await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
@@ -168,6 +186,8 @@ test('served text exports come from the admitted Markdown', async ({
     'for-ai.md',
     ...[
       'OVERVIEW.md',
+      'SETUP.md',
+      '00-project-and-git.md',
       'CURRICULUM.md',
       'PRACTICE.md',
       'AI-TEACHER.md',
@@ -190,7 +210,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(12);
+  expect(entries).toHaveLength(14);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -220,4 +240,115 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   const legacy = await request.get('raw/welcome.md');
   expect(legacy.status()).toBe(200);
   expect(await legacy.text()).toContain('course/OVERVIEW.md');
+});
+
+test('setup exposes three separate choices and source-authored copyable prompts', async ({
+  page,
+  context,
+}, info) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.goto('setup/#whats-next');
+  const main = page.getByRole('main');
+  await expect(
+    main.getByRole('heading', { name: /^What's next\?/, level: 2 }),
+  ).toBeVisible();
+  await expect(
+    main.getByRole('link', { name: 'Define your project', exact: true }),
+  ).toHaveAttribute('href', `${base}#choose-and-outline-your-project`);
+  await expect(
+    main.getByRole('link', {
+      name: 'Module 0 — Git and GitHub for your work',
+      exact: true,
+    }),
+  ).toHaveAttribute('href', `${base}modules/project-and-git/`);
+  await expect(
+    main.getByText('Continue existing work:', { exact: true }),
+  ).toBeVisible();
+  const blocks = main.locator('.theme-code-block');
+  await expect(blocks).toHaveCount(5);
+  const setup = await readFile('docs/course/SETUP.md', 'utf8');
+  const expectedBlocks = sourceCodeBlocks(setup);
+  expect(expectedBlocks.slice(2)).toEqual([
+    'Help me choose a small useful app and define its first behavior.',
+    'Help me understand Git and GitHub using this repository.',
+    'I already have a project. Help me choose a useful next learning step.',
+  ]);
+  for (const [index, block] of (await blocks.all()).entries()) {
+    const expected = expectedBlocks[index];
+    const button = block.getByRole('button', {
+      name: 'Copy text to clipboard',
+    });
+    await button.focus();
+    await page.keyboard.press('Enter');
+    await expect(block.getByRole('status')).toHaveText('Copied.');
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe(expected);
+    await button.click();
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe(expected);
+  }
+  await page.screenshot({
+    path: info.outputPath('setup-choices.png'),
+    fullPage: true,
+  });
+  await main
+    .getByRole('link', {
+      name: 'Module 0 — Git and GitHub for your work',
+      exact: true,
+    })
+    .click();
+  const gitPrompt = main.locator('.theme-code-block');
+  await expect(gitPrompt).toHaveCount(1);
+  await expect(gitPrompt.locator('code')).toContainText(
+    'Help me understand Git and GitHub using this repository.',
+  );
+  await expect(gitPrompt.locator('code')).not.toContainText('define');
+  await expect(
+    main.getByText('Draft — for review.', { exact: true }),
+  ).toBeVisible();
+});
+
+test('copy failure is announced and repeated copy can recover without browser errors', async ({
+  page,
+}) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    window.copyAttempts = [];
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: {
+        writeText: async (text) => {
+          window.copyAttempts.push(text);
+          if (window.copyAttempts.length === 1)
+            throw new Error('Clipboard denied');
+        },
+      },
+    });
+  });
+  await page.goto('setup/');
+  const block = page.locator('.theme-code-block').first();
+  const button = block.getByRole('button', { name: 'Copy text to clipboard' });
+  await button.click();
+  await expect(block.getByRole('status')).toHaveText(
+    'Copy failed. Select the text and copy it, or try again.',
+  );
+  const expected = sourceCodeBlocks(
+    await readFile('docs/course/SETUP.md', 'utf8'),
+  )[0];
+  await expect(block.locator('code')).toBeVisible();
+  await button.click();
+  await expect(block.getByRole('status')).toHaveText('Copied.');
+  await button.click();
+  await expect
+    .poll(() => page.evaluate(() => window.copyAttempts.length))
+    .toBe(3);
+  expect(await page.evaluate(() => window.copyAttempts)).toEqual([
+    expected,
+    expected,
+    expected,
+  ]);
+  expect(errors).toEqual([]);
 });

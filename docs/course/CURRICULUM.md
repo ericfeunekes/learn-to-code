@@ -7,20 +7,26 @@ source_file: CURRICULUM.md
 
 # Learn to Build Software — Curriculum
 
-Start with [the overview](OVERVIEW.md) for the purpose and step zero: defining
-and outlining your project. Module 1 contains the current detailed learning
-objectives. Modules 2–7 are being built: their pages describe broad intended
-coverage, with detailed objectives and examples to be developed with the course
-author and reviewed before readiness.
+Start with [workspace setup](SETUP.md), then choose from
+[What's next?](SETUP.md#whats-next). Project definition in
+[the overview](OVERVIEW.md#choose-and-outline-your-project) is separate from
+[Module 0 — Git and GitHub for your work](00-project-and-git.md). Setup does not
+require either learning activity. The setup flow and Module 0 are drafts for
+review. Module 1 contains the current detailed learning objectives. Modules 2–7
+are being built, with detailed outcomes and examples to be developed with the
+course author and reviewed before readiness.
 
 ## Core modules
 
 Learn enough to explain and apply an idea, then revisit it for depth. A module
-can take more than one session. The teaching AI uses the defined objectives on
-the selected page to teach and assess understanding, and
-[the teaching guide](AI-TEACHER.md) for the shared method. A future outline is
-not a completed set of learning objectives.
+can take more than one session. Use the selected page to identify what the
+learner can demonstrate and what evidence would show it. The
+[AI guide](AI-TEACHER.md) explains the purpose of the outlines, learning records
+and evidence review. The learner chooses how to learn; no fixed teaching method
+or module sequence is required. A future outline is not a completed set of
+learning objectives.
 
+0. [Git and GitHub for your work](00-project-and-git.md) — **Draft for review**
 1. [Testing and QA](01-testing-and-qa.md)
 2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Being
    built**

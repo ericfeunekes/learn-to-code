@@ -4,7 +4,17 @@ const matter = require('gray-matter');
 
 // This positive allowlist excludes learner records, logs, research and archives.
 const pages = [
-  ['OVERVIEW.md', '/', 'Course outcomes and a useful project to begin with.'],
+  ['OVERVIEW.md', '/', 'Course outcomes and choices after workspace setup.'],
+  [
+    'SETUP.md',
+    '/setup',
+    'Fork, clone and open your workspace, then choose what is next.',
+  ],
+  [
+    '00-project-and-git.md',
+    '/modules/project-and-git',
+    'Draft for human review: understand Git and GitHub using your existing repository.',
+  ],
   [
     'CURRICULUM.md',
     '/learning-path',
@@ -69,25 +79,22 @@ async function main() {
     let { content } = matter(
       await fs.readFile(path.join(sourceDir, file), 'utf8'),
     );
-    // Keep the reusable skill's private location and all learner records out.
-    if (file === 'AI-TEACHER.md') {
+    // Display source-authored prompts as copyable text without changing their words.
+    if (file === 'SETUP.md') {
       content = content.replace(
-        /Use the \[Teach through projects skill\]\(<[^>]+>\) for the teaching method:/,
-        'The teaching method is to',
+        /Ask: “([^”]+)”/g,
+        '\n\n  ```text\n  $1\n  ```\n\n  ',
       );
       content = content.replace(
-        /\[the progress record\]\(LEDGER\.md\)/g,
-        'the learner’s private progress record',
-      );
-      content = content.replace(
-        /\[the teaching log\]\(TEACHING-LOG\.md\)/g,
-        'the learner’s private teaching log',
-      );
-      content = content.replace(
-        /When using a teaching AI[\s\S]*$/,
-        'Keep learner records outside this public website. The full reusable teaching skill is maintained separately; the course owner can provide it to the teaching AI.\n',
+        /ask: “([^”]+)”/g,
+        '\n\n  ```text\n  $1\n  ```\n\n  ',
       );
     }
+    if (file === 'OVERVIEW.md')
+      content = content.replace(
+        /Ask AI: “([^”]+)”/g,
+        'Ask AI:\n\n```text\n$1\n```\n',
+      );
     if (file === 'CURRICULUM.md') {
       content = content.replace(/\n## Design basis[\s\S]*$/, '\n');
       content = content.replace(

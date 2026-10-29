@@ -108,17 +108,25 @@ By the end of this module, you should be able to:
   gap when one exists; request another check only when it answers a different
   unresolved question.
 
-## Guidance for the teaching AI
+## Context and optional examples for the teaching AI
 
-- Teach these as a first working foundation. Use a few examples to establish the
-  distinctions; revisit advanced case generation, protocols, persistence, and
-  concurrency when later modules make them useful.
-- Do not teach “automated tests versus manual QA” or “unit tests prove the whole
-  app.” Acceptance and exploratory testing can themselves examine the user’s
-  outcome.
-- Use a supplied database or HTTP client for the first injection example. Keep
-  assertions focused on the promised behavior; only require a particular call
-  when that interaction is itself part of the promise.
+- These outcomes provide a first working foundation. Examples can help establish
+  the distinctions; advanced case generation, protocols, persistence, and
+  concurrency can be revisited when useful to the learner’s project.
+- The learner may be focused on an app’s front-end UI. Use that project as
+  context, and look for useful opportunities to connect visible actions to the
+  data, stored state, service calls, and failures behind them. Make backend
+  concerns visible where they matter without requiring a backend-first project
+  or adding unrelated features.
+- Avoid the misleading distinctions “automated tests versus manual QA” and “unit
+  tests prove the whole app.” Acceptance and exploratory testing can themselves
+  examine the user’s outcome.
+- Possible dependency-injection examples include a supplied HTTP or database
+  client, a clock, or a file reader. Choose what fits the learner’s app and
+  question; no particular first example is required. An HTTP or database example
+  can also make a useful connection to backend behavior.
+- Keep assertions focused on the promised behavior; only require a particular
+  call when that interaction is itself part of the promise.
 
 [Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
 

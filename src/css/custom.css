@@ -125,3 +125,43 @@ input:focus-visible {
   outline: 3px solid var(--ifm-color-primary);
   outline-offset: 3px;
 }
+
+.copy-status {
+  display: block;
+  max-width: 24rem;
+  padding: 0.2rem 0.6rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  font-size: 0.85rem;
+}
+.copy-status:empty {
+  display: none;
+}
+
+.course-code-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.45rem 0.6rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+}
+.course-code-actions button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  cursor: pointer;
+}
+.course-code-actions button svg {
+  width: 18px;
+  height: 18px;
+}
+.course-code-actions .copy-status {
+  flex: 1 1 12rem;
+  padding: 0;
+}

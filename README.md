@@ -1,10 +1,42 @@
 # Learn to Code
 
-A simple Docusaurus course website for GitHub Pages. Module 1 and six future
-outlines help you understand, question and improve software by directing AI on a
-useful project.
+Learn to understand, question and improve software by directing AI. The course
+includes draft setup and Git/GitHub guidance, detailed Module 1 outcomes and six
+future outlines.
 
-## Run locally
+## Set up your learning workspace
+
+Fork or reuse [this repository](https://github.com/ericfeunekes/learn-to-code),
+clone your fork, then open that folder in Codex or Claude Code. See the
+[setup guide](docs/course/SETUP.md) for the full instructions and a copyable
+pre-clone AI prompt. You do not need an app idea, a Git lesson or a local
+website installation to finish setup.
+
+Once it is open, ask: “I'm set up. What's next?” Choose one:
+
+- [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
+- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository.
+- Continue existing work and choose a useful next learning step with your AI.
+
+The AI should wait for your choice. Setup and Module 0 remain drafts for human
+review; they are not agreed learning-completion gates.
+
+Build applications in [`app/`](app/README.md). Bundled learning skills use
+outcomes and evidence flexibly. `AGENTS.md` and `CLAUDE.md` share guidance;
+`skills/` is canonical and regular discovery copies live in `.agents/skills/`
+and `.claude/skills/`. Their presence does not prove a client loaded them. After
+reopening this folder, ask a natural question and check the actual response.
+
+Private progress and learning logs belong in the ignored root `.learning/`
+directory, or an established private record home. For example, keep current
+status in `.learning/progress.md` and useful resumption notes in
+`.learning/log.md`. Keep partial progress, evidence, AI assistance and
+uncertainty visible. These files are local and not backed up by a push; ignore
+rules do not untrack an already committed file. Never commit personal
+information or secrets. Successful AI output and passing tests alone do not
+prove learning.
+
+## Run the course website locally
 
 Use Node 24 LTS and npm 11, then:
 
@@ -46,3 +78,10 @@ snapshots of the content owner's maintained course. Refresh those snapshots
 through the [content workflow](maintenance/publication.md); do not edit them as
 a separate guide. The original course and all private learner records remain in
 their established home. Build output and local scratch files stay out of Git.
+
+## License
+
+Repository code, documentation and bundled teaching skills are available under
+[MIT](LICENSE), approved October 26, 2026. Third-party code, dependencies and
+linked material retain their own copyrights, licenses and notices. Links and
+citations do not grant rights to republish their targets.

@@ -1,7 +1,13 @@
 export default {
   course: [
     { type: 'doc', id: 'course/OVERVIEW', label: 'Start here' },
+    { type: 'doc', id: 'course/SETUP', label: 'Set up & what’s next' },
     { type: 'doc', id: 'course/CURRICULUM', label: 'Learning path' },
+    {
+      type: 'doc',
+      id: 'course/project-and-git',
+      label: '0. Git/GitHub · draft',
+    },
     { type: 'doc', id: 'course/testing-and-qa', label: '1. Testing and QA' },
     {
       type: 'category',

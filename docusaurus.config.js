@@ -38,6 +38,7 @@ export default {
       title: 'Learn to Code',
       logo: { alt: '', src: 'img/mark.svg' },
       items: [
+        { to: '/setup/', label: 'Setup & next choices', position: 'left' },
         { to: '/learning-path/', label: 'Learning path', position: 'left' },
         { to: '/for-ai/', label: 'For AI', position: 'left' },
         { to: '/search/', label: 'Search', position: 'right' },

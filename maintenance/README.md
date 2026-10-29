@@ -23,9 +23,11 @@ it.
 Exports are generated into ignored `.generated/` before `npm start` and
 `npm run build`. Restart development after editing reading content to refresh
 search and text exports. The production preview always uses the built exports.
-The overview supplies the homepage; the former `/start/` address redirects there
-in production. The old raw introduction address provides a pointer to the
-canonical overview.
+The overview supplies the homepage; setup and Module 0 appear as separate
+choices in navigation. Copyable prompts derive from the maintained source; the
+code-block button reports clipboard failure and permits retries. The former
+`/start/` address redirects there in production. The old raw introduction
+address provides a pointer to the canonical overview.
 
 ## Add admitted content
 
@@ -110,3 +112,16 @@ current package metadata and official documentation before upgrades:
   a generated Markdown file listed in `llms.txt`.
 - No private curriculum, learner record or third-party source is admitted
   without clearance. Review generated course refreshes before public pushes.
+
+## Bundled instruction maintenance
+
+Edit teaching skills under `skills/`, run `npm run skills:sync`, then
+`npm run check:skills`. Keep `AGENTS.md` and `CLAUDE.md` byte-equal. Mirrors are
+regular files for clients that do not follow symlinks; discovery still requires
+an actual client check. These are repository bundles, not personal skill
+installs.
+
+If Chromium is already installed but Playwright's download is unavailable, run
+checks with `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/path/to/chromium`. The default
+continues to use Playwright's managed browser. This is a browser test of the
+local production site, not an authenticated fork or client-reopen test.

@@ -13,8 +13,10 @@
     "format": "prettier --write .",
     "check:links": "python3 scripts/check_site.py",
     "test": "playwright test",
-    "check": "npm run lint && npm run build && npm run check:links && npm test",
-    "content:refresh": "node scripts/import-course.cjs"
+    "check": "npm run check:skills && npm run lint && npm run build && npm run check:links && npm test",
+    "content:refresh": "node scripts/import-course.cjs",
+    "skills:sync": "node scripts/sync-skills.cjs",
+    "check:skills": "node scripts/sync-skills.cjs --check"
   },
   "engines": {
     "node": ">=24 <27"
@@ -33,5 +35,6 @@
     "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
     "prettier": "3.9.10"
-  }
+  },
+  "license": "MIT"
 }

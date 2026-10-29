@@ -1,44 +1,55 @@
 ---
-title: Learn to Build Software — Practice
+title: Learn to Build Software — Practice and review
 description: Apply an objective in a project thread and bring the evidence back.
 slug: /practice
 source_file: PRACTICE.md
 ---
 
-# Learn to Build Software — Practice
+# Learn to Build Software — Practice and review
 
-Start with [the overview](OVERVIEW.md) and its project definition. Your teaching
-AI uses this loop for the
-[learning objectives on each module page](CURRICULUM.md#core-modules). Keep the
-teaching conversation and project work in separate threads so the teacher can
-review how you directed the work.
+Use [the overview](OVERVIEW.md) to define a useful project and the
+[learning outcomes](CURRICULUM.md#core-modules) to identify what you want to
+demonstrate. Choose how to learn: explanation, discussion and existing project
+work can each provide useful evidence.
 
-1. **Learn, then check understanding.** The teaching AI explains the concepts
-   with examples and answers your questions. Explain an idea back in your own
-   words, predict a result, or solve a small problem. Use its feedback to
-   address gaps and try again.
-2. **Agree on a small project task.** Choose something useful in your app that
-   applies the outcome. Open a separate project thread and give its AI the
-   intended behavior, constraints, and expected results.
-3. **Direct the work.** Ask questions, consider the AI’s proposals, request
-   focused changes, and check the result. AI can write the code; your requests
-   and reasoning should show how you are applying the lesson.
-4. **Bring the work back.** Return the actual project transcript, an accessible
-   link, or an export, with relevant existing artifacts and results such as a
-   diff or test output. If the teaching AI cannot read the link, paste or export
-   the conversation it needs.
-5. **Review and revisit.** The teacher reviews your actual requests and choices
-   against the outcome, identifies concrete strengths and gaps, and asks a
-   focused follow-up or suggests a small retry where needed. Return to earlier
-   concepts in later modules to check what you remember and deepen your
-   understanding.
+## Evidence of understanding
 
-Use a recoverable environment and disposable data, and keep credentials and
-private information out of shared material.
+An explanation in your own words, a prediction, or a comparison can show how you
+understand an idea and its limits. Receiving an explanation or repeating AI's
+answer establishes less than reasoning about a different case. Record what is
+actually shown and what remains open.
 
-The transcript shows how you directed the work. Shown code and results support
-claims about behavior; an AI summary alone does not establish correctness or
-your understanding. The [teaching guide](AI-TEACHER.md) explains how to review
-this evidence.
+## Evidence of application
+
+Choose a small relevant task in your app, or bring existing work. In a separate
+implementation conversation, give AI the intended behavior and constraints, make
+choices, question proposals and check the results. AI may write the code. Your
+requests, decisions and follow-ups can show how you applied the outcome; code
+and observed results show what the app does.
+
+A useful handoff carries the selected outcome, task and necessary constraints.
+Leave room for your own direction rather than copying a complete ideal prompt.
+Build in `app/` in your fork. Learning and review do not require installing or
+running this documentation website.
+
+## Feedback against the outcome
+
+Use the bundled **review-learning-evidence** skill with the relevant
+explanation, project/code, prompts or actual implementation conversation and
+available results. You can request review without taking a lesson first. If a
+conversation link is inaccessible, provide the relevant pasted or exported
+portion; keep credentials and private details out of shared material.
+
+Feedback should identify specific demonstrated judgment, explain its effect on
+the AI's work and outcome where visible, and name the most useful gap or
+improvement. A strong AI-produced artifact alone does not show who supplied the
+reasoning. Partial evidence supports a limited conclusion, not a mastery claim.
+A focused question or small retry can clarify a genuine gap without repeating
+checks that already answer it.
+
+Keep progress and the learning log private in the fork's ignored local record
+folder or your established record home. Preserve evidence of partial progress
+and choose a useful next step. Use recoverable experiments and disposable data.
+The [AI guide](AI-TEACHER.md) explains the outcome and evidence distinctions.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

@@ -1,0 +1,84 @@
+{
+  "retrieved": "2026-10-29",
+  "source": "Authenticated canonical Learning/Learn to Build Software general Markdown files",
+  "files": [
+    {
+      "file": "AI-TEACHER.md",
+      "modified": "2026-10-27T17:37:59.865Z",
+      "bytes": 2815,
+      "sha256": "a89ffe3280b7690fcdd4137fa3f0366fe4cd399f46bac23e1a2e5143593acc9e"
+    },
+    {
+      "file": "CURRICULUM.md",
+      "modified": "2026-10-27T17:37:59.864Z",
+      "bytes": 6505,
+      "sha256": "6842e0ba0b9baa81e22338e15093ceb4a57f6768fc8176e26670079c4eeb3fc9"
+    },
+    {
+      "file": "OVERVIEW.md",
+      "modified": "2026-10-27T17:37:59.863Z",
+      "bytes": 3870,
+      "sha256": "0e0455f0d636e976a1255d8ce54a99cf26451994b56dda2ed79c80afc21cb730"
+    },
+    {
+      "file": "00-project-and-git.md",
+      "modified": "2026-10-27T17:36:51.908Z",
+      "bytes": 5422,
+      "sha256": "dbc9ac02f7ac51ba1079736d95faeacfd89610d60891995d05e26c861a6c491e"
+    },
+    {
+      "file": "SETUP.md",
+      "modified": "2026-10-27T17:36:51.904Z",
+      "bytes": 4383,
+      "sha256": "be56ef9db939b05b759a6277f3b1e7b26398cddcc89277d0172e9628e336cc25"
+    },
+    {
+      "file": "01-testing-and-qa.md",
+      "modified": "2026-10-26T09:29:03.547Z",
+      "bytes": 6857,
+      "sha256": "65881f6f712d13eaa3e4799dbcee14de2822f7bb38f54d8a513e6f848c2164cb"
+    },
+    {
+      "file": "PRACTICE.md",
+      "modified": "2026-10-26T08:24:44.348Z",
+      "bytes": 2425,
+      "sha256": "bc76a23ab9d19b933fc7e024fd6921505e0910f7b8dda5113aecfe2e35067dab"
+    },
+    {
+      "file": "06-structuring-a-program.md",
+      "modified": "2026-10-25T13:56:58.943Z",
+      "bytes": 753,
+      "sha256": "3bc96a088c539688391701296e131b3d0d6e3908ba5b1105519ccffda96ae5f7"
+    },
+    {
+      "file": "07-concurrency.md",
+      "modified": "2026-10-25T13:56:58.943Z",
+      "bytes": 708,
+      "sha256": "285be6f7385b16dbc66152ef906f4f3feca8b48ded47b50737317e19e9b94c44"
+    },
+    {
+      "file": "04-modeling-data-and-behavior.md",
+      "modified": "2026-10-25T13:56:58.942Z",
+      "bytes": 698,
+      "sha256": "d9001bbb1714a7b63581ca8e14d410f0ec8d500ada998080d6bafad7dff19389"
+    },
+    {
+      "file": "05-typing-protocols-and-data-validation.md",
+      "modified": "2026-10-25T13:56:58.942Z",
+      "bytes": 699,
+      "sha256": "3dcca69e9bd8b747067c85fec95d9ad829ef034b205fc9f02cf0a67fbc9de664"
+    },
+    {
+      "file": "02-error-handling-and-recovery.md",
+      "modified": "2026-10-25T13:56:58.941Z",
+      "bytes": 699,
+      "sha256": "33f5049eb826d28b4a0a5cbfe2d0a49fb98a71c18c8080b75f41fb5dd84648ae"
+    },
+    {
+      "file": "03-persistence-and-shared-state.md",
+      "modified": "2026-10-25T13:56:58.941Z",
+      "bytes": 681,
+      "sha256": "2ac748ac69de75c21e2d49a4a058e79173af35d6fe28e3af6e0c66616241273b"
+    }
+  ]
+}

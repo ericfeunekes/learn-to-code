@@ -31,4 +31,16 @@ mentioned.
 
 ## Choose where to go next
 
-Return to the [learning path](course/CURRICULUM.md) to find the course map.
+After [workspace setup](course/SETUP.md), offer the three
+[What's next? choices](course/SETUP.md#whats-next): define a project, learn
+Git/GitHub, or continue existing work. Wait for the learner's selection. A Git
+request uses the existing repository without requiring project definition or
+repeating setup. The [learning path](course/CURRICULUM.md) supplies the course
+map.
+
+The fork bundles `use-learning-outcomes` and `review-learning-evidence` with
+Codex and Claude discovery copies. Read the actual relevant instructions; file
+presence and `llms.txt` access alone do not establish client instruction use.
+Credit learner reasoning and decisions separately from AI-generated artifacts;
+retain partial progress and uncertainty. Passing tests alone does not establish
+learning.
