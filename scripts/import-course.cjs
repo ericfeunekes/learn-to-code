@@ -1,6 +1,7 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const matter = require('gray-matter');
+const { refinements } = require('../maintenance/course-refinements.json');
 
 // This positive allowlist excludes learner records, logs, research and archives.
 const pages = [
@@ -28,7 +29,7 @@ const pages = [
   [
     'PRACTICE.md',
     '/practice',
-    'Apply an objective in a project thread and bring the evidence back.',
+    'Apply an objective in this conversation or hand it off, then review the evidence.',
   ],
   [
     '01-testing-and-qa.md',
@@ -79,6 +80,15 @@ async function main() {
     let { content } = matter(
       await fs.readFile(path.join(sourceDir, file), 'utf8'),
     );
+    const appliedRefinements = [];
+    for (const refinement of refinements.filter((item) => item.file === file)) {
+      if (content.split(refinement.before).length !== 2)
+        throw new Error(
+          `${file}: approved refinement ${refinement.id} needs source review`,
+        );
+      content = content.replace(refinement.before, refinement.after);
+      appliedRefinements.push(refinement.id);
+    }
     // Display source-authored prompts as copyable text without changing their words.
     if (file === 'SETUP.md') {
       content = content.replace(
@@ -124,6 +134,9 @@ async function main() {
             : description,
         slug,
         source_file: file,
+        ...(appliedRefinements.length
+          ? { source_refinements: appliedRefinements }
+          : {}),
       }) +
         '\n<!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->\n',
     ]);

@@ -1,8 +1,12 @@
 ---
 title: Learn to Build Software — Practice and review
-description: Apply an objective in a project thread and bring the evidence back.
+description: >-
+  Apply an objective in this conversation or hand it off, then review the
+  evidence.
 slug: /practice
 source_file: PRACTICE.md
+source_refinements:
+  - practice-conversation-choice-2026-10-29
 ---
 
 # Learn to Build Software — Practice and review
@@ -21,16 +25,18 @@ actually shown and what remains open.
 
 ## Evidence of application
 
-Choose a small relevant task in your app, or bring existing work. In a separate
-implementation conversation, give AI the intended behavior and constraints, make
+Choose a small relevant task in your app, or bring existing work. You can apply
+the concept in the same conversation or choose a separate implementation
+conversation. Give AI your intended behavior, expectations and constraints, make
 choices, question proposals and check the results. AI may write the code. Your
 requests, decisions and follow-ups can show how you applied the outcome; code
 and observed results show what the app does.
 
-A useful handoff carries the selected outcome, task and necessary constraints.
-Leave room for your own direction rather than copying a complete ideal prompt.
-Build in `app/` in your fork. Learning and review do not require installing or
-running this documentation website.
+If handing off, provide only the selected outcome, task, learner expectations,
+constraints and evidence to bring back. Leave room for the learner's decisions
+rather than supplying a fully solved prompt. A separate conversation is
+optional. Build in `app/` in your fork. Learning and review do not require
+installing or running this documentation website.
 
 ## Feedback against the outcome
 

@@ -33,6 +33,7 @@ test('production pages load without broken assets or browser errors', async ({
     ['setup/', 'Set up your workspace'],
     ['modules/project-and-git/', 'Module 0 — Git and GitHub for your work'],
     ['learning-path/', 'Learn to Build Software — Curriculum'],
+    ['practice/', 'Learn to Build Software — Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
     ['for-ai/', 'For AI'],

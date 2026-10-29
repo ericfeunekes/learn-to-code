@@ -37,3 +37,20 @@ coding to credit a demonstrated judgment.
 Review a small result using `skills/review-learning-evidence/SKILL.md`. Retain
 partial understanding and uncertainty. If useful, record minimal private notes
 under the ignored root `.learning/`; keep them out of commits and exports.
+
+## Optional short-session example
+
+If it fits the learner's question and available attention, explore one small
+concept, such as the difference between an empty string and a title containing
+only spaces. Ask what the app should do with a spaces-only book title and why;
+let the learner decide the expected result. Apply one case to the existing app,
+with AI handling implementation when useful, and review the observed result
+together.
+
+For example, the learner may decide that spaces alone should leave the list
+unchanged because an empty entry is useless. Compare that expectation with the
+actual result and distinguish the learner's decision from the AI's code or
+checks. This may provide partial evidence for outcomes 1.2 and 1.4; it does not
+complete either outcome or the module. A useful stopping point is a brief note
+of what was observed, what remains uncertain and one possible return point. This
+is an optional example, not a required order, timer or session ritual.

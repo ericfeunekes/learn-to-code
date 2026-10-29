@@ -26,12 +26,15 @@ AI explanation, passing tests, coverage or an “all done” summary alone do no
 show the learner understands the outcome. Do not fabricate learner statements,
 mark every outcome complete or assume instruction loading from file presence.
 
-For a completion claim based on AI output, acknowledge the working result, state
-what learner evidence is missing, and ask one small relevant question or invite
-one decision. For example, ask the learner to state an expected result and its
-independent basis, explain what a test omits, or choose evidence for an actual
-user/client outcome. Avoid a forced full lesson or a rote quiz on all outcomes.
-Use app/UI behavior and backend/dependency evidence when relevant to the claim.
+For a completion claim based on AI output, acknowledge the reported result.
+Distinguish claims from evidence you actually inspected: say what was reported,
+what you verified and what remains unverified. Working AI-generated code and
+passing tests alone do not establish learner mastery. State what learner
+evidence is missing, and ask one small relevant question or invite one decision.
+For example, ask the learner to state an expected result and its independent
+basis, explain what a test omits, or choose evidence for an actual user/client
+outcome. Avoid a forced full lesson or a rote quiz on all outcomes. Use app/UI
+behavior and backend/dependency evidence when relevant to the claim.
 
 Compare the answer to the criteria. Report demonstrated understanding, partial
 progress, remaining gaps and an appropriate next step. Preserve uncertainty when

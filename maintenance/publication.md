@@ -78,3 +78,18 @@ the separate review handoff. No learner ledger, log or research was imported.
 The branch is local only. Push, deployment and merge need separate
 authorization. Do not add hosted CI or self-hosted runners for this work;
 existing workflow configuration is unchanged.
+
+## Approved implementation refinements
+
+The October 29 review approved an optional short-session skill example,
+same-conversation application with an optional implementation handoff, and
+careful distinction between reported results and inspected evidence. These are
+implementation refinements, not edits to the maintained Drive source.
+
+`course-source.json` continues to identify the original canonical snapshot.
+`course-refinements.json` records the approved practice wording as an exact,
+guarded source replacement. The importer applies it before rendering and marks
+the generated page's `source_refinements` metadata. A changed source passage
+fails before any snapshots are written so it can be reviewed and reconciled; do
+not weaken the guard to force a refresh. The skill changes live in their
+canonical `skills/` files and reach discovery copies through `skills:sync`.

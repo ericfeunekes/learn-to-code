@@ -1,0 +1,12 @@
+{
+  "approved_on": "2026-10-29",
+  "basis": "Approved implementation refinements following review; original canonical Drive sources remain unchanged.",
+  "refinements": [
+    {
+      "id": "practice-conversation-choice-2026-10-29",
+      "file": "PRACTICE.md",
+      "before": "Choose a small relevant task in your app, or bring existing work. In a separate implementation conversation, give AI the intended behavior and constraints, make choices, question proposals and check the results. AI may write the code. Your requests, decisions and follow-ups can show how you applied the outcome; code and observed results show what the app does.\n\nA useful handoff carries the selected outcome, task and necessary constraints. Leave room for your own direction rather than copying a complete ideal prompt. Build in `app/` in your fork. Learning and review do not require installing or running this documentation website.",
+      "after": "Choose a small relevant task in your app, or bring existing work. You can apply the concept in the same conversation or choose a separate implementation conversation. Give AI your intended behavior, expectations and constraints, make choices, question proposals and check the results. AI may write the code. Your requests, decisions and follow-ups can show how you applied the outcome; code and observed results show what the app does.\n\nIf handing off, provide only the selected outcome, task, learner expectations, constraints and evidence to bring back. Leave room for the learner's decisions rather than supplying a fully solved prompt. A separate conversation is optional. Build in `app/` in your fork. Learning and review do not require installing or running this documentation website."
+    }
+  ]
+}
