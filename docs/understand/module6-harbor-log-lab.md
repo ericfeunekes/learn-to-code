@@ -92,6 +92,35 @@ read shared free-text notes in a real deployment; its use requires review.
 - PR #38, export prototype, opened October 20 and remains draft/open. Prototype
   checks pass; it is blocked by H3 and remains outside `main`.
 
+### H4a Trace one source change
+
+This is the supplied search hunk from PR #36 in `src/server.py`, before at
+`b830` and after at `c930`. Lines beginning `-` were removed; lines beginning
+`+` replaced them. The route and response line stayed the same. The unchanged
+request comes from a client using the H2 endpoint.
+
+```text
+ elif url.path == "/api/search":
+-    query = parse_qs(url.query, keep_blank_values=True).get("q", [""])[0]
+-    found = [note for note in NOTES if query in note["text"]]
++    query = parse_qs(url.query, keep_blank_values=True).get("q", [""])[0].strip()
++    found = [note for note in NOTES if query in note["text"].lower()]
+     self.reply(200, {"notes": found, "count": len(found)})
+```
+
+For reading this hunk: `parse_qs` extracts the query values; `.strip()` removes
+surrounding whitespace; `.lower()` makes a string lowercase; `in` checks whether
+one string occurs in another. H7's downloadable source is the after version.
+
+Choose one H2 request and follow its value through **request → query → selected
+notes → response**. Using the two dummy notes in H7, predict the response before
+and after this hunk. Point to the changed operation and the unchanged response
+connection that explain your prediction. Then choose a different letter-case or
+whitespace input: does this change satisfy all of H2? Return the hunk and your
+reasoning, not just PR #36's summary. These are source-based predictions; only
+the after version is runnable here. Do not report a before-version execution or
+historical production observation that you did not perform.
+
 ## H5 Versions, environments and availability
 
 The fictional ship workflow builds a selected revision and records its
@@ -181,7 +210,8 @@ One query is not complete search coverage. If a check surprises you, choose one
 small comparison that distinguishes a useful alternative explanation. Stop the
 server with Ctrl+C when finished; closing a browser tab does not stop it.
 
-Return the claim table, brief, reproducible finding, relevant output and your
-own correction of an agent claim to the teacher. Keep a historical October 25
-account distinct from today's local observation. A local result can expose a
-release risk; it cannot establish what a production user observed.
+Return the claim table, brief, H4a source trace and predictions, reproducible
+finding, relevant output and your own correction of an agent claim to the
+teacher. Keep a historical October 25 account distinct from today's local
+observation. A local result can expose a release risk; it cannot establish what
+a production user observed.

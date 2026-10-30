@@ -1,8 +1,8 @@
 # Second-track Module 6 review handoff
 
-Status: **local author-review draft; independent whole-track review pending**.
-No actual learner evidence, public release, Drive edit, push or merge is
-included.
+Status: **local author-review draft; initial review findings remediated,
+awaiting independent recheck**. No actual learner evidence, public release,
+Drive edit, push or merge is included.
 
 ## Deliverables and ownership
 
@@ -96,11 +96,24 @@ not require guessing this particular defect as a universal completion gate.
 
 For full capstone evidence, look for a learner contribution linking all six
 track skills: a plain-language parts map, relevant source navigation, an
-observed authorized check, a dated change trace, a reasoned statement of what
-the checks establish, and a bounded project account. A polished agent brief
-alone supports none of those learner-reasoning claims. Record partial evidence
-against the five outcomes rather than imposing a numerical score or declaring
-general mastery.
+observed authorized check, a source-change trace connecting an input to its
+result with before/after reasoning, a reasoned statement of what the checks
+establish, and a bounded project account. H4a supplies the hunk for that trace:
+the query passes through parsing and note selection into the unchanged response.
+For example, `spill` predicts count 0 at `b830` and 1 at `c930`; `Spill`
+predicts 1 then 0. An unchanged client request can therefore change behavior
+even though the endpoint and response shape stay the same. The after source
+lowercases note text but not the query, so the change does not satisfy all of
+H2. Neither before-version execution nor historical production behavior was
+observed.
+
+Ask the learner to explain a chosen input and comparison, rather than repeat
+these examples. Inspect their cited hunk and connection: a PR summary or dated
+status list alone leaves Module 4 source tracing unassessed. A polished agent
+brief alone supports none of those learner-reasoning claims. Record partial
+evidence against the five outcomes rather than imposing a numerical score or
+declaring general mastery. This capstone does not require the full trace for
+every short Module 6 exploration.
 
 ### Give this new record after the initial attempt
 
@@ -171,7 +184,7 @@ Integration should:
 6. Run the full integrated checks and independent whole-track review, including
    progression, scope, teacher behavior and genuine learner transfer evidence.
 
-### Final checks
+### Initial draft checks (`0c53c8f`)
 
 - `npm run check:skills`, `npm run lint`, and `git diff --check`: passed.
 - `npm run build`: passed at `/learn-to-code/`; generated 19 reading exports.
@@ -207,3 +220,51 @@ Ignored evidence: `.scratch/module6-runtime-evidence.json`,
 `.scratch/module6-probe.py`, `.scratch/module6-simulation.md`, isolated browser
 configuration/test copies, and `test-results/module6-final/`. The synthetic
 simulation is explicitly author-produced and supplies no learner mastery claim.
+
+## Independent review remediation: R1 and R2
+
+Review source: `626ffef1171b3ee621a016416fa615ce6c86343d`,
+`maintenance/drafts/understand-whole-track-review/REVIEW.md` on the independent
+review branch. Both P2 findings were confirmed against this module. The fixes
+below await the reviewer's independent recheck; they do not claim final
+whole-track approval.
+
+**R1 — idle browser connections:** use `ThreadingHTTPServer` so an idle accepted
+connection does not block a second client's identity request. The committed
+`tests/test_track2_module6_runtime.py` starts the actual downloadable fixture,
+keeps a TCP connection idle, completes `/version` through another connection
+within a two-second bound, then verifies clean process exit with the idle socket
+still open. Run it with `python3 tests/test_track2_module6_runtime.py -v`. The
+regression passes. Against a scratch control differing only by use of the
+original `HTTPServer`, the same test fails with a request timeout. This checks
+the causal boundary rather than merely asserting the chosen server class. The
+regular dummy API probe still reproduces the intended search contract failure
+and the previously documented response statuses. No search fix is part of this
+remediation.
+
+**R2 — source-change tracing:** H4a now supplies a tiny PR #36 search diff from
+`b830` to `c930`, with just-in-time explanations of its operations. The learner
+chooses an input, follows request → query → selected notes → response, predicts
+before/after behavior, and explains a changed operation and unchanged
+connection. They then choose a contrasting case. The module's capstone return
+and teacher criteria now require that source evidence before crediting the
+full-track tracing claim. Short Module 6 explorations can still retain partial
+evidence; this is not an implementation task or a rote checklist for every
+session.
+
+An author-run source simulation confirmed that the after hunk matches the
+downloadable source. With the same dummy notes, `spill` predicts counts 0 → 1,
+`Spill` predicts 1 → 0, uppercase `SPILL` predicts 0 → 0, and padded lowercase
+predicts 0 → 1. These are checks of the supplied source excerpts, not execution
+of historical deployment versions or evidence of human learning. Ignored output
+is in `.scratch/module6-r2-source-trace.json`.
+
+After remediation, the fixture SHA-256 is
+`9a21c6f92aa8d9b87edcb0577398b6d2bce6a94798693e1b28659baaa472438d`.
+`npm run build`, `check:links` (22 HTML files / 935 links, fragments and
+assets), `check:skills`, lint and diff whitespace checks passed. The focused
+Module 6 desktop/phone suite passed **4 tests (8.6 seconds)** against the final
+rebuilt pages and exports. Shared files, other authors' modules, package
+dependencies and publication state are unchanged. The new Python regression runs
+separately from the unchanged shared npm script; the integrator can include this
+command in the final runtime verification.

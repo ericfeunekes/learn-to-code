@@ -7,7 +7,7 @@ No installs, credentials, external services, persistent writes or live data.
 
 import argparse
 import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlsplit
 
 
@@ -53,7 +53,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=0)
     args = parser.parse_args()
-    server = HTTPServer(("127.0.0.1", args.port), Handler)
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print(
         f"Harbor Log fixture: http://127.0.0.1:{server.server_port} (Ctrl+C to stop)",
         flush=True,
