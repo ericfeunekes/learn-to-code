@@ -1,8 +1,12 @@
 ---
 title: Module 2 — Error handling and recovery
-description: Diagnose failures and choose responses and recovery.
+description: >-
+  Detailed draft pending course-author review: diagnose failures and choose
+  responses and recovery.
 slug: /modules/error-handling-and-recovery
 source_file: 02-error-handling-and-recovery.md
+source_refinements:
+  - module-2-recovery-draft-2026-10-30
 ---
 
 # Module 2 — Error handling and recovery

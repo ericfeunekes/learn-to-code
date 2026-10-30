@@ -47,7 +47,7 @@ const pages = [
   [
     '02-error-handling-and-recovery.md',
     '/modules/error-handling-and-recovery',
-    'Diagnose failures and choose responses and recovery.',
+    'Detailed draft pending course-author review: diagnose failures and choose responses and recovery.',
   ],
   [
     '03-persistence-and-shared-state.md',

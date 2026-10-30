@@ -72,7 +72,9 @@ For a course maintenance request, read
 generated snapshots. Use the documented source/revision workflow and
 `npm run content:refresh -- SOURCE_DIR`; do not edit generated pages directly.
 The course author owns curriculum decisions. Module 0 remains a human-review
-draft; Modules 2–7 remain broad outlines. Preserve Module 1's seven outcomes and
+draft. Module 2 has detailed proposed outcomes pending course-author review; use
+them for exploration and partial evidence, not agreed completion criteria.
+Modules 3–7 remain broad outlines. Preserve Module 1's seven outcomes and
 evidence criteria.
 
 Run `npm run check` after relevant changes. Browser tests use the production

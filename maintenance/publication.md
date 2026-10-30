@@ -20,14 +20,16 @@ this project.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
-Module 1 retains its detailed material. Modules 2–7 are short **Being built**
-outlines; their detailed outcomes and examples require development and human
-review. The owner approved release of this current version on October 25, 2026.
-The October 26 approval includes repository-wide MIT licensing and public
-distribution of the bundled teaching skills, superseding the earlier exclusion.
-The ledger, teaching log, sessions, learner identities, personal details,
-private source links, research archives, books and earlier course snapshots are
-outside the public repository and its history.
+Module 1 retains its detailed material. Module 2 is a detailed draft pending
+course-author review, with six proposed outcomes that are not agreed completion
+criteria. Modules 3–7 are short **Being built** outlines; their detailed
+outcomes and examples require development and human review. The owner approved
+release of this current version on October 25, 2026. The October 26 approval
+includes repository-wide MIT licensing and public distribution of the bundled
+teaching skills, superseding the earlier exclusion. The ledger, teaching log,
+sessions, learner identities, personal details, private source links, research
+archives, books and earlier course snapshots are outside the public repository
+and its history.
 
 ## One maintained curriculum source
 
@@ -83,10 +85,11 @@ existing workflow configuration is unchanged.
 
 The October 30 direction separates the course reference from the learner's own
 project repository. The overview, setup, course map, practice, teacher guide,
-and Module 0 context are revised in `course-revisions/`. These public authoring
-files are local review candidates; the original Drive sources and provenance
-remain untouched. This does not approve detailed outcomes for unfinished
-modules.
+and Module 0 context are revised in `course-revisions/`. The separately reviewed
+Module 2 draft is also registered there in the combined local review candidate.
+These public authoring files are local review candidates; the original Drive
+sources and provenance remain untouched. This does not approve detailed outcomes
+for unfinished modules.
 
 `course-refinements.json` registers each replacement with its original source's
 SHA-256. The importer verifies that hash before applying the revision, records

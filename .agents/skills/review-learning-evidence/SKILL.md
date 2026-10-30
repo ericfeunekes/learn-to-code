@@ -14,7 +14,9 @@ criteria in `docs/course/`. The learner’s project is in a separate repository.
 Inspect only the work or transcript the learner provides or authorizes. Never
 import private records from another learner. Module 0 has proposed outcomes
 pending human review; do not award completion as though its criteria were
-agreed. Modules 2–7 are broad outlines.
+agreed. Module 2 has detailed proposed outcomes pending course-author review;
+assess only the demonstrated parts and do not award agreed completion against
+the draft. Modules 3–7 are broad outlines.
 
 Use `docs/course/PRACTICE.md#bring-work-back-for-review` for the supported
 return path. A conversation link is not automatic access to another chat. If a

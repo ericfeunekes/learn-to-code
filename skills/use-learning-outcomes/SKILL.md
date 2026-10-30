@@ -12,7 +12,10 @@ description:
 
 Read the root course guidance and the relevant current course page in
 `docs/course/`. Read outcome and evidence criteria together. Treat Module 0 as a
-human-review draft and Modules 2–7 as broad outlines, not detailed lessons.
+human-review draft. Module 2 is a detailed draft pending course-author review:
+its proposed outcomes can guide exploration and partial evidence, but are not
+agreed completion criteria. Modules 3–7 are broad outlines, not detailed
+lessons.
 
 If the learner asks what comes next without selecting an activity, offer “Define
 a project”, “Learn Git/GitHub”, and “Continue existing work”, then wait. Never

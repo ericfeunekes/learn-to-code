@@ -82,8 +82,10 @@ Create notes only when useful. Do not publish learner records or transcripts.
 The public setup guide carries the pre-clone prompt and operational
 instructions. Module 0 is a separate Git/GitHub learning draft; do not treat its
 proposed outcomes as agreed completion criteria before human review. Module 1
-has agreed objectives. Modules 2–7 are being built and describe broad intended
-coverage. Develop their detailed outcomes with the course author and obtain
-human review before treating them as ready.
+has agreed objectives. Module 2 is a detailed draft pending course-author
+review. Its six proposed outcomes can guide exploration and partial evidence; do
+not treat them as agreed completion criteria. Modules 3–7 are being built and
+describe broad intended coverage. Develop their detailed outcomes with the
+course author and obtain human review before treating them as ready.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

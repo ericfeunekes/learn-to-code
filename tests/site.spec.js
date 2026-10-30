@@ -35,6 +35,10 @@ test('production pages load without broken assets or browser errors', async ({
     ['learning-path/', 'Learn to Build Software — Curriculum'],
     ['practice/', 'Learn to Build Software — Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
+    [
+      'modules/error-handling-and-recovery/',
+      'Module 2 — Error handling and recovery',
+    ],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
@@ -352,6 +356,60 @@ test('full course map leads to independent practice and accessible evidence retu
     path: info.outputPath('evidence-return.png'),
     fullPage: true,
   });
+});
+
+test('Module 2 draft connects independent application to the shared evidence-return flow', async ({
+  page,
+  request,
+}) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  await expect(
+    main.getByText('detailed draft pending course-author review', {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await main
+    .getByRole('link', { name: '2. Error handling and recovery', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}modules/error-handling-and-recovery/$`),
+  );
+  await expect(
+    main.getByText('Draft — for course-author review.', { exact: true }),
+  ).toBeVisible();
+  await expect(main.getByRole('heading', { level: 3 })).toHaveCount(6);
+  await expect(
+    main.getByText(
+      /Implementation happens in a separate learner-owned repository/,
+    ),
+  ).toBeVisible();
+  await expect(
+    main.getByText(/If the teacher cannot open the chat or repository/),
+  ).toBeVisible();
+  const raw = await request.get('raw/course/02-error-handling-and-recovery.md');
+  expect(await raw.text()).toContain('module-2-recovery-draft-2026-10-30');
+  await main
+    .getByRole('link', { name: 'Practice and transcript review', exact: true })
+    .click();
+  await expect(
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
+  ).toBeVisible();
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+  await page.goto('search/');
+  await page
+    .getByRole('searchbox', { name: 'Search words' })
+    .fill('unknown outcomes');
+  await page
+    .locator('.search-results')
+    .getByRole('link', {
+      name: 'Module 2 — Error handling and recovery',
+      exact: true,
+    })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}modules/error-handling-and-recovery/$`),
+  );
 });
 
 test('copy failure is announced and repeated copy can recover without browser errors', async ({

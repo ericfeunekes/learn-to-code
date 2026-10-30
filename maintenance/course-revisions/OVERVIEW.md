@@ -59,11 +59,13 @@ Learn enough when you need it; command memorization is not an entrance exam.
 
 ## Course status
 
-Module 1 has detailed learning objectives and evidence criteria. Modules 2–7 are
-**Being built**: their pages currently describe intended coverage, with detailed
-outcomes and examples still requiring development and human review. The setup
-flow and Module 0 are drafts for review. The full map describes the destination;
-it does not claim every lesson is ready.
+Module 1 has detailed learning objectives and evidence criteria. Module 2 is a
+**detailed draft pending course-author review**: its six proposed outcomes can
+guide exploration and partial evidence, but are not agreed completion criteria.
+Modules 3–7 are **Being built** outlines, with detailed outcomes and examples
+still requiring development and human review. The setup flow and Module 0 are
+drafts for review. The full map describes the destination; it does not claim
+every lesson is ready.
 
 ## Choose and outline your project
 

@@ -23,8 +23,9 @@ feedback. Revisit testing as failures, storage, data rules, structure, and
 overlapping work make the questions more demanding.
 
 The setup flow and Module 0 are drafts for review. Module 1 has detailed
-objectives. Modules 2–7 are being built: the map describes intended coverage,
-not finished lessons or agreed detailed outcomes.
+objectives. Module 2 is a detailed draft pending course-author review; its
+proposed outcomes can guide exploration and partial evidence, but are not agreed
+completion criteria. Modules 3–7 remain outlines being built.
 
 ## Core modules
 
@@ -38,8 +39,8 @@ learning objectives.
 
 0. [Git and GitHub for your work](00-project-and-git.md) — **Draft for review**
 1. [Testing and QA](01-testing-and-qa.md)
-2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Being
-   built**
+2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Detailed
+   draft for review**
 3. [Persistence and shared state](03-persistence-and-shared-state.md) — **Being
    built**
 4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — **Being

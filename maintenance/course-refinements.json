@@ -1,5 +1,5 @@
 {
-  "basis": "October 30 user direction: separate learner project repositories and a full-course overview. These local revisions await review; canonical Drive sources remain unchanged.",
+  "basis": "October 30 user direction and local draft integration: independent learner project repositories, full-course overview, and a detailed Module 2 draft pending author review. Canonical Drive sources remain unchanged.",
   "refinements": [],
   "revisions": [
     {
@@ -31,6 +31,11 @@
       "id": "separate-projects-00-project-and-git-2026-10-30",
       "file": "00-project-and-git.md",
       "source_sha256": "dbc9ac02f7ac51ba1079736d95faeacfd89610d60891995d05e26c861a6c491e"
+    },
+    {
+      "id": "module-2-recovery-draft-2026-10-30",
+      "file": "02-error-handling-and-recovery.md",
+      "source_sha256": "33f5049eb826d28b4a0a5cbfe2d0a49fb98a71c18c8080b75f41fb5dd84648ae"
     }
   ]
 }

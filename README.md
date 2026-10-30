@@ -2,8 +2,9 @@
 
 Learn to understand, question, and improve software by directing AI on a useful
 project. [The overview](docs/course/OVERVIEW.md) explains the full destination
-and each core topic's role. Module 1 has detailed outcomes; Modules 2–7 are
-being built. Setup and Module 0 remain drafts for human review.
+and each core topic's role. Module 1 has detailed outcomes; Module 2 is a
+detailed draft pending course-author review. Modules 3–7 remain outlines being
+built. Setup and Module 0 remain drafts for human review.
 
 ## Set up your own project
 

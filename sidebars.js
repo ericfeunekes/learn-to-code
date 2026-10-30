@@ -12,7 +12,7 @@ export default {
     {
       type: 'doc',
       id: 'course/error-handling-and-recovery',
-      label: '2. Error handling and recovery · being built',
+      label: '2. Error handling and recovery · draft',
     },
     {
       type: 'doc',
