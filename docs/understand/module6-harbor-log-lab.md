@@ -1,0 +1,187 @@
+---
+title: 'Module 6 lab: Harbor Log'
+description: >-
+  Fictional project records and a local API for independently investigating
+  project state and observed behavior.
+slug: /understand/module6-harbor-log-lab
+---
+
+# Module 6 lab: Harbor Log
+
+Use with [Read an evolving project](06-read-evolving-project.md). Everything
+below is invented training material: records, IDs, versions, people and data. Do
+not search for this project. There are no credentials, real users or external
+services in the executable fixture. This is a local authored draft, not a Drive
+export or evidence from an actual learner.
+
+Your question: **What changed for pilot users over these two weeks, and what can
+we confirm about search?** Scope: `harbor-log-api`, `main`, October 12–25, 2026,
+UTC. Snapshot: October 26 at 09:00 UTC. Compare October 12–18 with October
+19–25. The records below are complete for this fictional repository and window.
+The private planning board and the external identity service's repository are
+unavailable. The local fixture represents the release at the snapshot; running
+it now is a new local observation, not a historical production observation.
+
+Use H1–H7 as source IDs in your brief. First inspect the records and files,
+write an expectation, and choose your own small test. There is no learner answer
+key on this page. Ask your teacher to review your reasoning and supply one new
+record after your initial account.
+
+## H1 Repository home and files
+
+README, September 30: “Harbor Log helps dock supervisors record and search
+inspection notes. CSV downloads are available to pilot supervisors.”
+
+The fictional repository tree at `main`, abbreviated revision `c930`:
+
+```text
+README.md                  project introduction above
+docs/search-contract.md    H2
+docs/decisions.md          H3
+src/server.py              local fixture source below
+tests/search-checks.md     check record in H4
+.github/workflows/ship.yml deployment description in H5
+```
+
+These are the supplied extracts of the fictional repository, not files in a
+hidden remote. The runnable `server.py` is the actual local fixture source.
+Documentation, issue and workflow extracts describe the invented project; they
+do not execute deployments or confer access to an environment.
+
+## H2 Search contract, updated October 19
+
+For an authorized supervisor, `GET /api/search?q=TEXT` returns matching notes.
+Search ignores letter case and surrounding whitespace. A blank or omitted query
+returns every note. Results have `id` and `text`; the JSON `count` is the number
+returned. Use dummy records for checks. The sample note `N1` is “Spill near
+gate.”
+
+`GET /version` identifies the version and revision of the responding instance,
+its environment and whether CSV export is enabled. This endpoint identifies that
+instance only. Search does not send messages or write data. CSV export would
+read shared free-text notes in a real deployment; its use requires review.
+
+## H3 Work and decisions at the cutoff
+
+- Issue #12, duplicate saves: closed October 15 by merged PR #31. Acceptance:
+  retrying the same save must create only one note.
+- Issue #18, consistent search: closed October 22 by PR #36. Acceptance links
+  H2.
+- Issue #20, CSV export: open; label `priority-high` from September 28. Draft PR
+  #38 links it. October 21 update: “Blocked on privacy approval. Do not enable
+  downloads until approved.” No approval record is supplied.
+- Issue #23, offline capture: idea opened October 24; no assigned milestone,
+  accepted scope or linked PR.
+- Decision October 14: “Repair duplicate saves first, finish search next, hold
+  export for privacy review.” Maintainer reaffirmed it October 24. It links the
+  unavailable private board. A milestone due October 23 remains open and
+  includes #18 and #20. Its date is a target, not a revised commitment.
+
+## H4 Changes and checks
+
+- PR #31 merged October 15, revision `b810`. Its observed repeated-save check
+  recorded one note after retry. No case-insensitive search check is supplied.
+- PR #33, dependencies, merged October 17, revision `b830`; no feature claim.
+- PR #36, consistent search, opened October 9 and merged October 22 to `main`,
+  revision `c930`. Earlier work start is unknown. Check record: lowercase query
+  `spill` returned N1; empty query returned all records. Both passed on `c930`.
+  The record contains no uppercase or padded-query case. Review says rollout
+  follows deployment. The fixture represents this source revision.
+- PR #37, search suggestions, closed October 23 without merge after a design
+  discussion. It did not enter `main`.
+- PR #38, export prototype, opened October 20 and remains draft/open. Prototype
+  checks pass; it is blocked by H3 and remains outside `main`.
+
+## H5 Versions, environments and availability
+
+The fictional ship workflow builds a selected revision and records its
+environment and activation result. A workflow definition alone establishes no
+deployment happened. These are the supplied execution records:
+
+- Release 0.8, October 17, tag `v0.8` at `b830`: duplicate-save repair and
+  dependencies. Production activation succeeded October 18 at 10:00 UTC for
+  pilot supervisors. A same-day pilot check observed one note after a retry.
+- Release 0.9, October 23, tag `v0.9` at `c930`: consistent search; export is
+  excluded. Staging activated `c930` October 23 with export disabled. Production
+  activation failed October 24; the record explicitly says **0.8 / `b830`
+  remains active**, export disabled. No later activation appears in the window
+  or up to the snapshot. The local fixture runs 0.9 / `c930`, export disabled.
+- Staging has a real mail integration and shared pilot data in this invented
+  project. You have no permission or endpoint for using it. The lab authorizes
+  only the local fixture and dummy data; do not attempt a staging test.
+
+## H6 Activity and an agent's proposed account
+
+There were 8 recorded commits in the first week and 24 in the second across all
+branches. Sixteen later commits were bot checkpoints for the export draft; PR
+#36 combined many changes into one merge checkpoint. These totals do not include
+research or work in other repositories.
+
+An exploration agent proposes:
+
+> Search and export shipped to pilot users. The passing checks establish search
+> works for every query. Work is moving three times faster, so export should
+> finish next week. Offline capture is committed because an issue exists.
+
+Choose two consequential claims to challenge yourself. Cite exact evidence,
+explain the gap, and state what narrower conclusion is justified. If your own
+check reveals a problem, distinguish the symptom from an explanation of its
+cause. Source inspection may inform a hypothesis; this module does not ask you
+to implement a repair.
+
+## H7 Run the local fixture
+
+Python 3.10 or newer is sufficient; there are no third-party packages to
+install. Use a disposable folder outside private projects. Download or save
+[server.py](pathname:///labs/track2-module6/server.py) there and inspect it
+before execution. In a course reference checkout the same file is under
+`static/labs/track2-module6/server.py`. No course checkout or app repository is
+required. Follow your local tool policy; inspect with an agent if useful.
+
+The file serves dummy records in memory, binds only to `127.0.0.1`, makes no
+outbound requests, writes no files, and accepts only read requests. It does not
+use credentials. Export is disabled. It prints request paths to the terminal, so
+keep your inputs fictional. Do not change the binding or connect live data.
+
+In that disposable folder, start it in a terminal:
+
+```sh
+python3 server.py --port 0
+```
+
+It prints an operating-system-selected port, for example
+`Harbor Log fixture: http://127.0.0.1:54321 (Ctrl+C to stop)`. Use your actual
+printed port. An agent may help with the command and requests; it must return
+the actual output and your choices must remain visible. If Python or command
+execution is unavailable, ask for the source and relevant captured responses;
+mark the runtime exercise unobserved until you can perform it.
+
+Open `/version` at that address first. Expected setup result:
+
+```text
+{
+  "version": "0.9",
+  "revision": "c930",
+  "environment": "local-fixture",
+  "export_enabled": false
+}
+```
+
+Read the source to locate dummy data, search handling and configuration. Choose
+a query from H2 and state its expected result before sending it. Use a browser,
+an agent's local request tool, or this optional request shape, replacing `PORT`
+and the fictional query:
+
+```sh
+curl --get --data-urlencode 'q=your fictional query' 'http://127.0.0.1:PORT/api/search'
+```
+
+Record the actual JSON and HTTP status, input, version, environment and time.
+One query is not complete search coverage. If a check surprises you, choose one
+small comparison that distinguishes a useful alternative explanation. Stop the
+server with Ctrl+C when finished; closing a browser tab does not stop it.
+
+Return the claim table, brief, reproducible finding, relevant output and your
+own correction of an agent claim to the teacher. Keep a historical October 25
+account distinct from today's local observation. A local result can expose a
+release risk; it cannot establish what a production user observed.
