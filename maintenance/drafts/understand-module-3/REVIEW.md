@@ -1,0 +1,124 @@
+# Module 3 review and integration handoff
+
+Status: **private author-review draft; independent whole-track review and real
+learner use remain pending.** No push, merge, public publication, deployment, or
+canonical Drive edit is included.
+
+## Deliverables and ownership
+
+- [Module](MODULE.md): five proposed outcomes covering target/effects
+  boundaries, environment operation, repeatable checking, diagnostics, and
+  reproducible findings. General concepts precede API/MCP/browser-specific
+  tools.
+- [Practice](PRACTICE.md): a runnable fictional local API; optional supplied MCP
+  and browser packets; transfer to an authorized real repo; evidence return.
+- [Teacher notes](TEACHER.md): adaptive teaching, proposed assessment evidence,
+  fixture interpretation, gaps, and handoffs.
+- `fixture/module3_server.py`: Python standard-library HTTP service, loopback
+  only, fictional in-memory data, no outbound services or data writes.
+- `fixture/module3_fixture_test.py`: actual local HTTP/process checks of the
+  teaching fixture, including the intentionally defective capitalization search.
+
+The new sources live only in `maintenance/drafts/understand-module-3/`. They are
+independent authoring material created for the user's October 30 direction, not
+Drive exports, generated course snapshots, or an approved replacement for any
+building-track page. No source manifest, original content guard, navigation,
+shared skill, dependency file, website code, or existing module is edited.
+
+## Teaching and scope review
+
+Shared GitHub Module 0 precedes both tracks. This module expects the general
+software map and file-navigation skills of second-track Modules 1 and 2; no
+learner implementation project or product brief is required. It teaches active
+investigation without requiring feature implementation. One interface is enough;
+the MCP/browser alternatives do not imply live MCP or React execution.
+
+The module begins with environment/dependency/configuration/log concepts, makes
+them concrete with a small fixture, then transfers to one question in an
+authorized repo. It leaves detailed code/change tracing to Module 4 and formal
+confidence/coverage reasoning to Module 5. Its output can support Module 6's
+version/deployment account but does not infer progress, priorities, or shipping
+readiness. Cross-module terminology and progression must still be independently
+reviewed against the other five workers' final artifacts.
+
+The module and teacher note explicitly distinguish learner choices and
+interpretation, AI assistance, inspected results, reported results, and
+fictional packet evidence. An inaccessible chat link is not automatic evidence
+access. Blocked execution can leave useful partial understanding while
+environment operation remains unassessed. Private learner records do not belong
+in this folder or website exports.
+
+## Author walkthrough and verification
+
+An author-generated exercise walkthrough used a different search input from the
+worked example: `wood` and `WOOD`, with the requirement-based expectation that
+both find wood carving. The local HTTP results were 200 with one workshop and
+200 with none, respectively, under `module3.1`, ready mode. This supports the
+exercise's reproducible mismatch without establishing its root cause or behavior
+in any other environment. The owned process was stopped. Its task-local evidence
+is in ignored `.scratch/module-3/author-walkthrough.json`.
+
+This is a synthetic author simulation, not independent learner testing. No real
+learner, private repository, workplace staging system, actual MCP client/server,
+or React app was used. It verifies mechanics and provides a plausible exercise;
+it does not establish human comprehension, independent discovery, or transfer.
+
+Checks on the isolated worktree:
+
+- Three fixture boundary tests passed: ready search/request-log association and
+  clean shutdown; unavailable catalog versus successful empty result; refused
+  mutation methods with unchanged data. The fixture deliberately fails its
+  fictional case-insensitive search requirement; green author checks preserve
+  that educational defect rather than certify the directory as correct.
+- `npm run check:skills`, `npm run lint`, and `git diff --check` passed.
+- All nine relative file/fragment links in the module's authored Markdown
+  resolve; both Python files compile.
+- `npm run build` passed at `/learn-to-code/`; `npm run check:links` passed for
+  20 generated HTML files and 853 local links/assets/fragments. These are checks
+  of the existing site; private draft content is not built into that site.
+
+The HTTP fixture needs local socket access, which the execution sandbox
+initially blocked. Approved escalation allowed its disposable loopback tests and
+walkthrough to finish. No action remains denied or of uncertain outcome. Site
+build emitted nonfatal cache permission, localStorage, and update-check
+warnings; dependencies were reused read-only from the original checkout with a
+temporary symlink.
+
+The existing desktop/phone Playwright suite uses a task-local isolated config on
+port 4313 to avoid other workers' servers. The first config wrapper unexpectedly
+ran 11 unnamed tests; that run is not treated as desktop/phone evidence. The
+corrected config is derived directly from the baseline and lists all 22 tests.
+The final corrected run passed **22 tests across desktop and phone (1.2m)**.
+That checks the unchanged site's regression surface, not a rendered version of
+the new maintenance-only draft. Its temporary config and browser artifacts
+remain in ignored task-local scratch/test-results folders.
+
+## Integrate after whole-track review
+
+The branch starts at exact commit `d3c8cdb5631141ace2528326f7190e39073b23ac` and
+touches only this module's new folder. Cherry-pick the module commit supplied in
+the task's final handoff onto the intended integration branch. Do not merge or
+copy the temporary dependency symlink, ignored build outputs, or task-local
+evidence into curriculum content.
+
+Use `MODULE.md` as the draft entry point. Keep its second-track identity
+explicit to avoid confusion with building-track Module 3. The integrator owns
+shared overview/navigation/source-policy changes and reconciliation of the
+earlier read-only companion with the new track. This task does not silently
+replace that companion's read-only permission boundary.
+
+If admitted to website reading content later, provide accessible fixture files
+or a module download and adjust the practice source paths deliberately; do not
+publish broken links from `docs/` to maintenance-only Python files. Keep teacher
+interpretation separate from the learner's first attempt where useful. Recheck
+site source links, search, exports, desktop and phone behavior after that shared
+wiring changes. Canonical promotion and publication remain separate decisions.
+
+From the module folder, fixture author checks run with:
+
+```sh
+python3 -B fixture/module3_fixture_test.py -v
+```
+
+Local startup and stop instructions remain in practice. No task-owned server is
+intended to stay running after verification.
