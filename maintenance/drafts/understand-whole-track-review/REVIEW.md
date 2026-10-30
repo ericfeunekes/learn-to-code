@@ -366,3 +366,11 @@ hydration and produced mixed-theme contrast errors. That was invalid probe
 setup, not a module finding. The corrected probe persisted the preference,
 reloaded, asserted the selected theme and awaited hydration before accessibility
 analysis. Its accessibility checks passed; I4 is a separate captured exception.
+
+## Subsequent author-fix disposition
+
+The original findings and failed checks above describe frozen draft `fb46715`.
+R1 and R2 are now closed at author-fix checkpoint `53df1bd`; see
+[the independent author-fix recheck](REREVIEW-AUTHOR-FIXES.md) for source
+commits, actual runtime proof, capstone assessment and limits. I1–I4 and final
+combined review remain pending integration.
