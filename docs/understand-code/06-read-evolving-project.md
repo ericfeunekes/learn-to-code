@@ -169,15 +169,21 @@ for a changed evidence set before claiming transfer to unfamiliar work.
    where needed, then check a source yourself.
 2. Build a small account of project state. Include one user-facing capability,
    one open or uncertain item, a change during the window, and a visible
-   priority or dependency. Cite sources that another reader can inspect.
+   priority or dependency. Cite sources that another reader can inspect. For one
+   small source change, follow an input through connected operations to its
+   result. Supply the before/after hunk and explain the behavioral effect,
+   including one connection that stayed unchanged. The lab supplies H4a for this
+   trace. Distinguish source-based predictions from observed execution. If the
+   before source is inaccessible, retain the gap in tracing evidence.
 3. Choose one behavior and state your expectation before testing. Inspect setup
    and side effects, identify the local/authorized environment and revision, and
    run a small check. Record actual output. If execution is unavailable, propose
    a reproducible check and mark runtime application unobserved; do not invent
    it.
-4. Return a short brief, claim table, QA record and your own explanation of one
-   challenged claim. Identify which parts the agent supplied. A few paragraphs
-   and the relevant excerpts are enough; a full transcript is unnecessary.
+4. Return a short brief, claim table, source trace with your before/after
+   predictions, QA record and your own explanation of one challenged claim.
+   Identify which parts the agent supplied. A few paragraphs and the relevant
+   excerpts are enough; a full transcript is unnecessary.
 5. After feedback, handle one new deployment, rollout, test or decision record.
    Update only the affected claims and explain why the historical account stays
    intact. Your teacher can supply this change after the initial attempt.
@@ -189,7 +195,7 @@ updating only the claims affected by a new record. Use those different
 decisions, or choose an unfamiliar authorized behavior, when assessing transfer.
 
 This capstone connects the full track: explain the parts, find relevant files,
-run a behavior, follow its change history, assess evidence, and describe the
+run a behavior, trace a source change, assess evidence, and describe the
 project's state. Choosing an API exercise is sufficient; it does not establish
 transfer to MCP or React without further evidence.
 
@@ -242,6 +248,8 @@ to investigation rather than app implementation:
   one brief or one green check.
 - Check that claims fit their cutoff, environment, version and audience; the QA
   finding is reproducible; and at least one claim was challenged or revised.
+  Inspect the learner's input-to-result trace and before/after explanation;
+  history summaries alone leave source-change tracing unassessed.
 - Give one useful follow-up for an unresolved learning gap. Preserve honest
   access limits; missing evidence is not proof of inability.
 
