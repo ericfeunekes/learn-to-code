@@ -374,3 +374,12 @@ R1 and R2 are now closed at author-fix checkpoint `53df1bd`; see
 [the independent author-fix recheck](REREVIEW-AUTHOR-FIXES.md) for source
 commits, actual runtime proof, capstone assessment and limits. I1–I4 and final
 combined review remain pending integration.
+
+## Final combined-candidate disposition
+
+The exact combined candidate `5820c3d9f66a538fcca667d645ffd359fe916873` passed
+independent whole-path review. R1, R2 and I1–I4 are closed. See
+[the final review](FINAL-REVIEW.md) for immutable scope, independent checks,
+learning simulations and remaining validation limits. This preserves the
+historical findings above; it grants no publication authorization or claim of
+real learner success.
