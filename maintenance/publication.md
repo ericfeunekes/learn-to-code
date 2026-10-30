@@ -15,8 +15,8 @@ this project.
 - `docs/course/SETUP.md` and `00-project-and-git.md`: current setup and Module 0
   drafts for human review.
 - `docs/course/01-*.md` through `07-*.md`: the current seven module pages.
-- `AGENTS.md`, `CLAUDE.md`, `app/` guidance and the two bundled teaching skills
-  in `skills/`, with regular byte-equal Codex/Claude discovery copies.
+- `AGENTS.md`, `CLAUDE.md`, the retired `app/` pointer and two bundled teaching
+  skills in `skills/`, with regular byte-equal Codex/Claude discovery copies.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
@@ -79,17 +79,38 @@ The branch is local only. Push, deployment and merge need separate
 authorization. Do not add hosted CI or self-hosted runners for this work;
 existing workflow configuration is unchanged.
 
-## Approved implementation refinements
+## Course revisions for separate learner repositories
+
+The October 30 direction separates the course reference from the learner's own
+project repository. The overview, setup, course map, practice, teacher guide,
+and Module 0 context are revised in `course-revisions/`. These public authoring
+files are local review candidates; the original Drive sources and provenance
+remain untouched. This does not approve detailed outcomes for unfinished
+modules.
+
+`course-refinements.json` registers each replacement with its original source's
+SHA-256. The importer verifies that hash before applying the revision, records
+its ID in generated metadata, and prepares every page before writing any. A
+changed canonical source stops the refresh for reconciliation. Review the
+authored revision and generated diff together. When the owner incorporates a
+revision into the canonical source, update provenance and remove that override
+in the same reviewed change. Do not weaken a source guard to force a refresh.
+
+The October 30 practice revision supersedes the earlier same-conversation app
+implementation allowance. Teaching examples remain flexible; independent app
+implementation uses the learner's own repository and evidence can return from
+existing work without a mandatory handoff. `app/README.md` is only a pointer for
+older links. Learner projects do not inherit this site's Actions workflow,
+dependencies, or ignore rules.
+
+## Earlier approved implementation refinements
 
 The October 29 review approved an optional short-session skill example,
 same-conversation application with an optional implementation handoff, and
 careful distinction between reported results and inspected evidence. These are
 implementation refinements, not edits to the maintained Drive source.
 
-`course-source.json` continues to identify the original canonical snapshot.
-`course-refinements.json` records the approved practice wording as an exact,
-guarded source replacement. The importer applies it before rendering and marks
-the generated page's `source_refinements` metadata. A changed source passage
-fails before any snapshots are written so it can be reviewed and reconciled; do
-not weaken the guard to force a refresh. The skill changes live in their
-canonical `skills/` files and reach discovery copies through `skills:sync`.
+`course-source.json` continues to identify the original canonical snapshot. The
+importer supports exact guarded text refinements as well as the registered page
+revisions above. Skill changes live in canonical `skills/` files and reach
+discovery copies through `skills:sync`.

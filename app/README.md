@@ -1,9 +1,10 @@
-# Your application workspace
+# Use your own project repository
 
-Build learner projects here. No application or project definition is required to
-finish setup or learn Git with this repository. Keep course website changes in
-the repository root separate from application work in this directory.
+This folder is retained as a pointer for older links. Learner applications now
+belong in their own repositories, separate from the course. Use the
+[setup guide](../docs/course/SETUP.md) to create or resume your project, then
+[bring relevant work back for review](../docs/course/PRACTICE.md#bring-work-back-for-review).
 
-Store private progress and learning evidence in the ignored `.learning/`
-directory at the repository root. Never put secrets or personal learner records
-in committed files. Git ignore rules do not remove files already tracked.
+If you already have work here, preserve it while planning a move to its own
+repository. Check the result before removing the original. This folder contains
+no learner application or private records supplied by the course.

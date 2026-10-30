@@ -1,40 +1,53 @@
 # Learn to Code
 
-Learn to understand, question and improve software by directing AI. The course
-includes draft setup and Git/GitHub guidance, detailed Module 1 outcomes and six
-future outlines.
+Learn to understand, question, and improve software by directing AI on a useful
+project. [The overview](docs/course/OVERVIEW.md) explains the full destination
+and each core topic's role. Module 1 has detailed outcomes; Modules 2–7 are
+being built. Setup and Module 0 remain drafts for human review.
 
-## Set up your learning workspace
+## Set up your own project
 
-Fork or reuse [this repository](https://github.com/ericfeunekes/learn-to-code),
-clone your fork, then open that folder in Codex or Claude Code. See the
-[setup guide](docs/course/SETUP.md) for the full instructions and a copyable
-pre-clone AI prompt. You do not need an app idea, a Git lesson or a local
-website installation to finish setup.
+Use [the setup guide](docs/course/SETUP.md) and its copyable agent prompt to
+create or resume **your own GitHub project repository**, in its own local
+folder. You do not need a course fork, an app idea, a full Git lesson, or a
+local website installation. Existing projects are welcome.
 
-Once it is open, ask: “I'm set up. What's next?” Choose one:
+After setup, choose:
 
 - [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
-- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository.
+- [Learn Git/GitHub](docs/course/00-project-and-git.md) using your project.
 - Continue existing work and choose a useful next learning step with your AI.
 
-The AI should wait for your choice. Setup and Module 0 remain drafts for human
-review; they are not agreed learning-completion gates.
+An explicit request already selects an activity. The AI should not launch an
+unchosen lesson or app build.
 
-Build applications in [`app/`](app/README.md). Bundled learning skills use
-outcomes and evidence flexibly. `AGENTS.md` and `CLAUDE.md` share guidance;
-`skills/` is canonical and regular discovery copies live in `.agents/skills/`
-and `.claude/skills/`. Their presence does not prove a client loaded them. After
-reopening this folder, ask a natural question and check the actual response.
+## Learn here, build in your project, return for review
 
-Private progress and learning logs belong in the ignored root `.learning/`
-directory, or an established private record home. For example, keep current
-status in `.learning/progress.md` and useful resumption notes in
-`.learning/log.md`. Keep partial progress, evidence, AI assistance and
-uncertainty visible. These files are local and not backed up by a push; ignore
-rules do not untrack an already committed file. Never commit personal
-information or secrets. Successful AI output and passing tests alone do not
-prove learning.
+The course site and repository hold teacher material. Explore concepts with the
+teaching AI, then work independently with your implementation agent in your
+project repository. Use that project's instructions, dependencies, and checks.
+Course website Actions and course files belong to course maintenance.
+
+[Bring relevant work back for review](docs/course/PRACTICE.md#bring-work-back-for-review):
+your question or outcome, implementation chat link or excerpt, changed code or
+commit, and useful test or observed results. A teacher cannot assume access to
+another chat or private repository; supplied excerpts and files work too.
+Existing work and partial evidence can support a useful review. Agent-written
+code and passing tests alone do not establish your understanding.
+
+Give the teaching AI the relevant page, plain Markdown, or supplied text. An
+optional **separate course reference checkout** bundles teaching skills for
+Codex and Claude Code. `skills/` is canonical and regular discovery copies live
+in `.agents/skills/` and `.claude/skills/`; `AGENTS.md` and `CLAUDE.md` share
+guidance. Check actual instruction use rather than assuming it from file
+presence. There is no need to copy teacher skills or website dependencies into
+the project.
+
+Keep learning records in your established private home. In a local teaching
+checkout, ignored `.learning/` is an option after checking files are untracked.
+That rule does not apply to other repositories, and these local records are not
+backed up by a push. Keep private transcripts, personal information, and secrets
+out of commits and shared material.
 
 ## Run the course website locally
 

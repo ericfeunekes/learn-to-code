@@ -1,20 +1,36 @@
 ---
+type: curriculum
+status: active
+started: 2026-07-31T00:00:00.000Z
+revised: 2026-10-25T00:00:00.000Z
 title: Learn to Build Software — Curriculum
 description: The seven core modules and directions for further learning.
 slug: /learning-path
 source_file: CURRICULUM.md
+source_refinements:
+  - separate-projects-curriculum-2026-10-30
 ---
 
 # Learn to Build Software — Curriculum
 
-Start with [workspace setup](SETUP.md), then choose from
-[What's next?](SETUP.md#whats-next). Project definition in
-[the overview](OVERVIEW.md#choose-and-outline-your-project) is separate from
-[Module 0 — Git and GitHub for your work](00-project-and-git.md). Setup does not
-require either learning activity. The setup flow and Module 0 are drafts for
-review. Module 1 contains the current detailed learning objectives. Modules 2–7
-are being built, with detailed outcomes and examples to be developed with the
-course author and reviewed before readiness.
+Use [workspace setup](SETUP.md) to create or resume your own project repository,
+separate from the course. Then choose from [What's next?](SETUP.md#whats-next):
+define a project, learn Git/GitHub, or continue existing work. Project
+definition in [the overview](OVERVIEW.md#choose-and-outline-your-project) and
+[Module 0 — Git and GitHub for your work](00-project-and-git.md) remain separate
+choices; neither is a setup prerequisite.
+
+The course connects a useful first behavior to software you can test, recover,
+preserve, explain, and extend. The overview shows
+[each core topic's practical role](OVERVIEW.md#the-core-modules). Apply ideas
+independently in your project and
+[bring relevant work back](PRACTICE.md#bring-work-back-for-review) for teacher
+feedback. Revisit testing as failures, storage, data rules, structure, and
+overlapping work make the questions more demanding.
+
+The setup flow and Module 0 are drafts for review. Module 1 has detailed
+objectives. Modules 2–7 are being built: the map describes intended coverage,
+not finished lessons or agreed detailed outcomes.
 
 ## Core modules
 

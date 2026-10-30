@@ -1,20 +1,28 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const matter = require('gray-matter');
-const { refinements } = require('../maintenance/course-refinements.json');
+const { createHash } = require('node:crypto');
+const {
+  refinements,
+  revisions = [],
+} = require('../maintenance/course-refinements.json');
 
 // This positive allowlist excludes learner records, logs, research and archives.
 const pages = [
-  ['OVERVIEW.md', '/', 'Course outcomes and choices after workspace setup.'],
+  [
+    'OVERVIEW.md',
+    '/',
+    'The full course journey, practical core topics, and learning in your own project.',
+  ],
   [
     'SETUP.md',
     '/setup',
-    'Fork, clone and open your workspace, then choose what is next.',
+    'Create or resume your own project repository, separate from the course, then choose what is next.',
   ],
   [
     '00-project-and-git.md',
     '/modules/project-and-git',
-    'Draft for human review: understand Git and GitHub using your existing repository.',
+    'Draft for human review: direct AI on Git and GitHub in your own project repository.',
   ],
   [
     'CURRICULUM.md',
@@ -29,7 +37,7 @@ const pages = [
   [
     'PRACTICE.md',
     '/practice',
-    'Apply an objective in this conversation or hand it off, then review the evidence.',
+    'Apply an idea independently in your project and bring accessible evidence back for review.',
   ],
   [
     '01-testing-and-qa.md',
@@ -77,10 +85,22 @@ async function main() {
   const output = path.resolve('docs/course');
   const rendered = [];
   for (const [file, slug, description] of pages) {
-    let { content } = matter(
-      await fs.readFile(path.join(sourceDir, file), 'utf8'),
-    );
+    const source = await fs.readFile(path.join(sourceDir, file), 'utf8');
+    let { content } = matter(source);
     const appliedRefinements = [];
+    const revision = revisions.find((item) => item.file === file);
+    if (revision) {
+      if (
+        createHash('sha256').update(source).digest('hex') !==
+        revision.source_sha256
+      )
+        throw new Error(`${file}: revision ${revision.id} needs source review`);
+      content = await fs.readFile(
+        path.join(__dirname, '../maintenance/course-revisions', file),
+        'utf8',
+      );
+      appliedRefinements.push(revision.id);
+    }
     for (const refinement of refinements.filter((item) => item.file === file)) {
       if (content.split(refinement.before).length !== 2)
         throw new Error(

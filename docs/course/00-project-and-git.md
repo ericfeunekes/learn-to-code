@@ -1,10 +1,12 @@
 ---
 title: Module 0 — Git and GitHub for your work
 description: >-
-  Draft for human review: understand Git and GitHub using your existing
+  Draft for human review: direct AI on Git and GitHub in your own project
   repository.
 slug: /modules/project-and-git
 source_file: 00-project-and-git.md
+source_refinements:
+  - separate-projects-00-project-and-git-2026-10-30
 ---
 
 # Module 0 — Git and GitHub for your work
@@ -21,14 +23,15 @@ work. AI can operate Git and look up commands. You do not need command
 memorization or expert Git knowledge before starting an app.
 
 Choosing an app is a separate option under [What's next?](SETUP.md#whats-next).
-You can learn these concepts using the repository you already have, without
-defining an app first.
+You can learn these concepts using your existing project repository, including
+an empty one, without defining an app first. The course remains reference
+material; you do not need to fork it.
 
 ## Learn with your AI
 
 ```text
-Help me understand Git and GitHub using this repository.
-Focus on what I need to direct AI: my local copy versus my GitHub fork,
+Help me understand Git and GitHub using my project repository.
+Focus on what I need to direct AI: my local copy versus my GitHub repository,
 branches and commits, what gets shared, and bringing changes together.
 Use the setup I already have and explain more when my work needs it.
 ```
@@ -41,12 +44,14 @@ can return to a concept when it becomes relevant.
 ### 0.1 Recognize your working copy and what gets shared
 
 - Explain Git as the tool keeping project history and GitHub as a place to keep
-  and share repositories online. Distinguish the original course, your GitHub
-  fork and the local clone where you work.
+  and share repositories online. Distinguish the course reference from your own
+  GitHub project repository and its local working copy. Explain a fork when it
+  is relevant to work copied from another repository; creating your project does
+  not require a course fork.
 - Find your working folder again and tell AI which repository you mean. Explain
   that saving a file, making a local commit and sharing changes online are
   different actions.
-- Recognize the public visibility of this course fork and make an appropriate
+- Recognize whether your project is public or private and make an appropriate
   choice about what to share. AI can inspect repository roots, remote
   names/URLs, ignored files and client instructions; those technical checks are
   not a separate learner exam.
@@ -86,10 +91,10 @@ can return to a concept when it becomes relevant.
 
 ## Notes for the learning AI
 
-Use the existing workspace as context. Do not restart fork/clone setup or
-require project definition just because the learner asked about Git/GitHub. If
-setup is actually incomplete, explain the missing piece and use
-[the setup guide](SETUP.md).
+Use the existing project repository as context, with supplied details or files
+if you cannot access it. Do not restart repository setup or require project
+definition just because the learner asked about Git/GitHub. If setup is actually
+incomplete, explain the missing piece and use [the setup guide](SETUP.md).
 
 Keep practical direction and judgment central. Do technical checks and command
 selection yourself, explaining useful consequences in plain language. Do not
@@ -110,7 +115,8 @@ agreed.
 
 Consult these as needed; reading them all is not a prerequisite:
 
-- [GitHub: fork and clone a repository](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo)
+- [GitHub: create a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+- [GitHub: clone a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 - [Git: record and select changes](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
 - [Git: branches and merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 

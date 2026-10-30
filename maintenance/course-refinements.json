@@ -1,12 +1,36 @@
 {
-  "approved_on": "2026-10-29",
-  "basis": "Approved implementation refinements following review; original canonical Drive sources remain unchanged.",
-  "refinements": [
+  "basis": "October 30 user direction: separate learner project repositories and a full-course overview. These local revisions await review; canonical Drive sources remain unchanged.",
+  "refinements": [],
+  "revisions": [
     {
-      "id": "practice-conversation-choice-2026-10-29",
+      "id": "separate-projects-overview-2026-10-30",
+      "file": "OVERVIEW.md",
+      "source_sha256": "0e0455f0d636e976a1255d8ce54a99cf26451994b56dda2ed79c80afc21cb730"
+    },
+    {
+      "id": "separate-projects-setup-2026-10-30",
+      "file": "SETUP.md",
+      "source_sha256": "be56ef9db939b05b759a6277f3b1e7b26398cddcc89277d0172e9628e336cc25"
+    },
+    {
+      "id": "separate-projects-curriculum-2026-10-30",
+      "file": "CURRICULUM.md",
+      "source_sha256": "6842e0ba0b9baa81e22338e15093ceb4a57f6768fc8176e26670079c4eeb3fc9"
+    },
+    {
+      "id": "separate-projects-ai-teacher-2026-10-30",
+      "file": "AI-TEACHER.md",
+      "source_sha256": "a89ffe3280b7690fcdd4137fa3f0366fe4cd399f46bac23e1a2e5143593acc9e"
+    },
+    {
+      "id": "separate-projects-practice-2026-10-30",
       "file": "PRACTICE.md",
-      "before": "Choose a small relevant task in your app, or bring existing work. In a separate implementation conversation, give AI the intended behavior and constraints, make choices, question proposals and check the results. AI may write the code. Your requests, decisions and follow-ups can show how you applied the outcome; code and observed results show what the app does.\n\nA useful handoff carries the selected outcome, task and necessary constraints. Leave room for your own direction rather than copying a complete ideal prompt. Build in `app/` in your fork. Learning and review do not require installing or running this documentation website.",
-      "after": "Choose a small relevant task in your app, or bring existing work. You can apply the concept in the same conversation or choose a separate implementation conversation. Give AI your intended behavior, expectations and constraints, make choices, question proposals and check the results. AI may write the code. Your requests, decisions and follow-ups can show how you applied the outcome; code and observed results show what the app does.\n\nIf handing off, provide only the selected outcome, task, learner expectations, constraints and evidence to bring back. Leave room for the learner's decisions rather than supplying a fully solved prompt. A separate conversation is optional. Build in `app/` in your fork. Learning and review do not require installing or running this documentation website."
+      "source_sha256": "bc76a23ab9d19b933fc7e024fd6921505e0910f7b8dda5113aecfe2e35067dab"
+    },
+    {
+      "id": "separate-projects-00-project-and-git-2026-10-30",
+      "file": "00-project-and-git.md",
+      "source_sha256": "dbc9ac02f7ac51ba1079736d95faeacfd89610d60891995d05e26c861a6c491e"
     }
   ]
 }

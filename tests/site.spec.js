@@ -142,7 +142,9 @@ test('search supports keyboard input, results and an empty state', async ({
   const input = page.getByRole('searchbox', { name: 'Search words' });
   await input.focus();
   await page.keyboard.type('Markdown');
-  await expect(page.getByRole('status')).toHaveText('1 matching page.');
+  await expect(page.getByRole('status')).toHaveText(
+    /[1-9]\d* matching pages?\./,
+  );
   await expect(
     page
       .locator('.search-results')
@@ -243,7 +245,7 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   expect(await legacy.text()).toContain('course/OVERVIEW.md');
 });
 
-test('setup exposes three separate choices and source-authored copyable prompts', async ({
+test('setup exposes independent project preparation, three choices, and copyable prompts', async ({
   page,
   context,
 }, info) => {
@@ -269,9 +271,12 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   await expect(blocks).toHaveCount(5);
   const setup = await readFile('docs/course/SETUP.md', 'utf8');
   const expectedBlocks = sourceCodeBlocks(setup);
+  expect(expectedBlocks[0]).toContain('my own project repository');
+  expect(expectedBlocks[0]).toContain('separate from the learn-to-code course');
+  expect(expectedBlocks[1]).toContain('YOUR-USERNAME/YOUR-PROJECT.git');
   expect(expectedBlocks.slice(2)).toEqual([
     'Help me choose a small useful app and define its first behavior.',
-    'Help me understand Git and GitHub using this repository.',
+    'Help me understand Git and GitHub using my project repository.',
     'I already have a project. Help me choose a useful next learning step.',
   ]);
   for (const [index, block] of (await blocks.all()).entries()) {
@@ -303,12 +308,50 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   const gitPrompt = main.locator('.theme-code-block');
   await expect(gitPrompt).toHaveCount(1);
   await expect(gitPrompt.locator('code')).toContainText(
-    'Help me understand Git and GitHub using this repository.',
+    'Help me understand Git and GitHub using my project repository.',
   );
   await expect(gitPrompt.locator('code')).not.toContainText('define');
   await expect(
     main.getByText('Draft — for review.', { exact: true }),
   ).toBeVisible();
+});
+
+test('full course map leads to independent practice and accessible evidence return', async ({
+  page,
+  isMobile,
+}, info) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  const modules = main.getByRole('table');
+  await expect(modules.getByRole('row')).toHaveCount(8);
+  await expect(
+    main.getByText(/Module 1 has detailed learning objectives/),
+  ).toBeVisible();
+  // Later core topics are directly discoverable, without expanding a future-only category.
+  if (isMobile) {
+    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
+  }
+  const nav = isMobile
+    ? page.locator('.navbar-sidebar__item:not([inert])')
+    : page.getByRole('navigation', { name: 'Docs sidebar' });
+  await expect(
+    nav.getByRole('link', { name: /7\. Concurrency/ }),
+  ).toBeVisible();
+  await nav.getByRole('link', { name: /7\. Concurrency/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${base}modules/concurrency/$`));
+  await page.goto('practice/#bring-work-back-for-review');
+  await expect(
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
+  ).toBeVisible();
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+  await expect(main.getByText(/pasted excerpt/)).toBeVisible();
+  await expect(
+    main.getByText(/Distinguish reported results from inspected evidence/),
+  ).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath('evidence-return.png'),
+    fullPage: true,
+  });
 });
 
 test('copy failure is announced and repeated copy can recover without browser errors', async ({
