@@ -6,11 +6,12 @@ included.
 
 ## Deliverables and ownership
 
-- [Read an evolving project](../../../docs/understand/06-read-evolving-project.md)
+- [Read an evolving project](../../../docs/understand-code/06-read-evolving-project.md)
   supplies five proposed outcomes, small adaptive exercises, optional agent
   prompts, an independent capstone and evidence-return/review criteria.
-- [Harbor Log lab](../../../docs/understand/module6-harbor-log-lab.md) supplies
-  fictional repository extracts, bounded history and a safe local runtime task.
+- [Harbor Log lab](../../../docs/understand-code/module6-harbor-log-lab.md)
+  supplies fictional repository extracts, bounded history and a safe local
+  runtime task.
 - [server.py](../../../static/labs/track2-module6/server.py) is the downloadable
   fixture: standard-library Python, loopback binding, in-memory dummy data, no
   outbound calls, credentials or persistent writes. Its defect is intentional;
@@ -20,7 +21,7 @@ included.
   serious/critical automated accessibility findings, and exact Markdown/source
   delivery.
 
-New pages are maintained directly under `docs/understand/`, not generated
+New pages are maintained directly under `docs/understand-code/`, not generated
 `docs/course/` snapshots. They are locally authored under the October 30 task,
 with no canonical Drive-source claim. Importer registrations, source hashes,
 core modules, shared skills/guidance, navigation and dependencies are untouched.

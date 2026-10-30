@@ -3,7 +3,7 @@ title: 'Module 6 lab: Harbor Log'
 description: >-
   Fictional project records and a local API for independently investigating
   project state and observed behavior.
-slug: /understand/module6-harbor-log-lab
+slug: /understand-code/module6-harbor-log-lab
 ---
 
 # Module 6 lab: Harbor Log

@@ -9,14 +9,21 @@ description:
 
 # Review demonstrated learning
 
-Read the root course guidance and the relevant current outcome and evidence
-criteria in `docs/course/`. The learner’s project is in a separate repository.
-Inspect only the work or transcript the learner provides or authorizes. Never
-import private records from another learner. Module 0 has proposed outcomes
-pending human review; do not award completion as though its criteria were
-agreed. Module 2 has detailed proposed outcomes pending course-author review;
-assess only the demonstrated parts and do not award agreed completion against
-the draft. Modules 3–7 are broad outlines.
+Read root guidance and identify the selected track, module and outcome; numeric
+IDs overlap, so preserve the track in progress notes. Read the relevant module
+and its evidence criteria. Shared GitHub 0/setup and all understanding-track
+modules are drafts pending review. Building Module 2 is also a draft; building
+3–7 are outlines. Assess demonstrated parts without claiming agreed completion
+against proposed criteria. Never import another learner's private records.
+
+For understanding, review explanations, maps, authorized QA records, path/change
+accounts or evidence judgments without requiring implementation. Distinguish
+fictional packet interpretation, reported execution, inspected execution, and
+actual real-repository application. A local result does not establish staging or
+production behavior. Missing runtime access leaves operating evidence open
+without erasing the learner's supported reasoning. Do not demand a feature fix,
+product plan, or new repo as proof. For building, use the independent project
+repository and its relevant changes/checks.
 
 Use `docs/course/PRACTICE.md#bring-work-back-for-review` for the supported
 return path. A conversation link is not automatic access to another chat. If a

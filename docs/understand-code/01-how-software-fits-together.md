@@ -24,11 +24,10 @@ only when it helps. The teacher can skip material you already explain.
 
 Begin after the shared **Module 0: GitHub**. You need its introductory ideas of
 files, a repository and a recorded version, not command memorization. The
-[existing Git/GitHub draft](../course/00-project-and-git.md) supplies
-background; its project-setup context is being reorganized for the two-track
-plan. You do not need to create an implementation repository, install the course
-website or choose a product to build. A browser or supplied Markdown is enough
-here.
+[shared GitHub draft](../course/00-project-and-git.md) supplies the foundation
+for both tracks. You do not need to create an implementation repository, install
+the course website or choose a product to build. A browser or supplied Markdown
+is enough here.
 
 This module gives you a mental model, not a syntax lesson, product brief,
 architecture inventory or debugging assignment. You will not need to find a
@@ -229,3 +228,7 @@ QA. Following a feature or change, assessing correctness evidence and reading
 ongoing work come later. You do not need those skills to complete this module's
 small explanations, and this draft does not replace the building track's
 existing Module 1 on testing and QA.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md) ·
+[Next module](02-find-your-way.md)

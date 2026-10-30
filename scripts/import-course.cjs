@@ -12,22 +12,22 @@ const pages = [
   [
     'OVERVIEW.md',
     '/',
-    'The full course journey, practical core topics, and learning in your own project.',
+    'Shared GitHub foundations and two ways to work with code: building and investigating.',
   ],
   [
     'SETUP.md',
     '/setup',
-    'Create or resume your own project repository, separate from the course, then choose what is next.',
+    'Choose workspace needs by track; building uses an independent project, understanding can use supplied evidence.',
   ],
   [
     '00-project-and-git.md',
     '/modules/project-and-git',
-    'Draft for human review: direct AI on Git and GitHub in your own project repository.',
+    'Shared draft foundation: repositories, files, history, branches, PRs, issues and releases.',
   ],
   [
     'CURRICULUM.md',
     '/learning-path',
-    'The seven core modules and directions for further learning.',
+    'Shared GitHub 0, the building track, and the six-module understanding track.',
   ],
   [
     'AI-TEACHER.md',
@@ -37,7 +37,7 @@ const pages = [
   [
     'PRACTICE.md',
     '/practice',
-    'Apply an idea independently in your project and bring accessible evidence back for review.',
+    'Apply building or investigation skills independently and return accessible evidence for review.',
   ],
   [
     '01-testing-and-qa.md',

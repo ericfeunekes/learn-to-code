@@ -3,7 +3,7 @@ title: '6. Read an evolving project'
 description: >-
   Combine repository history and observed behavior into an account of what has
   changed, what users can do, and what remains uncertain.
-slug: /understand/read-evolving-project
+slug: /understand-code/read-evolving-project
 ---
 
 # 6. Read an evolving project
@@ -182,6 +182,12 @@ for a changed evidence set before claiming transfer to unfamiliar work.
    Update only the affected claims and explain why the historical account stays
    intact. Your teacher can supply this change after the initial attempt.
 
+If you already investigated Module 3's capitalization mismatch, finding the same
+kind of fault here is practice, not evidence of a new unfamiliar behavior. The
+capstone adds reconciling history, runtime/version and rollout evidence, then
+updating only the claims affected by a new record. Use those different
+decisions, or choose an unfamiliar authorized behavior, when assessing transfer.
+
 This capstone connects the full track: explain the parts, find relevant files,
 run a behavior, follow its change history, assess evidence, and describe the
 project's state. Choosing an API exercise is sufficient; it does not establish
@@ -243,3 +249,6 @@ You can pause after a single corrected claim. A successful capstone supports a
 bounded claim of independent investigation with the stated assistance; broader
 confidence needs later unfamiliar cases. No product roadmap, implementation or
 employee productivity report is needed.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md)

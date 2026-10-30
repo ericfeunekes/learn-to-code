@@ -1,20 +1,21 @@
 ---
-title: Learn to Build Software — Practice and review
+title: Practice and evidence review
 description: >-
-  Apply an idea independently in your project and bring accessible evidence back
-  for review.
+  Apply building or investigation skills independently and return accessible
+  evidence for review.
 slug: /practice
 source_file: PRACTICE.md
 source_refinements:
   - separate-projects-practice-2026-10-30
 ---
 
-# Learn to Build Software — Practice and review
+# Practice and evidence review
 
-Use [the overview](OVERVIEW.md) to define a useful project and the
-[learning outcomes](CURRICULUM.md#core-modules) to identify what you want to
-demonstrate. Explanation, discussion, and existing project work can each provide
-useful evidence. Choose the depth and pace that serve your question.
+Use [the two-track overview](OVERVIEW.md) and [learning map](CURRICULUM.md) to
+identify the question and outcome. Shared GitHub 0 comes first. Building applies
+ideas through an implementation in your own repository. Understanding applies
+them through explanations, navigation, authorized investigations/QA and evidence
+assessment; no new implementation repo is required. Existing work is welcome.
 
 ## Evidence of understanding
 
@@ -25,19 +26,19 @@ actually shown and what remains open.
 
 ## Evidence of application
 
-Choose a small relevant task in your app, or bring existing work. Explore the
-idea with the teaching AI, then apply it independently with your implementation
-agent in **your own project repository**. Give the agent your intended behavior,
-expectations, and constraints. Make choices, question proposals, and check the
-results. AI may write the code; your requests, decisions, and follow-ups can
-show how you applied the outcome.
+Explore one idea with the teaching AI, then apply it independently with an
+approved agent or tools. In the building track, give your implementation agent
+the behavior, expectations and constraints in your own project repository. In
+the understanding track, choose a bounded repository question, inspect the
+sources, run one authorized check when useful, and form your own interpretation.
+Do not fix a feature just to prove investigation skills.
 
-A useful handoff carries the selected outcome or question, intended behavior,
-necessary constraints, and evidence worth bringing back. Use it when helpful;
-you do not need a formal template or a fully solved prompt. Small explanations
-and examples can stay in the teaching conversation. App implementation belongs
-in your independent project, using its tools and checks. No course fork or
-website installation is needed.
+Use a small model and example before real-repository application. Understand the
+environment, version, settings, data and effects before execution; staging and
+local software may contact shared services. Supplied fictional evidence is a
+fallback for reasoning, not proof of actual startup, QA execution or transfer. A
+short handoff can state the selected outcome, task, limits and evidence worth
+returning; it need not be a formal template or a fully solved prompt.
 
 ## Bring work back for review
 
@@ -47,10 +48,13 @@ enough of the following to support the question:
 
 - **Context:** the outcome or question, task, and important expectations or
   constraints.
-- **Your direction:** the relevant implementation chat link, pasted excerpt, or
-  exported transcript showing your requests, decisions, and follow-ups.
-- **Project evidence:** the repository and commit or changed files, relevant
-  tests and their results, and observations of what the person or client can do.
+- **Your direction:** the relevant investigation or implementation chat link,
+  pasted excerpt, or exported transcript showing your requests, decisions, and
+  follow-ups.
+- **Project evidence:** the repository/view or relevant files/diffs, versions,
+  environment/configuration, actual commands/tests and results, and observations
+  of what the person or client can do. Source-only work can return a map or
+  explanation without execution; mark runtime evidence unassessed.
 
 The teacher must check what it can actually access. A chat link is a pointer,
 not automatic access to another conversation. If it cannot open a chat or

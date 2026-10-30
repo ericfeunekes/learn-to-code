@@ -1,24 +1,22 @@
 ---
-title: Companion skills
+title: Earlier repository-reading material
 description:
-  Standalone ways to understand software work, alongside the coding course.
+  Supplementary evidence for the Understand code and changes track, retained for
+  earlier links.
 slug: /companions
 ---
 
-# Companion skills
+# Earlier repository-reading material
 
-Use these modules when you want to understand software work without building an
-application first. They sit alongside the [coding course](../course/OVERVIEW.md)
-and are outside its main learning path. You can start here without completing
-setup, Git lessons, testing, or any core module.
+The former standalone companion is now part of the
+[Understand code and changes track](../understand-code/index.md), after shared
+[GitHub Module 0](../course/00-project-and-git.md). This is a two-track course;
+there is no separate companion path that bypasses the foundation.
 
-## Read an Active Repository
+[Module 6 — Read an evolving project](../understand-code/06-read-evolving-project.md)
+uses the [fictional Fieldnotes packet](fieldnotes-evidence.md) as a small
+practice before its independent investigation. No implementation repository or
+completed building modules are required. All second-track criteria remain drafts
+pending author and independent whole-path review.
 
-Open a project with development underway and work out what it does, what is
-changing, what has reached users, and what appears to be next. Practise tracing
-claims to evidence and asking useful questions when the picture is incomplete.
-
-[Read an Active Repository](read-active-repository.md) is a **detailed draft
-pending course-author review**. It includes a fictional example you can explore
-without access to a workplace repository. Its proposed outcomes can guide
-learning and partial evidence; they are not agreed completion criteria yet.
+[The former module address](read-active-repository.md) is retained as a pointer.

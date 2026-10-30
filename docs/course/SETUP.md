@@ -1,8 +1,8 @@
 ---
 title: Set up your workspace
 description: >-
-  Create or resume your own project repository, separate from the course, then
-  choose what is next.
+  Choose workspace needs by track; building uses an independent project,
+  understanding can use supplied evidence.
 slug: /setup
 source_file: SETUP.md
 source_refinements:
@@ -13,10 +13,25 @@ source_refinements:
 
 **Draft — for review.**
 
-Prepare a project repository of your own, separate from the course repository.
-You can keep reading the course on this site. No course fork, website install,
-app idea, or full Git/GitHub lesson is required to finish setup. Brief
-explanations of the steps can help as you go.
+Start with [shared Module 0 — GitHub for everyone](00-project-and-git.md), then
+choose a track. You can read the course or use supplied examples without
+creating a repository or installing the website.
+
+## For understanding code and changes
+
+Go to [the second-track guide](../understand-code/index.md). Start with general
+mental models and a small example, then use an authorized repository when
+useful. A browser or supplied Markdown is enough for the first modules. Local
+runtime setup happens when an investigation needs it; no app idea or new
+implementation repository is required. Execution requires a clear target,
+authorized actions, and understood effects even for staging.
+
+## For building software
+
+The steps below create or resume your own project repository, separate from the
+course. This operational setup can happen before a full Git lesson when helping
+with an explicit setup request. No course fork, website install, or app idea is
+required. Brief explanations can help as you go.
 
 ## Setup with AI
 
@@ -68,7 +83,8 @@ until the result is checked.
 
 ## What's next?
 
-Once setup is ready, ask your teaching AI “I'm set up. What's next?” or choose:
+For the building track, once setup is ready, ask your teaching AI “I'm set up.
+What's next?” or choose:
 
 - **Choose or outline an app:**
   [Define your project](OVERVIEW.md#choose-and-outline-your-project).
@@ -78,7 +94,7 @@ Once setup is ready, ask your teaching AI “I'm set up. What's next?” or choo
   ```
 
 - **Understand Git and GitHub:**
-  [Module 0 — Git and GitHub for your work](00-project-and-git.md).
+  [Module 0 — GitHub for everyone](00-project-and-git.md).
 
   ```text
   Help me understand Git and GitHub using my project repository.
@@ -111,11 +127,13 @@ the course website dependencies or teaching skills installed in your app.
 
 ## Setup guidance for the AI
 
-Read this page and the overview. Inspect tools, existing repositories, and local
-files before creating anything. Help choose a repository name, visibility, and
-folder without requiring a project-definition exercise. Use the learner's
-existing account. If required access is unavailable, report the exact unfinished
-action and guide the learner; do not claim setup succeeded.
+For an explicit building-track setup request, read this page and the overview.
+For the understanding track, use supplied examples or an authorized existing
+repository instead; do not require project creation. Inspect tools, existing
+repositories, and local files before creating anything. Help choose a repository
+name, visibility, and folder without requiring a project-definition exercise.
+Use the learner's existing account. If required access is unavailable, report
+the exact unfinished action and guide the learner; do not claim setup succeeded.
 
 Create or reuse an independent project repository, outside any course checkout.
 Verify its root, local folder, intended remote, and visibility where accessible.

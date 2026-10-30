@@ -1,3 +1,11 @@
+---
+title: Workshop directory practice
+description:
+  A fictional local API and supplied MCP/browser packets for bounded
+  investigation.
+slug: /understand-code/practice/workshop-directory
+---
+
 # Module 3 practice — Workshop directory
 
 This is a fictional local exercise, not a workplace repository. Choose one
@@ -19,18 +27,22 @@ mismatch; finding its implementation line is not required.
 
 ## Runnable local route
 
-You need an available Python 3 runtime and a local copy of just this module's
-folder. No course checkout, course website installation, account, API key,
-package download, or implementation project is required. If you have the course
-repository already, this folder is `maintenance/drafts/understand-module-3/`.
-Ask for help locating it; do not run the course root's `npm start` for this
-exercise.
+You need an available Python 3 runtime. Download
+[the local service](pathname:///exercises/understand-module3/module3_server.py)
+and, optionally,
+[its author checks](pathname:///exercises/understand-module3/module3_fixture_test.py)
+into a disposable folder. No course checkout, course website installation,
+account, API key, package download, or implementation project is required. In a
+course checkout, the originals are under `static/exercises/understand-module3/`.
+Open the folder containing the Python files; do not run the course root's
+`npm start` for this exercise.
 
-Inspect [the service](fixture/module3_server.py) before execution. Its runtime
-dependencies are Python's standard library. It binds only to `127.0.0.1`, an
-address on your own machine. It contains fictional in-memory data, makes no
-outbound requests, sends no messages, and writes no data files. Request logs go
-to the terminal. These boundaries describe this fixture only.
+Inspect
+[the service](pathname:///exercises/understand-module3/module3_server.py) before
+execution. Its runtime dependencies are Python's standard library. It binds only
+to `127.0.0.1`, an address on your own machine. It contains fictional in-memory
+data, makes no outbound requests, sends no messages, and writes no data files.
+Request logs go to the terminal. These boundaries describe this fixture only.
 
 Permitted actions: start and stop your own fixture, read its files, send the
 documented local GET requests, and restart it with the documented unavailable
@@ -41,7 +53,7 @@ these permissions over to it.
 1. Open a terminal in this module folder. Start:
 
    ```sh
-   python3 fixture/module3_server.py --port 0
+   python3 module3_server.py --port 0
    ```
 
    Port `0` asks the operating system to choose a free port. The startup line
@@ -72,7 +84,7 @@ these permissions over to it.
    event and return to the prompt. Restart your own fixture:
 
    ```sh
-   python3 fixture/module3_server.py --port 0 --catalog-state unavailable
+   python3 module3_server.py --port 0 --catalog-state unavailable
    ```
 
    Use the new printed address. Compare `/about`, `/health`, and the same

@@ -10,7 +10,7 @@ test('Module 6 learner can reach the capstone, inspect its source and return', a
 }) => {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('understand/read-evolving-project/');
+  await page.goto('understand-code/read-evolving-project/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     '6. Read an evolving project',
   );
@@ -44,7 +44,7 @@ test('Module 6 learner can reach the capstone, inspect its source and return', a
     .getByRole('link', { name: 'Read an evolving project', exact: true })
     .click();
   await expect(page).toHaveURL(
-    new RegExp(`${base}understand/read-evolving-project/$`),
+    new RegExp(`${base}understand-code/read-evolving-project/$`),
   );
   expect(errors).toEqual([]);
 });
@@ -55,8 +55,8 @@ test('Module 6 reading exports preserve the authored draft and fixture links', a
   const index = await request.get('llms.txt');
   const indexText = await index.text();
   for (const file of [
-    'understand/06-read-evolving-project.md',
-    'understand/module6-harbor-log-lab.md',
+    'understand-code/06-read-evolving-project.md',
+    'understand-code/module6-harbor-log-lab.md',
   ]) {
     expect(indexText).toContain(`${base}raw/${file}`);
     const exported = await request.get(`raw/${file}`);

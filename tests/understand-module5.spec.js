@@ -10,7 +10,7 @@ test('module 5 reaches its practice, downloadable lab and matching text exports'
 }, info) => {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('understand/evidence-of-correctness/');
+  await page.goto('understand-code/evidence-of-correctness/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Module 5 — Understand evidence of correctness',
   );
@@ -19,7 +19,7 @@ test('module 5 reaches its practice, downloadable lab and matching text exports'
     .getByRole('link', { name: 'the small evidence packet' })
     .click();
   await expect(page).toHaveURL(
-    new RegExp(`${base}understand/evidence-of-correctness/practice/$`),
+    new RegExp(`${base}understand-code/evidence-of-correctness/practice/$`),
   );
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Evidence for a blank-title change',
@@ -37,18 +37,18 @@ test('module 5 reaches its practice, downloadable lab and matching text exports'
     '05-evidence-of-correctness.md',
     '05-practice-evidence.md',
   ]) {
-    const raw = await request.get(`raw/understand/${file}`);
+    const raw = await request.get(`raw/understand-code/${file}`);
     expect(raw.status()).toBe(200);
     expect(await raw.text()).toBe(
-      (await readFile(`docs/understand/${file}`, 'utf8')).replaceAll(
+      (await readFile(`docs/understand-code/${file}`, 'utf8')).replaceAll(
         'pathname:///',
         base,
       ),
     );
   }
   for (const route of [
-    'understand/evidence-of-correctness/',
-    'understand/evidence-of-correctness/practice/',
+    'understand-code/evidence-of-correctness/',
+    'understand-code/evidence-of-correctness/practice/',
   ]) {
     await page.goto(route);
     expect(

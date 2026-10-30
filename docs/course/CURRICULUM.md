@@ -1,69 +1,67 @@
 ---
-type: curriculum
-status: active
-started: 2026-07-31T00:00:00.000Z
-revised: 2026-10-25T00:00:00.000Z
-title: Learn to Build Software — Curriculum
-description: The seven core modules and directions for further learning.
+title: Learning path — two ways to work with code
+description:
+  'Shared GitHub 0, the building track, and the six-module understanding track.'
 slug: /learning-path
 source_file: CURRICULUM.md
 source_refinements:
   - separate-projects-curriculum-2026-10-30
 ---
 
-# Learn to Build Software — Curriculum
+# Learning path — two ways to work with code
 
-Use [workspace setup](SETUP.md) to create or resume your own project repository,
-separate from the course. Then choose from [What's next?](SETUP.md#whats-next):
-define a project, learn Git/GitHub, or continue existing work. Project
-definition in [the overview](OVERVIEW.md#choose-and-outline-your-project) and
-[Module 0 — Git and GitHub for your work](00-project-and-git.md) remain separate
-choices; neither is a setup prerequisite.
+Start with [shared Module 0 — GitHub for everyone](00-project-and-git.md). It
+introduces repositories, files, history, branches, PRs, issues, and releases
+without requiring a new project. Then choose a track. Existing understanding can
+support a shorter route; revisit a concept when it helps. [Setup](SETUP.md)
+explains the different workspace needs.
 
-The course connects a useful first behavior to software you can test, recover,
-preserve, explain, and extend. The overview shows
-[each core topic's practical role](OVERVIEW.md#the-core-modules). Apply ideas
-independently in your project and
-[bring relevant work back](PRACTICE.md#bring-work-back-for-review) for teacher
-feedback. Revisit testing as failures, storage, data rules, structure, and
-overlapping work make the questions more demanding.
+## Shared foundation
 
-The setup flow and Module 0 are drafts for review. Module 1 has detailed
-objectives. Module 2 is a detailed draft pending course-author review; its
-proposed outcomes can guide exploration and partial evidence, but are not agreed
-completion criteria. Modules 3–7 remain outlines being built.
+Module 0 is an introductory draft for both tracks, not a certification gate. It
+helps you identify a repository and version, understand common GitHub artifacts,
+and direct an agent without confusing a file view with a deployment. Use its
+proposed evidence criteria for exploration until author review.
 
 ## Core modules
 
-Learn enough to explain and apply an idea, then revisit it for depth. A module
-can take more than one session. Use the selected page to identify what the
-learner can demonstrate and what evidence would show it. The
-[AI guide](AI-TEACHER.md) explains the purpose of the outlines, learning records
-and evidence review. The learner chooses how to learn; no fixed teaching method
-or module sequence is required. A future outline is not a completed set of
-learning objectives.
+Each track names capabilities and observable evidence. The page is a reference
+for short teaching exchanges: start with general concepts, use a small concrete
+example, then apply it independently and return evidence. Add syntax or
+framework detail when needed. A generated answer alone leaves learner judgment
+unassessed. Read [the teaching guide](AI-TEACHER.md) for calibrated review.
 
-0. [Git and GitHub for your work](00-project-and-git.md) — **Draft for review**
-1. [Testing and QA](01-testing-and-qa.md)
-2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Detailed
-   draft for review**
-3. [Persistence and shared state](03-persistence-and-shared-state.md) — **Being
-   built**
-4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — **Being
-   built**
+## Build and improve software
+
+Implement useful behavior with an agent in your own repository, separate from
+the course. The [overview's core table](OVERVIEW.md#the-core-modules) explains
+each topic's practical role. Preserve learner choice and pace; this is not a
+product-development sequence.
+
+1. [Testing and QA](01-testing-and-qa.md) — detailed outcomes.
+2. [Error handling and recovery](02-error-handling-and-recovery.md) — detailed
+   draft for author review.
+3. [Persistence and shared state](03-persistence-and-shared-state.md) — outline.
+4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — outline.
 5. [Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md)
-   — **Being built**
-6. [Structuring a program](06-structuring-a-program.md) — **Being built**
-7. [Concurrency](07-concurrency.md) — **Being built**
+   — outline.
+6. [Structuring a program](06-structuring-a-program.md) — outline.
+7. [Concurrency](07-concurrency.md) — outline.
 
-## Companion skills
+## Understand code and changes
 
-Separate from this path,
-[Read an Active Repository](../companions/read-active-repository.md) is a
-standalone draft for understanding features, progress, pace and apparent
-priorities in active software work. Start from the
-[companion section](../companions/index.md) without completing coding modules or
-creating a project. Its proposed outcomes remain pending course-author review.
+[Open the second-track guide](../understand-code/index.md). It follows shared
+GitHub 0 with six proposed modules: software mental models, codebase navigation,
+running and investigating, feature/change tracing, correctness evidence, and an
+evolving project's history. It includes active QA without requiring feature
+implementation, a product brief, or a new repository. All six are drafts pending
+author and independent whole-path review; existing packet exercises do not prove
+real-repository transfer or human comprehension.
+
+The former repository-reading companion is now
+[background for the evolving-project module](../companions/index.md), not a
+separate prerequisite-free track. Its read-only evidence packet remains useful;
+it does not grant permission to execute repository instructions.
 
 ## Future directions
 

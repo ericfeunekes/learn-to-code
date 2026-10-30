@@ -4,16 +4,27 @@ Status: **private author-review draft; independent whole-track review and real
 learner use remain pending.** No push, merge, public publication, deployment, or
 canonical Drive edit is included.
 
+## Integration location
+
+The integration candidate moves the authored module, practice, and teacher notes
+into `docs/understand-code/` and the two original fixture files into
+`static/exercises/understand-module3/` for direct downloads. Their outcomes and
+fixture behavior are preserved; practice paths and page metadata are adapted.
+The isolated-task history below describes the original maintenance-only layout.
+Current shared routing and aggregate checks belong to the integration result.
+
 ## Deliverables and ownership
 
-- [Module](MODULE.md): five proposed outcomes covering target/effects
-  boundaries, environment operation, repeatable checking, diagnostics, and
-  reproducible findings. General concepts precede API/MCP/browser-specific
-  tools.
-- [Practice](PRACTICE.md): a runnable fictional local API; optional supplied MCP
-  and browser packets; transfer to an authorized real repo; evidence return.
-- [Teacher notes](TEACHER.md): adaptive teaching, proposed assessment evidence,
-  fixture interpretation, gaps, and handoffs.
+- [Module](../../../docs/understand-code/03-run-and-investigate.md): five
+  proposed outcomes covering target/effects boundaries, environment operation,
+  repeatable checking, diagnostics, and reproducible findings. General concepts
+  precede API/MCP/browser-specific tools.
+- [Practice](../../../docs/understand-code/03-workshop-practice.md): a runnable
+  fictional local API; optional supplied MCP and browser packets; transfer to an
+  authorized real repo; evidence return.
+- [Teacher notes](../../../docs/understand-code/03-teacher-notes.md): adaptive
+  teaching, proposed assessment evidence, fixture interpretation, gaps, and
+  handoffs.
 - `fixture/module3_server.py`: Python standard-library HTTP service, loopback
   only, fictional in-memory data, no outbound services or data writes.
 - `fixture/module3_fixture_test.py`: actual local HTTP/process checks of the
@@ -114,10 +125,11 @@ interpretation separate from the learner's first attempt where useful. Recheck
 site source links, search, exports, desktop and phone behavior after that shared
 wiring changes. Canonical promotion and publication remain separate decisions.
 
-From the module folder, fixture author checks run with:
+In the integrated candidate, fixture author checks run from the repository root
+with:
 
 ```sh
-python3 -B fixture/module3_fixture_test.py -v
+python3 -B static/exercises/understand-module3/module3_fixture_test.py -v
 ```
 
 Local startup and stop instructions remain in practice. No task-owned server is

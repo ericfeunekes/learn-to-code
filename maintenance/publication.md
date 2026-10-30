@@ -31,23 +31,33 @@ sessions, learner identities, personal details, private source links, research
 archives, books and earlier course snapshots are outside the public repository
 and its history.
 
-## Companion draft source boundary
+## Second-track draft source boundary
 
-The October 30 user-directed companion, Read an Active Repository, is authored
-locally in `docs/companions/`: its section entry, module and fictional evidence
-packet. These are standalone authoring sources, outside the thirteen generated
-`docs/course/` snapshots and outside the core sequence. They are a local
-detailed draft pending course-author review, not canonical Drive material or
-approved public content. The normal build generates search and Markdown exports
-from these files; the course importer leaves them intact. No workplace
-repository, private board or learner record was accessed to create the fictional
-example.
+The October 30 two-track integration adds directly authored local drafts under
+`docs/understand-code/`: one track guide, six modules, examples/labs and
+separate Module 3 teacher notes. These are outside the thirteen generated
+`docs/course/` snapshots, not canonical Drive exports or approved public
+content. Their Python and JavaScript fixtures under `static/exercises/` and
+`static/labs/` use fictional or in-memory data. They are downloadable practice
+sources, not production apps. Author-review reports under `maintenance/drafts/`
+and private learner records are excluded from reading/search/raw exports. The
+explicit browser inventory contains 31 reading pages, including the retained
+legacy pointers and packet.
 
-Edit companion sources directly. Overview and curriculum links remain maintained
-in their existing guarded revisions; refresh those with the same unchanged
-canonical inputs. The source provenance manifest and all original hash guards
-remain unchanged. No publication, push or canonical source promotion is included
-in this addition.
+Shared GitHub 0 precedes both tracks. The older `docs/companions/` entry and
+module URL now point into second-track Module 6; its Fieldnotes packet remains
+supplementary evidence. No third prerequisite-free companion path is maintained.
+The original companion draft and each module author's branch remain in Git
+history for review. Module IDs are meaningful only with their track; preserve
+existing author outcome labels and qualify progress records accordingly.
+
+Edit these direct authoring sources in place. Overview/setup/shared GitHub0/map,
+practice and teacher context remain maintained in their guarded revision files;
+refresh against unchanged canonical inputs. The original provenance manifest and
+source hashes are unchanged. Keep building-track module bodies intact. All
+second-track outcomes remain proposed drafts pending author and independent
+whole-path review; no real learner validation is claimed. No push, public
+publication or canonical Drive promotion is included.
 
 ## One maintained curriculum source
 

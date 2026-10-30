@@ -12,10 +12,11 @@ Base: `d3c8cdb5631141ace2528326f7190e39073b23ac`. Branch:
 
 Authored sources:
 
-- [Module](../../../docs/understand/05-evidence-of-correctness.md): six proposed
-  outcomes, short optional exercises, observable learner evidence, teacher
-  adaptation and review criteria, prompts and incomplete-access guidance.
-- [Fictional packet](../../../docs/understand/05-practice-evidence.md): an
+- [Module](../../../docs/understand-code/05-evidence-of-correctness.md): six
+  proposed outcomes, short optional exercises, observable learner evidence,
+  teacher adaptation and review criteria, prompts and incomplete-access
+  guidance.
+- [Fictional packet](../../../docs/understand-code/05-practice-evidence.md): an
   independent expected behavior, weak assertion, focused reproduction,
   mismatched staging version, four transfer cases and a teacher comparison.
 - [Local lab](../../../static/exercises/understand-module5/evidence-lab.cjs):

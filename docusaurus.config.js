@@ -7,7 +7,7 @@ if (!baseUrl.startsWith('/') || !baseUrl.endsWith('/')) {
 
 export default {
   title: 'Learn to Code',
-  tagline: 'Understand what you build.',
+  tagline: 'Work with code. Understand the evidence.',
   favicon: 'img/mark.svg',
   url: process.env.SITE_URL || 'https://ericfeunekes.github.io',
   baseUrl,
@@ -40,7 +40,7 @@ export default {
       items: [
         { to: '/setup/', label: 'Setup & next choices', position: 'left' },
         { to: '/learning-path/', label: 'Learning path', position: 'left' },
-        { to: '/companions/', label: 'Companion skills', position: 'left' },
+        { to: '/understand-code/', label: 'Understand code', position: 'left' },
         { to: '/for-ai/', label: 'For AI', position: 'left' },
         { to: '/search/', label: 'Search', position: 'right' },
       ],
@@ -52,7 +52,7 @@ export default {
           title: 'Explore',
           items: [
             { label: 'Learning path', to: '/learning-path/' },
-            { label: 'Companion skills', to: '/companions/' },
+            { label: 'Understand code and changes', to: '/understand-code/' },
             { label: 'Search the site', to: '/search/' },
           ],
         },
@@ -67,7 +67,7 @@ export default {
           ],
         },
       ],
-      copyright: 'Learn to Code · Understand what you build.',
+      copyright: 'Learn to Code · Work with code. Understand the evidence.',
     },
     prism: { theme: themes.github, darkTheme: themes.dracula },
   },

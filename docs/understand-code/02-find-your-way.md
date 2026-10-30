@@ -201,3 +201,7 @@ question needs it, rather than lecture on every folder or framework. Later,
 Module 3 can use your map's entry points and configuration references to plan an
 authorized local or staging investigation; this map alone does not authorize
 execution.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md) ·
+[Next module](03-run-and-investigate.md)

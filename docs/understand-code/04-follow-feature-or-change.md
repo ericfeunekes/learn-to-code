@@ -197,3 +197,7 @@ Understand evidence of correctness: what do existing tests and observations
 actually establish, and what would a useful additional check prove? Module 6
 then combines changes with issues, releases and deployment evidence over time.
 You don't need either module's full analysis to finish this small explanation.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md) ·
+[Next module](05-evidence-of-correctness.md)

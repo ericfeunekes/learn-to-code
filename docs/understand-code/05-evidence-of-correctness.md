@@ -2,7 +2,7 @@
 title: Understand code · Module 5 — Understand evidence of correctness
 description:
   Judge what tests and observations establish about a specific change.
-slug: /understand/evidence-of-correctness
+slug: /understand-code/evidence-of-correctness
 ---
 
 # Module 5 — Understand evidence of correctness
@@ -229,3 +229,7 @@ built-in assertions: no server, network, credentials or persistent storage.
 Without a compatible local runtime, inspect the supplied transcript and label it
 as supplied evidence. Real API, MCP and browser checks inherit their own
 environment boundaries; the simulation does not establish those systems work.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md) ·
+[Next module](06-read-evolving-project.md)

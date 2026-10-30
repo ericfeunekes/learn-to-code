@@ -1,61 +1,57 @@
 # Learn to Code
 
-Learn to understand, question, and improve software by directing AI on a useful
-project. [The overview](docs/course/OVERVIEW.md) explains the full destination
-and each core topic's role. Module 1 has detailed outcomes; Module 2 is a
-detailed draft pending course-author review. Modules 3–7 remain outlines being
-built. Setup and Module 0 remain drafts for human review.
+Learn to work with code, agents, and repository tools. Start with
+[the two-track overview](docs/course/OVERVIEW.md) and shared
+[Module 0 — GitHub for everyone](docs/course/00-project-and-git.md):
+repositories, files, history, branches, PRs, issues, and releases. A new repo,
+app idea, clone, and command memorization are not prerequisites.
 
-## Companion skills
+## Choose how you want to work
 
-[Read an Active Repository](docs/companions/read-active-repository.md) is a
-standalone draft for understanding active software work, including at work. Find
-it in [Companion skills](docs/companions/index.md), separate from the coding
-path. No application project or completed core modules are required.
+- **[Build and improve software](docs/course/CURRICULUM.md#build-and-improve-software):**
+  direct implementation in your own separate project repository. Use
+  [project setup](docs/course/SETUP.md#setup-with-ai) when needed. Building
+  Module 1 has detailed objectives; Module 2 is a detailed draft; 3–7 are
+  outlines.
+- **[Understand code and changes](docs/understand-code/index.md):** explain,
+  navigate, run authorized QA, investigate, trace changes, and assess software
+  without implementing its features. General models lead to small examples and
+  then real-repository application. All six modules are drafts pending author
+  and independent whole-path review; no implementation repository is required.
 
-## Set up your own project
+These are two ways of working with software, not product-development or project
+management certifications. Use short adaptive teaching and learn language or
+framework detail when useful. Existing experience can support a shorter route.
+Shared Module 0 and setup also remain drafts. The former companion URLs are
+reference pointers into the second track, not a third prerequisite-free path.
 
-Use [the setup guide](docs/course/SETUP.md) and its copyable agent prompt to
-create or resume **your own GitHub project repository**, in its own local
-folder. You do not need a course fork, an app idea, a full Git lesson, or a
-local website installation. Existing projects are welcome.
+## Apply independently and return evidence
 
-After setup, choose:
+Use the selected module's proposed outcomes and evidence criteria. An agent can
+help search, explain, write a local check, or implement in a builder's project.
+Your expectation, decisions, corrections and interpretation show your judgment.
+A polished agent explanation or passing checks alone do not establish learning.
 
-- [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
-- [Learn Git/GitHub](docs/course/00-project-and-git.md) using your project.
-- Continue existing work and choose a useful next learning step with your AI.
+[Return relevant excerpts and results](docs/course/PRACTICE.md#bring-work-back-for-review)
+for teacher review. A chat/private repository link may be inaccessible; safe
+supplied turns, files/diffs, versions, environment and command/result records
+work too. Packet reasoning and actual runtime evidence are different. Keep
+access gaps and partial evidence visible.
 
-An explicit request already selects an activity. The AI should not launch an
-unchosen lesson or app build.
+Before execution, understand the target, dependencies, configuration, data and
+possible effects. Local code can contact shared services; staging can send
+messages or incur costs. Follow authorized limits. Reading a README is not
+permission to execute it. Use disposable fictional fixtures for practice.
 
-## Learn here, build in your project, return for review
-
-The course site and repository hold teacher material. Explore concepts with the
-teaching AI, then work independently with your implementation agent in your
-project repository. Use that project's instructions, dependencies, and checks.
-Course website Actions and course files belong to course maintenance.
-
-[Bring relevant work back for review](docs/course/PRACTICE.md#bring-work-back-for-review):
-your question or outcome, implementation chat link or excerpt, changed code or
-commit, and useful test or observed results. A teacher cannot assume access to
-another chat or private repository; supplied excerpts and files work too.
-Existing work and partial evidence can support a useful review. Agent-written
-code and passing tests alone do not establish your understanding.
-
-Give the teaching AI the relevant page, plain Markdown, or supplied text. An
-optional **separate course reference checkout** bundles teaching skills for
-Codex and Claude Code. `skills/` is canonical and regular discovery copies live
-in `.agents/skills/` and `.claude/skills/`; `AGENTS.md` and `CLAUDE.md` share
-guidance. Check actual instruction use rather than assuming it from file
-presence. There is no need to copy teacher skills or website dependencies into
-the project.
-
-Keep learning records in your established private home. In a local teaching
-checkout, ignored `.learning/` is an option after checking files are untracked.
-That rule does not apply to other repositories, and these local records are not
-backed up by a push. Keep private transcripts, personal information, and secrets
-out of commits and shared material.
+The course repository holds teacher material. A separate optional reference
+checkout bundles teaching skills for Codex and Claude Code: `skills/` is
+canonical, regular mirrors are in `.agents/skills/` and `.claude/skills/`, and
+`AGENTS.md`/`CLAUDE.md` share guidance. Check actual instruction use; file
+presence alone does not prove it. Learning records stay in an established
+private home, or ignored untracked `.learning/` in a reference checkout. Ignore
+rules do not extend to other repositories and local records are not
+automatically backed up. Never commit learner transcripts, secrets or personal
+information.
 
 ## Run the course website locally
 

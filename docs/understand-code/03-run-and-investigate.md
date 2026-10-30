@@ -1,3 +1,11 @@
+---
+title: Run and investigate software
+description:
+  Draft module for authorized local, API, MCP and browser investigation without
+  feature implementation.
+slug: /understand-code/run-and-investigate
+---
+
 # Module 3 — Run and investigate software
 
 **Second track: Understand code and changes. Private author-review draft.**
@@ -40,8 +48,8 @@ that can help connect an action to what the software did.
 Imagine a workshop directory that promises search will ignore capitalization.
 Before checking that promise, you need to know which directory is running,
 whether it has workshop data, and whether searching changes anything. The
-[local practice](PRACTICE.md) makes those questions concrete without accounts,
-package installation, or external services.
+[local practice](03-workshop-practice.md) makes those questions concrete without
+accounts, package installation, or external services.
 
 Use one short exchange at a time: explain the next idea, try a small check, and
 discuss its result. Skip familiar explanations. A learner asking how to start a
@@ -168,11 +176,12 @@ finding can be a mismatch, an expected result, or a blocked check. Do not label
 a blocked check a pass or claim all software works because one case did.
 
 Include your own interpretation, the agent's contribution, and one next
-question. Use the [practice return guide](PRACTICE.md#bring-back-evidence).
-Relevant supplied turns, files, commands, and outputs can support teacher
-review; an inaccessible chat link is only a pointer. Redact secrets and private
-data without removing the facts needed for the claim. Missing access limits what
-can be assessed, not what the learner is capable of understanding.
+question. Use the
+[practice return guide](03-workshop-practice.md#bring-back-evidence). Relevant
+supplied turns, files, commands, and outputs can support teacher review; an
+inaccessible chat link is only a pointer. Redact secrets and private data
+without removing the facts needed for the claim. Missing access limits what can
+be assessed, not what the learner is capable of understanding.
 
 **Observable evidence:** another reader can locate or repeat the case,
 distinguish your judgment from generated output, and see the finding's limits.
@@ -195,5 +204,9 @@ limits and help with safe independent work. Stop the local process we started.
 The teacher should invite the learner's expectation or next-check decision
 before offering a worked answer when useful. A learner can instead ask for a
 plain explanation, return with existing work, or stop after one useful result.
-The [teacher notes](TEACHER.md) describe proportionate review and the handoff to
-the next modules.
+The [teacher notes](03-teacher-notes.md) describe proportionate review and the
+handoff to the next modules.
+
+[Second-track guide](index.md) ·
+[Shared GitHub 0](../course/00-project-and-git.md) ·
+[Next module](04-follow-feature-or-change.md)

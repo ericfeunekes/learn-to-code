@@ -29,19 +29,22 @@ test('production pages load without broken assets or browser errors', async ({
       errors.push(`${response.status()} ${response.url()}`);
   });
   for (const [route, title] of [
-    ['', 'Learn to Build Software'],
+    ['', 'Learn to Work with Code'],
     ['setup/', 'Set up your workspace'],
-    ['modules/project-and-git/', 'Module 0 — Git and GitHub for your work'],
-    ['learning-path/', 'Learn to Build Software — Curriculum'],
-    ['practice/', 'Learn to Build Software — Practice and review'],
+    ['modules/project-and-git/', 'Module 0 — GitHub for everyone'],
+    ['learning-path/', 'Learning path — two ways to work with code'],
+    ['practice/', 'Practice and evidence review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     [
       'modules/error-handling-and-recovery/',
       'Module 2 — Error handling and recovery',
     ],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
-    ['companions/', 'Companion skills'],
-    ['companions/read-active-repository/', 'Read an Active Repository'],
+    ['companions/', 'Earlier repository-reading material'],
+    [
+      'companions/read-active-repository/',
+      'Read an Active Repository — earlier draft',
+    ],
     ['companions/fieldnotes-evidence/', 'Fieldnotes repository evidence'],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
@@ -94,7 +97,7 @@ test('navigation and theme work on desktop and phone', async ({
   }
   await expect(page).toHaveURL(new RegExp(`${base}learning-path/$`));
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Learn to Build Software — Curriculum',
+    'Learning path — two ways to work with code',
   );
   if (isMobile) {
     const table = page.getByRole('region', { name: 'Scrollable table' });
@@ -104,9 +107,17 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
-  await page.getByRole('link', { name: /Next 0\. Git\/GitHub/ }).click();
+  await page
+    .getByRole('main')
+    .locator(`a[href="${base}modules/project-and-git/"]`)
+    .first()
+    .click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/project-and-git/$`));
-  await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
+  await page.goto('');
+  await page
+    .getByRole('main')
+    .getByRole('link', { name: '1. Testing and QA', exact: true })
+    .click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
     await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
@@ -197,6 +208,20 @@ test('served text exports come from the admitted Markdown', async ({
     'companions/index.md',
     'companions/read-active-repository.md',
     'companions/fieldnotes-evidence.md',
+    'understand-code/index.md',
+    'understand-code/01-how-software-fits-together.md',
+    'understand-code/fixtures/module-1-shelf-summary.md',
+    'understand-code/02-find-your-way.md',
+    'understand-code/02-navigation-evidence.md',
+    'understand-code/03-run-and-investigate.md',
+    'understand-code/03-workshop-practice.md',
+    'understand-code/03-teacher-notes.md',
+    'understand-code/04-follow-feature-or-change.md',
+    'understand-code/04-change-evidence.md',
+    'understand-code/05-evidence-of-correctness.md',
+    'understand-code/05-practice-evidence.md',
+    'understand-code/06-read-evolving-project.md',
+    'understand-code/module6-harbor-log-lab.md',
     ...[
       'OVERVIEW.md',
       'SETUP.md',
@@ -223,7 +248,10 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(files.length);
+  expect(entries).toHaveLength(31);
+  expect(entries.map((entry) => entry.raw).sort()).toEqual(
+    files.map((file) => `${base}raw/${file}`).sort(),
+  );
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -240,7 +268,7 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   await page.goto('start/');
   await expect(page).toHaveURL(new RegExp(`${base}$`));
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Learn to Build Software',
+    'Learn to Work with Code',
   );
   await expect(
     page.getByRole('heading', { level: 2, name: /^Course status/ }),
@@ -270,7 +298,7 @@ test('setup exposes independent project preparation, three choices, and copyable
   ).toHaveAttribute('href', `${base}#choose-and-outline-your-project`);
   await expect(
     main.getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — GitHub for everyone',
       exact: true,
     }),
   ).toHaveAttribute('href', `${base}modules/project-and-git/`);
@@ -311,18 +339,20 @@ test('setup exposes independent project preparation, three choices, and copyable
   });
   await main
     .getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — GitHub for everyone',
       exact: true,
     })
     .click();
   const gitPrompt = main.locator('.theme-code-block');
   await expect(gitPrompt).toHaveCount(1);
   await expect(gitPrompt.locator('code')).toContainText(
-    'Help me understand Git and GitHub using my project repository.',
+    'Help me understand GitHub using',
   );
   await expect(gitPrompt.locator('code')).not.toContainText('define');
   await expect(
-    main.getByText('Draft — for review.', { exact: true }),
+    main.getByText('Shared foundation — draft for author review.', {
+      exact: true,
+    }),
   ).toBeVisible();
 });
 
@@ -335,7 +365,7 @@ test('full course map leads to independent practice and accessible evidence retu
   const modules = main.getByRole('table');
   await expect(modules.getByRole('row')).toHaveCount(8);
   await expect(
-    main.getByText(/Module 1 has detailed learning objectives/),
+    main.getByText(/Module 1\s+has detailed learning objectives/),
   ).toBeVisible();
   // Later core topics are directly discoverable, without expanding a future-only category.
   if (isMobile) {
@@ -461,100 +491,181 @@ test('copy failure is announced and repeated copy can recover without browser er
   expect(errors).toEqual([]);
 });
 
-test('standalone companion is discoverable outside the core sequence with practice and search', async ({
+test('shared GitHub foundation leads to the complete second-track draft without app setup', async ({
   page,
-  isMobile,
 }, info) => {
   await page.goto('');
   const main = page.getByRole('main');
-  const article = page.getByRole('article');
-  await article
-    .getByRole('link', { name: 'Companion skills', exact: true })
+  await main
+    .getByRole('link', { name: 'Module 0 — GitHub for everyone', exact: true })
     .click();
-  await expect(page).toHaveURL(new RegExp(`${base}companions/$`));
-  await article
-    .getByRole('link', { name: 'Read an Active Repository', exact: true })
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Module 0 — GitHub for everyone',
+  );
+  await expect(main.getByText(/You do not need an app idea/)).toBeVisible();
+  await main
+    .getByRole('link', { name: 'How software fits together', exact: true })
+    .click();
+  const routes = [
+    'how-software-fits-together',
+    'find-your-way',
+    'run-and-investigate',
+    'follow-feature-or-change',
+    'evidence-of-correctness',
+    'read-evolving-project',
+  ];
+  for (const [index, route] of routes.entries()) {
+    await expect(page).toHaveURL(
+      new RegExp(`${base}understand-code/${route}/$`),
+    );
+    await expect(
+      main.getByRole('link', { name: 'Shared GitHub 0', exact: true }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+    const a11y = await new AxeBuilder({ page }).analyze();
+    expect(
+      a11y.violations.filter((v) => ['critical', 'serious'].includes(v.impact)),
+    ).toEqual([]);
+    if (index < routes.length - 1)
+      await main
+        .getByRole('link', { name: 'Next module', exact: true })
+        .click();
+  }
+  await main
+    .getByRole('link', { name: 'Second-track guide', exact: true })
+    .click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Understand code and changes',
+  );
+  await expect(
+    main.getByText(/All six modules and assessment criteria are proposed/),
+  ).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath('two-track-guide.png'),
+    fullPage: true,
+  });
+  await page.goto('companions/read-active-repository/');
+  await main
+    .getByRole('link', {
+      name: 'Module 6 — Read an evolving project',
+      exact: true,
+    })
     .click();
   await expect(page).toHaveURL(
-    new RegExp(`${base}companions/read-active-repository/$`),
+    new RegExp(`${base}understand-code/read-evolving-project/$`),
   );
-  await expect(
-    main.getByText('Draft — for course-author review.', { exact: true }),
-  ).toBeVisible();
-  await expect(main.getByRole('heading', { level: 3 })).toHaveCount(6);
-  await expect(main.getByText(/You do not need to write code/)).toBeVisible();
-  // The companion uses its own sidebar and pagination rather than Module 8.
-  await expect(main.locator('.pagination-nav')).not.toContainText(
-    'Concurrency',
+});
+
+test('investigation practice exposes the exact disposable fixture and evidence-return guide', async ({
+  page,
+  request,
+}) => {
+  await page.goto('understand-code/run-and-investigate/');
+  const main = page.getByRole('main');
+  await main.getByRole('link', { name: 'local practice', exact: true }).click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}understand-code/practice/workshop-directory/$`),
   );
-  if (isMobile)
-    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
-  const nav = isMobile
-    ? page.locator('.navbar-sidebar__item:not([inert])')
-    : page.getByRole('navigation', { name: 'Docs sidebar' });
+  for (const file of ['module3_server.py', 'module3_fixture_test.py']) {
+    const response = await request.get(`exercises/understand-module3/${file}`);
+    expect(response.status()).toBe(200);
+    expect(await response.text()).toBe(
+      await readFile(`static/exercises/understand-module3/${file}`, 'utf8'),
+    );
+  }
+  await expect(main.getByText(/No course\s+checkout/)).toBeVisible();
+  await page.goto('practice/#bring-work-back-for-review');
   await expect(
-    nav.getByRole('link', { name: /Read an Active Repository/ }),
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
   ).toBeVisible();
-  await expect(nav.getByRole('link', { name: /7\. Concurrency/ })).toHaveCount(
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+});
+
+test('code word wrapping survives resize during route detachment', async ({
+  page,
+  isMobile,
+}) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('setup/');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-has-hydrated',
+    'true',
+  );
+  await expect(page.getByRole('main').locator('pre').first()).toBeVisible();
+  if (isMobile) {
+    const block = page.getByRole('main').locator('.theme-code-block').first();
+    const wrap = block.getByRole('button', { name: 'Toggle word wrap' });
+    await expect(wrap).toBeVisible();
+    await wrap.click();
+    await expect(block.locator('code')).toHaveCSS('white-space', 'pre-wrap');
+    await wrap.click();
+    await expect(block.locator('code')).not.toHaveCSS(
+      'white-space',
+      'pre-wrap',
+    );
+  }
+  // Model a queued viewport change at the detach boundary, before passive
+  // listener cleanup. This exercises the shared hook, not a module's prose.
+  await page.evaluate(() => {
+    window.codeDetachResizes = 0;
+    const removeChild = Node.prototype.removeChild;
+    Node.prototype.removeChild = function (child) {
+      const containsCode =
+        child instanceof Element &&
+        (child.matches('pre') || child.querySelector('pre'));
+      const removed = removeChild.call(this, child);
+      if (containsCode) {
+        window.codeDetachResizes += 1;
+        window.dispatchEvent(new Event('resize'));
+      }
+      return removed;
+    };
+  });
+  await page
+    .getByRole('main')
+    .getByRole('link', { name: 'the second-track guide', exact: true })
+    .click();
+  await expect(page).toHaveURL(new RegExp(`${base}understand-code/$`));
+  expect(await page.evaluate(() => window.codeDetachResizes)).toBeGreaterThan(
     0,
   );
-  if (isMobile)
-    await page.getByRole('button', { name: 'Close navigation bar' }).click();
-  await page.screenshot({
-    path: info.outputPath('companion-module.png'),
-    fullPage: true,
-  });
-  const table = main.getByRole('region', { name: 'Scrollable table' });
-  await table.focus();
-  if (isMobile) {
-    await page.keyboard.press('ArrowRight');
-    await expect
-      .poll(() => table.evaluate((el) => el.scrollLeft))
-      .toBeGreaterThan(0);
+  expect(errors).toEqual([]);
+});
+
+test('code blocks survive theme reload and viewport changes', async ({
+  page,
+}) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.emulateMedia({ colorScheme: 'dark' });
+  for (const route of [
+    'understand-code/navigation-evidence/',
+    'understand-code/evidence-of-correctness/practice/',
+  ]) {
+    await page.goto(route);
+    await expect(page.locator('html')).toHaveAttribute(
+      'data-has-hydrated',
+      'true',
+    );
+    await page.reload();
+    await expect(page.locator('html')).toHaveAttribute(
+      'data-has-hydrated',
+      'true',
+    );
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    for (const width of [390, 430, 390])
+      await page.setViewportSize({ width, height: 664 });
+    await page.evaluate(
+      () =>
+        new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        ),
+    );
   }
-  await article
-    .getByRole('link', { name: 'fictional Fieldnotes example', exact: true })
-    .click();
-  await expect(page).toHaveURL(
-    new RegExp(`${base}companions/fieldnotes-evidence/$`),
-  );
-  await expect(
-    main.getByRole('heading', {
-      name: /^E7 A plausible but flawed AI summary/,
-    }),
-  ).toBeVisible();
-  await page.screenshot({
-    path: info.outputPath('companion-evidence.png'),
-    fullPage: true,
-  });
-  await page.goto('search/');
-  await page
-    .getByRole('searchbox', { name: 'Search words' })
-    .fill('read an active repository');
-  await page
-    .locator('.search-results')
-    .getByRole('link', { name: 'Read an Active Repository', exact: true })
-    .click();
-  await expect(page).toHaveURL(
-    new RegExp(`${base}companions/read-active-repository/$`),
-  );
-  await page.goto('learning-path/');
-  await article
-    .getByRole('link', { name: 'Read an Active Repository', exact: true })
-    .click();
-  await expect(page).toHaveURL(
-    new RegExp(`${base}companions/read-active-repository/$`),
-  );
-  await page.goto('companions/');
-  if (isMobile)
-    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
-  if (isMobile)
-    await page.getByRole('button', { name: /Back to main menu/ }).click();
-  const mainNav = isMobile
-    ? page.locator('.navbar-sidebar__item:not([inert])')
-    : page.getByRole('navigation', { name: 'Main', exact: true });
-  await mainNav
-    .getByRole('link', { name: 'Learning path', exact: true })
-    .click();
-  await expect(page).toHaveURL(new RegExp(`${base}learning-path/$`));
+  expect(errors).toEqual([]);
 });

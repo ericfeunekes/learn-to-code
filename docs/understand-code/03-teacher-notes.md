@@ -1,9 +1,17 @@
+---
+title: Run and investigate — teacher notes
+description:
+  Draft evidence criteria, fixture interpretation and handoffs for Module 3.
+slug: /understand-code/teacher/run-and-investigate
+---
+
 # Module 3 teacher notes
 
-Read [the module](MODULE.md) and the selected part of [practice](PRACTICE.md).
-This is a proposed second-track module pending course-author and whole-track
-review. Do not treat the building track's Module 3, existing companion outcomes,
-or this draft as interchangeable completion criteria.
+Read [the module](03-run-and-investigate.md) and the selected part of
+[practice](03-workshop-practice.md). This is a proposed second-track module
+pending course-author and whole-track review. Do not treat the building track's
+Module 3, existing companion outcomes, or this draft as interchangeable
+completion criteria.
 
 ## Teach a useful next step
 

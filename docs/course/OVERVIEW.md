@@ -1,124 +1,121 @@
 ---
-title: Learn to Build Software
+title: Learn to Work with Code
 description: >-
-  The full course journey, practical core topics, and learning in your own
-  project.
+  Shared GitHub foundations and two ways to work with code: building and
+  investigating.
 slug: /
 source_file: OVERVIEW.md
 source_refinements:
   - separate-projects-overview-2026-10-30
 ---
 
-# Learn to Build Software
+# Learn to Work with Code
 
-Learn to understand, question, and improve software by directing AI on a useful
-project of your own. AI can write the code; your work is to decide what should
-happen, understand the choices, and judge the result.
+Learn to use code, agents, and repository tools to understand, investigate, and
+improve software. You can build implementations or work with existing software
+without becoming its feature implementer. In both cases, your contribution is
+the question, expectation, decision, and judgment you bring to the work.
 
-The destination is software you can explain, test, recover, and keep improving.
-A first working feature gives you something real to examine. As your project
-grows, you will reason about failures, saved information, data rules, program
-structure, and actions that overlap. These ideas work together: a save failure
-can raise questions about recovery, storage, tests, and repeated requests.
+## One foundation, two tracks
 
-## Start with your own project
+Start with [Module 0 — GitHub for everyone](00-project-and-git.md):
+repositories, files, history, branches, pull requests, issues, and releases. Use
+a small example or an authorized repository. You do not need to create an app,
+clone the course, or memorize commands. If you already understand the
+foundation, use existing evidence and revisit only what helps.
 
-Use [workspace setup](SETUP.md) to create or reopen **your own project
-repository**, separate from this course. The course site and repository hold the
-teaching material. You do not need to fork them, install the website, or build
-your app inside them. You can ask your agent to handle GitHub setup; an app idea
-and a full Git lesson are not prerequisites.
+Then choose the kind of work you want to do:
 
-Then choose from [What's next?](SETUP.md#whats-next): define a project, learn
-Git/GitHub, or continue existing work. If you have already chosen, go directly
-to that activity. Keep the course available to your teaching AI through the
-site, supplied Markdown, or a separate reference checkout.
+- **[Build and improve software](CURRICULUM.md#build-and-improve-software):**
+  direct an implementation agent in your own project repository. Learn to test,
+  recover, preserve data, model behavior, structure code, and handle overlapping
+  work.
+- **[Understand code and changes](../understand-code/index.md):** use a
+  repository and its tools to explain software, find relevant code, run QA,
+  investigate a behavior, follow a change, and assess evidence. You can do this
+  without implementing features or creating an implementation repository.
 
-## What you will be able to do
+These are ways of working with code, not product-development or project
+management certifications. You can follow either track or move between them as
+questions arise. The [learning path](CURRICULUM.md) shows each module's role and
+current draft status.
 
-You should be able to:
+## Learn generally, then make it concrete
 
-- Turn intended behavior into focused AI requests with constraints and expected
-  results.
-- Explain relevant behavior, data, states, and program structure well enough to
-  question an implementation.
-- Compare plausible choices, defend a decision, and direct a coherent
-  improvement while preserving behavior that should stay the same.
-- Judge what tests and other evidence establish about ordinary use, failures,
-  saved state, and overlapping or repeated actions.
-- Investigate an unfamiliar concept with AI, check its explanation, and choose a
-  useful next learning step.
+Start with a small mental model, try a tiny example, then apply it to an
+accessible real repository or useful project. Add language and framework detail
+when it helps answer your question. A module is a reference for short adaptive
+exchanges, not a lecture to finish in one sitting or a rigid course march.
+
+An agent can explain a file, search, run an authorized check, or write code.
+Your work is to connect the evidence, predict what should happen, question an
+unsupported claim, and choose a useful next step. Existing work and partial
+understanding are welcome.
 
 ## The core modules
 
-These seven topics form the core of the course. The practical questions below
-show why each matters; they are a map for learning, not a required sequence.
+The building track retains its seven topics:
 
-| Module                                                                                  | A practical question in your project                                                                 |
-| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [1. Testing and QA](01-testing-and-qa.md)                                               | What should happen, and what evidence would convince you it works for the person or client using it? |
-| [2. Error handling and recovery](02-error-handling-and-recovery.md)                     | When an operation fails, what happened, what should the person see, and how can work recover?        |
-| [3. Persistence and shared state](03-persistence-and-shared-state.md)                   | What must survive closing the app, and which saved or cached value should you trust?                 |
-| [4. Modeling data and behavior](04-modeling-data-and-behavior.md)                       | What things, relationships, states, and rules does the app need to represent?                        |
-| [5. Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md) | What information do parts of the system promise to exchange, and how do you check actual inputs?     |
-| [6. Structuring a program](06-structuring-a-program.md)                                 | Where should a responsibility live, and how can you change it without tangling unrelated behavior?   |
-| [7. Concurrency](07-concurrency.md)                                                     | What if two actions overlap, arrive in a different order, or happen twice?                           |
+| Module                                                                                  | Practical role                                                         |
+| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [1. Testing and QA](01-testing-and-qa.md)                                               | Decide what should happen and what evidence checks the actual outcome. |
+| [2. Error handling and recovery](02-error-handling-and-recovery.md)                     | Investigate failures and choose useful feedback and safe recovery.     |
+| [3. Persistence and shared state](03-persistence-and-shared-state.md)                   | Understand what survives and which saved or cached value to trust.     |
+| [4. Modeling data and behavior](04-modeling-data-and-behavior.md)                       | Represent the relevant things, relationships, states, and rules.       |
+| [5. Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md) | Explain exchanged information and check actual inputs.                 |
+| [6. Structuring a program](06-structuring-a-program.md)                                 | Place responsibilities and change related behavior coherently.         |
+| [7. Concurrency](07-concurrency.md)                                                     | Reason about overlapping, reordered, or repeated actions.              |
 
-[Module 0 — Git and GitHub for your work](00-project-and-git.md) is a separate
-foundation for directing your agent on copies, checkpoints, sharing, and merges.
-Learn enough when you need it; command memorization is not an entrance exam.
-
-## Companion skills
-
-[Companion skills](../companions/index.md) sit outside the coding path and can
-be used on their own.
-[Read an Active Repository](../companions/read-active-repository.md) helps you
-understand what a team is building, progress, delivery pace and priorities from
-repository evidence. It is a detailed draft pending course-author review; no
-coding modules or project setup are prerequisites.
+The [understanding track](../understand-code/index.md) progresses from how
+software fits together, through navigation and active investigation, to tracing
+changes, judging correctness evidence, and reading an evolving project. API,
+MCP, and browser QA are possible ways to investigate; choose the interface
+relevant to your question rather than doing every tool exercise.
 
 ## Course status
 
-Module 1 has detailed learning objectives and evidence criteria. Module 2 is a
-**detailed draft pending course-author review**: its six proposed outcomes can
-guide exploration and partial evidence, but are not agreed completion criteria.
-Modules 3–7 are **Being built** outlines, with detailed outcomes and examples
-still requiring development and human review. The setup flow and Module 0 are
-drafts for review. The full map describes the destination; it does not claim
-every lesson is ready.
+This is a combined local review draft, not a claim that the whole course is
+validated. Shared Module 0 and setup are drafts. In the building track, Module 1
+has detailed learning objectives; Module 2 is a **detailed draft pending
+course-author review**; Modules 3–7 are **Being built** outlines. All six
+understanding-track modules are proposed drafts pending author and independent
+whole-path review. Draft criteria can guide exploration and partial evidence,
+but are not agreed completion criteria or proof of real learner success.
 
 ## Choose and outline your project
 
-This is one option after [setup](SETUP.md). Ask AI:
+This option belongs to the building track. Ask AI:
 
 ```text
 Help me choose a small useful app and define its first behavior.
 ```
 
-Choose a useful, low-stakes app or continue one you already have. Describe who
-it is for, its core behavior, a small initial scope, and observable success in
-plain language. In your own repository, direct your implementation agent to
-build the smallest runnable version that does something useful. Learn tools as
-you need them. You can return to this project across the course rather than
-rebuilding it for each topic.
+Describe who will use it, one useful behavior, a small initial scope, and
+observable success. Then use [project setup](SETUP.md#setup-with-ai) to create
+or resume your own repository, separate from the course. An agent can handle the
+GitHub steps; a full Git lesson is not an operational setup gate. If you already
+have a project, continue it.
+
+For the understanding track, start with its supplied examples and bring an
+authorized repository or excerpts when useful. No app definition or new
+repository is required.
 
 ## Learn, apply, and bring back evidence
 
-Explore an idea with the teaching AI, then work independently with your
-implementation agent in your project repository. Bring back a relevant chat link
-or excerpt, the changed code or commit, and useful test or observed results for
-[review](PRACTICE.md#bring-work-back-for-review). The teacher can review only
-material it can access; an exported or pasted excerpt works when a chat or
-private repository is inaccessible.
+Explore an idea with the teaching AI, apply it independently with an approved
+agent or tools, and
+[return relevant evidence](PRACTICE.md#bring-work-back-for-review). For
+building, implementation belongs in your own repository. For understanding,
+application can be a source-backed explanation, an authorized local/API/MCP or
+browser check, or a bounded assessment of a change. Keep effects within the
+permitted target: a local app can contact shared services, and staging is not
+automatically safe.
 
-Your explanations, expectations, decisions, and follow-ups show your judgment.
-Agent-written code and green tests can show useful software results, but alone
-they do not establish your understanding. Existing work and partial evidence are
-welcome; you do not need a preceding lesson or a formal handoff every time.
-
-Follow your questions and project needs, revisit ideas for depth, and work at
-your own pace. The [learning path](CURRICULUM.md) connects the core topics to
-possible further directions. The [teaching guide](AI-TEACHER.md) explains how to
-use outcomes and evidence without imposing a fixed teaching method.
+A chat link may be inaccessible. Supply relevant safe turns, files or diffs,
+versions, test/results, and your interpretation rather than assuming teacher
+access. Agent-written code, a polished explanation, and green tests alone do not
+prove your understanding. The [teaching guide](AI-TEACHER.md) explains how to
+credit observed judgment and preserve uncertainty without a ceremonial handoff
+for every question.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

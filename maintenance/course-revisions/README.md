@@ -34,3 +34,12 @@ Relative links in the authoring files target their generated `docs/course/`
 location. They become valid reading links after import; use those generated
 pages to navigate the course. This directory is an authoring input, not another
 public site or a standalone reference checkout.
+
+## Two-track integration
+
+The general revisions now route shared GitHub0 into building or understanding
+code and changes. Building-module lesson bodies are preserved. The six new
+second-track drafts are direct authoring sources in `docs/understand-code/`, not
+importer snapshots or Drive exports. The older companion URLs are reference
+pointers into that track. These local candidates await independent whole-path
+and author review.

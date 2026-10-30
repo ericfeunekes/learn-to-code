@@ -3,7 +3,7 @@ title: Module 5 practice — Evidence for a blank-title change
 description:
   A fictional change with weak checks, a reproducible defect and mismatched
   deployment evidence.
-slug: /understand/evidence-of-correctness/practice
+slug: /understand-code/evidence-of-correctness/practice
 ---
 
 # Evidence for a blank-title change
