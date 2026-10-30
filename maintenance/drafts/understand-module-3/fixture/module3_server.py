@@ -5,7 +5,8 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from threading import Lock
 from urllib.parse import parse_qs, urlsplit
 
 
@@ -14,21 +15,27 @@ WORKSHOPS = [
     {"id": "watercolour", "title": "watercolour basics"},
     {"id": "wood", "title": "wood carving"},
 ]
+EVENT_LOCK = Lock()
 
 
 def event(**fields):
-    print(
-        json.dumps({"time": datetime.now(timezone.utc).isoformat(), **fields}),
-        file=sys.stderr,
-        flush=True,
-    )
+    with EVENT_LOCK:
+        print(
+            json.dumps({"time": datetime.now(timezone.utc).isoformat(), **fields}),
+            file=sys.stderr,
+            flush=True,
+        )
 
 
-class WorkshopServer(HTTPServer):
+class WorkshopServer(ThreadingHTTPServer):
+    # Idle browser connections must not prevent the owned process from stopping.
+    daemon_threads = True
+
     def __init__(self, port, catalog_state):
         super().__init__(("127.0.0.1", port), WorkshopHandler)
         self.catalog_state = catalog_state
         self.request_number = 0
+        self.request_lock = Lock()
 
 
 class WorkshopHandler(BaseHTTPRequestHandler):
@@ -37,8 +44,9 @@ class WorkshopHandler(BaseHTTPRequestHandler):
         pass
 
     def reply(self, status, body, route):
-        self.server.request_number += 1
-        request_id = f"m3-{self.server.request_number}"
+        with self.server.request_lock:
+            self.server.request_number += 1
+            request_id = f"m3-{self.server.request_number}"
         encoded = json.dumps({**body, "request_id": request_id}).encode()
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
@@ -47,9 +55,9 @@ class WorkshopHandler(BaseHTTPRequestHandler):
         if status == 405:
             self.send_header("Allow", "GET")
         self.end_headers()
+        event(event="request", request_id=request_id, route=route, status=status)
         if self.command != "HEAD":
             self.wfile.write(encoded)
-        event(event="request", request_id=request_id, route=route, status=status)
 
     def do_GET(self):
         parsed = urlsplit(self.path)
