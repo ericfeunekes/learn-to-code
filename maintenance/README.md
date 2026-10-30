@@ -62,6 +62,11 @@ the separate learner-repository flow without editing the original Drive files.
 Their guarded replacements and reconciliation rules are in the
 [publication boundary](publication.md#course-revisions-for-separate-learner-repositories).
 
+Companion drafts in `docs/companions/` are maintained directly, outside the core
+course importer. Keep their standalone sidebar separate from the core sequence;
+use the [source boundary](publication.md#companion-draft-source-boundary) for
+status and authoring ownership.
+
 ## Verify a change
 
 Run `npm run check`. It formats-checks maintained files, builds Docusaurus with

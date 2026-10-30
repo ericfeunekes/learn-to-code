@@ -31,6 +31,24 @@ sessions, learner identities, personal details, private source links, research
 archives, books and earlier course snapshots are outside the public repository
 and its history.
 
+## Companion draft source boundary
+
+The October 30 user-directed companion, Read an Active Repository, is authored
+locally in `docs/companions/`: its section entry, module and fictional evidence
+packet. These are standalone authoring sources, outside the thirteen generated
+`docs/course/` snapshots and outside the core sequence. They are a local
+detailed draft pending course-author review, not canonical Drive material or
+approved public content. The normal build generates search and Markdown exports
+from these files; the course importer leaves them intact. No workplace
+repository, private board or learner record was accessed to create the fictional
+example.
+
+Edit companion sources directly. Overview and curriculum links remain maintained
+in their existing guarded revisions; refresh those with the same unchanged
+canonical inputs. The source provenance manifest and all original hash guards
+remain unchanged. No publication, push or canonical source promotion is included
+in this addition.
+
 ## One maintained curriculum source
 
 The content owner continues to maintain the current course in its established

@@ -1,4 +1,17 @@
 export default {
+  companions: [
+    { type: 'doc', id: 'companions/index', label: 'Companion skills' },
+    {
+      type: 'doc',
+      id: 'companions/read-active-repository',
+      label: 'Read an Active Repository · draft',
+    },
+    {
+      type: 'doc',
+      id: 'companions/fieldnotes-evidence',
+      label: 'Fieldnotes practice evidence',
+    },
+  ],
   course: [
     { type: 'doc', id: 'course/OVERVIEW', label: 'Start here' },
     { type: 'doc', id: 'course/SETUP', label: 'Set up & what’s next' },

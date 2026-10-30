@@ -40,6 +40,7 @@ export default {
       items: [
         { to: '/setup/', label: 'Setup & next choices', position: 'left' },
         { to: '/learning-path/', label: 'Learning path', position: 'left' },
+        { to: '/companions/', label: 'Companion skills', position: 'left' },
         { to: '/for-ai/', label: 'For AI', position: 'left' },
         { to: '/search/', label: 'Search', position: 'right' },
       ],
@@ -51,6 +52,7 @@ export default {
           title: 'Explore',
           items: [
             { label: 'Learning path', to: '/learning-path/' },
+            { label: 'Companion skills', to: '/companions/' },
             { label: 'Search the site', to: '/search/' },
           ],
         },

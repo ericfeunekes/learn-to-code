@@ -56,6 +56,15 @@ learning objectives.
 6. [Structuring a program](06-structuring-a-program.md) — **Being built**
 7. [Concurrency](07-concurrency.md) — **Being built**
 
+## Companion skills
+
+Separate from this path,
+[Read an Active Repository](../companions/read-active-repository.md) is a
+standalone draft for understanding features, progress, pace and apparent
+priorities in active software work. Start from the
+[companion section](../companions/index.md) without completing coding modules or
+creating a project. Its proposed outcomes remain pending course-author review.
+
 ## Future directions
 
 Choose a direction when it serves your app or something you want to build next.

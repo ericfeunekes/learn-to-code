@@ -26,6 +26,10 @@ not its proposed outcomes.
   proposed outcomes, pending course-author review. See its
   [original review handoff](../drafts/module-2/REVIEW.md).
 
+The overview and course map also link to the separate locally authored companion
+section. That addition does not change the seven core modules or claim a
+canonical Drive source for the companion.
+
 Relative links in the authoring files target their generated `docs/course/`
 location. They become valid reading links after import; use those generated
 pages to navigate the course. This directory is an authoring input, not another

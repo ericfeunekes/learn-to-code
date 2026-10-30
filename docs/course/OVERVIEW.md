@@ -68,6 +68,15 @@ show why each matters; they are a map for learning, not a required sequence.
 foundation for directing your agent on copies, checkpoints, sharing, and merges.
 Learn enough when you need it; command memorization is not an entrance exam.
 
+## Companion skills
+
+[Companion skills](../companions/index.md) sit outside the coding path and can
+be used on their own.
+[Read an Active Repository](../companions/read-active-repository.md) helps you
+understand what a team is building, progress, delivery pace and priorities from
+repository evidence. It is a detailed draft pending course-author review; no
+coding modules or project setup are prerequisites.
+
 ## Course status
 
 Module 1 has detailed learning objectives and evidence criteria. Module 2 is a

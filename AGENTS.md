@@ -64,6 +64,18 @@ rules do not extend to other repositories and it is not automatically backed up.
 Create minimal notes only when useful. Never stage, publish, or import private
 learner records into course content or exports.
 
+## Companion learning
+
+For reading active software work without app implementation, use
+[Read an Active Repository](docs/companions/read-active-repository.md) and its
+fictional evidence packet. This standalone companion is outside the coding path;
+setup and core modules are not prerequisites. It is a detailed draft pending
+course-author review. Follow its proposed evidence criteria for exploration and
+partial evidence, not agreed completion. Preserve its read-only access and
+privacy boundaries. Apply the teaching/review distinctions above to the
+learner's own interpretations and challenges; an AI summary alone is not
+learning evidence.
+
 ## Course website maintenance
 
 For a course maintenance request, read

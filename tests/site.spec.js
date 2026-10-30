@@ -40,6 +40,9 @@ test('production pages load without broken assets or browser errors', async ({
       'Module 2 — Error handling and recovery',
     ],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
+    ['companions/', 'Companion skills'],
+    ['companions/read-active-repository/', 'Read an Active Repository'],
+    ['companions/fieldnotes-evidence/', 'Fieldnotes repository evidence'],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
   ]) {
@@ -191,6 +194,9 @@ test('served text exports come from the admitted Markdown', async ({
   const text = await index.text();
   const files = [
     'for-ai.md',
+    'companions/index.md',
+    'companions/read-active-repository.md',
+    'companions/fieldnotes-evidence.md',
     ...[
       'OVERVIEW.md',
       'SETUP.md',
@@ -217,7 +223,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(14);
+  expect(entries).toHaveLength(files.length);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -453,4 +459,102 @@ test('copy failure is announced and repeated copy can recover without browser er
     expected,
   ]);
   expect(errors).toEqual([]);
+});
+
+test('standalone companion is discoverable outside the core sequence with practice and search', async ({
+  page,
+  isMobile,
+}, info) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  const article = page.getByRole('article');
+  await article
+    .getByRole('link', { name: 'Companion skills', exact: true })
+    .click();
+  await expect(page).toHaveURL(new RegExp(`${base}companions/$`));
+  await article
+    .getByRole('link', { name: 'Read an Active Repository', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}companions/read-active-repository/$`),
+  );
+  await expect(
+    main.getByText('Draft — for course-author review.', { exact: true }),
+  ).toBeVisible();
+  await expect(main.getByRole('heading', { level: 3 })).toHaveCount(6);
+  await expect(main.getByText(/You do not need to write code/)).toBeVisible();
+  // The companion uses its own sidebar and pagination rather than Module 8.
+  await expect(main.locator('.pagination-nav')).not.toContainText(
+    'Concurrency',
+  );
+  if (isMobile)
+    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
+  const nav = isMobile
+    ? page.locator('.navbar-sidebar__item:not([inert])')
+    : page.getByRole('navigation', { name: 'Docs sidebar' });
+  await expect(
+    nav.getByRole('link', { name: /Read an Active Repository/ }),
+  ).toBeVisible();
+  await expect(nav.getByRole('link', { name: /7\. Concurrency/ })).toHaveCount(
+    0,
+  );
+  if (isMobile)
+    await page.getByRole('button', { name: 'Close navigation bar' }).click();
+  await page.screenshot({
+    path: info.outputPath('companion-module.png'),
+    fullPage: true,
+  });
+  const table = main.getByRole('region', { name: 'Scrollable table' });
+  await table.focus();
+  if (isMobile) {
+    await page.keyboard.press('ArrowRight');
+    await expect
+      .poll(() => table.evaluate((el) => el.scrollLeft))
+      .toBeGreaterThan(0);
+  }
+  await article
+    .getByRole('link', { name: 'fictional Fieldnotes example', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}companions/fieldnotes-evidence/$`),
+  );
+  await expect(
+    main.getByRole('heading', {
+      name: /^E7 A plausible but flawed AI summary/,
+    }),
+  ).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath('companion-evidence.png'),
+    fullPage: true,
+  });
+  await page.goto('search/');
+  await page
+    .getByRole('searchbox', { name: 'Search words' })
+    .fill('read an active repository');
+  await page
+    .locator('.search-results')
+    .getByRole('link', { name: 'Read an Active Repository', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}companions/read-active-repository/$`),
+  );
+  await page.goto('learning-path/');
+  await article
+    .getByRole('link', { name: 'Read an Active Repository', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}companions/read-active-repository/$`),
+  );
+  await page.goto('companions/');
+  if (isMobile)
+    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
+  if (isMobile)
+    await page.getByRole('button', { name: /Back to main menu/ }).click();
+  const mainNav = isMobile
+    ? page.locator('.navbar-sidebar__item:not([inert])')
+    : page.getByRole('navigation', { name: 'Main', exact: true });
+  await mainNav
+    .getByRole('link', { name: 'Learning path', exact: true })
+    .click();
+  await expect(page).toHaveURL(new RegExp(`${base}learning-path/$`));
 });

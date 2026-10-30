@@ -6,6 +6,13 @@ and each core topic's role. Module 1 has detailed outcomes; Module 2 is a
 detailed draft pending course-author review. Modules 3–7 remain outlines being
 built. Setup and Module 0 remain drafts for human review.
 
+## Companion skills
+
+[Read an Active Repository](docs/companions/read-active-repository.md) is a
+standalone draft for understanding active software work, including at work. Find
+it in [Companion skills](docs/companions/index.md), separate from the coding
+path. No application project or completed core modules are required.
+
 ## Set up your own project
 
 Use [the setup guide](docs/course/SETUP.md) and its copyable agent prompt to
