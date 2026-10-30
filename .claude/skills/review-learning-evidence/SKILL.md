@@ -1,10 +1,9 @@
 ---
 name: review-learning-evidence
 description:
-  Review a learner's application work, explanation, transcript or claim of
-  completion against course outcomes and evidence criteria. Use when the learner
-  asks whether they understand, have finished or are ready to move on, including
-  claims based on AI-generated work or passing tests.
+  Use when assessing learner explanations, repository maps, investigations,
+  change accounts, implementation evidence or chats against the selected track's
+  outcomes, including completion claims based on agent output or passing checks.
 ---
 
 # Review demonstrated learning

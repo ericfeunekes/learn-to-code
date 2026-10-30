@@ -26,10 +26,12 @@ Current shared routing and aggregate checks belong to the integration result.
 - [Teacher notes](../../../docs/understand-code/03-teacher-notes.md): adaptive
   teaching, proposed assessment evidence, fixture interpretation, gaps, and
   handoffs.
-- `fixture/module3_server.py`: Python standard-library HTTP service, loopback
-  only, fictional in-memory data, no outbound services or data writes.
-- `fixture/module3_fixture_test.py`: actual local HTTP/process checks of the
-  teaching fixture, including the intentionally defective capitalization search.
+- `static/exercises/understand-module3/module3_server.py`: Python
+  standard-library HTTP service, loopback only, fictional in-memory data, no
+  outbound services or data writes.
+- `static/exercises/understand-module3/module3_fixture_test.py`: actual local
+  HTTP/process checks of the teaching fixture, including the intentionally
+  defective capitalization search.
 
 The new sources live only in `maintenance/drafts/understand-module-3/`. They are
 independent authoring material created for the user's October 30 direction, not
@@ -146,11 +148,11 @@ the task's final handoff onto the intended integration branch. Do not merge or
 copy the temporary dependency symlink, ignored build outputs, or task-local
 evidence into curriculum content.
 
-Use `MODULE.md` as the draft entry point. Keep its second-track identity
-explicit to avoid confusion with building-track Module 3. The integrator owns
-shared overview/navigation/source-policy changes and reconciliation of the
-earlier read-only companion with the new track. This task does not silently
-replace that companion's read-only permission boundary.
+Use the linked run-and-investigate module page as the draft entry point. Keep
+its second-track identity explicit to avoid confusion with building-track
+Module 3. The integrator owns shared overview/navigation/source-policy changes
+and reconciliation of the earlier read-only companion with the new track. This
+task does not silently replace that companion's read-only permission boundary.
 
 If admitted to website reading content later, provide accessible fixture files
 or a module download and adjust the practice source paths deliberately; do not

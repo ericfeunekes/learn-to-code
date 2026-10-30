@@ -1,11 +1,10 @@
 ---
 name: use-learning-outcomes
 description:
-  Help a learner choose, understand or practice software learning outcomes in
-  this workspace, including starting after setup, learning Git/GitHub, defining
-  a project or choosing a learning step on existing work. Use for natural
-  requests to learn or decide what comes next; application implementation
-  belongs in the learner’s own project repository.
+  Use when choosing, learning or practicing a shared GitHub, building-track or
+  understanding-track outcome, including repository exploration, QA
+  investigation, conceptual questions or a useful next learning step on existing
+  work.
 ---
 
 # Teach toward a chosen outcome
