@@ -1,8 +1,9 @@
 # Module 3 review and integration handoff
 
-Status: **private author-review draft; independent whole-track review and real
-learner use remain pending.** No push, merge, public publication, deployment, or
-canonical Drive edit is included.
+Status: **private author-review draft; initial independent whole-track review
+completed, with R1 remediation awaiting independent recheck. Real learner use
+remains pending.** No push, merge, public publication, deployment, or canonical
+Drive edit is included.
 
 ## Integration location
 
@@ -103,6 +104,39 @@ The final corrected run passed **22 tests across desktop and phone (1.2m)**.
 That checks the unchanged site's regression surface, not a rendered version of
 the new maintenance-only draft. Its temporary config and browser artifacts
 remain in ignored task-local scratch/test-results folders.
+
+## R1 remediation — idle browser connections
+
+The independent whole-track review at `626ffef1171b3ee621a016416fa615ce6c86343d`
+found that the fixture's synchronous HTTP server could wait indefinitely for an
+idle browser connection and block an ordinary request on another connection. A
+new regression first reproduced the defect on the original service: `/about`
+timed out after three seconds while the first connection had incomplete headers.
+Its owned process was cleaned up.
+
+The fixture now uses `ThreadingHTTPServer` with explicit daemon handler threads,
+so idle connections neither block other requests nor hold the process open on
+Ctrl+C. This matches the browser-preconnection use described in
+[Python's server documentation](https://docs.python.org/3/library/http.server.html#http.server.ThreadingHTTPServer).
+Request-number allocation and structured log writes are protected with locks.
+The response event is logged before the response body completes, making it
+available when a client finishes reading the result.
+
+The new boundary regression holds both a silent connection and an incomplete
+request open, receives `/about` on another connection, completes four additional
+concurrent requests, and verifies distinct request IDs with matching JSON log
+records. With both idle clients still open, SIGINT exits with code zero and a
+final `stopped` event; a new connection to the closed listener is refused. All
+four fixture tests passed after the fix, including the original ready,
+unavailable, and refused-mutation cases. The intentional search mismatch is
+preserved. Python syntax, authored Markdown formatting, and `git diff --check`
+also passed.
+
+This remediation changes only the fixture, its tests, and this handoff. The
+site's source and routing are unchanged, so the earlier site checks above were
+not rerun or presented as new evidence. No task-owned service remains running.
+This is an author-confirmed fix pending the independent reviewer's recheck; it
+does not resolve shared integration obligations or demonstrate learner success.
 
 ## Integrate after whole-track review
 

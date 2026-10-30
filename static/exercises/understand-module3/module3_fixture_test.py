@@ -7,11 +7,14 @@ of the directory meeting its search requirement. No external service is used.
 import json
 import selectors
 import signal
+import socket
 import subprocess
 import sys
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.error import HTTPError
+from urllib.parse import urlsplit
 from urllib.request import ProxyHandler, Request, build_opener
 
 
@@ -98,6 +101,36 @@ class FixtureBoundaryTest(unittest.TestCase):
         status, result = self.request(base, "/api/workshops?q=water")
         self.assertEqual((status, result["error"]), (503, "catalog_unavailable"))
         self.assertNotIn("workshops", result)
+
+    def test_idle_connection_does_not_block_requests_or_shutdown(self):
+        process, base = self.start_service()
+        address = ("127.0.0.1", urlsplit(base).port)
+        with (
+            socket.create_connection(address, timeout=3) as idle,
+            socket.create_connection(address, timeout=3) as partial,
+        ):
+            # Keep both a silent preconnection and incomplete request open.
+            partial.sendall(b"GET /about HTTP/1.1\r\n")
+            status, about = self.request(base, "/about")
+            self.assertEqual((status, about["version"]), (200, "module3.1"))
+            with ThreadPoolExecutor(max_workers=4) as clients:
+                results = list(clients.map(lambda _: self.request(base, "/about"), range(4)))
+            self.assertTrue(all(status == 200 for status, _body in results))
+            ids = {body["request_id"] for _status, body in results}
+            ids.add(about["request_id"])
+            self.assertEqual(len(ids), 5)
+            process.send_signal(signal.SIGINT)
+            _out, logs = process.communicate(timeout=5)
+            self.assertEqual(process.returncode, 0)
+            events = [json.loads(line) for line in logs.splitlines()]
+            self.assertEqual(events[-1]["event"], "stopped")
+            requests = [row for row in events if row["event"] == "request"]
+            self.assertEqual({row["request_id"] for row in requests}, ids)
+            self.assertEqual(len(requests), 5)
+            # Both idle clients deliberately remain open when the process exits.
+            with self.assertRaises(ConnectionRefusedError):
+                with socket.create_connection(address, timeout=1):
+                    pass
 
     def test_mutations_are_refused_and_data_stays_the_same(self):
         _process, base = self.start_service()
