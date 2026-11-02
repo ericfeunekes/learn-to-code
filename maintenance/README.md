@@ -57,6 +57,17 @@ same directory structure. Keep private links, absolute machine paths and learner
 progress out of public reading material. Custom MDX is intentionally disabled:
 plain Markdown stays usable by browsers and text readers from one source.
 
+The [registered general course revisions](course-revisions/README.md) describe
+the separate learner-repository flow without editing the original Drive files.
+Their guarded replacements and reconciliation rules are in the
+[publication boundary](publication.md#course-revisions-for-separate-learner-repositories).
+
+Second-track drafts in `docs/understand-code/` are authored directly, outside
+the core importer. Shared GitHub 0 precedes both tracks. The earlier companion
+URLs are pointers into Module 6, with Fieldnotes retained as a source packet.
+Use the [source boundary](publication.md#second-track-draft-source-boundary) for
+status, authoring ownership and the admitted reading/fixture inventory.
+
 ## Verify a change
 
 Run `npm run check`. It formats-checks maintained files, builds Docusaurus with

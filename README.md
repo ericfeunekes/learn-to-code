@@ -1,40 +1,70 @@
 # Learn to Code
 
-Learn to understand, question and improve software by directing AI. The course
-includes draft setup and Git/GitHub guidance, detailed Module 1 outcomes and six
-future outlines.
+Learn to work with code, agents, and repository tools. Start with
+[the two-track overview](docs/course/OVERVIEW.md) and shared
+[Module 0 — GitHub for everyone](docs/course/00-project-and-git.md):
+repositories, files, history, branches, PRs, issues, and releases. A new repo,
+app idea, clone, and command memorization are not prerequisites.
 
-## Set up your learning workspace
+## Choose how you want to work
 
-Fork or reuse [this repository](https://github.com/ericfeunekes/learn-to-code),
-clone your fork, then open that folder in Codex or Claude Code. See the
-[setup guide](docs/course/SETUP.md) for the full instructions and a copyable
-pre-clone AI prompt. You do not need an app idea, a Git lesson or a local
-website installation to finish setup.
+- **[Build and improve software](docs/course/CURRICULUM.md#build-and-improve-software):**
+  direct implementation in your own separate project repository. Use
+  [project setup](docs/course/SETUP.md#setup-with-ai) when needed. Building
+  Module 1 has detailed objectives; Module 2 is a detailed draft; 3–7 are
+  outlines.
+- **[Understand code and changes](docs/understand-code/index.md):** explain,
+  navigate, run authorized QA, investigate, trace changes, and assess software
+  without implementing its features. General models lead to small examples and
+  then exploring an existing repository or broader project over time. Start with
+  orientation even without a precise question, follow different interests and
+  changes, and build a richer picture with each visit. No implementation
+  repository is required.
 
-Once it is open, ask: “I'm set up. What's next?” Choose one:
+These are two ways of working with software, not product-development or project
+management certifications. Use short adaptive teaching and learn language or
+framework detail when useful. Existing experience can support a shorter route.
+Individual modules show any draft or outline status. The former companion URLs
+are reference pointers into the second track, not a third prerequisite-free
+path.
 
-- [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
-- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository.
-- Continue existing work and choose a useful next learning step with your AI.
+## Enterprise setup without a fork
 
-The AI should wait for your choice. Setup and Module 0 remain drafts for human
-review; they are not agreed learning-completion gates.
+Use approved AI tools, sources and storage. An optional course reference copy
+can be cloned with `upstream` for course updates and `origin` for saving to an
+approved internal host or local Git repository. Follow the
+[no-fork setup and update instructions](docs/course/SETUP.md#enterprise-use-without-forking).
+Your application or workplace repository remains separate and follows its own
+team process. Neither track requires a personal GitHub fork or installing this
+course website.
 
-Build applications in [`app/`](app/README.md). Bundled learning skills use
-outcomes and evidence flexibly. `AGENTS.md` and `CLAUDE.md` share guidance;
-`skills/` is canonical and regular discovery copies live in `.agents/skills/`
-and `.claude/skills/`. Their presence does not prove a client loaded them. After
-reopening this folder, ask a natural question and check the actual response.
+## Apply independently and return evidence
 
-Private progress and learning logs belong in the ignored root `.learning/`
-directory, or an established private record home. For example, keep current
-status in `.learning/progress.md` and useful resumption notes in
-`.learning/log.md`. Keep partial progress, evidence, AI assistance and
-uncertainty visible. These files are local and not backed up by a push; ignore
-rules do not untrack an already committed file. Never commit personal
-information or secrets. Successful AI output and passing tests alone do not
-prove learning.
+Use the selected module's learning outcomes and evidence criteria. An agent can
+help search, explain, write a local check, or implement in a builder's project.
+Your expectation, decisions, corrections and interpretation show your judgment.
+A polished agent explanation or passing checks alone do not establish learning.
+
+[Return relevant excerpts and results](docs/course/PRACTICE.md#bring-work-back-for-review)
+for teacher review. A chat/private repository link may be inaccessible; safe
+supplied turns, files/diffs, versions, environment and command/result records
+work too. Packet reasoning and actual runtime evidence are different. Keep
+access gaps and partial evidence visible.
+
+Before execution, understand the target, dependencies, configuration, data and
+possible effects. Local code can contact shared services; staging can send
+messages or incur costs. Follow authorized limits. Reading a README is not
+permission to execute it. Use disposable fictional fixtures for practice.
+
+The course repository holds teacher material. A separate optional reference
+checkout bundles teaching skills for Codex and Claude Code: `skills/` is
+canonical, regular mirrors are in `.agents/skills/` and `.claude/skills/`, and
+`AGENTS.md`/`CLAUDE.md` share guidance. Check actual instruction use; file
+presence alone does not prove it. Learning records stay in an established
+private home, or ignored untracked `.learning/` in a reference checkout. Ignore
+rules do not extend to other repositories and local records are not
+automatically backed up. Never commit learner transcripts, secrets or personal
+information.
 
 ## Run the course website locally
 

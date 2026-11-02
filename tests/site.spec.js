@@ -29,13 +29,23 @@ test('production pages load without broken assets or browser errors', async ({
       errors.push(`${response.status()} ${response.url()}`);
   });
   for (const [route, title] of [
-    ['', 'Learn to Build Software'],
+    ['', 'Learn to Work with Code'],
     ['setup/', 'Set up your workspace'],
-    ['modules/project-and-git/', 'Module 0 — Git and GitHub for your work'],
-    ['learning-path/', 'Learn to Build Software — Curriculum'],
-    ['practice/', 'Learn to Build Software — Practice and review'],
+    ['modules/project-and-git/', 'Module 0 — GitHub for everyone'],
+    ['learning-path/', 'Learning path — two ways to work with code'],
+    ['practice/', 'Practice and evidence review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
+    [
+      'modules/error-handling-and-recovery/',
+      'Module 2 — Error handling and recovery',
+    ],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
+    ['companions/', 'Earlier repository-reading material'],
+    [
+      'companions/read-active-repository/',
+      'Read an Active Repository — earlier material',
+    ],
+    ['companions/fieldnotes-evidence/', 'Fieldnotes repository evidence'],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
   ]) {
@@ -87,7 +97,7 @@ test('navigation and theme work on desktop and phone', async ({
   }
   await expect(page).toHaveURL(new RegExp(`${base}learning-path/$`));
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Learn to Build Software — Curriculum',
+    'Learning path — two ways to work with code',
   );
   if (isMobile) {
     const table = page.getByRole('region', { name: 'Scrollable table' });
@@ -97,9 +107,17 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
-  await page.getByRole('link', { name: /Next 0\. Git\/GitHub/ }).click();
+  await page
+    .getByRole('main')
+    .locator(`a[href="${base}modules/project-and-git/"]`)
+    .first()
+    .click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/project-and-git/$`));
-  await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
+  await page.goto('');
+  await page
+    .getByRole('main')
+    .getByRole('link', { name: 'Testing and QA', exact: true })
+    .click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
     await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
@@ -142,7 +160,9 @@ test('search supports keyboard input, results and an empty state', async ({
   const input = page.getByRole('searchbox', { name: 'Search words' });
   await input.focus();
   await page.keyboard.type('Markdown');
-  await expect(page.getByRole('status')).toHaveText('1 matching page.');
+  await expect(page.getByRole('status')).toHaveText(
+    /[1-9]\d* matching pages?\./,
+  );
   await expect(
     page
       .locator('.search-results')
@@ -185,6 +205,25 @@ test('served text exports come from the admitted Markdown', async ({
   const text = await index.text();
   const files = [
     'for-ai.md',
+    'companions/index.md',
+    'companions/read-active-repository.md',
+    'companions/fieldnotes-evidence.md',
+    'understand-code/index.md',
+    'understand-code/01-how-software-fits-together.md',
+    'understand-code/fixtures/module-1-shelf-summary.md',
+    'understand-code/02-find-your-way.md',
+    'understand-code/02-navigation-evidence.md',
+    'understand-code/03-follow-one-behavior.md',
+    'understand-code/03-behavior-evidence.md',
+    'understand-code/03-run-and-investigate.md',
+    'understand-code/03-workshop-practice.md',
+    'understand-code/03-teacher-notes.md',
+    'understand-code/04-follow-feature-or-change.md',
+    'understand-code/04-change-evidence.md',
+    'understand-code/05-evidence-of-correctness.md',
+    'understand-code/05-practice-evidence.md',
+    'understand-code/06-read-evolving-project.md',
+    'understand-code/module6-harbor-log-lab.md',
     ...[
       'OVERVIEW.md',
       'SETUP.md',
@@ -211,7 +250,10 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(14);
+  expect(entries).toHaveLength(33);
+  expect(entries.map((entry) => entry.raw).sort()).toEqual(
+    files.map((file) => `${base}raw/${file}`).sort(),
+  );
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -228,10 +270,10 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   await page.goto('start/');
   await expect(page).toHaveURL(new RegExp(`${base}$`));
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Learn to Build Software',
+    'Learn to Work with Code',
   );
   await expect(
-    page.getByRole('heading', { level: 2, name: /^Course status/ }),
+    page.getByRole('heading', { level: 2, name: /^Module availability/ }),
   ).toBeVisible();
   await page.goto('modules/concurrency/');
   await expect(
@@ -243,7 +285,7 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   expect(await legacy.text()).toContain('course/OVERVIEW.md');
 });
 
-test('setup exposes three separate choices and source-authored copyable prompts', async ({
+test('setup exposes independent project preparation, three choices, and copyable prompts', async ({
   page,
   context,
 }, info) => {
@@ -258,7 +300,7 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   ).toHaveAttribute('href', `${base}#choose-and-outline-your-project`);
   await expect(
     main.getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — GitHub for everyone',
       exact: true,
     }),
   ).toHaveAttribute('href', `${base}modules/project-and-git/`);
@@ -266,12 +308,25 @@ test('setup exposes three separate choices and source-authored copyable prompts'
     main.getByText('Continue existing work:', { exact: true }),
   ).toBeVisible();
   const blocks = main.locator('.theme-code-block');
-  await expect(blocks).toHaveCount(5);
   const setup = await readFile('docs/course/SETUP.md', 'utf8');
   const expectedBlocks = sourceCodeBlocks(setup);
-  expect(expectedBlocks.slice(2)).toEqual([
+  await expect(blocks).toHaveCount(expectedBlocks.length);
+  expect(expectedBlocks[0]).toContain('my own project repository');
+  expect(
+    expectedBlocks.some((block) =>
+      block.includes('git clone --origin upstream'),
+    ),
+  ).toBe(true);
+  expect(
+    expectedBlocks.some((block) =>
+      block.includes('git config remote.pushDefault origin'),
+    ),
+  ).toBe(true);
+  expect(expectedBlocks[0]).toContain('separate from the learn-to-code course');
+  expect(expectedBlocks[1]).toContain('YOUR_APPROVED_PROJECT_URL');
+  expect(expectedBlocks.slice(2, 5)).toEqual([
     'Help me choose a small useful app and define its first behavior.',
-    'Help me understand Git and GitHub using this repository.',
+    'Help me understand Git and GitHub using my project repository.',
     'I already have a project. Help me choose a useful next learning step.',
   ]);
   for (const [index, block] of (await blocks.all()).entries()) {
@@ -296,19 +351,138 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   });
   await main
     .getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — GitHub for everyone',
       exact: true,
     })
     .click();
   const gitPrompt = main.locator('.theme-code-block');
   await expect(gitPrompt).toHaveCount(1);
   await expect(gitPrompt.locator('code')).toContainText(
-    'Help me understand Git and GitHub using this repository.',
+    'Help me understand GitHub using',
   );
   await expect(gitPrompt.locator('code')).not.toContainText('define');
   await expect(
-    main.getByText('Draft — for review.', { exact: true }),
+    main.getByText('Draft module.', {
+      exact: true,
+    }),
   ).toBeVisible();
+});
+
+test('full course map leads to independent practice and accessible evidence return', async ({
+  page,
+  isMobile,
+}, info) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  // Both tracks have equal heading rank and expose their complete module paths.
+  await expect(
+    main.getByRole('heading', {
+      level: 3,
+      name: /^Build with Code/,
+    }),
+  ).toBeVisible();
+  await expect(
+    main.getByRole('heading', {
+      level: 3,
+      name: /^Understand \/ Investigate Software/,
+    }),
+  ).toBeVisible();
+  for (const route of [
+    'modules/testing-and-qa',
+    'modules/error-handling-and-recovery',
+    'modules/persistence-and-shared-state',
+    'modules/modeling-data-and-behavior',
+    'modules/typing-protocols-and-data-validation',
+    'modules/structuring-a-program',
+    'modules/concurrency',
+    'understand-code/how-software-fits-together',
+    'understand-code/find-your-way',
+    'understand-code/follow-one-behavior',
+    'understand-code/run-and-investigate',
+    'understand-code/evidence-of-correctness',
+    'understand-code/read-evolving-project',
+  ])
+    await expect(main.locator(`a[href="${base}${route}/"]`)).toBeVisible();
+  await expect(
+    main.getByText(/Module 1\s+has detailed learning objectives/),
+  ).toBeVisible();
+  // Later core topics are directly discoverable, without expanding a future-only category.
+  if (isMobile) {
+    await page.getByRole('button', { name: 'Toggle navigation bar' }).click();
+  }
+  const nav = isMobile
+    ? page.locator('.navbar-sidebar__item:not([inert])')
+    : page.getByRole('navigation', { name: 'Docs sidebar' });
+  await expect(
+    nav.getByRole('link', { name: /7\. Concurrency/ }),
+  ).toBeVisible();
+  await nav.getByRole('link', { name: /7\. Concurrency/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${base}modules/concurrency/$`));
+  await page.goto('practice/#bring-work-back-for-review');
+  await expect(
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
+  ).toBeVisible();
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+  await expect(main.getByText(/pasted excerpt/)).toBeVisible();
+  await expect(
+    main.getByText(/Distinguish reported results from inspected evidence/),
+  ).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath('evidence-return.png'),
+    fullPage: true,
+  });
+});
+
+test('Module 2 draft connects independent application to the shared evidence-return flow', async ({
+  page,
+  request,
+}) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  await expect(
+    main.getByText('Draft', {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await main
+    .getByRole('link', { name: 'Error handling and recovery', exact: true })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}modules/error-handling-and-recovery/$`),
+  );
+  await expect(main.getByText('Draft module.', { exact: true })).toBeVisible();
+  await expect(main.getByRole('heading', { level: 3 })).toHaveCount(6);
+  await expect(
+    main.getByText(
+      /Implementation happens in a separate learner-owned repository/,
+    ),
+  ).toBeVisible();
+  await expect(
+    main.getByText(/If the teacher cannot open the chat or repository/),
+  ).toBeVisible();
+  const raw = await request.get('raw/course/02-error-handling-and-recovery.md');
+  expect(await raw.text()).toContain('module-2-recovery-draft-2026-10-30');
+  await main
+    .getByRole('link', { name: 'Practice and transcript review', exact: true })
+    .click();
+  await expect(
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
+  ).toBeVisible();
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+  await page.goto('search/');
+  await page
+    .getByRole('searchbox', { name: 'Search words' })
+    .fill('unknown outcomes');
+  await page
+    .locator('.search-results')
+    .getByRole('link', {
+      name: 'Module 2 — Error handling and recovery',
+      exact: true,
+    })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}modules/error-handling-and-recovery/$`),
+  );
 });
 
 test('copy failure is announced and repeated copy can recover without browser errors', async ({
@@ -351,5 +525,184 @@ test('copy failure is announced and repeated copy can recover without browser er
     expected,
     expected,
   ]);
+  expect(errors).toEqual([]);
+});
+
+test('shared GitHub foundation leads to the complete second-track draft without app setup', async ({
+  page,
+}, info) => {
+  await page.goto('');
+  const main = page.getByRole('main');
+  await main
+    .getByRole('link', { name: 'Module 0 — GitHub for everyone', exact: true })
+    .click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Module 0 — GitHub for everyone',
+  );
+  await expect(main.getByText('You do not need an app idea')).toBeVisible();
+  await main
+    .getByRole('link', { name: 'How software fits together', exact: true })
+    .click();
+  const routes = [
+    'how-software-fits-together',
+    'find-your-way',
+    'follow-one-behavior',
+    'run-and-investigate',
+    'evidence-of-correctness',
+    'read-evolving-project',
+  ];
+  for (const [index, route] of routes.entries()) {
+    await expect(page).toHaveURL(
+      new RegExp(`${base}understand-code/${route}/$`),
+    );
+    await expect(
+      main.getByRole('link', { name: 'Shared GitHub 0', exact: true }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+    const a11y = await new AxeBuilder({ page }).analyze();
+    expect(
+      a11y.violations.filter((v) => ['critical', 'serious'].includes(v.impact)),
+    ).toEqual([]);
+    if (index < routes.length - 1)
+      await main
+        .getByRole('link', { name: 'Next module', exact: true })
+        .click();
+  }
+  await main
+    .getByRole('link', { name: 'Second-track guide', exact: true })
+    .click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Understand code and changes',
+  );
+  await expect(
+    main.getByRole('heading', { name: /^The six-module path/ }),
+  ).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath('two-track-guide.png'),
+    fullPage: true,
+  });
+  await page.goto('companions/read-active-repository/');
+  await main
+    .getByRole('link', {
+      name: 'Module 6 — Read an evolving project',
+      exact: true,
+    })
+    .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}understand-code/read-evolving-project/$`),
+  );
+});
+
+test('investigation practice exposes the exact disposable fixture and evidence-return guide', async ({
+  page,
+  request,
+}) => {
+  await page.goto('understand-code/run-and-investigate/');
+  const main = page.getByRole('main');
+  await main.getByRole('link', { name: 'practice', exact: true }).click();
+  await expect(page).toHaveURL(
+    new RegExp(`${base}understand-code/practice/workshop-directory/$`),
+  );
+  for (const file of ['module3_server.py', 'module3_fixture_test.py']) {
+    const response = await request.get(`exercises/understand-module3/${file}`);
+    expect(response.status()).toBe(200);
+    expect(await response.text()).toBe(
+      await readFile(`static/exercises/understand-module3/${file}`, 'utf8'),
+    );
+  }
+  await expect(main.getByText(/No course\s+checkout/)).toBeVisible();
+  await page.goto('practice/#bring-work-back-for-review');
+  await expect(
+    main.getByRole('heading', { name: /^Bring work back for review/ }),
+  ).toBeVisible();
+  await expect(main.getByText(/A chat link is a pointer/)).toBeVisible();
+});
+
+test('code word wrapping survives resize during route detachment', async ({
+  page,
+  isMobile,
+}) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('setup/');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-has-hydrated',
+    'true',
+  );
+  await expect(page.getByRole('main').locator('pre').first()).toBeVisible();
+  if (isMobile) {
+    const block = page.getByRole('main').locator('.theme-code-block').first();
+    const wrap = block.getByRole('button', { name: 'Toggle word wrap' });
+    await expect(wrap).toBeVisible();
+    await wrap.click();
+    await expect(block.locator('code')).toHaveCSS('white-space', 'pre-wrap');
+    await wrap.click();
+    await expect(block.locator('code')).not.toHaveCSS(
+      'white-space',
+      'pre-wrap',
+    );
+  }
+  // Model a queued viewport change at the detach boundary, before passive
+  // listener cleanup. This exercises the shared hook, not a module's prose.
+  await page.evaluate(() => {
+    window.codeDetachResizes = 0;
+    const removeChild = Node.prototype.removeChild;
+    Node.prototype.removeChild = function (child) {
+      const containsCode =
+        child instanceof Element &&
+        (child.matches('pre') || child.querySelector('pre'));
+      const removed = removeChild.call(this, child);
+      if (containsCode) {
+        window.codeDetachResizes += 1;
+        window.dispatchEvent(new Event('resize'));
+      }
+      return removed;
+    };
+  });
+  await page
+    .getByRole('main')
+    .getByRole('link', { name: 'the second-track guide', exact: true })
+    .click();
+  await expect(page).toHaveURL(new RegExp(`${base}understand-code/$`));
+  expect(await page.evaluate(() => window.codeDetachResizes)).toBeGreaterThan(
+    0,
+  );
+  expect(errors).toEqual([]);
+});
+
+test('code blocks survive theme reload and viewport changes', async ({
+  page,
+}) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.emulateMedia({ colorScheme: 'dark' });
+  for (const route of [
+    'understand-code/navigation-evidence/',
+    'understand-code/evidence-of-correctness/practice/',
+  ]) {
+    await page.goto(route);
+    await expect(page.locator('html')).toHaveAttribute(
+      'data-has-hydrated',
+      'true',
+    );
+    await page.reload();
+    await expect(page.locator('html')).toHaveAttribute(
+      'data-has-hydrated',
+      'true',
+    );
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    for (const width of [390, 430, 390])
+      await page.setViewportSize({ width, height: 664 });
+    await page.evaluate(
+      () =>
+        new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        ),
+    );
+  }
   expect(errors).toEqual([]);
 });

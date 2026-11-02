@@ -1,8 +1,9 @@
 # Third-party notices
 
-The code-block button overrides in `src/theme/CodeBlock/Buttons/` adapt the
-Docusaurus component structure. Its original notice and license follow.
-Dependencies and linked references retain their own terms.
+The code-block overrides in `src/theme/CodeBlock/Buttons/` and
+`src/theme/CodeBlock/Content/String/` adapt the Docusaurus component structure
+and word-wrap behavior. Their original notice and license follow. Dependencies
+and linked references retain their own terms.
 
 ```text
 MIT License

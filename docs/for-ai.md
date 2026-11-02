@@ -31,16 +31,25 @@ mentioned.
 
 ## Choose where to go next
 
-After [workspace setup](course/SETUP.md), offer the three
-[What's next? choices](course/SETUP.md#whats-next): define a project, learn
-Git/GitHub, or continue existing work. Wait for the learner's selection. A Git
-request uses the existing repository without requiring project definition or
-repeating setup. The [learning path](course/CURRICULUM.md) supplies the course
-map.
+Start with [shared GitHub Module 0](course/00-project-and-git.md), using
+existing understanding where appropriate. Then select the track from the
+learner's question:
+[building software](course/CURRICULUM.md#build-and-improve-software) or
+[understanding code and changes](understand-code/index.md). Do not require
+project creation for understanding/investigation. For an explicit building setup
+request, use [project setup](course/SETUP.md#setup-with-ai) and preserve its
+three next choices. Existing selected activities can proceed directly.
 
-The fork bundles `use-learning-outcomes` and `review-learning-evidence` with
-Codex and Claude discovery copies. Read the actual relevant instructions; file
-presence and `llms.txt` access alone do not establish client instruction use.
-Credit learner reasoning and decisions separately from AI-generated artifacts;
-retain partial progress and uncertainty. Passing tests alone does not establish
-learning.
+The course repository is teacher material. Build applications in an independent
+project; investigate existing repositories or safe fixtures within authorized
+effects. A separate local reference checkout bundles `use-learning-outcomes` and
+`review-learning-evidence`; supplied course Markdown also works. File presence
+and `llms.txt` access alone do not prove instruction use.
+
+Use [the evidence-return guide](course/PRACTICE.md#bring-work-back-for-review).
+Accept accessible links or bounded supplied excerpts, version/environment notes,
+actual commands/results, and learner reasoning. Mark fictional, reported and
+inspected evidence separately. Do not infer external chat access, hidden turns,
+live execution or real-repository transfer from an agent summary. Preserve
+partial evidence and gaps. Use the selected module’s learning outcomes and
+evidence criteria.

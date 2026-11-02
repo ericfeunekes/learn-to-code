@@ -1,39 +1,42 @@
 # Publication and content boundary
 
-The owner approved a public `ericfeunekes/learn-to-code` repository and GitHub
-Pages website on October 25, 2026 for general course material. Learner-private
-material remains excluded. No account or optional app permissions are changed by
-this project.
-
-## Published content manifest
-
-- `docs/for-ai.md`: the original AI reading guide. The maintained course
-  overview supplies the single homepage; the earlier separate introduction is
-  retired.
-- `docs/course/OVERVIEW.md`, `CURRICULUM.md`, `PRACTICE.md` and `AI-TEACHER.md`:
-  reviewed course outcomes, map and general practice/teaching context.
-- `docs/course/SETUP.md` and `00-project-and-git.md`: current setup and Module 0
-  drafts for human review.
-- `docs/course/01-*.md` through `07-*.md`: the current seven module pages.
-- `AGENTS.md`, `CLAUDE.md`, `app/` guidance and the two bundled teaching skills
-  in `skills/`, with regular byte-equal Codex/Claude discovery copies.
-- Website code, dependency lock, tests and contributor documentation.
-
-The website, search index, raw Markdown and `llms.txt` derive from these pages.
-Module 1 retains its detailed material. Modules 2–7 are short **Being built**
-outlines; their detailed outcomes and examples require development and human
-review. The owner approved release of this current version on October 25, 2026.
-The October 26 approval includes repository-wide MIT licensing and public
-distribution of the bundled teaching skills, superseding the earlier exclusion.
-The ledger, teaching log, sessions, learner identities, personal details,
-private source links, research archives, books and earlier course snapshots are
+The public repository and GitHub Pages site contain general course material,
+website source and reusable teaching skills. Private learner records, personal
+details, transcripts, source research and internal author-review notes stay
 outside the public repository and its history.
 
-## One maintained curriculum source
+## Published source inventory
 
-The content owner continues to maintain the current course in its established
-Learning workspace. `docs/course/` contains generated publication snapshots, not
-an independently editable course. Edit the maintained source, then run:
+- `docs/course/`: thirteen generated course pages, including the shared GitHub
+  foundation, setup, overview/map, practice/teaching guidance and building
+  modules.
+- `docs/understand-code/`: the understanding path, six modules and their
+  examples.
+- `docs/companions/`: preserved entry pointers and the fictional Fieldnotes
+  packet.
+- `docs/for-ai.md`: plain-text reading and evidence guidance.
+- `skills/`, regular `.agents/skills/` and `.claude/skills/` mirrors, and shared
+  `AGENTS.md`/`CLAUDE.md`: learning and evidence-review instructions.
+- `static/exercises/` and `static/labs/`: fictional downloadable practice code.
+- Website source, locked dependencies, checks, maintenance and license
+  documents.
+
+These sources generate 33 reading exports. Internal author reports, learner
+records and development scratch evidence are excluded from both publication
+sources and reading/search/raw exports. Publishing a development branch's
+history merely after deleting private files is insufficient: use a clean public
+change based on the current published branch, retaining private development
+branches separately.
+
+## Course sources and registered revisions
+
+`maintenance/course-source.json` identifies the thirteen original canonical
+snapshots by filename and hash. `maintenance/course-refinements.json` registers
+the seven shared revisions under `course-revisions/`. The importer verifies each
+original hash before applying a revision, prepares all outputs before writing,
+and records the revision in generated metadata.
+
+Refresh with the canonical general source folder available locally:
 
 ```sh
 npm run content:refresh -- /path/to/maintained/course
@@ -41,55 +44,49 @@ npm run format
 npm run check
 ```
 
-The importer admits exactly thirteen named general files. It removes the private
-research provenance section, rejects private references, adds website metadata,
-generalizes personal author-review references, adjusts one heading level and
-formats source-authored prompts as copyable text without changing their words.
-It does not revise learning objectives. The two repository skills are maintained
-in `skills/`; run `npm run skills:sync` after editing them.
-`npm run check:skills` requires regular byte-equal discovery copies and shared
-root guidance. The positive allowlist is not a substitute for reviewing new text
-and the diff: check examples, links, rights and personal information on every
-refresh.
+A changed original source stops refresh for reconciliation. When a revision is
+incorporated into the canonical source, update provenance and remove its
+override in the same reviewed change. Do not weaken guards or admit learner
+records, research, books or personal data through the importer. Directly
+authored understanding pages remain outside it. Preserve individual module
+labels and existing outcomes; do not invent detailed content for outlines.
+
+## Skills and separate workspaces
+
+Edit canonical skills under `skills/`, run `npm run skills:sync`, then
+`npm run check:skills`. Discovery copies are regular byte-equal files, and root
+instructions match. File presence alone does not establish client use.
+
+Build applications in the learner's own repository. Enterprise course references
+may use an approved update source as `upstream` and save destination as
+`origin`; their Git history, dependencies and private records stay separate from
+learner apps and investigated workplace repositories. Local Git ignore rules are
+not a backup and do not untrack previously committed files.
 
 ## Release and recovery
 
-The native [Pages workflow](../.github/workflows/pages.yml) validates pushes and
-pull requests. With `PAGES_PUBLISH_ENABLED=true`, pushes to `main` deploy
-through GitHub Actions; manual dispatch can redeploy `main`. Pages uses GitHub's
-configured origin/base path. Inspect the workflow's deploy result and actual
-site URL; then check the reader journey separately.
+The existing [Pages workflow](../.github/workflows/pages.yml) runs jobs only in
+`ericfeunekes/learn-to-code`. It validates pushes and pull requests in the
+upstream repository. On `main`, with `PAGES_PUBLISH_ENABLED=true`, eligible
+pushes or manual dispatch build and deploy through the existing GitHub Pages
+configuration. Imported reference repositories skip these jobs. No additional
+hosted runner, service or permission is required by the course.
 
-For a regression, revert the offending source commit and push the correction to
-`main`. To pause future deploys, set `PAGES_PUBLISH_ENABLED=false`; this does
-not unpublish the current site. Any unpublishing or audience change needs its
-own authorization. Repository-owned code, documentation and bundled skills use
-the root MIT license, as approved October 26. Preserve third-party rights,
-copyright and license notices; dependencies and linked references retain their
-own terms.
+Before a public push, inspect the exact source/history boundary and diff, run
+required checks, and obtain the user's release authorization. Prefer a draft PR
+when a PR is used. Confirm the workflow result and actual reader journey after
+publication. Source/publication actions require separate authorization; running
+local checks does not publish.
 
-## Current cloud change boundary
+For an authorized correction, revert the offending public source change and
+redeploy. `PAGES_PUBLISH_ENABLED=false` pauses future publication without
+unpublishing the current site. Any audience or access change requires its own
+authorization.
 
-The October 29 branch is a fresh implementation from public main, independent of
-the offline Mac branch. It does not claim to recover that branch. Source hashes
-and modification times for the thirteen admitted files are recorded in
-`course-source.json`; private source identities and transfer details belong in
-the separate review handoff. No learner ledger, log or research was imported.
-The branch is local only. Push, deployment and merge need separate
-authorization. Do not add hosted CI or self-hosted runners for this work;
-existing workflow configuration is unchanged.
+## Rights and privacy
 
-## Approved implementation refinements
-
-The October 29 review approved an optional short-session skill example,
-same-conversation application with an optional implementation handoff, and
-careful distinction between reported results and inspected evidence. These are
-implementation refinements, not edits to the maintained Drive source.
-
-`course-source.json` continues to identify the original canonical snapshot.
-`course-refinements.json` records the approved practice wording as an exact,
-guarded source replacement. The importer applies it before rendering and marks
-the generated page's `source_refinements` metadata. A changed source passage
-fails before any snapshots are written so it can be reviewed and reconciled; do
-not weaken the guard to force a refresh. The skill changes live in their
-canonical `skills/` files and reach discovery copies through `skills:sync`.
+Repository-owned code, documentation and teaching skills use the root MIT
+license. Preserve third-party terms and notices, including the Docusaurus
+component attribution and emitted dependency notices. Links do not grant rights
+to republish external source material. No private research source, book, learner
+identity, record or transcript belongs in the public history.

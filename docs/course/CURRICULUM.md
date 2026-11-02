@@ -1,43 +1,81 @@
 ---
-title: Learn to Build Software — Curriculum
-description: The seven core modules and directions for further learning.
+title: Learning path — two ways to work with code
+description:
+  'Shared GitHub 0, the building track, and the six-module understanding track.'
 slug: /learning-path
 source_file: CURRICULUM.md
+source_refinements:
+  - separate-projects-curriculum-2026-10-30
 ---
 
-# Learn to Build Software — Curriculum
+# Learning path — two ways to work with code
 
-Start with [workspace setup](SETUP.md), then choose from
-[What's next?](SETUP.md#whats-next). Project definition in
-[the overview](OVERVIEW.md#choose-and-outline-your-project) is separate from
-[Module 0 — Git and GitHub for your work](00-project-and-git.md). Setup does not
-require either learning activity. The setup flow and Module 0 are drafts for
-review. Module 1 contains the current detailed learning objectives. Modules 2–7
-are being built, with detailed outcomes and examples to be developed with the
-course author and reviewed before readiness.
+Start with [shared Module 0 — GitHub for everyone](00-project-and-git.md). It
+introduces repositories, files, history, branches, PRs, issues, and releases
+without requiring a new project. Then choose a track. Existing understanding can
+support a shorter route; revisit a concept when it helps. [Setup](SETUP.md)
+explains the different workspace needs.
+
+## Shared foundation
+
+Module 0 helps you identify a repository and version, understand common GitHub
+artifacts, and direct an agent without confusing a file view with a deployment.
+Use what you already know and revisit a concept when it helps.
 
 ## Core modules
 
-Learn enough to explain and apply an idea, then revisit it for depth. A module
-can take more than one session. Use the selected page to identify what the
-learner can demonstrate and what evidence would show it. The
-[AI guide](AI-TEACHER.md) explains the purpose of the outlines, learning records
-and evidence review. The learner chooses how to learn; no fixed teaching method
-or module sequence is required. A future outline is not a completed set of
-learning objectives.
+Each track names capabilities and observable evidence. The page is a reference
+for short teaching exchanges: start with general concepts, use a small concrete
+example, then apply it independently and return evidence. Add syntax or
+framework detail when needed. A generated answer alone leaves learner judgment
+unassessed. Read [the teaching guide](AI-TEACHER.md) for calibrated review.
 
-0. [Git and GitHub for your work](00-project-and-git.md) — **Draft for review**
-1. [Testing and QA](01-testing-and-qa.md)
-2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Being
-   built**
-3. [Persistence and shared state](03-persistence-and-shared-state.md) — **Being
-   built**
-4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — **Being
-   built**
+## Build and improve software
+
+Implement useful behavior with an agent in your own repository, separate from
+the course. The [overview's core table](OVERVIEW.md#the-core-modules) explains
+each topic's practical role. Preserve learner choice and pace; this is not a
+product-development sequence.
+
+1. [Testing and QA](01-testing-and-qa.md) — detailed outcomes.
+2. [Error handling and recovery](02-error-handling-and-recovery.md) — detailed
+   draft.
+3. [Persistence and shared state](03-persistence-and-shared-state.md) — outline.
+4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — outline.
 5. [Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md)
-   — **Being built**
-6. [Structuring a program](06-structuring-a-program.md) — **Being built**
-7. [Concurrency](07-concurrency.md) — **Being built**
+   — outline.
+6. [Structuring a program](06-structuring-a-program.md) — outline.
+7. [Concurrency](07-concurrency.md) — outline.
+
+## Understand code and changes
+
+[Open the second-track guide](../understand-code/index.md). This path supports
+product/project managers, designers and business subject-matter experts who want
+to understand software and what the development team is doing. Start with a
+useful general picture, then revisit it in increasing detail:
+
+1. [How software fits together](../understand-code/01-how-software-fits-together.md).
+2. [Find your way around a project](../understand-code/02-find-your-way.md),
+   including an early view of what it does and what is changing.
+3. [Follow one behavior](../understand-code/03-follow-one-behavior.md).
+4. [Run and investigate a behavior](../understand-code/03-run-and-investigate.md).
+5. [Understand a change and its evidence](../understand-code/05-evidence-of-correctness.md).
+6. [Understand an evolving project](../understand-code/06-read-evolving-project.md).
+
+Keep a repository or broader project as your continuing context. Begin with
+orientation even when you have no precise question, then explore different parts
+as interests and the team's work evolve. The modules offer capabilities to
+revisit, not a separate assignment for every visit. Focus an individual
+investigation when useful without confining the whole path to one question. The
+final synthesis deepens project understanding already introduced in Module 2. It
+includes active QA without requiring feature implementation, a product brief, or
+a new repository. Its six modules introduce useful capabilities, then deepen
+them through explanation, code exploration, investigation and evidence review.
+
+The former repository-reading companion is now
+[background for the evolving-project module](../companions/index.md), not a
+separate prerequisite-free track. Its read-only evidence packet remains useful;
+it does not grant permission to execute repository instructions.
 
 ## Future directions
 
