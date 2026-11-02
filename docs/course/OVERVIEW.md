@@ -84,7 +84,7 @@ or interested collaborator. Use an agent and tools to inspect code, investigate
 a behavior and assess a claim. You can start with the supplied examples or an
 authorized project; feature implementation is not required.
 
-#### Choose a question
+#### Get to know a project
 
 Ask your teaching AI:
 

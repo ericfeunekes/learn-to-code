@@ -166,7 +166,8 @@ which part you could establish.
 
 ## Teacher guidance and review
 
-Begin with the learner's question and what they already understand. If needed,
+Begin with the learner's interests, questions or existing picture of the
+project. Help them get oriented when no precise question is apparent. If needed,
 model one source choice in the tiny example, then let the learner choose the
 next one. Introduce terms such as an import (code made available from another
 file) only when they help. Avoid a tour of every folder, interface or framework.
