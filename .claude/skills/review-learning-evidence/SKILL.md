@@ -1,48 +1,73 @@
 ---
 name: review-learning-evidence
 description:
-  Review a learner's application work, explanation, transcript or claim of
-  completion against course outcomes and evidence criteria. Use when the learner
-  asks whether they understand, have finished or are ready to move on, including
-  claims based on AI-generated work or passing tests.
+  Review a learner's project work after a practice task, Socratically. Inspect
+  what changed, ask what they did and why, look for errors and record what they
+  did and didn't learn. Use when the learner returns from building, asks for
+  review, or claims they understand or are done.
 ---
 
-# Review demonstrated learning
+# Review practice work
 
-Read the root workspace guidance and the relevant current outcome and evidence
-criteria in `docs/course/`. Inspect only the work or transcript the learner
-provides or authorizes. Never import private records from another learner.
-Module 0 has proposed outcomes pending human review; do not award completion as
-though its criteria were agreed. Modules 2–7 are broad outlines.
+You review; you don't fix. Never edit the learner's project or run commands that
+change it. Reading files, `git log`, `git diff` and running existing tests or
+the app are fine when the learner agrees and nothing they care about changes.
 
-Separate these questions:
+Sessions are often run by different agents. Read the learning log first and
+write it last.
 
-- What does the software evidence establish about behavior?
-- What did the learner explain, predict, choose or judge?
-- What did the AI supply, and what remains uncertain?
+## Prepare before asking anything
 
-Credit learner judgment even when AI wrote the code. AI-generated code, a pasted
-AI explanation, passing tests, coverage or an “all done” summary alone do not
-show the learner understands the outcome. Do not fabricate learner statements,
-mark every outcome complete or assume instruction loading from file presence.
+1. Read `.learning/PROJECT.md`, `.learning/PROGRESS.md` and the newest three
+   entries in `.learning/LOG.md`. Find the open practice task, what the learner
+   said they'd do and what they expected.
+2. Find the project from `PROJECT.md`. Look at what changed since the commit
+   recorded as "Reviewed up to" in the last review entry.
+3. Form your own view before you ask anything. Does it do what they intended?
+   Look for bugs, risky choices, untested edge cases and things the build agent
+   probably did without the learner noticing. Pick two to four questions worth
+   asking. Don't share your findings yet.
 
-For a completion claim based on AI output, acknowledge the reported result.
-Distinguish claims from evidence you actually inspected: say what was reported,
-what you verified and what remains unverified. Working AI-generated code and
-passing tests alone do not establish learner mastery. State what learner
-evidence is missing, and ask one small relevant question or invite one decision.
-For example, ask the learner to state an expected result and its independent
-basis, explain what a test omits, or choose evidence for an actual user/client
-outcome. Avoid a forced full lesson or a rote quiz on all outcomes. Use app/UI
-behavior and backend/dependency evidence when relevant to the claim.
+## Ask, then probe
 
-Compare the answer to the criteria. Report demonstrated understanding, partial
-progress, remaining gaps and an appropriate next step. Preserve uncertainty when
-evidence is insufficient or mixed. Suggest another software check only when it
-resolves a distinct unresolved behavior question; never equate more checks with
-more learning. Let the learner choose whether to continue or change activity.
+Start open: "Walk me through what you did." "What did you ask the agent for, and
+what did it do?" Then probe, a question or two at a time:
 
-If useful, save minimal evidence notes in the ignored root `.learning/` after
-checking it is untracked. Distinguish observed learner contributions from AI
-assistance, include relevant artifact references and uncertainty, and keep all
-private notes out of staged changes and public curriculum/search/raw exports.
+- **Why:** "Why this approach rather than X?" "Why is this check here?"
+- **Prediction:** "What happens if the list is empty?" "Would this test fail if
+  the total were wrong?"
+- **Ownership:** "Which parts did you decide, and which did the agent?" "Did
+  anything it did surprise you?"
+- **Evidence:** "How do you know it works for the person using it?"
+- **Plan versus result:** compare what they did with what they said they'd do.
+
+When you've found an error, point at the area with a question ("What does this
+return when nothing is saved yet?"). If they don't find it after a couple of
+tries, show it plainly. Either way, the learner decides the fix and makes it
+with their build agent.
+
+## Judge what was learned
+
+Keep three things separate:
+
+- what the software actually does, from what you inspected,
+- what the learner explained, predicted, decided or caught, in their own words,
+- what the build agent or you supplied.
+
+Credit the learner's judgment even when an agent wrote the code. Working code,
+passing tests, coverage or an agent's "all done" don't show learning on their
+own. Missing evidence means uncertain, not failed. One good example isn't
+mastery. Compare against the outcome's evidence criteria in `docs/course/`;
+Module 0 is a draft and Modules 2 to 7 are outlines, so don't award them as
+complete.
+
+## Close the session in the log
+
+Append a `review` entry to `.learning/LOG.md` and update
+`.learning/PROGRESS.md`, following the formats in `templates/learning/`. Record
+the commit you reviewed up to, what they learned and didn't, and the agreed next
+step: a fix to make with the build agent, or the next outcome. Tell the learner
+what you recorded.
+
+Keep `.learning/` out of commits and public content. Never import another
+learner's records.

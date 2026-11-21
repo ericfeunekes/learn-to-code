@@ -21,8 +21,10 @@ Once it is open, ask: “I'm set up. What's next?” Choose one:
 The AI should wait for your choice. Setup and Module 0 remain drafts for human
 review; they are not agreed learning-completion gates.
 
-Build applications in [`app/`](app/README.md). Bundled learning skills use
-outcomes and evidence flexibly. `AGENTS.md` and `CLAUDE.md` share guidance;
+Agents in this workspace teach and review; they don't build your project. Build
+in [`app/`](app/README.md) or your own project folder, in a separate session
+with your build agent, then come back for a review. Bundled learning skills
+handle teaching and review. `AGENTS.md` and `CLAUDE.md` share guidance;
 `skills/` is canonical and regular discovery copies live in `.agents/skills/`
 and `.claude/skills/`. Their presence does not prove a client loaded them. After
 reopening this folder, ask a natural question and check the actual response.

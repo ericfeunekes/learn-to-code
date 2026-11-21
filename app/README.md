@@ -1,9 +1,13 @@
-# Your application workspace
+# Your project workspace
 
-Build learner projects here. No application or project definition is required to
-finish setup or learn Git with this repository. Keep course website changes in
-the repository root separate from application work in this directory.
+Build your project here, or in its own folder or repository if you prefer.
+Either way, record where it lives in `.learning/PROJECT.md` so review sessions
+can find it.
 
-Store private progress and learning evidence in the ignored `.learning/`
-directory at the repository root. Never put secrets or personal learner records
-in committed files. Git ignore rules do not remove files already tracked.
+Open this `app/` folder in your build agent as its own session. Agents in the
+main workspace teach and review; agents here help you build. Bring what you
+built back to the main workspace for a review.
+
+Your fork is public. Never put secrets or personal learner records in committed
+files. Learning records stay in the ignored `.learning/` folder at the
+repository root. Ignore rules don't remove files Git already tracks.

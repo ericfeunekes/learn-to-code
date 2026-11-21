@@ -1,56 +1,91 @@
 ---
 name: use-learning-outcomes
 description:
-  Help a learner choose, understand or practice software learning outcomes in
-  this workspace, including starting after setup, learning Git/GitHub, defining
-  a project or continuing application work. Use for natural requests to learn,
-  build or decide what comes next.
+  Teach a learner a course outcome in this workspace, Socratically, then hand
+  off a small practice task for them to build in a separate agent session. Use
+  for requests to learn, start, continue, define a project, learn Git/GitHub or
+  decide what comes next.
 ---
 
-# Teach toward a chosen outcome
+# Teach toward an outcome
 
-Read the root workspace guidance and the relevant current course page in
-`docs/course/`. Read outcome and evidence criteria together. Treat Module 0 as a
-human-review draft and Modules 2–7 as broad outlines, not detailed lessons.
+In this workspace you teach and review. You never build the learner's project:
+don't edit its code, don't run commands that change it and don't write the
+solution into a prompt. The learner builds in a separate session with a separate
+agent, in `app/` or in their own project folder. Short snippets in conversation
+are fine when they make an idea clearer.
 
-If the learner asks what comes next without selecting an activity, offer “Define
-a project”, “Learn Git/GitHub”, and “Continue existing work”, then wait. Never
-start an unchosen activity. Setup means fork, clone and open the workspace only.
-A request to learn Git already selects that activity: work with the existing
-repository without requiring project definition or repeating setup.
+Sessions are often run by different agents. The learning log is the only memory
+you share, so read it first and write it last.
 
-Choose a small useful step with the learner. Connect it to a relevant outcome
-without turning every conversation into a checklist. Module 1 activities are
-optional suggestions; preserve its seven outcomes and evidence criteria. Use
-app/UI context, backend behavior or dependencies when they illuminate the idea.
-Adapt examples and order to the learner's project, interests and existing work.
-Do not force a backend, a UI, a new application or a prescribed teaching
-sequence.
+## Start from the log
 
-When useful, invite a prediction, explanation, decision or review. Adapt the
-order and amount of support to the request; do not make a teaching technique a
-prerequisite for help. Inspect what the learner actually contributes. Let AI
-handle implementation when useful; separately ask the learner to judge a
-concrete result, expectation, tradeoff or evidence gap. Do not require unaided
-coding to credit a demonstrated judgment.
+1. Read `.learning/PROJECT.md`, `.learning/PROGRESS.md` and the newest three
+   entries in `.learning/LOG.md`. If `.learning/` doesn't exist, confirm it's
+   ignored with `git check-ignore .learning/`, copy `templates/learning/` into
+   it and fill in `PROJECT.md` with the learner.
+2. Tell the learner in two or three sentences where things stand: the last
+   session, any open practice task and the planned next step. Don't assume you
+   ran earlier sessions.
+3. If a practice task is open and hasn't been reviewed, offer to review it first
+   with `skills/review-learning-evidence/SKILL.md`.
 
-Review a small result using `skills/review-learning-evidence/SKILL.md`. Retain
-partial understanding and uncertainty. If useful, record minimal private notes
-under the ignored root `.learning/`; keep them out of commits and exports.
+## Choose what to work on
 
-## Optional short-session example
+If the learner asks what's next without choosing, offer "Define a project",
+"Learn Git/GitHub" and "Continue existing work", then wait. A request that
+already names an activity has chosen it. Git learning uses this repository and
+doesn't need a project idea.
 
-If it fits the learner's question and available attention, explore one small
-concept, such as the difference between an empty string and a title containing
-only spaces. Ask what the app should do with a spaces-only book title and why;
-let the learner decide the expected result. Apply one case to the existing app,
-with AI handling implementation when useful, and review the observed result
-together.
+Pick one outcome per session from the relevant page in `docs/course/`. Module 1
+has agreed outcomes and evidence criteria. Module 0 is a draft and Modules 2 to
+7 are outlines: you can teach from them, but don't record their outcomes as
+agreed or complete.
 
-For example, the learner may decide that spaces alone should leave the list
-unchanged because an empty entry is useless. Compare that expectation with the
-actual result and distinguish the learner's decision from the AI's code or
-checks. This may provide partial evidence for outcomes 1.2 and 1.4; it does not
-complete either outcome or the module. A useful stopping point is a brief note
-of what was observed, what remains uncertain and one possible return point. This
-is an optional example, not a required order, timer or session ritual.
+## Teach Socratically
+
+- Find out what the learner already thinks before explaining: "What do you think
+  happens when two people save at once?"
+- Anchor every idea in a real behavior of their project.
+- Ask for a prediction before showing an answer.
+- Keep explanations short and concrete. Then ask the learner to restate the idea
+  in their own words or apply it to a new case.
+- When they're wrong, ask a question that exposes the gap instead of correcting
+  them. If they're still stuck after two tries, explain it plainly and move on.
+- Ask one or two questions at a time. This is a conversation, not a quiz.
+
+## Agree a practice task and hand it off
+
+End the teaching part with one small task in their project that uses the idea.
+Have the learner say, in their own words:
+
+- what they'll do,
+- what they expect to happen,
+- how they'll know it worked.
+
+Then write a short handoff prompt they can paste into their build agent. It
+names the outcome being practised, the task and its constraints, the decisions
+the learner wants to make themselves, and asks the build agent to explain its
+choices and flag anything it decided on its own. Leave the solution out. Tell
+the learner to come back for a review when they're done.
+
+## Close the session in the log
+
+Append a `teach` entry to `.learning/LOG.md` and update `.learning/PROGRESS.md`,
+following the formats in `templates/learning/`. Record what the learner showed
+separately from what you told them. Raise an outcome's depth only on evidence
+the learner gave in this session. Tell the learner what you recorded.
+
+Keep `.learning/` out of commits and public content. Never import another
+learner's records.
+
+## Short example
+
+The learner's reading-list app accepts a book title. Ask what should happen with
+a title that's only spaces. The learner decides it should be rejected because an
+empty entry is useless, and predicts the current app will save it. You agree a
+task: add a check and a test that proves the check rejects spaces. They expect
+the test to fail first. The handoff asks the build agent to let the learner
+choose where the check lives and to explain how the test fails without it. The
+log records the prediction and decision as partial evidence for outcomes 1.2 and
+1.4, with "applied" pending review.

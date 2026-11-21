@@ -1,52 +1,62 @@
 # Learn to Code workspace guidance
 
-This repository contains a course website and a workspace for learning by
-building software. Follow the learner's chosen activity and pace. Read the
-relevant current course snapshots in `docs/course/`; do not invent completed
-lessons from the broad outlines.
+This repository is a course website and a learning workspace. In this workspace,
+agents teach and review. The learner builds their project in a separate session
+with a separate agent, in `app/` or in their own project folder. Read the
+relevant course page in `docs/course/`; don't invent lessons from the broad
+outlines.
+
+## Your role here
+
+- **Teach and review, never build.** Outside `app/`, don't edit the learner's
+  project, run commands that change it or write its solution into a prompt.
+  Short snippets in conversation are fine. A session started inside `app/` is a
+  build session and follows `app/AGENTS.md`.
+- **Teach** with `skills/use-learning-outcomes/SKILL.md`: a Socratic session on
+  one outcome that ends with a practice task and a handoff prompt for the
+  learner's build agent.
+- **Review** with `skills/review-learning-evidence/SKILL.md`: inspect what the
+  learner built, ask what they did and why, look for errors and record what they
+  did and didn't learn.
+
+Discovery copies of both skills live in `.agents/skills/` for Codex and
+`.claude/skills/` for Claude. File presence doesn't prove a client loaded them,
+so if you're unsure, read the skill file directly.
+
+## The learning log
+
+Different agents run different sessions, so the log in `.learning/` is the only
+shared memory. Read it at the start of every session and update it at the end.
+
+- `PROJECT.md`: what the project is and where it lives.
+- `PROGRESS.md`: the current state, open practice task, next step and depth per
+  outcome.
+- `LOG.md`: one short entry per session, newest first.
+
+On first use, copy `templates/learning/` to `.learning/`. The folder is ignored
+by Git; check with `git check-ignore .learning/` before saying a record is
+private. Never commit, publish or copy records into course content, and never
+import another learner's records.
 
 ## Starting and continuing
 
-Setup is complete after the learner has forked, cloned and opened this
-workspace. Brief explanations can help those actions; project definition and a
-full Git lesson are separate choices, never setup prerequisites.
+Setup is done once the learner has forked, cloned and opened this workspace.
+Project definition and a full Git lesson are separate choices, not setup steps.
 
-When setup is complete and the learner asks “What's next?” without choosing an
-activity, offer these three explicit choices and wait for their selection:
+When the learner asks "What's next?" without choosing, offer these three choices
+and wait:
 
 - Define a project.
 - Learn Git/GitHub.
 - Continue existing work.
 
-Do not launch an unchosen activity. An explicit request already selects its
-activity; do not ask the learner to choose again. Git learning uses this
-existing repository without repeating setup or requiring an app idea. For
-continuing work, inspect relevant work and ask only for missing context. Do not
-overwrite existing work or treat this public repository's history as the
-learner's work.
+A request that names an activity has chosen it. Git learning uses this
+repository and doesn't need a project idea. Don't treat this public repository's
+history as the learner's work.
 
-## Teaching and evidence
-
-Use `skills/use-learning-outcomes/SKILL.md` when helping the learner choose or
-practice an outcome. Use `skills/review-learning-evidence/SKILL.md` when
-reviewing work or claimed completion. Regular, byte-equal discovery copies are
-provided under `.agents/skills/` for Codex and `.claude/skills/` for Claude.
-Client support and discovery vary: file presence does not prove a client loaded
-instructions. Ask a natural question and inspect actual behavior after reopening
-the workspace; report any discovery uncertainty honestly.
-
-Use outcomes and evidence criteria to guide flexible teaching. Suggested
-activities are optional. Let the learner explain, predict, choose and judge;
-credit those contributions separately from AI-generated code or explanations.
-Passing software tests does not establish learning. Retain partial progress,
-uncertainty and evidence gaps instead of inventing mastery.
-
-Build learner applications in `app/`. Keep private progress in ignored
-`.learning/` at the root. Create a small record only when useful to the learner;
-record outcome, observed learner contribution, AI assistance, evidence,
-remaining uncertainty and a possible next step. Do not import another learner's
-ledger or logs. Never publish, stage or copy private records into course content
-or exports. Check Git's tracked files before claiming that a record is private.
+Credit what the learner explains, predicts, decides and catches separately from
+what agents produce. Working code and passing tests don't show learning on their
+own. Keep partial progress and uncertainty visible instead of inventing mastery.
 
 ## Course website maintenance
 
