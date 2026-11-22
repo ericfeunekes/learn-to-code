@@ -62,7 +62,10 @@ above. Pages come in this order:
   Module 3 early when something has broken. Keep Module 8 short for a local,
   single-user app.
 - Understand track: Module 0 (0.3–0.7), then U1 to U7. Find each module's pages
-  from the table in `docs/understand-code/index.md`.
+  from the table in `docs/understand-code/index.md`. Run the role strand
+  (`docs/understand-code/08-use-it-in-your-role.md`, UR.1–UR.4) alongside the
+  modules: offer UR.1 and UR.4 once U2 is explained, and pick the practice task
+  for the learner's role (product manager, project manager or business user).
 
 Move on when a page is done for a first pass (see
 `templates/learning/PROGRESS.md`). Where a module's lane section names focus and
