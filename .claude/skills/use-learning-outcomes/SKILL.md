@@ -47,9 +47,10 @@ pick and record why. If the project will touch real people's data, suggest
 synthetic data, because the course fork is public.
 
 Otherwise pick one outcome per session from the relevant page in `docs/course/`.
-Module 1 has agreed outcomes and evidence criteria. Module 0 is a draft and
-Modules 2 to 7 are outlines: you can teach from them, but don't record their
-outcomes as agreed or complete.
+Module 1 has agreed outcomes and evidence criteria. Module 0 and Modules 2 to 8
+are drafts: you can teach from them, but don't record their outcomes as agreed
+or complete. Each draft module lists agent mistakes to watch for, a check
+without AI per outcome and practice tasks; use them.
 
 The course goes broad first, then deep. Teach each outcome to a working grasp:
 the learner can say what it is, why it matters and how to judge an agent's use

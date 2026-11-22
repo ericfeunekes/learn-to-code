@@ -73,8 +73,8 @@ architecture, and `maintenance/publication.md` before importing content.
 `docs/course/` contains generated snapshots: refresh through
 `npm run content:refresh -- SOURCE_DIR`. Do not edit generated curriculum
 directly. The course author owns curriculum decisions. Module 0 remains a
-human-review draft; Modules 2–7 remain broad outlines. Preserve all seven Module
-1 outcomes and their evidence criteria.
+human-review draft, as do Modules 2–8. Preserve all seven Module 1 outcomes and
+their evidence criteria.
 
 Run `npm run check` after relevant changes. Browser tests use the production
 build and cover desktop and phone. Keep scratch work in ignored `.scratch/`. Do
