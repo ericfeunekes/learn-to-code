@@ -30,7 +30,7 @@ async function main() {
     if (!agents.equals(await fs.readFile(path.join(dir, 'CLAUDE.md'))))
       throw new Error(`${dir}: AGENTS.md and CLAUDE.md must share guidance`);
   }
-  for (const file of ['PROJECT.md', 'PROGRESS.md', 'LOG.md'])
+  for (const file of ['PROJECT.md', 'PROGRESS.md', 'LOG.md', 'HANDOFF.md'])
     await fs.access(path.join('templates', 'learning', file));
   console.log(
     `Teaching skill discovery copies ${check ? 'verified' : 'updated'}.`,

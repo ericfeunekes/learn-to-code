@@ -29,14 +29,12 @@ handle teaching and review. `AGENTS.md` and `CLAUDE.md` share guidance;
 and `.claude/skills/`. Their presence does not prove a client loaded them. After
 reopening this folder, ask a natural question and check the actual response.
 
-Private progress and learning logs belong in the ignored root `.learning/`
-directory, or an established private record home. For example, keep current
-status in `.learning/progress.md` and useful resumption notes in
-`.learning/log.md`. Keep partial progress, evidence, AI assistance and
-uncertainty visible. These files are local and not backed up by a push; ignore
-rules do not untrack an already committed file. Never commit personal
-information or secrets. Successful AI output and passing tests alone do not
-prove learning.
+Your learning log lives in the ignored root `.learning/` folder: `PROJECT.md`,
+`PROGRESS.md` and `LOG.md`, started from `templates/learning/`. Teach and review
+agents read it first and update it last, so a different agent can pick up each
+session. It isn't pushed with your fork. To keep it across machines, make
+`.learning/` its own private Git repository. Never commit personal information
+or secrets. Successful AI output and passing tests alone don't prove learning.
 
 ## Run the course website locally
 
