@@ -13,14 +13,14 @@ keep each step small, check what actually happened, and use Git to keep or undo
 the result. Git is part of this module because it's your undo button and your
 record of what changed.
 
-It's a learning option after [workspace setup](SETUP.md), not part of setup. You
-can learn it with this repository before choosing an app, or on your own
-project.
+It's a learning option after [setup](SETUP.md), or straight away on the
+Understand track; see [where to start](CURRICULUM.md#where-to-start). You can
+learn it with this repository before choosing an app, or on your own project.
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** you show it through briefs you write, checks you run, and
   what you notice in an agent's summary and the list of changed files.
@@ -30,7 +30,9 @@ changes is the evidence.
 On the [Understand code and changes](../understand-code/index.md) track, you
 won't brief build agents. Focus on 0.3 to 0.7: Git as a record, checking what
 changed, agent mistakes, keeping data out and reading a team's work on GitHub.
-0.1 and 0.2 are useful when you ask an agent to investigate for you.
+Do them on a repository your team works on; you don't need a fork. Each of those
+outcomes has an Understand-track evidence line. 0.1 and 0.2 are useful when you
+ask an agent to investigate for you.
 
 Each outcome ends with a **check without AI**: something you can do on your own,
 with the agent closed, to show the idea is yours.
@@ -43,7 +45,7 @@ Then help me practise directing an agent: writing a brief, keeping
 each step small, reading what changed, and keeping or undoing it.
 ```
 
-## Practical outcomes
+## Learning objectives
 
 These are capabilities to develop through useful work, not an entrance exam. You
 can return to a concept when it becomes relevant.
@@ -91,6 +93,8 @@ can return to a concept when it becomes relevant.
 - **Evidence:** you returned to a known good state after a bad change, or chose
   correctly what to commit and what to share. Write code: you also read
   `git log` and `git diff` yourself.
+- **Understand track:** in your team's repository, you found the commit that
+  changed a behavior you care about and said what it changed.
 - **Check without AI:** from your project's history, say what the last three
   commits did and which one you'd go back to if the newest broke something.
 
@@ -105,21 +109,25 @@ can return to a concept when it becomes relevant.
 - **Evidence:** you caught a difference between the summary and the change, or
   confirmed they match with a reason. Write code: a correct prediction you made
   before running the code.
+- **Understand track:** for one change in your team's repository, you compared
+  the pull request's description with its list of changed files and said whether
+  they match.
 - **Check without AI:** given a summary and a list of changed files, say what
   you'd check first and why. Write code: predict the output of a short function
   you didn't write.
 
 ### 0.5 Recognise common agent mistakes
 
-- Know the usual ways an agent goes wrong: claiming results it didn't observe,
-  such as "all tests pass"; weakening or rewriting a test so it passes; copying
-  expected values from the program's own output; changing things you didn't ask
-  for; deleting or rewriting working code; inventing a package, option or
-  function; and explaining confidently but wrongly.
+- Know the usual ways an agent goes wrong, listed under
+  [Agent mistakes to watch for](#agent-mistakes-to-watch-for): claiming results
+  it didn't observe, weakening a test, changing things you didn't ask for and
+  explaining confidently but wrongly.
 - Ask for the evidence behind a claim, such as the actual test output or a run
   of the app.
 - **Evidence:** you caught one of these mistakes in your own work or in a
   practice example with a planted mistake.
+- **Understand track:** you questioned one claim in a team's pull request or an
+  agent's summary of it, and said what evidence would settle it.
 - **Check without AI:** review a short practice transcript or change and find
   the planted mistake.
 
@@ -135,6 +143,8 @@ can return to a concept when it becomes relevant.
   replace it, then clean up.
 - **Evidence:** you made a sound choice about what to share, or caught a secret
   or personal detail before it was committed.
+- **Understand track:** you named what in your team's repository or its records
+  must not go into an AI tool, and kept it out of your own prompts.
 - **Check without AI:** list every place in your project where a secret or
   personal data could leak.
 
@@ -151,11 +161,55 @@ can return to a concept when it becomes relevant.
   discussion happened.
 - **Evidence:** you explained one pull request in your own project, or a team's,
   from its issue to its merge, including who approved it and what checks ran.
+  Building alone with no pull requests yet? Use a public project you rely on.
+- **Understand track:** you did this for a pull request in your team's
+  repository.
 - **Check without AI:** for one merged pull request, say what changed, why, who
   approved it, what evidence it shipped with and whether it has reached users
   yet.
 
-## Notes for the learning AI
+## Agent mistakes to watch for
+
+This is the general list. Each later module adds the mistakes specific to its
+topic.
+
+- **Claiming results it didn't observe.** "All tests pass" or "it works" without
+  output you can see.
+- **Weakening a test.** Editing, loosening or deleting a test so it passes.
+- **Copying expected values from the output.** Writing a test's expected result
+  by running the program, so a bug becomes the answer key.
+- **Changing what you didn't ask for.** Touching other files, renaming things or
+  "tidying up" outside the task.
+- **Deleting or rewriting working code** to make a new change fit.
+- **Inventing things.** A package, option or function that doesn't exist.
+- **Discarding work to make Git succeed.** Throwing away changes or overwriting
+  history so a command goes through.
+- **Explaining confidently but wrongly.** A fluent explanation is not evidence.
+
+## Practice tasks
+
+Pick one that fits. Each runs through the
+[practice loop](PRACTICE.md#the-practice-loop). Without a project yet, use this
+course repository for Git practice, or `app/` with synthetic data.
+
+- **Brief rewrite.** Teach: what would an agent have to guess in "make the list
+  better"? Build: give your rewritten brief to a fresh agent and ask it only to
+  list its questions. Review: which gaps did it still find? (0.1)
+- **Undo drill.** On your first version, or in `app/`: Build: hand off one small
+  change, then ask the agent to take you back to the last good commit. Review:
+  show the history and say what each of the last three commits did. (0.2, 0.3)
+- **Planted mistake.** Review an agent's summary that says "Added the overdue
+  filter. All tests pass." The list of changed files also includes an edited
+  test file, and no test output is shown. Say what you'd check first and what
+  you'd ask for. (0.4, 0.5)
+- **Secrets sweep.** List every place in your project where a secret or personal
+  data could leak, then ask an agent to search the project and its history, and
+  compare the two lists. (0.6)
+- **Read one pull request.** Explain one merged pull request from its issue to
+  its merge with the agent closed, then check your account against the page.
+  (0.7)
+
+## Notes for the teaching AI
 
 Use the existing workspace as context. Don't restart fork/clone setup or require
 project definition just because the learner asked about Git/GitHub. If setup is

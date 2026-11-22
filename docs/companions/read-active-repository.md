@@ -1,22 +1,14 @@
 ---
-title: Read an Active Repository — earlier material
+title: Read an Active Repository
 description:
-  Earlier module entry folded into the understanding track's evolving-project
-  module.
+  This earlier module is now Module 6 of the Understand code and changes track.
 slug: /companions/read-active-repository
 ---
 
-# Read an Active Repository — earlier material
+# Read an Active Repository
 
-This earlier companion has been folded into
+This earlier module is now
 [Module 6 — Read an evolving project](../understand-code/06-read-evolving-project.md)
-of [Understand code and changes](../understand-code/index.md). Begin with shared
-[Module 0](../course/00-project-and-git.md), then use the relevant skills from
-the understanding track. You do not need to create an implementation repository.
-
-The [fictional Fieldnotes example](fieldnotes-evidence.md) remains a source
-packet for practice. Its read-only evidence does not authorize running commands,
-contacting services, changing files, or publishing messages. Active
-investigation uses Module 4's environment and effects checks. Current outcomes
-and assessment criteria live in Module 6; the earlier version is preserved in
-Git history rather than maintained as another course path.
+in the [Understand code and changes track](../understand-code/index.md). Use
+Module 6's outcomes and evidence criteria. The optional
+[Fieldnotes packet](fieldnotes-evidence.md) is extra practice for it.

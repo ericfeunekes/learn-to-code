@@ -16,9 +16,8 @@ interfaces. Start with the diff in S5 and use the other excerpts as needed.
 Everything here is invented training material: names, revision labels, files,
 diff, records and observations. These are supplied excerpts, not an executable
 repository or actual QA results. No server, accounts, installation or live
-requests are needed. JavaScript and diff excerpts use plain text for readable
-contrast. Section IDs stand in for evidence links; fictional paths are evidence
-labels, not files to locate on your computer.
+requests are needed. Section IDs stand in for evidence links; fictional paths
+are evidence labels, not files to locate on your computer.
 
 ## S1 Scope, revisions and question
 
@@ -111,9 +110,10 @@ excerpts don't show clearing previously displayed rows on error.
 
 ## S4 MCP caller and declared inputs
 
-MCP exposes operations as tools with declared inputs. In this repo,
-`mcp/tools.js` registers tool `find_notes` with an input schema whose optional
-integer field `limit` has minimum 1 and maximum 100. The registered handler is:
+MCP (Model Context Protocol) exposes operations as tools with declared inputs
+that AI tools can call. In this repo, `mcp/tools.js` registers tool `find_notes`
+with an input schema whose optional integer field `limit` has minimum 1 and
+maximum 100. The registered handler is:
 
 ```text
 import { findNotes } from '../server/search.js';

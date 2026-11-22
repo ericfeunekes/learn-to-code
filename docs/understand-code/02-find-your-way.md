@@ -1,5 +1,5 @@
 ---
-title: Find your way around a project
+title: Module 2 — Find your way around a project
 description:
   Find useful docs, code and work records, explain a project's purpose and
   current work, and check an agent's claim.
@@ -8,193 +8,180 @@ slug: /understand-code/find-your-way
 
 # Module 2 — Find your way around a project
 
-You join a conversation about unfamiliar software. What does it do? Where could
-you look to understand it? What is being requested or changed, and what appears
-to be available? You can give a useful first answer before understanding every
-line or running the software.
+You join a conversation about software you don't know. What does it do? Where
+would you look? What is being asked for or changed, and what do people have
+today? You can give a useful first answer without understanding every line or
+running anything.
 
-Use a small map: **what the software does → where to look → what the work
-records say → what still needs checking**. Your result might be a short spoken
-explanation with a few links or an annotated sketch. A folder inventory alone
-does not explain the project.
+Work with a small map: **what the software does → where to look → what the work
+records say → what still needs checking**. The result can be a short spoken
+explanation with a few links, or an annotated sketch. A list of folders on its
+own doesn't explain a project.
 
 ## Start with the repository and your interests
 
-Bring [Module 0](../course/00-project-and-git.md)'s Git and GitHub outcomes (0.3
-to 0.7) and Module 1's picture of software parts. Existing understanding counts.
-You need no new repository, local install, language course or command recall.
-Use GitHub, an editor, safe supplied excerpts or an approved agent.
+Bring Module 0's Git and GitHub outcomes (0.3 to 0.7) and Module 1's picture.
+You need a browser and GitHub, an editor, or an approved agent. You don't need
+to install anything.
 
-You can begin with “Help me get to know this repository” rather than a precise
-question. Start with its README and instructions, then explore a few useful
-docs, files and work records to build an initial picture. Notice what interests
-you or remains unclear. A question such as “What does book search do, and where
-has the request for author search got to?” may emerge as you explore.
+You can start with “Help me get to know this repository” rather than a precise
+question. Read the README first, then open a few docs, files and work records
+that look useful. Note what interests you and what's unclear. A question such as
+“What does book search do, and where has the request for author search got to?”
+will often come out of that first look.
 
-Keep the repository or broader project as the continuing context. Return to
-different parts as your interests or the team's work change. Name the selected
-branch or revision when available; a fork, archive or one component may give you
-only part of the picture. Earlier notes are a starting point, not proof of the
-project's current state.
+Say which branch or version you looked at. A fork or one component may show only
+part of the project. Notes from an earlier visit are a starting point, not proof
+of the project's current state.
 
-This is a reading and search exercise. Use tools approved for the material;
-repository instructions do not authorize execution. Keep secrets and private
-data out of shared excerpts. Installing dependencies, running the project,
-calling its services and changing files are unnecessary here. Later modules
-teach behavior tracing, execution and change evidence. You can ask a useful
-question now without first completing those investigations.
+This module is reading and searching only. Don't install, run or change
+anything: later modules cover that. Keep secrets and private data out of
+anything you share.
 
 ## A tiny example
 
 A fictional library app's README says readers can search book titles. An open
-issue asks for author search. A PR titled “Match title or author” is merged into
-`main`; the latest release note predates that merge and lists title search.
+issue asks for author search. A pull request titled “Match title or author” is
+merged into `main`. The latest release note is older than that merge and lists
+only title search.
 
-A useful first account is: “This app helps readers find books. Author search was
-requested and a related change has merged into the selected branch. The release
-record supplied here is older, so I cannot yet say whether readers have the
-change.” The issue, PR and release answer different questions, as in Module 0.
-Even a release containing the change would not by itself establish deployment.
+A useful first account: “This app helps readers find books. Author search was
+requested, and a change for it is merged into `main`. The release note I have is
+older, so I can't yet say whether readers have it.” The issue, the pull request
+and the release answer different questions. (Module 6 goes deeper into what has
+reached users.)
 
-For a file map, the README may point to an architecture note, which names the
-browser search panel and an **API**, an interface one program uses to ask
-another for information or an action. Here, the browser uses it to ask for
-books. Open one of those files to check its role. You need not follow the whole
-request or judge its tests yet.
+To find the code, the README might point to an architecture note that names the
+browser search panel and an **API**: a way for one program to ask another for
+information or an action. Here the browser uses it to ask for books. Open one of
+those files to check what it does. You don't need to follow the whole request
+yet.
 
 Explain that example in your own words, then try the
-[fictional Pocket Library packet](02-navigation-evidence.md) or a small,
-authorized part of a real project. Skip the example if you can already do this.
+[fictional Pocket Library packet](02-navigation-evidence.md) or a small part of
+a real project you may use. Skip the example if you can already do this.
 
 ## Learning outcomes and practice
 
-### N2.1 Find sources that answer your question
+### U2.1 Find sources that answer your question
 
-Locate relevant documentation, code and work records. Give each a role based on
-its contents. Keep the map small enough to explain: a handful of locations is
-often enough. Add a file when it helps explain the part you are exploring.
+Find the documentation, code and work records that matter to your question, and
+say what each one is for, based on what it contains. A handful of places is
+usually enough.
 
-A README supplies a starting account. An architecture note can explain how parts
-fit together. Search a visible label or domain term to find likely code; then
-open a match in context. Search results are leads: old docs, tests and generated
-output can contain the same words as maintained source. A generated file is
-produced from another source; a header or build note can identify it. Work
-records may live in GitHub issues, PRs and releases or an approved linked
-system. Missing access is a limit to name, not permission to seek more access.
+- A README gives a starting account. An architecture note explains how the parts
+  fit together.
+- Search for a word you see on screen or a business term to find likely code,
+  then open a match and read around it. Search results are leads: old docs,
+  tests and generated files can contain the same words. A generated file is
+  produced from another file; a header comment usually says so.
+- Work records live in GitHub issues, pull requests and releases, or in a linked
+  tracker such as Jira.
+- If you can't open something, say so. Don't look for a way round the access
+  rules.
 
-**Try:** in the packet, find where book search is described, where a relevant
-rule appears, and where the author-search work is recorded. Explain why you
-would set aside one search match. The packet's README is dated: what would you
-qualify after opening its linked architecture note?
+**Try:** in the packet, find where book search is described, where its rule
+appears and where the author-search work is recorded. Explain why you would set
+aside one search result. The packet's README is dated: what would you qualify
+after opening the architecture note it links to?
 
-**Show:** a map guided by your interest or question, with paths or record
-titles, the selected view and a brief reason for each choice. Explain at least
-one role using actual content, rather than a filename. A small supported map
-counts even if other areas remain unfamiliar. No complete source trace is
-required.
+**Show:** a small map with paths or record titles, the version you looked at and
+a one-line reason for each. Explain at least one role from the file's contents,
+not its name.
 
-### N2.2 Give a modest account of the software and current work
+**Check without AI:** open one file from your map and say in one sentence what
+it does and how you know.
 
-Explain the software's purpose and the parts relevant to your question in
-ordinary language. Connect that account to one piece of ongoing work. Reuse
-Module 0's distinctions: an issue records a request or problem; a PR proposes a
-change and, if merged, records its entry into a branch; a release names a
-version. Inspect the descriptions and links rather than relying on status alone.
+### U2.2 Give a modest account of the software and current work
 
-State what is requested, proposed or merged, and what the available release or
-running-version evidence lets you say about availability. Use the distinctions
-that matter to your question; you do not need an example of every status.
-“Unknown from these sources” is useful when you can explain what is missing. An
-issue can bundle several requests, so a related merged PR may cover only part of
-it. Do not infer delivery dates or team performance from record counts.
+Explain in plain language what the software does and which parts matter to your
+question. Connect that to one piece of ongoing work. Use Module 0's
+distinctions: an issue records a request or problem; a pull request proposes a
+change and, once merged, records that it entered a branch; a release names a
+version. Read the descriptions and links rather than relying on the status
+label.
 
-**Try:** use the packet's docs and work records to answer: “What does Pocket
-Library do, and how far has the author-search request got?” Include a limit on
-what you know about readers' experience. You can give this first account before
-reading the code excerpts, then refine one claim after checking a source.
+Say what is requested, what is proposed and what is merged, and what you can and
+can't say about what users have. “Unknown from these sources” is a good answer
+when you can say what's missing. One issue can bundle several requests, so a
+merged pull request may cover only part of it. Don't infer delivery dates or
+team performance from counts of records.
 
-**Show:** a short explanation that connects purpose, a relevant part and a work
-record. Distinguish what is recorded from what is apparently available, with a
-source and a meaningful limit. It need not be a status report for the whole
-project or a judgment that the change works correctly.
+**Try:** using the packet's docs and work records, answer “What does Pocket
+Library do, and how far has the author-search request got?” Include one limit on
+what you know about readers' experience.
 
-### N2.3 Check an important claim and choose the next question
+**Show:** a short explanation connecting purpose, a relevant part and a work
+record, with a source and one honest limit.
 
-An agent can search, explain unfamiliar syntax and suggest a map. You choose
-what matters and judge whether its sources support the claim. Give it your
-question, selected view and permitted sources. Ask it to cite paths or record
-sections and separate inspected facts from inferences. Keep this inquiry
-read-only. Ask for a lead or explanation if you want to make your own map first;
-a complete agent-written answer is optional.
+**Check without AI:** for one issue in a real repository, say from the page
+alone what it asks for and whether any linked pull request is open or merged.
+
+### U2.3 Check an important claim and choose the next question
+
+An agent can search, explain unfamiliar code and suggest a map. You decide what
+matters and whether its sources support its claims. Give it your question and
+the sources it may use. Ask it to cite file paths or record sections and to
+separate what it read from what it guessed.
 
 Open at least one cited source yourself. Decide whether it supports a claim that
-matters to your account, and explain why. Accept, narrow or correct the claim.
-If code is unfamiliar, ask what a small relevant excerpt means. You need not
-prove every connection or learn the surrounding syntax to check a simple rule, a
-stale path or a PR's stated scope.
+matters to your account. Accept it, narrow it or correct it. If the code is
+unfamiliar, ask what one small excerpt means.
 
-**Try:** choose one claim from the packet's unverified agent account. Give your
-judgment and supporting excerpt before asking for a revision. Then ask one
-useful next question: what missing evidence would change your answer? For
-example, distinguish a question about the version readers have from a question
-about how the code makes a decision.
+**Try:** pick one claim from the packet's agent account. Give your judgment and
+the excerpt that supports it before asking for a revision. Then ask one useful
+next question: what missing evidence would change your answer?
 
-**Show:** your own reason for accepting or correcting the claim, a revised
-account where needed, and a next question tied to a real uncertainty. An agent's
-corrected answer alone does not show your judgment. Knowing exactly what remains
-unknown can be good progress.
+**Show:** your reason for accepting or correcting the claim, a revised account
+if needed, and a next question tied to a real gap. An agent's corrected answer
+on its own doesn't show your judgment.
+
+**Check without AI:** take one sentence from an agent's summary and find the
+line or record that supports it, or say that nothing does.
 
 ## Apply it to something useful
 
-Choose a small unfamiliar part of an authorized real project. A feature named in
-its README and one related issue or PR is a useful starting point. Use an agent
-as needed to find docs, likely code and work records. Make a small map and
-explain what the software does and what is happening with that feature. Check
-one important claim against a source and ask a useful next question.
+Pick a small, unfamiliar part of a real project you may use: a feature named in
+its README and one related issue or pull request is a good start. With an agent,
+find the docs, the likely code and the work records. Make a small map, explain
+what the feature does and what is happening with it, check one claim against a
+source and ask one useful next question.
 
-Then shift the question slightly: if you were asked about availability instead
-of implementation location, which source would you inspect next, and why? This
-reveals whether you can choose a route rather than memorize a file tree.
+Then change the question slightly: if someone asked what users have today,
+rather than where the code is, which source would you open next, and why?
 
-If a real project is inaccessible or unsuitable to share, use the packet. Label
-that work as practice on fictional evidence. Existing work can also count; bring
-the sources and your explanation rather than repeat a lesson. Incomplete access
-may support a purpose-and-files map while leaving current work unknown. Say
-which part you could establish.
+If you can't use a real project yet, use the packet and say it was practice on
+fictional material. Partial access is fine: say which parts you could and
+couldn't establish.
 
-## Teacher guidance and review
-
-Begin with the learner's interests, questions or existing picture of the
-project. Help them get oriented when no precise question is apparent. If needed,
-model one source choice in the tiny example, then let the learner choose the
-next one. Introduce terms such as an import (code made available from another
-file) only when they help. Avoid a tour of every folder, interface or framework.
-For packet-specific guidance and a labeled simulated response, see the
-[teacher notes in the packet](02-navigation-evidence.md#teacher-notes).
-
-Review the learner's explanation alongside the relevant safe excerpts or
-accessible links, including the selected revision when known. Ask one short
-follow-up about a source choice, a correction or an uncertainty. Credit those
-visible decisions separately from agent output. A polished summary with no
-explanation of its claims is incomplete evidence; ask the learner to check one
-claim rather than demand a full report. A learner who explains purpose and a
-merged change but confuses merge with availability needs a focused follow-up on
-versions, not a restart.
-
-Return demonstrated parts, the remaining gap and one useful next step. Accept a
-spoken explanation, annotated links or short notes; no fixed evidence template
-is required. Keep any learner records in their established private home, outside
-course exports. A fictional exercise or successful software check does not
-establish real learner understanding or transfer to a real project.
+After this module, take a first look at Module 7's
+[U7.1 to U7.3](07-work-with-engineers.md#learning-outcomes): read one real
+issue, one pull request with its review, and its checks.
 
 ## Next: follow one behavior
 
-Take one behavior from your map into **Module 3: Follow one behavior**. You will
-follow a small action through its connections, explain a rule and predict what a
-changed input would do. The map gives you a starting place; it does not need to
-contain that whole trace already. Module 4 adds running and investigating, and
-Module 6 returns to current work with a deeper, dated account as evidence
-changes.
+Take one behavior from your map into [Module 3](03-follow-one-behavior.md).
+You'll follow a small action through the code, state its rule in plain words and
+predict what a different input would do.
+
+## For the teaching agent
+
+- Start from the learner's interests and existing picture. If no question is
+  clear, help them get oriented. Model one source choice in the tiny example if
+  needed, then let them choose the next.
+- Introduce terms such as an import (code made available from another file) only
+  when they help. Avoid a tour of every folder or framework.
+- Packet-specific guidance and a labelled simulated response are in the
+  [packet's teacher notes](02-navigation-evidence.md#teacher-notes).
+- Review the learner's explanation against the excerpts or links, including the
+  version when known. Ask one short follow-up about a source choice, a
+  correction or an uncertainty. A polished summary with no explanation of its
+  claims is incomplete; ask the learner to check one claim.
+- A learner who explains purpose and a merged change but confuses merged with
+  available needs one follow-up on versions, not a restart.
+- Accept spoken explanations, annotated links or short notes. Fictional practice
+  doesn't show transfer to a real project. Keep records in the learner's private
+  `.learning/` log.
 
 [Track guide](index.md) · [Module 0](../course/00-project-and-git.md) ·
 [Next module](03-follow-one-behavior.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Module 1 practice: Shelf summary'
+title: 'Module 1 practice — Shelf summary'
 description:
   Fictional interface and file excerpts for explaining an action-to-result path,
   comparing files with an instance, and trying a fresh example.

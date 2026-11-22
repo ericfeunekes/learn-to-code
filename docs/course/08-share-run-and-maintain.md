@@ -22,8 +22,8 @@ understandable (6.5).
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** you show it through the decisions you write down and the
   checks you run yourself: who can reach the app, what happens when someone
@@ -47,6 +47,10 @@ By the end of this module, you should be able to:
   each costs, who looks after it and whether it's approved for your data.
 - Decide whether the app should be reachable from the internet at all. Many work
   tools shouldn't be.
+- If approval is still pending, start local-only: a colleague uses the app on
+  your computer, with you there, while you follow up the requests you started in
+  Plan your app. That's a step, not the end: the capstone needs at least one
+  colleague to use the app for a real task.
 
 ### 8.2 Control access
 
@@ -99,8 +103,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                                                      | Write-code lane adds                                                                 |
 | --------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | 8.1       | Say where the app will run, who can reach it, what it costs and who approved it.                                      | Find the settings that differ between your local copy and the deployed one.          |
@@ -111,12 +113,14 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Share with one colleague.** Teach: where should it run, and who should get
   in? Build: hand off a deployment to an approved place with sign-in, using
   synthetic data. Review: open it yourself, then try it as someone who shouldn't
-  get in.
+  get in. If hosting isn't approved yet, a colleague uses it on your computer
+  instead, and you record the open hosting request.
 - **Release and undo.** Teach: what could a release break? Build: hand off a
   small change released to a test copy first, with a written undo plan. Review:
   did you try the undo, and does it bring back the data as well as the code?
@@ -135,12 +139,15 @@ Pick one that fits your app. Each runs through the
   questions, not expertise. The [learning path](CURRICULUM.md#future-directions)
   goes deeper.
 - Work within the learner's organization's rules. If they can't deploy anywhere
-  approved, a local-only app plus a written plan for sharing meets 8.1.
+  approved yet, a local-only app plus a written plan for sharing meets 8.1 as a
+  step. It isn't an end state: keep the hosting request as an open item in the
+  log, and remind the learner that the capstone needs a colleague to use the
+  app.
 - Never set up accounts, paid services or permission changes for the learner.
   Help them ask the right person.
 - Weight 8.2 heavily: a failed access check found by the learner is strong
   evidence.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

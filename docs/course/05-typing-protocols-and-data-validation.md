@@ -21,8 +21,8 @@ model from Module 2 and keeping secrets out (0.6).
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** focus on 5.4, checking outside data where it enters, which
   is a security skill every app needs. Show it by naming where outside data
@@ -105,8 +105,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                                       | Write-code lane adds                                                             |
 | --------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | 5.1       | For one value, say what its type allows and one mix-up a type could catch.                             | Run the type checker and explain one error it reports, or why it reports none.   |
@@ -117,7 +115,8 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Map the entry points.** Teach: where does outside data come in? Build: hand
   off a task to list every entry point and what each checks, without changing
@@ -145,6 +144,6 @@ Pick one that fits your app. Each runs through the
 - A suitable type or protocol doesn't need a framework or a rewrite of sound
   existing code.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

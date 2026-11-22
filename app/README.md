@@ -8,13 +8,15 @@ where it lives in `.learning/PROJECT.md` so review sessions can find it.
 Build in a separate session from your teaching sessions:
 
 1. Finish a teaching session at the repository root with a handoff you drafted
-   from `templates/learning/HANDOFF.md`.
+   in `.learning/handoffs/`, copied from `templates/learning/HANDOFF.md`.
 2. Open a new session in this `app/` folder, or in your project folder, with
    your build agent. In Claude Code, run `claude` from this folder. In Codex,
    open this folder as the workspace.
 3. Paste in the whole handoff and build.
 4. The build agent commits on a `practice/` branch and adds an entry to
    `BUILD-NOTES.md`. Take that back to a review session at the repository root.
+5. After the review, merge the practice branch into `main` (or ask the build
+   agent to) so the next handoff starts from your kept work.
 
 This folder is part of your public fork. Never put secrets, real personal data
 or work data in committed files. Learning records stay in the ignored

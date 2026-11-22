@@ -33,7 +33,7 @@ test('production pages load without broken assets or browser errors', async ({
     ['setup/', 'Set up your workspace'],
     ['modules/project-and-git/', 'Module 0 — Directing an agent'],
     ['learning-path/', 'Learn to Build Software — Curriculum'],
-    ['practice/', 'Learn to Build Software — Practice and review'],
+    ['practice/', 'Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
     ['plan-your-app/', 'Plan your app'],
@@ -48,7 +48,7 @@ test('production pages load without broken assets or browser errors', async ({
     ['understand-code/', 'Understand code and changes'],
     [
       'understand-code/work-with-engineers/',
-      '7. Work with engineers on GitHub',
+      'Module 7 — Work with engineers on GitHub',
     ],
     ['understand-code/review-questions/', 'Review questions for a change'],
     ['for-ai/', 'For AI'],
@@ -115,6 +115,8 @@ test('navigation and theme work on desktop and phone', async ({
   }
   await page.getByRole('link', { name: /Next Plan your app/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}plan-your-app/$`));
+  await page.getByRole('link', { name: /Next Practice and review/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${base}practice/$`));
   await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
@@ -233,7 +235,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(38);
+  expect(entries).toHaveLength(37);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -269,7 +271,7 @@ test('merged entry keeps the old overview URL and shows full modules', async ({
   expect(await legacy.text()).toContain('course/OVERVIEW.md');
 });
 
-test('setup exposes three separate choices and source-authored copyable prompts', async ({
+test('setup exposes three choices, an understand-track pointer and source-authored copyable prompts', async ({
   page,
   context,
 }, info) => {

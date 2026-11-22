@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 const base = process.env.BASE_URL || '/learn-to-code/';
 
-test('Module 6 learner can reach the capstone, inspect its source and return', async ({
+test('Module 6 learner can reach the Harbor Log lab, inspect its source and return', async ({
   page,
   request,
 }) => {
@@ -12,7 +12,7 @@ test('Module 6 learner can reach the capstone, inspect its source and return', a
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('understand-code/read-evolving-project/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    '6. Read an evolving project',
+    'Module 6 — Read an evolving project',
   );
   const main = page.getByRole('main');
   await main.getByRole('link', { name: 'Harbor Log lab', exact: true }).click();
@@ -50,14 +50,14 @@ test('Module 6 learner can reach the capstone, inspect its source and return', a
   expect(errors).toEqual([]);
 });
 
-test('Module 6 reading exports preserve the authored draft and fixture links', async ({
+test('Module 6 reading exports preserve the authored pages and fixture links', async ({
   request,
 }) => {
   const index = await request.get('llms.txt');
   const indexText = await index.text();
   for (const file of [
     'understand-code/06-read-evolving-project.md',
-    'understand-code/module6-harbor-log-lab.md',
+    'understand-code/06-harbor-log-lab.md',
   ]) {
     expect(indexText).toContain(`${base}raw/${file}`);
     const exported = await request.get(`raw/${file}`);

@@ -29,6 +29,16 @@ learning material. Learner records and teaching logs stay private, outside this
 public site. Do not infer progress from a page being available or a lesson being
 mentioned.
 
+## How the teaching works
+
+An agent opened at the root of the course workspace teaches and reviews; it
+never builds the learner's project. The learner drafts a handoff, builds in a
+separate session with a separate build agent, and comes back for a review. On
+the Understand code and changes track, the learner brings back an investigation
+instead, and only the learner posts to a team's repository. A private
+`.learning/` folder is the only memory these sessions share. The workspace's
+`AGENTS.md` and `CLAUDE.md` carry the full rules.
+
 ## Choose where to go next
 
 The course has two tracks that share [Module 0](course/00-project-and-git.md).

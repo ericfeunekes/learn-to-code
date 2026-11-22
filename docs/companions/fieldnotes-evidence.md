@@ -1,5 +1,5 @@
 ---
-title: Fieldnotes repository evidence
+title: Module 6 extra practice — Fieldnotes
 description:
   Fictional repository history for practising feature status, delivery pace and
   priority interpretation.
@@ -13,9 +13,11 @@ All names, IDs, dates, counts and excerpts below are fictional. They are the
 complete evidence for this exercise; do not search for the repo. Refer to each
 section's ID as you would a source link in a real repository.
 
-Use it with [Read an Active Repository](read-active-repository.md). Try one
-question before reading the worked interpretation: **What could a pilot user do
-by the end of October 25, and what appears to be next?**
+Use it with
+[Module 6 — Read an evolving project](../understand-code/06-read-evolving-project.md),
+as optional extra practice after the Harbor Log lab. Try one question before
+reading the worked interpretation: **What could a pilot user do by the end of
+October 25, and what appears to be next?**
 
 Scope: the `fieldnotes-web` repository, default branch `main`, October 12–25,
 2026 inclusive, UTC. Snapshot: October 26, 2026 at 09:00 UTC. Issues, PRs,
@@ -163,3 +165,6 @@ comparison. What changes, and what stays unknown? Deployment is now supported;
 saved views is known to be unavailable to the pilot because it is disabled for
 those users. Explain that distinction yourself and say which evidence would
 settle the colleague's announcement decision.
+
+[Module 6](../understand-code/06-read-evolving-project.md) ·
+[Track guide](../understand-code/index.md)

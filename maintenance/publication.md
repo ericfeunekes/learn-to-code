@@ -50,7 +50,7 @@ npm run format
 npm run check
 ```
 
-The importer admits exactly fourteen named general files. It removes the private
+The importer admits exactly sixteen named general files. It removes the private
 research provenance section, rejects private references, adds website metadata,
 generalizes personal author-review references, adjusts one heading level and
 formats source-authored prompts as copyable text without changing their words.
@@ -82,11 +82,13 @@ own terms.
 The October 29 branch is a fresh implementation from public main, independent of
 the offline Mac branch. It does not claim to recover that branch. Source hashes
 and modification times for the sixteen admitted files are recorded in
-`course-source.json`; private source identities and transfer details belong in
-the separate review handoff. No learner ledger, log or research was imported.
-The branch is local only. Push, deployment and merge need separate
-authorization. Do not add hosted CI or self-hosted runners for this work;
-existing workflow configuration is unchanged.
+`course-source.json` (November 22 snapshot). `docs/course/` was edited in place
+after that snapshot, so bring the maintained source up to date before running
+`content:refresh`, or the refresh will revert those edits. Private source
+identities and transfer details belong in the separate review handoff. No
+learner ledger, log or research was imported. The branch is local only. Push,
+deployment and merge need separate authorization. Do not add hosted CI or
+self-hosted runners for this work; existing workflow configuration is unchanged.
 
 ## Approved implementation refinements
 

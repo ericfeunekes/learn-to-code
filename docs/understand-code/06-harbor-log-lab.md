@@ -103,10 +103,11 @@ read shared free-text notes in a real deployment; its use requires review.
 
 ### H4a Trace one source change
 
-This is the supplied search hunk from PR #36 in `src/server.py`, before at
-`b830` and after at `c930`. Lines beginning `-` were removed; lines beginning
-`+` replaced them. The route and response line stayed the same. The unchanged
-request comes from a client using the H2 endpoint.
+This is the supplied search hunk (a block of changed lines in a diff) from PR
+#36 in `src/server.py`, before at `b830` and after at `c930`. Lines beginning
+`-` were removed; lines beginning `+` replaced them. The route and response line
+stayed the same. The unchanged request comes from a client using the H2
+endpoint.
 
 ```text
  elif url.path == "/api/search":
@@ -167,10 +168,12 @@ investigate search, while keeping production availability tied to H5.
 
 Python 3.10 or newer is sufficient; there are no third-party packages to
 install. Use a disposable folder outside private projects. Download or save
-[server.py](pathname:///labs/track2-module6/server.py) there and inspect it
-before execution. In a course reference checkout the same file is under
-`static/labs/track2-module6/server.py`. No course checkout or app repository is
-required. Follow your local tool policy; inspect with an agent if useful.
+[server.py](pathname:///labs/track2-module6/server.py) there (right-click, “Save
+link as…”) and inspect it before execution. No copy of the course or app
+repository is needed. Follow your organization's tool policy; inspect it with an
+agent if useful. New to terminals? See Module 4's
+[“Never used a terminal?” box](04-run-and-investigate.md#one-question-one-environment-one-check),
+or ask your agent to run each step and explain it.
 
 Permitted actions are to read the fixture, start and stop your own server, and
 send local GET requests to `/version` and `/api/search` with fictional inputs.
@@ -213,6 +216,10 @@ and the fictional query:
 ```sh
 curl --include --get --data-urlencode 'q=your fictional query' 'http://127.0.0.1:PORT/api/search'
 ```
+
+`curl` sends a web request from the terminal. `--include` prints the response
+status as well as the body. `--get --data-urlencode 'q=…'` adds your query to
+the address, safely encoding spaces and special characters.
 
 Record the actual JSON and HTTP status, input, version, environment and time.
 One query is not complete search coverage. If a check surprises you, choose one

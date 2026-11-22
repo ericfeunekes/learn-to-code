@@ -3,8 +3,8 @@
 This repository is a course website and a learning workspace. Agents started at
 the repository root teach and review. The learner builds their project in a
 separate session with a separate agent, in `app/` or in their own project
-folder. Read the relevant course page in `docs/course/`; teach from its outcomes
-rather than inventing lessons.
+folder. Read the relevant course page in `docs/course/` or
+`docs/understand-code/`; teach from its outcomes rather than inventing lessons.
 
 **Build sessions:** if this session started inside `app/`, follow
 `app/AGENTS.md` and ignore the rest of this file. Build sessions don't read or
@@ -18,10 +18,15 @@ update `.learning/`.
   learner's own project folder, builds.
 - **Teach** with `skills/use-learning-outcomes/SKILL.md`: a Socratic session on
   one outcome. The learner then drafts a build handoff from
-  `templates/learning/HANDOFF.md`, and you critique it.
+  `templates/learning/HANDOFF.md` (understand track: an investigation brief from
+  `templates/learning/INVESTIGATE.md`) in `.learning/handoffs/`, and you
+  critique it.
 - **Review** with `skills/review-learning-evidence/SKILL.md`: inspect what the
-  learner built and its `BUILD-NOTES.md`, ask what they did and why, look for
+  learner built and its `BUILD-NOTES.md`, or on the understand track the
+  records, versions and results they cite. Ask what they did and why, look for
   errors and record what they did and didn't learn.
+- **Never post for the learner.** No agent posts, comments, pushes or merges on
+  a team's repository. The learner posts after reviewing the exact text.
 
 Discovery copies of both skills live in `.agents/skills/` for Codex and
 `.claude/skills/` for Claude. File presence doesn't prove a client loaded them,
@@ -32,8 +37,8 @@ so if you're unsure, read the skill file directly.
 Different agents run different sessions, so the log in `.learning/` is the only
 shared memory. Teach and review sessions read it first and update it last.
 
-- `PROJECT.md`: the learner's goal (direct agents, write code or both), what the
-  project is and where it lives.
+- `PROJECT.md`: the track, the lane (direct agents, write code or both), and the
+  project or repository followed, where it lives and its data rules.
 - `PROGRESS.md`: the open practice task and its starting commit, the next step,
   depth per outcome and open findings.
 - `LOG.md`: one short entry per session, newest first.
@@ -42,9 +47,11 @@ shared memory. Teach and review sessions read it first and update it last.
 fresh clone. If it's missing, ask the learner whether they've had sessions
 before and where their log is before creating anything. To keep it across
 machines, the learner can make `.learning/` its own private Git repository. Only
-for a genuine first session, copy `templates/learning/` into `.learning/`. Never
-commit records to the course repository, publish them or copy them into course
-content, and never import another learner's records.
+for a genuine first session, copy `PROJECT.md`, `PROGRESS.md` and `LOG.md` from
+`templates/learning/` into `.learning/`. Commit the log only in its own
+repository, and push it only when the learner says yes. Never commit records to
+the course repository, publish them or copy them into course content, and never
+import another learner's records.
 
 ## Starting and continuing
 
@@ -56,10 +63,14 @@ fork; see `docs/course/SETUP.md`.
 The course has two tracks sharing Module 0. The build track (`docs/course/`) is
 for directing agents to build an app. The Understand code and changes track
 (`docs/understand-code/`) is for product managers and risk and control reviewers
-following a team's software; it needs no project, handoff or build session.
+following a team's software; it needs no project or build session. Running or
+changing a team's software (starting it, a QA pass, a draft issue or pull
+request) happens in a separate investigation session in the learner's own clone,
+never from the root.
 
-Any start that doesn't name an activity, such as "What's next?" or "I want to
-start", gets these three choices. Then wait:
+A learner whose log has a next step gets it proposed first. Otherwise, any start
+that doesn't name an activity, such as "What's next?" or "I want to start", gets
+these three choices. Then wait:
 
 - Define a project (or, on the understand track, pick a repository to follow).
 - Learn Git/GitHub.

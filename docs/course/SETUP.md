@@ -14,17 +14,57 @@ your work private:
 
 - **The course workspace** is a copy of this course on your computer. Your
   teaching and review agents run here, and your private learning log lives in
-  its ignored `.learning/` folder.
+  its ignored `.learning/` folder. It's a hidden folder: ask your agent to show
+  it, or turn on hidden files.
 - **Your project** is where your app is built. For anything touching work data
   or work logic, that's its own private repository, approved by your
   organization, outside the course.
 
-You don't need to choose an app or complete a Git/GitHub lesson for setup. Ask
-about anything confusing as you go; brief explanations can be part of setup.
+You don't need an app idea or a Git lesson to finish setup; see
+[where to start](CURRICULUM.md#where-to-start). Ask about anything confusing as
+you go.
 
 On the [Understand code and changes](../understand-code/index.md) track you
 don't need a project at all. A browser is enough to start; set up the course
 workspace when you want a teaching agent with the course's skills.
+
+## Before you start
+
+Check these first. At work, the first one can take a while, so ask early.
+
+1. **Is the AI tool approved at work?** Before you install anything, find out
+   whether your organization approves the coding agent you want to use, and for
+   which data. If you don't know, ask IT or security first. Never put work data
+   into a tool that isn't approved.
+2. **Which computer?** A work laptop is usually managed: it may block installs,
+   and your organization's rules apply to everything on it. Ask IT if an install
+   is blocked rather than working around it. A personal computer is fine for
+   practising with synthetic data, but keep work data off it.
+3. **A coding agent.** This course uses
+   [Claude Code](https://code.claude.com/docs/en/overview) (from Anthropic) or
+   [Codex](https://developers.openai.com/codex) (from OpenAI). Each is an AI
+   that can read and change files and run commands in a folder on your computer,
+   which a chat in a browser can't. Both need a paid plan. Both run in a
+   terminal, and both also offer a desktop app or a code-editor extension.
+4. **A GitHub account.** A free personal account is fine for your copy of the
+   course. Your work app may live somewhere else; see step 3 below.
+
+No coding agent yet? A chat such as Claude.ai or ChatGPT can still walk you
+through each step below; you type the commands yourself.
+
+### Your first terminal
+
+A terminal is a window where you type commands. You'll need only a few.
+
+- **Open it.** Mac: press Cmd+Space, type Terminal and press Enter. Windows:
+  open Terminal or PowerShell from the Start menu.
+- **Look around.** `ls` lists what's in the current folder. `cd Documents` moves
+  into a folder, and `cd ..` moves back up one.
+- **Run a command.** Paste it, press Enter and read the output before the next
+  one. If you see an error, stop and ask your agent or chat what it means.
+- **Stop something running,** such as an app: press Ctrl+C.
+- **Start your agent** from inside a folder: type `claude` for Claude Code or
+  `codex` for Codex.
 
 ## Setup with AI
 
@@ -63,7 +103,14 @@ the AI should not claim to have performed steps it cannot access.
    - **A work app, or anything private:** create or reuse its own private
      repository in your approved Git host, clone it into its own folder, and
      copy the course's `app/AGENTS.md` into it as `AGENTS.md` (and `CLAUDE.md`
-     for Claude Code) so its build agent follows the course's rules.
+     for Claude Code) so its build agent follows the course's rules. Your agent
+     can do the copying if you ask.
+   - **No approved Git host yet:** keep the project as a local-only Git
+     repository, with no online copy, in a folder your organization backs up,
+     such as OneDrive or a network drive, if that's allowed. Copy `AGENTS.md` in
+     the same way. The course doesn't need an online copy until you share the
+     app in [Module 8](08-share-run-and-maintain.md); ask IT about a Git host
+     before then.
    - **A personal practice app with synthetic data only:** you can build in the
      course's `app/` folder. It's inside your public fork, so treat everything
      there as public.
@@ -73,23 +120,40 @@ the AI should not claim to have performed steps it cannot access.
    you build.
 5. Ask the AI to check the setup and show you the next choices below.
 
+## Let the review agent read your project
+
+Your teaching and review agents run in the course folder. If your project is in
+a separate folder, the review agent needs permission to read it:
+
+- **Claude Code:** start the review session in the course folder with
+  `claude --add-dir /path/to/your-project`, or type
+  `/add-dir /path/to/your-project` in a session that's already running.
+- **Codex:** open a workspace that includes both the course folder and your
+  project folder. Or, in your project folder, run
+  `git diff main..practice/<short-name>` and paste the output into the review
+  session.
+
+The review agent then reads your project, so anything in it goes to that AI
+tool. The same approval and data rules apply as for your build agent: synthetic
+data only, unless real data is approved for that tool. The review agent reads;
+it never changes your project.
+
 ## What's next?
 
 Once setup is ready, ask your AI:
 
 > I'm set up. What's next?
 
-Or choose an option here:
+Or choose one of these three:
 
-- **Plan an app:** [Plan your app](PLAN.md).
+- **Define a project:** [Plan your app](PLAN.md).
 
   ```text
   Help me decide whether to build my idea, and on what.
   ```
 
-- **Understand Git and GitHub:**
-  [Module 0 — Directing an agent](00-project-and-git.md), which starts with Git
-  and GitHub.
+- **Learn Git/GitHub:** [Module 0 — Directing an agent](00-project-and-git.md),
+  which starts with Git and GitHub.
 
   ```text
   Help me understand Git and GitHub using this repository.
@@ -104,15 +168,14 @@ Or choose an option here:
   You can go to [Module 1 — Testing and QA](01-testing-and-qa.md) when it serves
   your app.
 
-- **Understand a team's software:**
-  [Understand code and changes](../understand-code/index.md).
+These are separate conversations, and the AI waits for your choice.
 
-  ```text
-  Help me get to know a repository my team works on.
-  ```
+On the Understand track, go to
+[Understand code and changes](../understand-code/index.md) instead and ask:
 
-These are separate conversations or requests you can choose from. A full Git
-lesson is not required before working on your app.
+```text
+Help me get to know a repository my team works on.
+```
 
 If the client needs you to reopen a folder first, use the exact path the setup
 AI provides, then ask “I'm set up. What's next?” there.
@@ -174,11 +237,21 @@ instructions. If a new client session is needed to load project context, provide
 its exact folder and a resume message; file presence alone does not prove
 instruction use.
 
+Before installing anything, ask whether the AI tool is approved for the
+learner's work and data. If there's no approved Git host, set up a local-only
+repository in a backed-up folder rather than a personal online repository for
+work logic.
+
 Finish with the local folders, the learner's repositories and their visibility,
-any incomplete setup action and **What's next?** Offer the choices above with
-their site links. Record where the project lives in `.learning/PROJECT.md`.
-Successful setup does not establish learning completion. Do not launch an
-unchosen next activity or publish the learner's app changes.
+any incomplete setup action and **What's next?** Offer the three choices above
+with their site links, and the Understand-track pointer. If `.learning/` doesn't
+exist, ask whether the learner has had sessions before and where their log is.
+Only for a genuine first session, copy `PROJECT.md`, `PROGRESS.md` and `LOG.md`
+from `templates/learning/` into `.learning/`. Handoffs and investigation briefs
+are copied later, one per task, into `.learning/handoffs/`. Then record where
+the project lives in `.learning/PROJECT.md`. Successful setup does not establish
+learning completion. Do not launch an unchosen next activity or publish the
+learner's app changes.
 
 [Course overview](OVERVIEW.md) · [Learning path](CURRICULUM.md)
 

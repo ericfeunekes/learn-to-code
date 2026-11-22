@@ -13,7 +13,7 @@ const pages = [
   [
     'PLAN.md',
     '/plan-your-app',
-    'Decide whether to build, on what and with which data, who will use it, and outline the first version.',
+    'Decide whether to build, on what and with which data, who will use it, then outline and run a first version.',
   ],
   [
     'SETUP.md',
@@ -38,12 +38,12 @@ const pages = [
   [
     'PRACTICE.md',
     '/practice',
-    'Apply an objective in this conversation or hand it off, then review the evidence.',
+    'Apply an outcome in a separate build session or bring work back, then review the evidence.',
   ],
   [
     '01-testing-and-qa.md',
     '/modules/testing-and-qa',
-    'Define expected behavior and judge tests and the actual client outcome.',
+    'Define expected behavior, and judge tests and what the user actually gets.',
   ],
   [
     '02-modeling-data-and-behavior.md',

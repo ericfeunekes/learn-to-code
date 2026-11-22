@@ -31,8 +31,18 @@ control reviewers who need evidence that a change was made properly.
 
 - Who wrote the change: a person, an agent, or a person directing an agent?
 - Who reviewed and approved it, and were they someone other than the author?
-- Did the approval happen before the merge? Were any required reviews or checks
-  skipped or overridden?
+- Which commit did they approve? Was anything pushed after the approval, and was
+  it reviewed again?
+- Were branch protection and required reviewers enforced, including code owners
+  for sensitive files, or was it merged by an admin who bypassed them?
+- Who merged it, and who deployed it? Were they different from the author?
+- Was it linked to an approved ticket or change request, and can you follow it
+  from that ticket to the pull request and the release?
+- If it was an emergency change, was it reviewed afterwards, and by whom?
+
+Module 7's
+[table for risk and control reviewers](07-work-with-engineers.md#for-risk-and-control-reviewers)
+shows where to find each of these on GitHub.
 
 ## What evidence is there?
 
@@ -45,8 +55,8 @@ control reviewers who need evidence that a change was made properly.
 
 ## Has it reached users?
 
-- Is it merged, released, or actually running where users are? Merged isn't the
-  same as released.
+- Is it merged, released, or actually running where users are? See
+  [Module 6](06-read-evolving-project.md#merged-isnt-released-date-what-you-observe).
 - Which version or release includes it, and when did that go live?
 - Is it switched on for everyone, or behind a setting or for some users only?
 
@@ -69,4 +79,4 @@ Record the answer, and update your account of the change. A question that turns
 up a real gap is good evidence of learning, whatever the answer.
 
 [Track guide](index.md) · [Module 5](05-evidence-of-correctness.md) ·
-[Module 6](06-read-evolving-project.md)
+[Module 6](06-read-evolving-project.md) · [Module 7](07-work-with-engineers.md)

@@ -15,26 +15,32 @@ has two tracks that share Module 0, Directing an agent:
 Fork or reuse [this repository](https://github.com/ericfeunekes/learn-to-code),
 clone your fork, then open that folder in Codex or Claude Code. See the
 [setup guide](docs/course/SETUP.md) for the full instructions and a copyable
-pre-clone AI prompt. You do not need an app idea, a Git lesson or a local
-website installation to finish setup.
+pre-clone AI prompt. At work, check that the AI tool is approved before you
+install it ([Before you start](docs/course/SETUP.md#before-you-start)). You do
+not need an app idea, a Git lesson or a local website installation to finish
+setup.
 
 Once it is open, ask: “I'm set up. What's next?” Choose one:
 
-- [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
+- [Define a project](docs/course/PLAN.md) (Plan your app).
 - [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository,
   as the start of Module 0, Directing an agent.
 - Continue existing work and choose a useful next learning step with your AI.
 
-The AI should wait for your choice. Setup and Module 0 are learning activities,
-not gates you must pass before anything else.
+On the Understand track, start with the
+[track guide](docs/understand-code/index.md) instead. The AI should wait for
+your choice; setup isn't a gate (see
+[where to start](docs/course/CURRICULUM.md#where-to-start)).
 
 Agents in this workspace teach and review; they don't build your project. Build
 in [`app/`](app/README.md) or your own project folder, in a separate session
-with your build agent, then come back for a review. Bundled learning skills
-handle teaching and review. `AGENTS.md` and `CLAUDE.md` share guidance;
-`skills/` is canonical and regular discovery copies live in `.agents/skills/`
-and `.claude/skills/`. Their presence does not prove a client loaded them. After
-reopening this folder, ask a natural question and check the actual response.
+with your build agent, then come back for a review. The
+[practice loop](docs/course/PRACTICE.md#the-practice-loop) lists the steps.
+Bundled learning skills handle teaching and review. `AGENTS.md` and `CLAUDE.md`
+share guidance; `skills/` is canonical and regular discovery copies live in
+`.agents/skills/` and `.claude/skills/`. Their presence does not prove a client
+loaded them. After reopening this folder, ask a natural question and check the
+actual response.
 
 Your learning log lives in the ignored root `.learning/` folder: `PROJECT.md`,
 `PROGRESS.md` and `LOG.md`, started from `templates/learning/`. Teach and review

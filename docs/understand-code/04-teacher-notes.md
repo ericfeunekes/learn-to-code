@@ -1,16 +1,15 @@
 ---
-title: Run and investigate — teacher notes
+title: Module 4 — notes for the teaching agent
 description: Guidance for reviewing one bounded investigation in Module 4.
 slug: /understand-code/teacher/run-and-investigate
 ---
 
-# Module 4 teacher notes
+# Module 4 — notes for the teaching agent
 
-Read [the module](03-run-and-investigate.md) and the chosen
-[practice route](03-workshop-practice.md). Use the module’s outcomes to review
-the learner’s contribution. The retained `03` source filenames and `module3`
-fixture identifiers preserve links; this is understanding-track Module 4,
-distinct from building-track Module 4.
+Read [the module](04-run-and-investigate.md) and the chosen
+[practice route](04-workshop-practice.md). Use the module's outcomes, U4.1 to
+U4.3, to review the learner's contribution. They are separate from the build
+track's Module 4 outcomes.
 
 ## Start with a useful question
 
@@ -23,9 +22,15 @@ detail only when it helps the selected investigation.
 [Module 3](03-follow-one-behavior.md) contributes a behavior path, an explained
 rule or a prediction. Do not require a complete source trace before examining an
 observed problem. The learner can use an authorized hosted environment, local
-service, API, MCP tool or browser journey. One suitable interface is sufficient.
-Help with access, commands and request syntax is allowed; unaided installation,
-command recall and whole-stack setup are not learning targets.
+service, API, MCP (Model Context Protocol) tool or browser journey. One suitable
+interface is enough. Help with access, commands and request syntax is allowed;
+unaided installation, command recall and whole-stack setup are not learning
+targets. For a learner new to terminals, let the agent run each command and
+narrate what it did and what it printed.
+
+Running the team's app or tests happens in the learner's investigation session,
+in their own clone, never from the course root. That session never posts, pushes
+or comments without the learner's go-ahead for the exact text.
 
 An agent may inspect instructions, explain configuration, operate the approved
 environment and collect output. Invite the learner to make a choice before
@@ -36,11 +41,11 @@ prompt to copy.
 
 ## Review three observable outcomes
 
-| Outcome                        | What to look for                                                                                                                                                    | What leaves evidence open                                                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| 4.1 Target and effects         | Learner identifies the environment/version or a specific unknown, a relevant setting or data fact, and why the action is permitted.                                 | A copied agent summary with no learner judgment about the target or effects.      |
-| 4.2 Expectation and check      | Learner explains a chosen input and expected result with a basis, directs a real check, and identifies the observed output.                                         | A supplied packet alone, or an agent's “passed” report without the action/result. |
-| 4.3 Interpretation and finding | Learner compares expectation and observation, uses relevant diagnostic evidence, bounds the conclusion, and supplies repeatable details and a useful next question. | A polished generated finding without visible learner reasoning.                   |
+| Outcome                         | What to look for                                                                                                                                                    | What leaves evidence open                                                         |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| U4.1 Target and effects         | Learner identifies the environment/version or a specific unknown, a relevant setting or data fact, and why the action is permitted.                                 | A copied agent summary with no learner judgment about the target or effects.      |
+| U4.2 Expectation and check      | Learner explains a chosen input and expected result with a basis, directs a real check, and identifies the observed output.                                         | A supplied packet alone, or an agent's “passed” report without the action/result. |
+| U4.3 Interpretation and finding | Learner compares expectation and observation, uses relevant diagnostic evidence, bounds the conclusion, and supplies repeatable details and a useful next question. | A polished generated finding without visible learner reasoning.                   |
 
 Use the smallest evidence that supports the claim. A short exchange and a
 relevant output excerpt can be enough; a formal report, full chat export and

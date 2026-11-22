@@ -11,22 +11,28 @@ source_file: CURRICULUM.md
 
 This page covers the build track. The
 [Understand code and changes](../understand-code/index.md) track has its own
-six-module path for following a team's software without building it. Both share
-[Module 0](00-project-and-git.md).
+seven-module path for following a team's software without building it. Both
+share [Module 0](00-project-and-git.md).
+
+## Where to start
 
 Start with [workspace setup](SETUP.md), then choose from
-[What's next?](SETUP.md#whats-next). [Plan your app](PLAN.md) is separate from
-[Module 0 — Directing an agent](00-project-and-git.md), which includes Git and
-GitHub. Setup does not require either learning activity.
+[What's next?](SETUP.md#whats-next). Setup isn't a gate and neither is any
+lesson: you don't need an app idea or a Git lesson to finish setup, and you
+don't need to finish Module 0 before planning your app. [Plan your app](PLAN.md)
+and [Module 0 — Directing an agent](00-project-and-git.md), which includes Git
+and GitHub, are separate choices, and you can do them in either order. The usual
+order is Plan your app, ending with a first runnable version, then Module 0 on
+that version, then Module 1. Each step runs through the
+[practice loop](PRACTICE.md#the-practice-loop).
 
 ## Core modules
 
 Learn enough to explain and apply an idea, then revisit it for depth. A module
-can take more than one session. Use the selected page to identify what the
-learner can demonstrate and what evidence would show it. The
-[AI guide](AI-TEACHER.md) explains the purpose of the outcomes, learning records
-and evidence review. The learner chooses how to learn; no fixed teaching method
-or module sequence is required.
+can take more than one session. There's no fixed module sequence: you choose
+what to learn next, and your teaching agent asks questions rather than
+lecturing. The [Teaching guide](AI-TEACHER.md) explains how the agents use the
+outcomes and your learning log.
 
 - [Plan your app](PLAN.md)
 
@@ -64,15 +70,18 @@ answers one question you'll face when an agent builds for you:
 
 Plan your app and Modules 0 and 1 are the foundation: every later module uses
 the plan, the brief, the small-step loop and the habit of checking evidence.
-Module 2 turns the plan into a spec early, because "what should it do?" comes
-before most other questions. Modules 3 to 7 each add one kind of problem agents
-commonly get wrong. Module 8 takes the app to its users, and Module 9 puts
-everything together in a capstone and teaches you how to keep learning.
+Module 1 takes its expected results from your Plan outline or an agreed
+requirement. Module 2 then turns the plan into a proper spec, early, because
+"what should it do?" comes before most other questions. Modules 3 to 7 each add
+one kind of problem agents commonly get wrong. Module 8 takes the app to its
+users, and Module 9 puts everything together in a capstone and teaches you how
+to keep learning.
 
 In the direct-agents lane, the most programmer-heavy outcomes, such as test
 doubles (1.5, 1.6), types (5.1 to 5.3), program structure (6.2, 6.3) and the
-theory of concurrency (7.1, 7.3), stay at a recognize-and-ask level. Each
-module's lane section says which outcomes to focus on.
+theory of concurrency (7.1, 7.3), stay at a recognize-and-ask level. Where a
+module's lane section names focus outcomes, use it; otherwise every outcome is
+in scope for both lanes and only the evidence differs.
 
 Four strands run through every module, so each idea comes back several times at
 more depth:
@@ -94,7 +103,12 @@ more depth:
   where a rule is enforced, read a multi-file diff.
 
 The order is a suggestion. Module 3 is a good next step whenever something
-breaks. If your app is simple and only you use it, Module 8 can be short.
+breaks. Module 8 can be short while only you use the app, but the capstone needs
+at least one colleague to use it.
+
+Your app grows as you go. Where you can, each module's practice task uses the
+next feature from your Plan outline, merged into `main` after review, so by
+Module 9 you have one app worth sharing rather than a set of drills.
 
 ## Future directions
 

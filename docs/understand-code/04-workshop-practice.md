@@ -1,7 +1,7 @@
 ---
-title: Workshop directory practice
+title: Module 4 practice — Workshop directory
 description:
-  A fictional local API and supplied MCP/browser packets for bounded
+  A fictional local API and supplied MCP and browser packets for one bounded
   investigation.
 slug: /understand-code/practice/workshop-directory
 ---
@@ -51,15 +51,20 @@ it. You do not need to run the workshop service as well.
 
 ## Runnable local route
 
-You need an available Python 3 runtime. Download
+You need Python 3 on your computer (see Module 4's
+[what to ask IT for](04-run-and-investigate.md#what-to-ask-it-for)). Make a new,
+empty folder. Download
 [the local service](pathname:///exercises/understand-module3/module3_server.py)
 and, optionally,
 [its author checks](pathname:///exercises/understand-module3/module3_fixture_test.py)
-into a disposable folder. No course checkout, course website installation,
-account, API key, package download, or implementation project is required. In a
-course checkout, the originals are under `static/exercises/understand-module3/`.
-Open the folder containing the Python files; do not run the course root's
-`npm start` for this exercise.
+into it: right-click each link and choose “Save link as…” (if a link opens as
+text in the browser, save that page into the folder). You don't need a copy of
+the course, an account, an API key or any package downloads. Keep both files:
+Module 7's practice repository uses them again.
+
+New to terminals? Read the
+[“Never used a terminal?” box](04-run-and-investigate.md#one-question-one-environment-one-check)
+first, or ask your agent to run each step and explain it.
 
 Inspect
 [the service](pathname:///exercises/understand-module3/module3_server.py) before
@@ -75,9 +80,7 @@ or shared staging system. Do not substitute another service's address and carry
 these permissions over to it.
 
 An agent can carry out these steps. You should be able to explain the target,
-your expectation and the result; command recall is unnecessary. The retained
-`module3` download names and version identify this fixture, now used in
-Module 4.
+your expectation and the result; you don't need to remember the commands.
 
 1. Open a terminal in the folder containing the downloaded service. Start:
 
@@ -91,10 +94,8 @@ Module 4.
    the exact setup error and use a packet below; do not claim a successful run.
 
 2. In a browser, open the printed base URL plus `/about`. This is a JSON API,
-   not a React app. Expect `environment: local-fixture`, version `module3.1`,
-   and `catalog_state: ready`. The fixture does not report its Git commit. If
-   you are using a Git checkout, record its revision separately with
-   `git rev-parse HEAD`; a copied folder's revision can remain unknown.
+   not a web page. Expect `environment: local-fixture`, version `module3.1`, and
+   `catalog_state: ready`. Record that version in your notes.
 
 3. Open `/health`, then `/api/workshops`. The ready health result is status
    `200` and `ready: true`; the workshop result lists both titles. Ask an agent
@@ -135,12 +136,14 @@ your established private record home; do not commit it to the course.
 
 ## MCP packet route — inspect, then choose a call
 
-The following is supplied fictional evidence, not a live tool discovery or
-execution. The fixture identity note says `workshops-mcp 0.3`, transport `stdio`
-(a local process's input/output), data `fictional-catalog`, and permitted tool
-`search_workshops`. Its author notes that `reserve_seat` reaches an external
-booking system and may send a confirmation; that operation is outside the
-exercise's permission, even though it appears in discovery.
+MCP (Model Context Protocol) is a standard way for AI tools to call operations a
+server offers, called tools. The following is supplied fictional evidence, not a
+live tool discovery or execution. The fixture identity note says
+`workshops-mcp 0.3`, transport `stdio` (a local process's input/output), data
+`fictional-catalog`, and permitted tool `search_workshops`. Its author notes
+that `reserve_seat` reaches an external booking system and may send a
+confirmation; that operation is outside the exercise's permission, even though
+it appears in discovery.
 
 ```json
 {
@@ -170,9 +173,11 @@ exercise's permission, even though it appears in discovery.
 }
 ```
 
-Choose a valid allowed call and predict its result before reading the supplied
-results below. This is interpretation practice; an actual authorized MCP client
-can be used for the execution outcome on your own project.
+`readOnlyHint` is the tool author's own label saying a tool only reads. It is a
+claim, not a guarantee. Choose a valid allowed call and predict its result
+before reading the supplied results below. This is interpretation practice; an
+actual authorized MCP client can be used for the execution outcome on your own
+project.
 
 Supplied fictional records: `search_workshops` with `{"query":"water"}` returned
 `{"content":[{"type":"text","text":"watercolour basics"}],"isError":false}`; the
@@ -184,13 +189,15 @@ that differs from a valid call returning an unexpected result.
 
 ## Browser packet route — separate the screen and its request
 
-These are fictional observations from an example React app; no React application
-is bundled or executed by this exercise. The app's run guide says its frontend
-uses `npm run dev`, and its configured API target must be checked separately.
-That command belongs to this example, not every React repository.
+These are fictional observations from an example React app (React is a popular
+toolkit for building web screens); no React application is bundled or executed
+by this exercise. The app's run guide says its frontend uses `npm run dev`, and
+its configured API target must be checked separately. That command belongs to
+this example, not every React repository.
 
 At 10:00 UTC, the local frontend's About panel reports `workshop-ui 0.8`.
-Searching `WATER` displays “No workshops”. The browser Network panel records
+Searching `WATER` displays “No workshops”. The browser's Network panel (in its
+developer tools, a list of the requests the page made) records
 `GET https://workshops-stage.example.invalid/api/workshops?q=WATER`, status
 `200`, body `{"workshops":[]}`. The console has no errors. A supplied deployment
 note lists stage API version `0.6` from yesterday; no current running API
