@@ -20,8 +20,8 @@ stored data.
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** you show it by predicting what survives a restart and
   checking it, tracing where a value lives through the app's behavior, and
@@ -95,8 +95,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                                                 | Write-code lane adds                                                                           |
 | --------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | 4.1       | For three values in your app, say where each lives and predict whether it survives a restart.                    | Find the line that saves one of those values and the line that reads it back.                  |
@@ -107,7 +105,8 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Restart test.** Teach: what does your app keep in memory versus save? Build:
   hand off a check that adds disposable data, restarts the app and shows what
@@ -136,6 +135,6 @@ Pick one that fits your app. Each runs through the
 - Note multi-write changes and several requests hitting an empty cache as links
   to Module 7. Don't require transactions or locking here.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

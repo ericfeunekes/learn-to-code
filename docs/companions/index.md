@@ -1,21 +1,20 @@
 ---
-title: Earlier repository-reading material
+title: Repository-reading practice
 description:
-  Supplementary evidence for the Understand code and changes track, retained for
-  earlier links.
+  Where the earlier repository-reading companion went, and the optional
+  Fieldnotes packet for Module 6 of the Understand code and changes track.
 slug: /companions
 ---
 
-# Earlier repository-reading material
+# Repository-reading practice
 
-The former standalone companion is now part of the
-[Understand code and changes track](../understand-code/index.md), after shared
-[Module 0](../course/00-project-and-git.md). This is a two-track course; there
-is no separate companion path that bypasses the foundation.
+The earlier standalone companion is now part of the
+[Understand code and changes track](../understand-code/index.md). Start with the
+[track guide](../understand-code/index.md).
 
-[Module 6 — Read an evolving project](../understand-code/06-read-evolving-project.md)
-uses the [fictional Fieldnotes packet](fieldnotes-evidence.md) as a small
-practice before its independent investigation. No implementation repository or
-completed building modules are required.
-
-[The former module address](read-active-repository.md) is retained as a pointer.
+The [fictional Fieldnotes packet](fieldnotes-evidence.md) is optional extra
+practice for
+[Module 6 — Read an evolving project](../understand-code/06-read-evolving-project.md).
+Module 6's main practice is the
+[Harbor Log lab](../understand-code/06-harbor-log-lab.md); use Fieldnotes
+afterwards if you want a second, shorter case.

@@ -14,6 +14,7 @@ export default {
       items: [
         { type: 'doc', id: 'course/CURRICULUM', label: 'Learning path' },
         { type: 'doc', id: 'course/PLAN', label: 'Plan your app' },
+        { type: 'doc', id: 'course/PRACTICE', label: 'Practice and review' },
         {
           type: 'doc',
           id: 'course/testing-and-qa',
@@ -91,7 +92,7 @@ export default {
         {
           type: 'doc',
           id: 'understand-code/read-evolving-project',
-          label: '6. Understand an evolving project',
+          label: '6. Read an evolving project',
         },
         {
           type: 'doc',
@@ -105,23 +106,58 @@ export default {
         },
         {
           type: 'category',
-          label: 'Examples, labs and teacher notes',
+          label: 'Practice, labs and teacher notes',
           collapsed: true,
           items: [
-            'understand-code/fixtures/module-1-shelf-summary',
-            'understand-code/navigation-evidence',
-            'understand-code/behavior-evidence',
-            'understand-code/workshop-practice',
-            'understand-code/teacher-notes',
-            'understand-code/change-evidence',
-            'understand-code/practice-evidence',
-            'understand-code/module6-harbor-log-lab',
-            'companions/fieldnotes-evidence',
+            {
+              type: 'doc',
+              id: 'understand-code/fixtures/module-1-shelf-summary',
+              label: 'M1 practice: Shelf summary',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/navigation-evidence',
+              label: 'M2 practice: Pocket Library',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/behavior-evidence',
+              label: 'M3 practice: reading-list filter',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/workshop-practice',
+              label: 'M4 practice: workshop directory',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/practice-evidence',
+              label: 'M5 practice: blank-title change',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/change-evidence',
+              label: 'M5 extra practice: Note Finder',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/harbor-log-lab',
+              label: 'M6 lab: Harbor Log',
+            },
+            {
+              type: 'doc',
+              id: 'companions/fieldnotes-evidence',
+              label: 'M6 extra practice: Fieldnotes',
+            },
+            {
+              type: 'doc',
+              id: 'understand-code/teacher-notes',
+              label: 'M4 notes for the teaching agent',
+            },
           ],
         },
       ],
     },
-    { type: 'doc', id: 'course/PRACTICE', label: 'Practice & evidence review' },
     { type: 'doc', id: 'course/AI-TEACHER', label: 'Teaching guide' },
     { type: 'doc', id: 'for-ai', label: 'For AI' },
   ],

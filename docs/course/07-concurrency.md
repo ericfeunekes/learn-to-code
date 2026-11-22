@@ -19,8 +19,8 @@ shows up when work overlaps. Also returns to retries and lost replies (3.2,
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** focus on 7.4, the cases users actually hit: double submits
   and retries, and on 7.2 when two people can edit the same thing. Show it by
@@ -97,8 +97,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                         | Write-code lane adds                                                      |
 | --------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | 7.1       | List the kinds of overlapping work in your app and what each shares.                     | Find where async work or background jobs start in your code.              |
@@ -109,7 +107,8 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Double submit.** Teach: what happens if this is sent twice? Build: hand off
   a task to show the effect of two quick submits on disposable data, with your
@@ -135,6 +134,6 @@ Pick one that fits your app. Each runs through the
 - Keep concurrency control and duplicate-effect handling distinct even when one
   operation needs both.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

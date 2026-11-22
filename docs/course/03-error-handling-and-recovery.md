@@ -20,8 +20,8 @@ run it yourself, check what changed.
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** you show it through the failure reports you write, the
   explanations you accept or reject, and the behavior you check after a fix.
@@ -106,8 +106,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                                                         | Write-code lane adds                                                                                     |
 | --------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
 | 3.1       | Write a failure report for a real bug: steps, expected, actual, and one way to test a proposed cause.                    | Read a stack trace and name the line where the failure surfaced and one place the cause could be.        |
@@ -118,7 +116,8 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Break it on purpose.** Teach: what are the ways this action could fail?
   Build: hand off a task to make one failure happen with disposable data (a
@@ -146,6 +145,6 @@ Pick one that fits your app. Each runs through the
 - Debugging is where agents most often take over. Keep the learner deciding what
   counts as evidence and when a fix is accepted, even in the direct-agents lane.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

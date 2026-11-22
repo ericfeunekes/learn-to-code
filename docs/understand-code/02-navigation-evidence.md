@@ -1,12 +1,12 @@
 ---
-title: Module 2 navigation evidence
+title: Module 2 practice — Pocket Library
 description:
   Fictional project packet for finding docs, code and work records, explaining
   current work and checking an agent's claim.
 slug: /understand-code/navigation-evidence
 ---
 
-# Module 2 navigation evidence
+# Module 2 practice — Pocket Library
 
 Use with [Find your way around a project](02-find-your-way.md). **Pocket
 Library** is an invented project. This packet contains fictional files and work

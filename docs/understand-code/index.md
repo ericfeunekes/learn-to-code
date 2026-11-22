@@ -11,113 +11,118 @@ slug: /understand-code
 This track is for product managers, project managers, risk and control
 reviewers, designers, business experts and anyone who needs to follow a team's
 software without building it. The goal: open a repository where work is under
-way, understand what's happening, and work alongside the engineers. You'll know
-where to look, follow what changed and why, ask questions that surface problems
-and risks, test changes yourself and contribute through the team's process.
+way, understand what's happening and work alongside the engineers. By the end
+you'll know where to look, follow what changed and why, ask questions that
+surface problems and risks, start the app and test changes yourself, and
+contribute through the team's process with comments, issues and small pull
+requests.
 
-Your useful result is an explanation you can check, a better question, or an
-investigation that clarifies a claim. You can use agents and tools without
-becoming the feature implementer. It complements the
-[build track](../course/OVERVIEW.md#two-tracks), which is for people who direct
-agents to build their own app.
+You use agents and tools as helpers. You don't become the person who builds the
+features. The [build track](../course/OVERVIEW.md#two-tracks) is the other
+track, for people who direct agents to build their own app.
 
-Start with [Module 0](../course/00-project-and-git.md), focusing on its Git and
-GitHub outcomes (0.3 to 0.7), using what you already know. No app idea, new
-project repository, course installation or unaided coding is required. A
-question can start at a relevant module; revisit an earlier idea only when it
-helps.
+## Before you start
+
+You need four things. First, an AI tool your organization approves for the code
+you'll look at. Second, a clear answer to what you may show it: public code and
+the course's fictional examples are always fine, but a team's private code,
+customer data and secrets are only fine if your organization says so. Ask before
+you paste anything. Third, a free GitHub account. Fourth, from Module 4 on, an
+agent that can run commands on your computer, such as Claude Code or Codex. It
+can run each command for you and explain what it did, so you don't need to know
+the commands. If your laptop is managed by IT, ask early: see Module 4's
+[what to ask IT for](04-run-and-investigate.md#what-to-ask-it-for).
+
+You don't need an app idea, a fork of this course or any coding experience.
+
+## Your first two sessions
+
+> **Session 1: GitHub and the big picture.** Do Module 0's Git and GitHub
+> outcomes ([0.3 to 0.7](../course/00-project-and-git.md)) on a repository your
+> team works on, in the browser. Then do
+> [Module 1](01-how-software-fits-together.md) and its Shelf summary practice.
+>
+> **Session 2: Find your way, then read the team's records.** Do
+> [Module 2](02-find-your-way.md) on the same repository. Then take a first look
+> at Module 7's [U7.1 to U7.3](07-work-with-engineers.md#learning-outcomes):
+> read one issue, one pull request and its checks. You don't need to master them
+> yet. This starts the social side of the work early: from week one you can
+> follow what the team is discussing.
+
+After that, go through Modules 3 to 7 in order, or jump to the module that
+answers the question you have today.
+
+## The seven modules
+
+| Module                                                                   | What you can do after it                                                                                                         |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| [1. How software fits together](01-how-software-fits-together.md)        | Explain how a person's action leads to a result, and tell the files in a repository apart from the software people are running.  |
+| [2. Find your way around a project](02-find-your-way.md)                 | Find the useful files and work records and give a short, honest account of what the software does and what is changing.          |
+| [3. Follow one behavior](03-follow-one-behavior.md)                      | Follow one small path through the code, state its rule in plain words and predict what a different input would do.               |
+| [4. Run and investigate a behavior](04-run-and-investigate.md)           | Start an app safely, try one thing, compare it with what you expected and write it up so someone else can repeat it.             |
+| [5. Understand a change and its evidence](05-evidence-of-correctness.md) | Explain what a change does before and after, and judge whether its tests would catch it going wrong.                             |
+| [6. Read an evolving project](06-read-evolving-project.md)               | Combine work records, a source change and an observation into a dated account, and update it when new evidence arrives.          |
+| [7. Work with engineers on GitHub](07-work-with-engineers.md)            | Read issues, pull requests, reviews and checks; ask good questions; run a QA pass; contribute; follow real work in the capstone. |
+
+Use the [review questions](review-questions.md) on any change, at any point.
+
+## Which pages belong to which module
+
+| Module | Main page                                                             | Practice                                                                                        | Other pages                                         |
+| ------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| 1      | [How software fits together](01-how-software-fits-together.md)        | [Shelf summary](fixtures/module-1-shelf-summary.md)                                             |                                                     |
+| 2      | [Find your way around a project](02-find-your-way.md)                 | [Pocket Library](02-navigation-evidence.md)                                                     |                                                     |
+| 3      | [Follow one behavior](03-follow-one-behavior.md)                      | [Reading-list filter](03-behavior-evidence.md)                                                  |                                                     |
+| 4      | [Run and investigate a behavior](04-run-and-investigate.md)           | [Workshop directory](04-workshop-practice.md)                                                   | [Notes for the teaching agent](04-teacher-notes.md) |
+| 5      | [Understand a change and its evidence](05-evidence-of-correctness.md) | [Blank-title change](05-practice-evidence.md); extra: [Note Finder](05-change-evidence.md)      |                                                     |
+| 6      | [Read an evolving project](06-read-evolving-project.md)               | [Harbor Log](06-harbor-log-lab.md); extra: [Fieldnotes](../companions/fieldnotes-evidence.md)   |                                                     |
+| 7      | [Work with engineers on GitHub](07-work-with-engineers.md)            | Your own [practice repository](07-work-with-engineers.md#practise-in-your-own-repository-first) | [Review questions](review-questions.md)             |
 
 ## A project you can return to
 
-An existing repository, or the broader software project it belongs to, is your
-continuing context. Return to it over time to understand different parts, follow
-the team's changes and investigate things that catch your attention. You do not
-need a precise question before you begin. Start by getting oriented: what the
-software does, how its main parts connect and what work is happening. The
-supplied examples let you begin before you have a project to bring.
+A repository your team works on is your continuing context. Come back to it over
+time: explore a feature one week, read a pull request the next, check what
+reached a release after that. You don't need a precise question to start.
+Getting oriented is a fine first goal: what the software does, how its main
+parts connect and what work is happening. Until you have a repository you may
+use, the fictional examples in each module let you practise.
 
-On one visit you might explore a feature; later you might investigate a bug,
-read a PR or find out what reached a release. A focused question can keep an
-individual investigation manageable. Curiosity, broad exploration and following
-unexpected connections belong here too. The course is not confined to answering
-one question, and a visit is not a separate assignment to complete.
+Keep a few short notes as you go, so the next visit starts where you left off.
 
-Build a richer picture as you go. Reuse what you already understand, revisit the
-relevant modules and check earlier conclusions when the software or its work
-records change. A small private map or a few return notes can help; a new formal
-report is unnecessary for every visit.
+## Broad first, then deep
 
-## The picture first, then increasing detail
+Get a rough picture of the whole before you explain every part. You can
+understand that a screen asks a service for information, and that the service
+reads stored data, long before you learn a particular framework or database.
+Each module returns to the same picture with a sharper question: explain the
+parts, find the evidence, follow one behavior, try it, judge a change and
+combine it all into an account you keep up to date. Module 7 then puts that
+picture to work with the engineers.
 
-Get a usable picture of the whole before explaining every part. A screen can ask
-a service for information that comes from stored data; you can understand that
-connection before learning a particular framework or database language. An
-issue, a source change and what users can currently do are related views of the
-work, not the same fact.
+## How to work with an agent on this track
 
-Revisit the picture with increasingly concrete questions: explain the parts,
-find the evidence, follow one behavior, investigate it, assess a change, and
-combine what you learned into an account that can be updated. Each module can
-support short exchanges and partial results. The pages are references, not seven
-lectures or a required sequence of sessions.
+Use an approved agent to search, read, explain and run things for you. Your part
+is to choose the question, predict the result, decide what to check and judge
+what the evidence shows. The agent's part is the mechanics.
 
-## The seven-module path
+Reading a command is different from running it. Before anything runs, establish
+where it runs, which version, what data it uses and what it could change. Module
+4 shows how. Work that runs the team's app or drafts a pull request happens in a
+separate investigation session in your own copy of the repository. That session
+never posts anything without your go-ahead for the exact text.
 
-| Module                                                                   | Useful result                                                                                                                    |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| [1. How software fits together](01-how-software-fits-together.md)        | Explain a simple action-to-result connection and distinguish files from running software.                                        |
-| [2. Find your way around a project](02-find-your-way.md)                 | Locate useful files and work records; give an early, modest account of what the software does and what is changing.              |
-| [3. Follow one behavior](03-follow-one-behavior.md)                      | Explain a small path and its rule, then predict what happens when one input changes.                                             |
-| [4. Run and investigate a behavior](03-run-and-investigate.md)           | Direct one suitable check, interpret its result and give someone a reproducible finding.                                         |
-| [5. Understand a change and its evidence](05-evidence-of-correctness.md) | Explain before/after effects and judge whether the available checks address them.                                                |
-| [6. Understand an evolving project](06-read-evolving-project.md)         | Combine work records, a source change and an observation; revise a dated account when new evidence arrives.                      |
-| [7. Work with engineers on GitHub](07-work-with-engineers.md)            | Read issues, pull requests, reviews and checks; ask good questions; run a QA pass; contribute; follow real work in the capstone. |
+The examples in each module are fictional. Say so when you use them: practising
+on a fictional example is useful, but it isn't the same as doing it on a real
+project.
 
-Module 2 already offers a useful project overview. Module 6 deepens that
-understanding and combines the other capabilities, and Module 7 puts it to work
-alongside the engineers, ending in the track's capstone. Use the
-[review questions](review-questions.md) on any change, at any point. Navigation
-and behavior tracing remain useful even when you cannot run the software.
+## Bring work back for review
 
-## Active work, with a clear target
+Bring your question, the sources you used and their version, what was run and
+what it showed, your explanation and what the agent did. See
+[the shared evidence guide](../course/PRACTICE.md#bring-work-back-for-review).
+If a link is private, safe excerpts work too.
 
-Use approved agents and tools to search, inspect, investigate and question a
-claim. Add syntax and framework detail when it answers the question at hand.
-API, MCP and browser checks are alternative ways to investigate a behavior;
-choose a relevant interface rather than completing three technology courses.
-Hosted authorized access is as valid as local startup.
-
-Reading a command or tool schema differs from executing it. Establish the
-environment, version, data and permitted effects before execution. Local
-software can contact shared services. Pause an uncertain action and continue
-with safe evidence instead of treating missing runtime access as missing
-understanding.
-
-The supplied examples are fictional. Local fixtures make some checks runnable;
-packets support reasoning when execution is unavailable. Label these uses
-honestly: a supplied result is not your execution, and a familiar exercise does
-not establish transfer to an unfamiliar real repository.
-
-## Independent application and teacher review
-
-Make your own prediction, explanation, investigation or assessment, with agent
-assistance as useful. Bring back the question, relevant sources and version, any
-actual commands and results, your interpretation and the agent's contribution.
-Use
-[the shared evidence guide](../course/PRACTICE.md#bring-work-back-for-review). A
-chat or repository link may be inaccessible; relevant safe excerpts work too.
-
-The teacher credits your explanations, choices and follow-ups separately from
-agent output. A correct map or green check alone does not prove understanding.
-Missing access can leave useful partial evidence while execution or transfer
-remains unassessed. Keep learner records private; a short supported explanation
-is enough when it answers the question.
-
-## Earlier material
-
-The [Fieldnotes packet](../companions/fieldnotes-evidence.md) remains
-supplementary practice for Module 6. The former
-[companion entry](../companions/index.md) points into this track. The former
-[feature/change page](04-follow-feature-or-change.md) points to the reworked
-Modules 3 and 5. These are preserved links, not additional modules or
-alternative completion criteria.
+The teaching agent credits your explanations, choices and questions separately
+from what an agent produced. A correct summary or a green check doesn't prove
+understanding on its own. Missing access leaves a part unassessed; it isn't a
+failure. Keep your learning notes private.

@@ -12,8 +12,7 @@ Use with [Module 3 — Follow one behavior](03-follow-one-behavior.md).
 **Everything here is fictional training material.** The paths and source
 excerpts describe one supplied snapshot, **Reading list example**. They aren't
 files to locate on your computer, an executable repository, or evidence of
-actual tool use. The JavaScript excerpts use plain text for readable contrast.
-No installation, account, server or code writing is required.
+actual tool use. No installation, account, server or code writing is required.
 
 Question: **When someone checks “Only unread”, how does that choice determine
 which titles are displayed? What would unchecking it do?**
@@ -157,4 +156,4 @@ A correct count without a path supports only part of the work. An explanation
 that follows the call and return but names the display implementation as missing
 is appropriately bounded. Neither establishes what a real browser displayed. For
 observation, carry the prediction to
-[Module 4 — Run and investigate](03-run-and-investigate.md).
+[Module 4 — Run and investigate](04-run-and-investigate.md).

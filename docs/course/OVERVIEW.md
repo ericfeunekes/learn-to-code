@@ -15,26 +15,36 @@ and judge the result.
 
 ## Two tracks
 
-- **Build an app.** For a business user who wants to direct AI to build a tool
-  for their work. By the end you can build an app that's more than a throwaway
-  demo: it does a real job, follows a spec, has checks you trust, keeps its data
-  safe, lets the right people in and can be maintained. It won't be
-  enterprise-grade, but it gives you a solid base to keep learning. Start with
-  [workspace setup](SETUP.md) and [Plan your app](PLAN.md).
-- **[Understand code and changes](../understand-code/index.md).** For product
-  managers, risk and control reviewers, and anyone who needs to follow a team's
-  software without building it. By the end you can open a team's GitHub, know
-  where to look, follow what changed and why, ask the questions that surface
-  problems and risks, test changes yourself and contribute through the team's
-  process. You'll be able to work alongside engineers, not just review their
-  work. No project or setup is needed to start.
+Pick the one that fits your job. You can take both.
+
+- **Build an app.** Direct AI to build a useful tool for your work: it does a
+  real job, has checks you trust and keeps its data safe. **Start here →**
+  [Set up your workspace](SETUP.md), then [Plan your app](PLAN.md).
+- **Understand code and changes.** Follow a team's software without building it,
+  as a product manager or a risk and control reviewer. **Start here →**
+  [the track guide](../understand-code/index.md). No project or setup needed.
 
 Both tracks share [Module 0](00-project-and-git.md): Git, GitHub, reading what
-changed and spotting agent mistakes. You can take both.
+changed and spotting agent mistakes.
 
-On the build track, after [setup](SETUP.md), use
-[What's next?](SETUP.md#whats-next) or ask your AI “I'm set up. What's next?”
-The [AI guide](AI-TEACHER.md) explains outcome and evidence context.
+On the build track, by the end you can build an app that's more than a throwaway
+demo: it follows a spec, keeps its data safe, lets the right people in and can
+be maintained. It won't be enterprise-grade, but it gives you a solid base to
+keep learning. On the Understand track, by the end you can open a team's GitHub,
+follow what changed and why, ask the questions that surface problems and risks,
+test changes yourself and work alongside engineers.
+
+After [setup](SETUP.md), use [What's next?](SETUP.md#whats-next) or ask your AI
+“I'm set up. What's next?” New words are explained in
+[Words you'll meet](#words-youll-meet).
+
+## How long it takes
+
+A module is usually three sessions: one to learn, one to build and one to
+review, each about one to two hours. At about 3 hours a week, the build track
+takes roughly 4 to 5 months from Plan your app to the capstone. You should have
+a first version of your app running within the first month, at the end of Plan
+your app. The Understand track has no build sessions, so it usually goes faster.
 
 ## What you will be able to do
 
@@ -75,14 +85,12 @@ it's recorded in your learning log.
 
 ## Choose and outline your project
 
-[Plan your app](PLAN.md) is the first step on the build track, separate from the
-Git/GitHub learning prompt. It covers whether to build at all, which platform
-and what it costs, your organization's data rules, who will use it and who will
-maintain it, and a one-page outline. If you already have a project, resume it
-rather than starting again.
-
-If you do not yet have a working app, direct AI to make the smallest runnable
-version you can use for the testing module. Learn setup tools as needed.
+[Plan your app](PLAN.md) is the first step on the build track. It covers whether
+to build at all, which platform and what it costs, your organization's data
+rules, who will use it and who will maintain it, a one-page outline and a first
+runnable version built with synthetic data. If you already have a project,
+resume it rather than starting again. Setup isn't a gate; see
+[where to start](CURRICULUM.md#where-to-start).
 
 ## The core modules
 
@@ -91,9 +99,9 @@ build on each other.
 
 | Module                                                                                  | Intended outcome                                                                                                                         |
 | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [Plan your app](PLAN.md)                                                                | Decide whether to build, on what and with which data, who will use it, and outline the first version.                                    |
+| [Plan your app](PLAN.md)                                                                | Decide whether to build, on what and with which data, who will use it, outline it and run a first version.                               |
 | [0. Directing an agent](00-project-and-git.md)                                          | Brief an agent, keep steps small, check what changed, catch common agent mistakes, and use Git and GitHub to keep, undo and follow work. |
-| [1. Testing and QA](01-testing-and-qa.md)                                               | Define expected behavior and judge useful checks and the actual client outcome.                                                          |
+| [1. Testing and QA](01-testing-and-qa.md)                                               | Define expected behavior, and judge useful checks and what the user actually gets.                                                       |
 | [2. Modeling data and behavior](02-modeling-data-and-behavior.md)                       | Describe the things, states and rules in your app, and turn them into a spec an agent can build from.                                    |
 | [3. Debugging, errors and recovery](03-error-handling-and-recovery.md)                  | Direct a diagnosis from evidence, and choose how the app responds and recovers.                                                          |
 | [4. Persistence and shared state](04-persistence-and-shared-state.md)                   | Explain where data lives, which copy is trusted, and how saved data survives changes.                                                    |
@@ -121,5 +129,46 @@ Work at your own pace. Module 9 ends the core by handing over to you: a capstone
 you run yourself, and a way to learn whatever you need next. Then choose from
 [future directions](CURRICULUM.md#future-directions) according to what you want
 to build.
+
+## Words you'll meet
+
+Each word has a rough Excel or SharePoint equivalent. The match isn't exact, but
+it's a good start.
+
+- **Repository (repo):** a project folder whose whole history Git keeps. Like a
+  SharePoint document library with version history on every file.
+- **Commit:** a saved checkpoint of the whole project, with a note saying what
+  changed. Like an entry in a file's Version history, but for every file at
+  once, and only when you choose.
+- **Branch:** a separate line of work where you try something without touching
+  the main version. Like saving "Budget – new layout" as a copy, then folding
+  the good parts back into the original.
+- **Fork:** your own copy of someone else's repository on GitHub. Like copying a
+  shared template into your own OneDrive: you change your copy, not theirs.
+- **Clone:** a copy of a repository on your computer that stays linked to the
+  online one. Like syncing a SharePoint library to your laptop.
+- **Pull request:** a proposal to bring one branch's changes into another, with
+  room for review and approval. Like sending a copy with tracked changes for
+  someone to approve before it replaces the master.
+- **Terminal:** a window where you type commands instead of clicking: Terminal
+  on a Mac, Terminal or PowerShell on Windows. Like the formula bar: exact text
+  in, a result out.
+- **Test:** a small program that runs part of your app and compares the result
+  with what you expected. Like a check cell that shows "OK" only when the totals
+  reconcile.
+- **Fixture:** the known starting data a test uses. Like a sample sheet of
+  made-up rows you keep for checking formulas.
+- **Schema:** the agreed shape of the data: which fields, what type and which
+  are required. Like a SharePoint list's column settings, or data validation on
+  each column.
+- **Deployment:** putting a copy of your app somewhere other people can use it.
+  Like publishing a workbook to a team site instead of keeping it on your
+  desktop.
+- **Environment:** one place the app runs, with its own settings and data: your
+  computer, a test copy or the live copy. Like a practice workbook and the real
+  one: same formulas, different data.
+- **Synthetic data:** made-up data shaped like the real thing, with no real
+  people or confidential details. Like the sample companies in Microsoft's
+  templates.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

@@ -172,12 +172,13 @@ explain its value, and write a limited conclusion. No live calls are needed.
 - **API:** the response is now 400, but a new observation shows one note saved.
   Which part of P1 is met and which is violated? What would checking only status
   miss?
-- **MCP:** a tool's input schema says `title` must be a string. Its test checks
-  that `"   "` passes schema validation and calls that “correct rejection.” A
-  schema describes permitted input/output structure; it need not express all
-  behavior rules. No invocation result or stored state is supplied. What is
-  established, and what evidence would resolve the title behavior? An MCP tool
-  call can have effects; do not invoke an unknown tool to fill this gap.
+- **MCP (Model Context Protocol):** a tool's input schema says `title` must be a
+  string. Its test checks that `"   "` passes schema validation and calls that
+  “correct rejection.” A schema describes permitted input/output structure; it
+  need not express all behavior rules. No invocation result or stored state is
+  supplied. What is established, and what evidence would resolve the title
+  behavior? An MCP tool call can have effects; do not invoke an unknown tool to
+  fill this gap.
 - **React:** a component test replaces the save service with a response saying
   “saved” and sees a confirmation banner. A real-browser observation on the
   candidate shows that banner, but reloading loses the note. Explain what the

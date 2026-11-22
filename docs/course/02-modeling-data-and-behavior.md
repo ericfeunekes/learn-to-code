@@ -22,8 +22,8 @@ the data is saved.
 
 ## Choose your lane
 
-The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
-changes is the evidence.
+Same outcomes in both [lanes](OVERVIEW.md#choose-your-lane); the evidence
+differs.
 
 - **Direct agents:** you show it through the model you write in plain language,
   the states and rules you define, and the permitted and forbidden cases you
@@ -101,8 +101,6 @@ These add to the general list in [Module 0](00-project-and-git.md).
 
 ## By lane, and checks without AI
 
-Each check without AI is something the learner does with the agent closed.
-
 | Objective | Check without AI                                                                                                  | Write-code lane adds                                                                     |
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | 2.1       | Sketch the main things in your app and how they relate, and name two look-alike values that must not be mixed up. | Find the data structure for one of those things and compare it with your sketch.         |
@@ -113,7 +111,8 @@ Each check without AI is something the learner does with the agent closed.
 ## Practice tasks
 
 Pick one that fits your app. Each runs through the
-[teach, build and review loop](PRACTICE.md).
+[practice loop](PRACTICE.md#the-practice-loop). Where you can, build the next
+feature from your Plan outline as the task, so your app grows as you learn.
 
 - **Model before code.** Teach: what are the things, states and rules in your
   app? Build: hand off a task asking the agent to compare your written model
@@ -139,6 +138,6 @@ Pick one that fits your app. Each runs through the
 - 2.4 is the direct-agents lane's main deliverable from this module. A clear
   spec plus checks is how that learner directs a build without reading code.
 
-[Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
+[Course overview](OVERVIEW.md) · [Practice and review](PRACTICE.md)
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

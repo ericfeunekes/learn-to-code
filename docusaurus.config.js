@@ -29,7 +29,15 @@ export default {
   plugins: [
     [
       '@docusaurus/plugin-client-redirects',
-      { redirects: [{ from: '/start/', to: '/' }] },
+      {
+        redirects: [
+          { from: '/start/', to: '/' },
+          {
+            from: '/understand-code/follow-feature-or-change/',
+            to: '/understand-code/follow-one-behavior/',
+          },
+        ],
+      },
     ],
   ],
   themeConfig: {
