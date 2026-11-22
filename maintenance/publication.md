@@ -81,14 +81,14 @@ own terms.
 
 The October 29 branch is a fresh implementation from public main, independent of
 the offline Mac branch. It does not claim to recover that branch. Source hashes
-and modification times for the thirteen files admitted at that time are recorded
-in `course-source.json`; it predates Plan your app and Modules 8 and 9, and
-`docs/course/` has since been edited in place, so don't run `content:refresh`
-until the maintained source matches it; private source identities and transfer
-details belong in the separate review handoff. No learner ledger, log or
-research was imported. The branch is local only. Push, deployment and merge need
-separate authorization. Do not add hosted CI or self-hosted runners for this
-work; existing workflow configuration is unchanged.
+and modification times for the sixteen admitted files are recorded in
+`course-source.json` (November 22 snapshot). `docs/course/` was edited in place
+after that snapshot, so bring the maintained source up to date before running
+`content:refresh`, or the refresh will revert those edits. Private source
+identities and transfer details belong in the separate review handoff. No
+learner ledger, log or research was imported. The branch is local only. Push,
+deployment and merge need separate authorization. Do not add hosted CI or
+self-hosted runners for this work; existing workflow configuration is unchanged.
 
 ## Approved implementation refinements
 
@@ -97,7 +97,8 @@ same-conversation application with an optional implementation handoff, and
 careful distinction between reported results and inspected evidence. These are
 implementation refinements, not edits to the maintained Drive source.
 
-`course-source.json` continues to identify the original canonical snapshot.
+`course-source.json` identifies the current canonical Drive snapshot, replaced
+on November 22, 2026 with the sources behind the current pages.
 `course-refinements.json` records the approved practice wording as an exact,
 guarded source replacement. The importer applies it before rendering and marks
 the generated page's `source_refinements` metadata. A changed source passage
