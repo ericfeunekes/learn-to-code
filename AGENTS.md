@@ -48,13 +48,20 @@ content, and never import another learner's records.
 
 ## Starting and continuing
 
-Setup is done once the learner has forked, cloned and opened this workspace.
+Setup is done once the learner has forked or cloned and opened this workspace.
 Project definition and a full Git lesson are separate choices, not setup steps.
+A work app lives in its own private repository, not in `app/` in the public
+fork; see `docs/course/SETUP.md`.
+
+The course has two tracks sharing Module 0. The build track (`docs/course/`) is
+for directing agents to build an app. The Understand code and changes track
+(`docs/understand-code/`) is for product managers and risk and control reviewers
+following a team's software; it needs no project, handoff or build session.
 
 Any start that doesn't name an activity, such as "What's next?" or "I want to
 start", gets these three choices. Then wait:
 
-- Define a project.
+- Define a project (or, on the understand track, pick a repository to follow).
 - Learn Git/GitHub.
 - Continue existing work.
 

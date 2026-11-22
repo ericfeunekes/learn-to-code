@@ -11,7 +11,7 @@ source_refinements:
 
 # Learn to Build Software — Practice and review
 
-Use [the overview](OVERVIEW.md) to define a useful project and the
+Use [Plan your app](PLAN.md) to define a useful project and the
 [learning outcomes](CURRICULUM.md#core-modules) to identify what you want to
 demonstrate. Choose how to learn: explanation, discussion and existing project
 work can each provide useful evidence.
@@ -40,6 +40,24 @@ in `BUILD-NOTES.md`. Leave room for your own decisions rather than supplying a
 fully solved prompt. Build in `app/` in your fork or in your own project folder.
 Learning and review do not require installing or running this documentation
 website.
+
+## Bring work back for review
+
+Bring back what a reviewer needs to see your part in the work, not just the
+result:
+
+- **Build track:** the handoff you drafted, the build agent's `BUILD-NOTES.md`
+  entry, the commits on your `practice/` branch, and what you ran and observed
+  yourself.
+- **[Understand code and changes](../understand-code/index.md) track:** your
+  question, the repository, pull requests or records you looked at and which
+  version, any commands you ran and their results, your explanation or finding,
+  and what the agent did for you.
+
+A link to another conversation or a private repository may not open for the
+reviewer. Paste or export the relevant parts instead, with credentials, personal
+data and confidential work details removed. Say what's fictional practice
+material and what's real.
 
 ## Feedback against the outcome
 

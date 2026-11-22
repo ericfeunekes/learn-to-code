@@ -1,11 +1,11 @@
 ---
-title: Module 3 — Persistence and shared state
+title: Module 4 — Persistence and shared state
 description: 'Explain storage, authoritative values, caching and preservation.'
 slug: /modules/persistence-and-shared-state
-source_file: 03-persistence-and-shared-state.md
+source_file: 04-persistence-and-shared-state.md
 ---
 
-# Module 3 — Persistence and shared state
+# Module 4 — Persistence and shared state
 
 "I refreshed and my data disappeared" is one of the most common surprises in an
 app an agent built. This module is about where your app keeps its data, which
@@ -14,7 +14,7 @@ casually, and a storage mistake can lose real work, so this is where checking
 before you keep a change matters most.
 
 Returns to fixtures and disposable test data (1.5), integration checks against
-real storage (1.3), and interrupted operations (2.4). Module 0's undo (0.3)
+real storage (1.3), and interrupted operations (3.4). Module 0's undo (0.3)
 protects your code, not your saved data, so keep a copy before any change to
 stored data.
 
@@ -33,7 +33,7 @@ changes is the evidence.
 
 By the end of this module, you should be able to:
 
-### 3.1 Trace state and explain durability
+### 4.1 Trace state and explain durability
 
 - Trace a value from input through its reads, changes and storage. Distinguish
   temporary memory from saved state in the browser, a file, a database or
@@ -42,7 +42,7 @@ By the end of this module, you should be able to:
   then direct an agent to test the prediction with disposable data. Explain what
   the result shows and why some state is meant to be temporary.
 
-### 3.2 Identify authoritative data and its readers and writers
+### 4.2 Identify authoritative data and its readers and writers
 
 - Say which data is the source of truth and which values are copies or derived
   results. Explain which value wins when copies disagree, including an unsaved
@@ -52,7 +52,7 @@ By the end of this module, you should be able to:
   agent to trace a real update through those paths and say who sees it, when,
   and what could be out of date.
 
-### 3.3 Decide whether and how to cache
+### 4.3 Decide whether and how to cache
 
 - Explain a cache as a copy kept to avoid repeating work. Weigh what it saves
   against the cost of keeping it fresh, and defend adding one, keeping the
@@ -63,7 +63,7 @@ By the end of this module, you should be able to:
 - Direct an agent to show the freshness and empty-cache behavior using the real
   cache, not a stand-in, when you're claiming how it works.
 
-### 3.4 Preserve and recover saved data
+### 4.4 Preserve and recover saved data
 
 - Explain who relies on a saved format and how changing a field or its meaning
   affects older records. Distinguish migrating existing data, staying compatible
@@ -99,10 +99,10 @@ Each check without AI is something the learner does with the agent closed.
 
 | Objective | Check without AI                                                                                                 | Write-code lane adds                                                                           |
 | --------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 3.1       | For three values in your app, say where each lives and predict whether it survives a restart.                    | Find the line that saves one of those values and the line that reads it back.                  |
-| 3.2       | Name the source of truth for one piece of data and every part of the app that changes it.                        | Read the code paths that write it and check whether you missed one.                            |
-| 3.3       | For one cache, or one place a cache might help, state the acceptable staleness and what happens when it's empty. | Find where a cached value is refreshed or cleared.                                             |
-| 3.4       | Given a proposed field change, list the old records it affects and how you'd keep them readable.                 | Read your schema or a saved file and predict what an older record looks like after the change. |
+| 4.1       | For three values in your app, say where each lives and predict whether it survives a restart.                    | Find the line that saves one of those values and the line that reads it back.                  |
+| 4.2       | Name the source of truth for one piece of data and every part of the app that changes it.                        | Read the code paths that write it and check whether you missed one.                            |
+| 4.3       | For one cache, or one place a cache might help, state the acceptable staleness and what happens when it's empty. | Find where a cached value is refreshed or cleared.                                             |
+| 4.4       | Given a proposed field change, list the old records it affects and how you'd keep them readable.                 | Read your schema or a saved file and predict what an older record looks like after the change. |
 
 ## Practice tasks
 
@@ -125,7 +125,7 @@ Pick one that fits your app. Each runs through the
 
 - This is a first pass, following
   [broad first, then deep](OVERVIEW.md#broad-first-then-deep). Aim for a working
-  grasp of all four objectives. Modeling what the data means comes in Module 4,
+  grasp of all four objectives. Modeling what the data means came in Module 2,
   types and validation of stored data in Module 5, and several writers at once
   in Module 7.
 - Use the store the app already has. A new database, cache or migration isn't

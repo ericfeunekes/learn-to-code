@@ -1,13 +1,15 @@
 ---
 title: 'Module 5 — Typing, protocols, and data validation'
-description: 'Express shapes and shared promises, and check actual data.'
+description: >-
+  Check outside data at the boundary, and see what types and promises do and do
+  not check.
 slug: /modules/typing-protocols-and-data-validation
 source_file: 05-typing-protocols-and-data-validation.md
 ---
 
 # Module 5 — Typing, protocols, and data validation
 
-Module 4 described what your data means. This module is about how code writes
+Module 2 described what your data means. This module is about how code writes
 that meaning down, and how the app checks data coming in from outside before
 trusting it. Anything from outside, whether a form, a file, an API response or a
 pasted value, can be wrong or hostile. Checking it at the right place is both a
@@ -15,16 +17,19 @@ correctness rule and your first real security boundary.
 
 Returns to test doubles (1.5): a fake or stub is only useful if it keeps the
 same promises as the real thing. Also returns to dependency injection (1.6), the
-model from Module 4 and keeping secrets out (0.6).
+model from Module 2 and keeping secrets out (0.6).
 
 ## Choose your lane
 
 The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
 changes is the evidence.
 
-- **Direct agents:** you show it by naming where outside data enters, deciding
-  what must be checked there, and testing it with good, malformed and
-  well-formed-but-wrong input.
+- **Direct agents:** focus on 5.4, checking outside data where it enters, which
+  is a security skill every app needs. Show it by naming where outside data
+  enters, deciding what must be checked there, and testing it with good,
+  malformed and well-formed-but-wrong input. For 5.1 to 5.3, recognize and ask:
+  say in plain language what values are allowed, and ask the agent what its
+  types do and don't check.
 - **Write code:** you also read type definitions and validation code, run the
   type checker yourself, and write a small type or check by hand.
 
@@ -47,7 +52,7 @@ By the end of this module, you should be able to:
 
 - Explain when missing, optional, empty and zero mean different things in your
   app, and which are allowed.
-- Describe the valid combinations in a record or lifecycle from Module 4, and
+- Describe the valid combinations in a record or lifecycle from Module 2, and
   name a combination that breaks your rules.
 - Ask an agent for a small type sketch that rules out invalid combinations.
   Compare it with the current representation and decide whether a change is

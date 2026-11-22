@@ -14,18 +14,19 @@ where that can happen in your app, showing it on purpose, and choosing the
 smallest protection that works.
 
 Returns to judging evidence (1.7): a passing test can miss a problem that only
-shows up when work overlaps. Also returns to retries and lost replies (2.2,
-2.4), the source of truth (3.2) and rules that must stay true (4.3).
+shows up when work overlaps. Also returns to retries and lost replies (3.2,
+3.4), the source of truth (4.2) and rules that must stay true (2.3).
 
 ## Choose your lane
 
 The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
 changes is the evidence.
 
-- **Direct agents:** focus on 7.2 and 7.4, the cases users actually hit: double
-  submits, two people editing, retries. Show it by naming the risk, asking for a
-  controlled demonstration and judging the protection. 7.1 and 7.3 can stay at a
-  recognize-and-ask level.
+- **Direct agents:** focus on 7.4, the cases users actually hit: double submits
+  and retries, and on 7.2 when two people can edit the same thing. Show it by
+  naming the risk, asking for a controlled demonstration and judging the
+  protection. 7.1 and 7.3 stay at a recognize-and-ask level. If only you use the
+  app, one double-submit check is enough for this module.
 - **Write code:** you also follow the order of steps in two overlapping runs,
   read where a lock or transaction starts and ends, and write a controlled test
   of the overlap.

@@ -1,12 +1,12 @@
 ---
-title: 'Module 2 — Debugging, errors and recovery'
+title: 'Module 3 — Debugging, errors and recovery'
 description:
   'Direct a diagnosis from evidence, and choose responses and recovery.'
 slug: /modules/error-handling-and-recovery
-source_file: 02-error-handling-and-recovery.md
+source_file: 03-error-handling-and-recovery.md
 ---
 
-# Module 2 — Debugging, errors and recovery
+# Module 3 — Debugging, errors and recovery
 
 Something in your app will break. This module is about what you do next: find
 out why from evidence, decide how the app should respond, and recover without
@@ -32,7 +32,7 @@ changes is the evidence.
 
 By the end of this module, you should be able to:
 
-### 2.1 Diagnose a failure from evidence
+### 3.1 Diagnose a failure from evidence
 
 - Describe a failure as an agent can use it: what you did, what you expected,
   what happened instead, and how to make it happen again. A failure you can
@@ -48,7 +48,7 @@ By the end of this module, you should be able to:
   only when the original case now passes and a regression check would catch the
   failure if it came back.
 
-### 2.2 Choose how to handle a failure
+### 3.2 Choose how to handle a failure
 
 - Distinguish three kinds of failure: input the user can correct, a dependency
   that's temporarily unavailable, and a bug in the app. Each needs a different
@@ -62,7 +62,7 @@ By the end of this module, you should be able to:
 - Direct an agent to show the chosen response for one failure, and explain your
   choice against a plausible alternative.
 
-### 2.3 Make failure understandable and observable
+### 3.3 Make failure understandable and observable
 
 - Distinguish a message that helps the user act from diagnostic detail that
   helps you find the cause. A user needs to know what happened, whether their
@@ -74,7 +74,7 @@ By the end of this module, you should be able to:
 - Direct an agent to show both the user's view of a failure and the diagnostic
   record behind it.
 
-### 2.4 Reason about interruption and recovery
+### 3.4 Reason about interruption and recovery
 
 - When an operation stops partway, say what finished, what didn't and what's
   uncertain. A missing reply doesn't prove nothing happened: the save may have
@@ -110,10 +110,10 @@ Each check without AI is something the learner does with the agent closed.
 
 | Objective | Check without AI                                                                                                         | Write-code lane adds                                                                                     |
 | --------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| 2.1       | Write a failure report for a real bug: steps, expected, actual, and one way to test a proposed cause.                    | Read a stack trace and name the line where the failure surfaced and one place the cause could be.        |
-| 2.2       | For three failures in your app, sort them into user-correctable, temporary or a bug, and say how each should be handled. | Point to where an error is caught in your code and say whether that code can actually decide what to do. |
-| 2.3       | Write the user message and the log entry for one failure, and mark anything that must stay out of the log.               | Add one useful log line by hand and check it appears.                                                    |
-| 2.4       | For an interrupted save, list what might have happened and what you'd check before retrying.                             | Trace what state the code leaves behind if it stops halfway through a function.                          |
+| 3.1       | Write a failure report for a real bug: steps, expected, actual, and one way to test a proposed cause.                    | Read a stack trace and name the line where the failure surfaced and one place the cause could be.        |
+| 3.2       | For three failures in your app, sort them into user-correctable, temporary or a bug, and say how each should be handled. | Point to where an error is caught in your code and say whether that code can actually decide what to do. |
+| 3.3       | Write the user message and the log entry for one failure, and mark anything that must stay out of the log.               | Add one useful log line by hand and check it appears.                                                    |
+| 3.4       | For an interrupted save, list what might have happened and what you'd check before retrying.                             | Trace what state the code leaves behind if it stops halfway through a function.                          |
 
 ## Practice tasks
 
@@ -136,9 +136,9 @@ Pick one that fits your app. Each runs through the
 
 - This is a first pass, following
   [broad first, then deep](OVERVIEW.md#broad-first-then-deep). Aim for a working
-  grasp of all four objectives. Saved state comes back in Module 3, valid
-  transitions in Module 4, and duplicate effects under overlapping work in
-  Module 7.
+  grasp of all four objectives. Saved state comes back in Module 4, valid
+  transitions were covered in Module 2, and duplicate effects under overlapping
+  work in Module 7.
 - A file operation, a calculation or bad input is enough of an example. An
   external service isn't required.
 - Keep diagnosis, user feedback and recovery distinct. A clear message doesn't

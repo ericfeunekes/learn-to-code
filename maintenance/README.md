@@ -57,6 +57,12 @@ same directory structure. Keep private links, absolute machine paths and learner
 progress out of public reading material. Custom MDX is intentionally disabled:
 plain Markdown stays usable by browsers and text readers from one source.
 
+The [Understand code and changes](../docs/understand-code/index.md) track lives
+in `docs/understand-code/` and is authored directly, outside the core importer.
+Its labs and downloadable fixtures in `static/` use fictional data. The earlier
+companion URLs in `docs/companions/` point into that track. Module 0 in
+`docs/course/` is shared by both tracks.
+
 ## Verify a change
 
 Run `npm run check`. It formats-checks maintained files, builds Docusaurus with
