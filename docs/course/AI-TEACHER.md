@@ -52,10 +52,10 @@ the fork README describes the ignored local default. Do not publish learner
 records or transcripts.
 
 The public setup guide carries the pre-clone prompt and operational
-instructions. Module 0 is a separate Git/GitHub learning draft; do not treat its
-proposed outcomes as agreed completion criteria before human review. Module 1
-has agreed objectives. Modules 2–7 are being built and describe broad intended
-coverage. Develop their detailed outcomes with the course author and obtain
-human review before treating them as ready.
+instructions. Module 0, Directing an agent, includes Git/GitHub learning and is
+a draft; do not treat its proposed outcomes as agreed completion criteria before
+human review. Module 1 has agreed objectives. Modules 2–7 are being built and
+describe broad intended coverage. Develop their detailed outcomes with the
+course author and obtain human review before treating them as ready.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

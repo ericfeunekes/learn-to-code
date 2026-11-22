@@ -31,7 +31,7 @@ test('production pages load without broken assets or browser errors', async ({
   for (const [route, title] of [
     ['', 'Learn to Build Software'],
     ['setup/', 'Set up your workspace'],
-    ['modules/project-and-git/', 'Module 0 — Git and GitHub for your work'],
+    ['modules/project-and-git/', 'Module 0 — Directing an agent'],
     ['learning-path/', 'Learn to Build Software — Curriculum'],
     ['practice/', 'Learn to Build Software — Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
@@ -97,7 +97,7 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
-  await page.getByRole('link', { name: /Next 0\. Git\/GitHub/ }).click();
+  await page.getByRole('link', { name: /Next 0\. Directing an agent/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/project-and-git/$`));
   await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
@@ -258,7 +258,7 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   ).toHaveAttribute('href', `${base}#choose-and-outline-your-project`);
   await expect(
     main.getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — Directing an agent',
       exact: true,
     }),
   ).toHaveAttribute('href', `${base}modules/project-and-git/`);
@@ -296,7 +296,7 @@ test('setup exposes three separate choices and source-authored copyable prompts'
   });
   await main
     .getByRole('link', {
-      name: 'Module 0 — Git and GitHub for your work',
+      name: 'Module 0 — Directing an agent',
       exact: true,
     })
     .click();

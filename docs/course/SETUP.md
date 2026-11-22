@@ -67,7 +67,8 @@ Or choose an option here:
   ```
 
 - **Understand Git and GitHub:**
-  [Module 0 — Git and GitHub for your work](00-project-and-git.md).
+  [Module 0 — Directing an agent](00-project-and-git.md), which starts with Git
+  and GitHub.
 
   ```text
   Help me understand Git and GitHub using this repository.

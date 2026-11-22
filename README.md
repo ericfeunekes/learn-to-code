@@ -15,7 +15,8 @@ website installation to finish setup.
 Once it is open, ask: “I'm set up. What's next?” Choose one:
 
 - [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
-- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository.
+- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository,
+  as the start of Module 0, Directing an agent.
 - Continue existing work and choose a useful next learning step with your AI.
 
 The AI should wait for your choice. Setup and Module 0 remain drafts for human
