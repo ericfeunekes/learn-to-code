@@ -180,8 +180,10 @@ evidence means uncertain, not failed.
 Compare against the outcome's text and its row in the page's "By lane, and
 checks without AI" table (Module 0: its "Evidence" and "Check without AI"
 bullets; understand track: the module page and its evidence or teacher-notes
-page). If the notes show the agent decided what the handoff reserved for the
-learner, record "agent-led" for that outcome and don't raise depth.
+page; role strand UR.1–UR.4: the "Evidence" lines and checks in
+`docs/understand-code/08-use-it-in-your-role.md`). If the notes show the agent
+decided what the handoff reserved for the learner, record "agent-led" for that
+outcome and don't raise depth.
 
 Explained is a good first-pass result. Don't log missing depth as a finding or
 block the next outcome on it; note it in "Not yet learned".

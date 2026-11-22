@@ -101,6 +101,11 @@ export default {
         },
         {
           type: 'doc',
+          id: 'understand-code/use-it-in-your-role',
+          label: 'Use it in your role',
+        },
+        {
+          type: 'doc',
           id: 'understand-code/review-questions',
           label: 'Review questions for a change',
         },

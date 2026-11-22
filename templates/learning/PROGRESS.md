@@ -88,6 +88,7 @@ the learner reaches each module.
 | U5 A change and its evidence  | —     | —             | —                              | —                       |
 | U6 An evolving project        | —     | —             | —                              | —                       |
 | U7 Work with engineers        | —     | —             | —                              | —                       |
+| UR Use it in your role        | —     | —             | —                              | —                       |
 
 ## Open findings
 

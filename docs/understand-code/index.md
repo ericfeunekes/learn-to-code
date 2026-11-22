@@ -50,7 +50,9 @@ You don't need an app idea, a fork of this course or any coding experience.
 > follow what the team is discussing.
 
 After that, go through Modules 3 to 7 in order, or jump to the module that
-answers the question you have today.
+answers the question you have today. Alongside them, work through
+[Use it in your role](08-use-it-in-your-role.md), starting with its practice
+task for your job.
 
 ## The seven modules
 
@@ -65,6 +67,15 @@ answers the question you have today.
 | [7. Work with engineers on GitHub](07-work-with-engineers.md)            | Read issues, pull requests, reviews and checks; ask good questions; run a QA pass; contribute; follow real work in the capstone. |
 
 Use the [review questions](review-questions.md) on any change, at any point.
+
+## Use it in your role
+
+[Use it in your role](08-use-it-in-your-role.md) connects the modules to the job
+you already do: turning a need into acceptance criteria, judging scope and
+effort, working with a team that uses AI to write code, and reading delivery
+signals in the repository. It has one practice task each for product managers,
+project managers and business users. Start it after your first two sessions and
+come back to it as the modules deepen.
 
 ## Which pages belong to which module
 
