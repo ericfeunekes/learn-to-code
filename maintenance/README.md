@@ -116,10 +116,12 @@ current package metadata and official documentation before upgrades:
 ## Bundled instruction maintenance
 
 Edit teaching skills under `skills/`, run `npm run skills:sync`, then
-`npm run check:skills`. Keep `AGENTS.md` and `CLAUDE.md` byte-equal. Mirrors are
-regular files for clients that do not follow symlinks; discovery still requires
-an actual client check. These are repository bundles, not personal skill
-installs.
+`npm run check:skills`. Keep `AGENTS.md` and `CLAUDE.md` byte-equal, both at the
+root (teach and review) and in `app/` (build). The check also confirms the
+learning-log templates in `templates/learning/` exist; skills and root guidance
+point agents at them. Mirrors are regular files for clients that do not follow
+symlinks; discovery still requires an actual client check. These are repository
+bundles, not personal skill installs.
 
 If Chromium is already installed but Playwright's download is unavailable, run
 checks with `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/path/to/chromium`. The default

@@ -6,7 +6,7 @@ export default {
     {
       type: 'doc',
       id: 'course/project-and-git',
-      label: '0. Git/GitHub · draft',
+      label: '0. Directing an agent · draft',
     },
     { type: 'doc', id: 'course/testing-and-qa', label: '1. Testing and QA' },
     {

@@ -14,7 +14,7 @@ const pages = [
   [
     '00-project-and-git.md',
     '/modules/project-and-git',
-    'Draft for human review: understand Git and GitHub using your existing repository.',
+    'Draft for human review: brief an agent, check its work and use Git to keep or undo it.',
   ],
   [
     'CURRICULUM.md',

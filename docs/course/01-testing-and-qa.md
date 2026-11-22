@@ -110,6 +110,12 @@ By the end of this module, you should be able to:
 
 ## Context and optional examples for the teaching AI
 
+- This module is a first pass, following the course's
+  [broad first, then deep](OVERVIEW.md#broad-first-then-deep) approach. Aim for
+  a working grasp of every objective rather than mastery of one. For 1.5 and 1.6
+  that means knowing what a fixture, test double or injected dependency is, why
+  an agent uses one, and judging one in the learner's project. Designing
+  interfaces and dependency direction come back in Modules 5 and 6.
 - These outcomes provide a first working foundation. Examples can help establish
   the distinctions; advanced case generation, protocols, persistence, and
   concurrency can be revisited when useful to the learner’s project.
@@ -127,6 +133,22 @@ By the end of this module, you should be able to:
   can also make a useful connection to backend behavior.
 - Keep assertions focused on the promised behavior; only require a particular
   call when that interaction is itself part of the promise.
+
+## By lane, and checks without AI
+
+The objectives above apply to both [lanes](OVERVIEW.md#choose-your-lane). In the
+write-code lane, also show the code-reading part listed below. Each check
+without AI is something the learner does with the agent closed.
+
+| Objective | Check without AI                                                                                   | Write-code lane adds                                                     |
+| --------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 1.1       | For one feature, write a quality question and the evidence that would answer it.                   | Find where in the code that behavior lives.                              |
+| 1.2       | Write inputs, expected results and the basis for each, before seeing the implementation.           | Write one assertion yourself.                                            |
+| 1.3       | For three described checks, say what actually runs, what's substituted and which level each is.    | Read a test and say what it really exercises.                            |
+| 1.4       | List ordinary, boundary, empty, invalid and failure cases for a requirement.                       | Write one of those cases as a test yourself.                             |
+| 1.5       | Say what a given stub, fake or mock keeps and leaves out.                                          | Read a fixture and predict the state a test starts from.                 |
+| 1.6       | Point to a dependency in your project and say how a test could supply a different one.             | Change one function to receive its dependency, by hand.                  |
+| 1.7       | Given an "all passed" report, list what it doesn't establish and one fault you'd plant to test it. | Predict whether a given test fails for a given wrong result, then check. |
 
 [Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)
 

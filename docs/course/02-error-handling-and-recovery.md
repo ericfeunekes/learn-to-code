@@ -22,6 +22,8 @@ Intended coverage:
 - Understanding interrupted operations, uncertain outcomes, and recovery
   choices.
 
+Returns to failure cases (1.4) and regression checks for reproduced defects.
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.

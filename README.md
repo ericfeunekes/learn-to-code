@@ -15,26 +15,27 @@ website installation to finish setup.
 Once it is open, ask: “I'm set up. What's next?” Choose one:
 
 - [Define a project](docs/course/OVERVIEW.md#choose-and-outline-your-project).
-- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository.
+- [Learn Git/GitHub](docs/course/00-project-and-git.md) using this repository,
+  as the start of Module 0, Directing an agent.
 - Continue existing work and choose a useful next learning step with your AI.
 
 The AI should wait for your choice. Setup and Module 0 remain drafts for human
 review; they are not agreed learning-completion gates.
 
-Build applications in [`app/`](app/README.md). Bundled learning skills use
-outcomes and evidence flexibly. `AGENTS.md` and `CLAUDE.md` share guidance;
+Agents in this workspace teach and review; they don't build your project. Build
+in [`app/`](app/README.md) or your own project folder, in a separate session
+with your build agent, then come back for a review. Bundled learning skills
+handle teaching and review. `AGENTS.md` and `CLAUDE.md` share guidance;
 `skills/` is canonical and regular discovery copies live in `.agents/skills/`
 and `.claude/skills/`. Their presence does not prove a client loaded them. After
 reopening this folder, ask a natural question and check the actual response.
 
-Private progress and learning logs belong in the ignored root `.learning/`
-directory, or an established private record home. For example, keep current
-status in `.learning/progress.md` and useful resumption notes in
-`.learning/log.md`. Keep partial progress, evidence, AI assistance and
-uncertainty visible. These files are local and not backed up by a push; ignore
-rules do not untrack an already committed file. Never commit personal
-information or secrets. Successful AI output and passing tests alone do not
-prove learning.
+Your learning log lives in the ignored root `.learning/` folder: `PROJECT.md`,
+`PROGRESS.md` and `LOG.md`, started from `templates/learning/`. Teach and review
+agents read it first and update it last, so a different agent can pick up each
+session. It isn't pushed with your fork. To keep it across machines, make
+`.learning/` its own private Git repository. Never commit personal information
+or secrets. Successful AI output and passing tests alone don't prove learning.
 
 ## Run the course website locally
 

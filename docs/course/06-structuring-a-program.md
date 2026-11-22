@@ -23,6 +23,9 @@ Intended coverage:
 - Planning a focused change across components while preserving the behavior
   callers rely on.
 
+Returns to dependency injection (1.6) at greater depth: where dependencies
+should come from, and how that shapes a program.
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.

@@ -6,7 +6,7 @@ description: >-
 slug: /practice
 source_file: PRACTICE.md
 source_refinements:
-  - practice-conversation-choice-2026-10-29
+  - practice-separate-build-2026-11-22
 ---
 
 # Learn to Build Software — Practice and review
@@ -25,18 +25,21 @@ actually shown and what remains open.
 
 ## Evidence of application
 
-Choose a small relevant task in your app, or bring existing work. You can apply
-the concept in the same conversation or choose a separate implementation
-conversation. Give AI your intended behavior, expectations and constraints, make
-choices, question proposals and check the results. AI may write the code. Your
+Choose a small relevant task in your app, or bring existing work. Apply the
+concept in a separate build session, not in the teaching conversation. Draft the
+handoff yourself from `templates/learning/HANDOFF.md`: your intended behavior,
+expectations, success check and constraints. Then make choices, question
+proposals and check the results. In the direct-agents lane the build agent may
+write all the code; in the write-code lane you write the parts you named. Your
 requests, decisions and follow-ups can show how you applied the outcome; code
 and observed results show what the app does.
 
-If handing off, provide only the selected outcome, task, learner expectations,
-constraints and evidence to bring back. Leave room for the learner's decisions
-rather than supplying a fully solved prompt. A separate conversation is
-optional. Build in `app/` in your fork. Learning and review do not require
-installing or running this documentation website.
+The handoff carries the selected outcome, task, your expectations, constraints
+and the decisions that are yours, and asks the build agent to record what it did
+in `BUILD-NOTES.md`. Leave room for your own decisions rather than supplying a
+fully solved prompt. Build in `app/` in your fork or in your own project folder.
+Learning and review do not require installing or running this documentation
+website.
 
 ## Feedback against the outcome
 

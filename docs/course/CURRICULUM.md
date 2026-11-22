@@ -10,11 +10,11 @@ source_file: CURRICULUM.md
 Start with [workspace setup](SETUP.md), then choose from
 [What's next?](SETUP.md#whats-next). Project definition in
 [the overview](OVERVIEW.md#choose-and-outline-your-project) is separate from
-[Module 0 — Git and GitHub for your work](00-project-and-git.md). Setup does not
-require either learning activity. The setup flow and Module 0 are drafts for
-review. Module 1 contains the current detailed learning objectives. Modules 2–7
-are being built, with detailed outcomes and examples to be developed with the
-course author and reviewed before readiness.
+[Module 0 — Directing an agent](00-project-and-git.md), which includes Git and
+GitHub. Setup does not require either learning activity. The setup flow and
+Module 0 are drafts for review. Module 1 contains the current detailed learning
+objectives. Modules 2–7 are being built, with detailed outcomes and examples to
+be developed with the course author and reviewed before readiness.
 
 ## Core modules
 
@@ -26,7 +26,7 @@ and evidence review. The learner chooses how to learn; no fixed teaching method
 or module sequence is required. A future outline is not a completed set of
 learning objectives.
 
-0. [Git and GitHub for your work](00-project-and-git.md) — **Draft for review**
+0. [Directing an agent](00-project-and-git.md) — **Draft for review**
 1. [Testing and QA](01-testing-and-qa.md)
 2. [Error handling and recovery](02-error-handling-and-recovery.md) — **Being
    built**

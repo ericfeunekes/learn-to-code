@@ -25,8 +25,13 @@ async function main() {
       }
     }
   }
-  if (!(await fs.readFile('AGENTS.md')).equals(await fs.readFile('CLAUDE.md')))
-    throw new Error('AGENTS.md and CLAUDE.md must share the same guidance');
+  for (const dir of ['.', 'app']) {
+    const agents = await fs.readFile(path.join(dir, 'AGENTS.md'));
+    if (!agents.equals(await fs.readFile(path.join(dir, 'CLAUDE.md'))))
+      throw new Error(`${dir}: AGENTS.md and CLAUDE.md must share guidance`);
+  }
+  for (const file of ['PROJECT.md', 'PROGRESS.md', 'LOG.md', 'HANDOFF.md'])
+    await fs.access(path.join('templates', 'learning', file));
   console.log(
     `Teaching skill discovery copies ${check ? 'verified' : 'updated'}.`,
   );

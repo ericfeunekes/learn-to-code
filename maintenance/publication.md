@@ -15,8 +15,10 @@ this project.
 - `docs/course/SETUP.md` and `00-project-and-git.md`: current setup and Module 0
   drafts for human review.
 - `docs/course/01-*.md` through `07-*.md`: the current seven module pages.
-- `AGENTS.md`, `CLAUDE.md`, `app/` guidance and the two bundled teaching skills
-  in `skills/`, with regular byte-equal Codex/Claude discovery copies.
+- `AGENTS.md`, `CLAUDE.md`, `app/` guidance and build-agent instructions, the
+  empty learning-log templates in `templates/learning/`, and the two bundled
+  teaching skills in `skills/`, with regular byte-equal Codex/Claude discovery
+  copies.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.

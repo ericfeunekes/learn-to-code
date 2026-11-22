@@ -21,6 +21,9 @@ Intended coverage:
 - Protocols and interfaces as promises between callers and implementations.
 - Validating the shape and meaning of external data before using it.
 
+Returns to test doubles (1.5): a fake or stub is only useful if it keeps the
+same promises as the real thing.
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.

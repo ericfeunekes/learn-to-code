@@ -22,6 +22,9 @@ Intended coverage:
 - Rules that must remain true across the app’s actions.
 - Comparing the intended model with the data and behavior of an existing app.
 
+Returns to expected results from domain rules (1.2) and properties that must
+stay true (1.4).
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.
