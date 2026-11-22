@@ -7,8 +7,6 @@ source_file: SETUP.md
 
 # Set up your workspace
 
-**Draft — for review.**
-
 First get the course repository into a local folder you can open in Codex or
 Claude Code. You do not need to choose an app or complete a Git/GitHub lesson
 for this step. Ask about anything confusing as you go; brief explanations can be

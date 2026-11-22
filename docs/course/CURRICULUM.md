@@ -13,35 +13,26 @@ Start with [workspace setup](SETUP.md), then choose from
 [What's next?](SETUP.md#whats-next). Project definition in
 [the overview](OVERVIEW.md#choose-and-outline-your-project) is separate from
 [Module 0 — Directing an agent](00-project-and-git.md), which includes Git and
-GitHub. Setup does not require either learning activity. Module 1 contains the
-agreed learning objectives. The setup flow, Module 0 and Modules 2–8 are drafts
-with detailed outcomes, awaiting review by the course author before they are
-treated as agreed.
+GitHub. Setup does not require either learning activity.
 
 ## Core modules
 
 Learn enough to explain and apply an idea, then revisit it for depth. A module
 can take more than one session. Use the selected page to identify what the
 learner can demonstrate and what evidence would show it. The
-[AI guide](AI-TEACHER.md) explains the purpose of the outlines, learning records
+[AI guide](AI-TEACHER.md) explains the purpose of the outcomes, learning records
 and evidence review. The learner chooses how to learn; no fixed teaching method
-or module sequence is required. A draft module is not yet an agreed set of
-learning objectives.
+or module sequence is required.
 
-0. [Directing an agent](00-project-and-git.md) — **Draft for review**
+0. [Directing an agent](00-project-and-git.md)
 1. [Testing and QA](01-testing-and-qa.md)
-2. [Debugging, errors and recovery](02-error-handling-and-recovery.md) — **Draft
-   for review**
-3. [Persistence and shared state](03-persistence-and-shared-state.md) — **Draft
-   for review**
-4. [Modeling data and behavior](04-modeling-data-and-behavior.md) — **Draft for
-   review**
+2. [Debugging, errors and recovery](02-error-handling-and-recovery.md)
+3. [Persistence and shared state](03-persistence-and-shared-state.md)
+4. [Modeling data and behavior](04-modeling-data-and-behavior.md)
 5. [Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md)
-   — **Draft for review**
-6. [Structuring a program](06-structuring-a-program.md) — **Draft for review**
-7. [Concurrency](07-concurrency.md) — **Draft for review**
-8. [Build and learn on your own](08-build-and-learn-on-your-own.md) — **Draft
-   for review**
+6. [Structuring a program](06-structuring-a-program.md)
+7. [Concurrency](07-concurrency.md)
+8. [Build and learn on your own](08-build-and-learn-on-your-own.md)
 
 ## How the modules reach the goal
 

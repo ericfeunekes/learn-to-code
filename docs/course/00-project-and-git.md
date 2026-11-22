@@ -1,16 +1,11 @@
 ---
 title: Module 0 — Directing an agent
-description: >-
-  Draft for human review: brief an agent, check its work and use Git to keep or
-  undo it.
+description: 'Brief an agent, check its work and use Git to keep or undo it.'
 slug: /modules/project-and-git
 source_file: 00-project-and-git.md
 ---
 
 # Module 0 — Directing an agent
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 0.
 
 This module comes first because every later module depends on it. AI agents
 write the code; this module is about running that work well. You brief an agent,
@@ -43,7 +38,7 @@ Then help me practise directing an agent: writing a brief, keeping
 each step small, reading what changed, and keeping or undoing it.
 ```
 
-## Proposed practical outcomes
+## Practical outcomes
 
 These are capabilities to develop through useful work, not an entrance exam. You
 can return to a concept when it becomes relevant.
@@ -148,8 +143,7 @@ well for 0.5 in both lanes.
 
 Credit only what the learner shows. An AI-run setup, a successful command or
 your own explanation establishes little about the learner, and one good example
-isn't mastery. Don't award completion against this draft as though its outcomes
-were agreed.
+isn't mastery.
 
 ## Reference explanations
 

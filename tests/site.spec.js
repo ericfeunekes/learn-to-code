@@ -227,7 +227,7 @@ test('served text exports come from the admitted Markdown', async ({
   );
 });
 
-test('merged entry keeps the old overview URL and marks draft modules', async ({
+test('merged entry keeps the old overview URL and shows full modules', async ({
   page,
   request,
 }) => {
@@ -237,12 +237,11 @@ test('merged entry keeps the old overview URL and marks draft modules', async ({
     'Learn to Build Software',
   );
   await expect(
-    page.getByRole('heading', { level: 2, name: /^Course status/ }),
+    page.getByRole('heading', { level: 2, name: /^The core modules/ }),
   ).toBeVisible();
+  await expect(page.getByRole('main')).not.toContainText(/draft/i);
   await page.goto('modules/concurrency/');
-  await expect(
-    page.getByRole('main').getByText('Draft — for review.', { exact: true }),
-  ).toBeVisible();
+  await expect(page.getByRole('main')).not.toContainText(/draft|being built/i);
   await expect(
     page.getByRole('heading', {
       level: 2,
@@ -317,9 +316,7 @@ test('setup exposes three separate choices and source-authored copyable prompts'
     'Help me understand Git and GitHub using this repository.',
   );
   await expect(gitPrompt.locator('code')).not.toContainText('define');
-  await expect(
-    main.getByText('Draft — for review.', { exact: true }),
-  ).toBeVisible();
+  await expect(main).not.toContainText(/draft — for review/i);
 });
 
 test('copy failure is announced and repeated copy can recover without browser errors', async ({

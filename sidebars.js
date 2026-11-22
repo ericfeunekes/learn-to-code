@@ -6,12 +6,12 @@ export default {
     {
       type: 'doc',
       id: 'course/project-and-git',
-      label: '0. Directing an agent · draft',
+      label: '0. Directing an agent',
     },
     { type: 'doc', id: 'course/testing-and-qa', label: '1. Testing and QA' },
     {
       type: 'category',
-      label: 'Modules 2–8 · drafts',
+      label: 'Modules 2–8',
       collapsed: false,
       items: [
         {

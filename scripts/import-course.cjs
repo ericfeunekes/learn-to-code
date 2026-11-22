@@ -14,7 +14,7 @@ const pages = [
   [
     '00-project-and-git.md',
     '/modules/project-and-git',
-    'Draft for human review: brief an agent, check its work and use Git to keep or undo it.',
+    'Brief an agent, check its work and use Git to keep or undo it.',
   ],
   [
     'CURRICULUM.md',
@@ -133,12 +133,7 @@ async function main() {
       file,
       matter.stringify(content.trim() + '\n', {
         title,
-        description:
-          /^0[2-8]-/.test(file) && content.includes('**Draft — for review.**')
-            ? `Draft for review. ${description}`
-            : content.includes('**Being built**') && /^0[2-8]-/.test(file)
-              ? `Being built — outline only. ${description}`
-              : description,
+        description: description,
         slug,
         source_file: file,
         ...(appliedRefinements.length

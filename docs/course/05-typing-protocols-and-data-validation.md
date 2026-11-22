@@ -1,15 +1,11 @@
 ---
 title: 'Module 5 — Typing, protocols, and data validation'
-description:
-  'Draft for review. Express shapes and shared promises, and check actual data.'
+description: 'Express shapes and shared promises, and check actual data.'
 slug: /modules/typing-protocols-and-data-validation
 source_file: 05-typing-protocols-and-data-validation.md
 ---
 
 # Module 5 — Typing, protocols, and data validation
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 5.
 
 Module 4 described what your data means. This module is about how code writes
 that meaning down, and how the app checks data coming in from outside before
