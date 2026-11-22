@@ -87,8 +87,7 @@ Credit the learner's judgment even when an agent wrote the code. Working code,
 passing tests, coverage or an agent's "all done" don't show learning on their
 own. Missing evidence means uncertain, not failed. One good example isn't
 mastery. Compare against the outcome's evidence criteria in `docs/course/`.
-Module 0 is a draft and Modules 2 to 7 are outlines, so don't award them as
-complete.
+Module 0 and Modules 2 to 8 are drafts, so don't award them as complete.
 
 The course goes broad first, then deep, so explained is a good result for a
 first pass. Don't log missing depth as a finding or block the next outcome on

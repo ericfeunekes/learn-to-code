@@ -19,7 +19,7 @@ const pages = [
   [
     'CURRICULUM.md',
     '/learning-path',
-    'The seven core modules and directions for further learning.',
+    'The core modules, how they reach the goal, and directions for further learning.',
   ],
   [
     'AI-TEACHER.md',
@@ -39,7 +39,7 @@ const pages = [
   [
     '02-error-handling-and-recovery.md',
     '/modules/error-handling-and-recovery',
-    'Diagnose failures and choose responses and recovery.',
+    'Direct a diagnosis from evidence, and choose responses and recovery.',
   ],
   [
     '03-persistence-and-shared-state.md',
@@ -65,6 +65,11 @@ const pages = [
     '07-concurrency.md',
     '/modules/concurrency',
     'Reason about overlapping and repeated work and suitable controls.',
+  ],
+  [
+    '08-build-and-learn-on-your-own.md',
+    '/modules/build-and-learn-on-your-own',
+    'Run a capstone yourself, learn a new topic with an agent and set your next outcomes.',
   ],
 ];
 
@@ -129,9 +134,11 @@ async function main() {
       matter.stringify(content.trim() + '\n', {
         title,
         description:
-          content.includes('**Being built**') && /^0[2-7]-/.test(file)
-            ? `Being built — outline only. ${description}`
-            : description,
+          /^0[2-8]-/.test(file) && content.includes('**Draft — for review.**')
+            ? `Draft for review. ${description}`
+            : content.includes('**Being built**') && /^0[2-8]-/.test(file)
+              ? `Being built — outline only. ${description}`
+              : description,
         slug,
         source_file: file,
         ...(appliedRefinements.length

@@ -36,6 +36,10 @@ test('production pages load without broken assets or browser errors', async ({
     ['practice/', 'Learn to Build Software — Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
+    [
+      'modules/build-and-learn-on-your-own/',
+      'Module 8 — Build and learn on your own',
+    ],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
   ]) {
@@ -90,7 +94,8 @@ test('navigation and theme work on desktop and phone', async ({
     'Learn to Build Software — Curriculum',
   );
   if (isMobile) {
-    const table = page.getByRole('region', { name: 'Scrollable table' });
+    // The wide future-directions table is the last table on the page.
+    const table = page.getByRole('region', { name: 'Scrollable table' }).last();
     await table.focus();
     await page.keyboard.press('ArrowRight');
     await expect
@@ -199,6 +204,7 @@ test('served text exports come from the admitted Markdown', async ({
       '05-typing-protocols-and-data-validation.md',
       '06-structuring-a-program.md',
       '07-concurrency.md',
+      '08-build-and-learn-on-your-own.md',
     ].map((name) => `course/${name}`),
   ];
   for (const file of files) {
@@ -211,7 +217,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(14);
+  expect(entries).toHaveLength(15);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -221,7 +227,7 @@ test('served text exports come from the admitted Markdown', async ({
   );
 });
 
-test('merged entry keeps the old overview URL and marks future work', async ({
+test('merged entry keeps the old overview URL and marks draft modules', async ({
   page,
   request,
 }) => {
@@ -235,9 +241,14 @@ test('merged entry keeps the old overview URL and marks future work', async ({
   ).toBeVisible();
   await page.goto('modules/concurrency/');
   await expect(
-    page.getByRole('main').getByText('Being built', { exact: true }),
+    page.getByRole('main').getByText('Draft — for review.', { exact: true }),
   ).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3 })).toHaveCount(0);
+  await expect(
+    page.getByRole('heading', {
+      level: 2,
+      name: /^Agent mistakes to watch for/,
+    }),
+  ).toBeVisible();
   const legacy = await request.get('raw/welcome.md');
   expect(legacy.status()).toBe(200);
   expect(await legacy.text()).toContain('course/OVERVIEW.md');

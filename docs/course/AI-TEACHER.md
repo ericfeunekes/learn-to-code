@@ -54,8 +54,9 @@ records or transcripts.
 The public setup guide carries the pre-clone prompt and operational
 instructions. Module 0, Directing an agent, includes Git/GitHub learning and is
 a draft; do not treat its proposed outcomes as agreed completion criteria before
-human review. Module 1 has agreed objectives. Modules 2–7 are being built and
-describe broad intended coverage. Develop their detailed outcomes with the
-course author and obtain human review before treating them as ready.
+human review. Module 1 has agreed objectives. Modules 2–8 are drafts for review
+with detailed outcomes, checks without AI and practice tasks. Teach from them,
+but don't treat their outcomes as agreed completion criteria until the course
+author has reviewed them.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

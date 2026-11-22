@@ -22,10 +22,11 @@ evidence context.
 
 ## Course status
 
-The setup flow and Module 0, Directing an agent, are drafts for review. Module 1
-has detailed learning objectives. Modules 2–7 are being built and currently show
-broad intended coverage. Their objectives and examples will be developed with
-the course author and reviewed before they are presented as ready.
+Module 1 has agreed learning objectives. The setup flow, Module 0 and Modules
+2–8 are drafts for review: each has detailed outcomes, checks without AI and
+practice tasks, but the course author hasn't yet reviewed them as the agreed
+course. You can learn from them now; just don't treat their outcomes as final
+completion criteria.
 
 ## What you will be able to do
 
@@ -79,19 +80,21 @@ version you can use for the testing module. Learn setup tools as needed.
 
 ## The core modules
 
-Module 1 sets out detailed learning objectives. The later pages describe
-intended coverage and are marked **Being built**.
+Module 1 has agreed objectives. The other modules are drafts for review. The
+[learning path](CURRICULUM.md#how-the-modules-reach-the-goal) shows how they
+build on each other.
 
-| Module                                                                                  | Intended outcome                                                                                                     |
-| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| [0. Directing an agent](00-project-and-git.md) — **Draft for review**                   | Brief an agent, keep steps small, check what changed, catch common agent mistakes, and use Git to keep or undo work. |
-| [1. Testing and QA](01-testing-and-qa.md)                                               | Define expected behavior and judge useful checks and the actual client outcome.                                      |
-| [2. Error handling and recovery](02-error-handling-and-recovery.md)                     | Diagnose failures and choose responses and recovery.                                                                 |
-| [3. Persistence and shared state](03-persistence-and-shared-state.md)                   | Explain storage, authoritative values, caching, and preservation.                                                    |
-| [4. Modeling data and behavior](04-modeling-data-and-behavior.md)                       | Describe identities, relationships, states, and rules.                                                               |
-| [5. Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md) | Express shapes and shared promises, and check actual data.                                                           |
-| [6. Structuring a program](06-structuring-a-program.md)                                 | Explain responsibilities and dependencies, and plan coherent changes.                                                |
-| [7. Concurrency](07-concurrency.md)                                                     | Reason about overlapping and repeated work and suitable controls.                                                    |
+| Module                                                                                                         | Intended outcome                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [0. Directing an agent](00-project-and-git.md) — **Draft for review**                                          | Brief an agent, keep steps small, check what changed, catch common agent mistakes, and use Git to keep or undo work.          |
+| [1. Testing and QA](01-testing-and-qa.md)                                                                      | Define expected behavior and judge useful checks and the actual client outcome.                                               |
+| [2. Debugging, errors and recovery](02-error-handling-and-recovery.md) — **Draft for review**                  | Direct a diagnosis from evidence, and choose how the app responds and recovers.                                               |
+| [3. Persistence and shared state](03-persistence-and-shared-state.md) — **Draft for review**                   | Explain where data lives, which copy is trusted, and how saved data survives changes.                                         |
+| [4. Modeling data and behavior](04-modeling-data-and-behavior.md) — **Draft for review**                       | Describe the things, states and rules in your app, and turn them into a spec an agent can build from.                         |
+| [5. Typing, protocols, and data validation](05-typing-protocols-and-data-validation.md) — **Draft for review** | Express data and promises in code, and check outside input at the boundary, including basic security.                         |
+| [6. Structuring a program](06-structuring-a-program.md) — **Draft for review**                                 | Explain how the parts fit, plan changes across them, and keep the project understandable to the next agent.                   |
+| [7. Concurrency](07-concurrency.md) — **Draft for review**                                                     | Spot where work overlaps or repeats, show it on purpose, and choose the smallest protection.                                  |
+| [8. Build and learn on your own](08-build-and-learn-on-your-own.md) — **Draft for review**                     | Plan, direct and review a larger piece of work yourself, then learn a new topic with an agent and set your own next outcomes. |
 
 ## Broad first, then deep
 
@@ -105,7 +108,8 @@ dependency injection, for example, appear early in Module 1 so you know what
 they are and why an agent reaches for them. Modules 3, 5 and 6 return to them
 when storage, interfaces and program structure make them matter more.
 
-Work at your own pace. After the core, choose from
+Work at your own pace. Module 8 ends the core by handing over to you: a capstone
+you run yourself, and a way to learn whatever you need next. Then choose from
 [future directions](CURRICULUM.md#future-directions) according to what you want
 to build.
 

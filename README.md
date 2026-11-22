@@ -1,8 +1,9 @@
 # Learn to Code
 
 Learn to understand, question and improve software by directing AI. The course
-includes draft setup and Git/GitHub guidance, detailed Module 1 outcomes and six
-future outlines.
+has nine modules: agreed Module 1 outcomes, and detailed drafts for review of
+Module 0 (directing an agent), Modules 2–7 and a Module 8 capstone on building
+and learning on your own.
 
 ## Set up your learning workspace
 

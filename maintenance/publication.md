@@ -14,7 +14,7 @@ this project.
   reviewed course outcomes, map and general practice/teaching context.
 - `docs/course/SETUP.md` and `00-project-and-git.md`: current setup and Module 0
   drafts for human review.
-- `docs/course/01-*.md` through `07-*.md`: the current seven module pages.
+- `docs/course/01-*.md` through `08-*.md`: the current module pages.
 - `AGENTS.md`, `CLAUDE.md`, `app/` guidance and build-agent instructions, the
   empty learning-log templates in `templates/learning/`, and the two bundled
   teaching skills in `skills/`, with regular byte-equal Codex/Claude discovery
@@ -22,14 +22,16 @@ this project.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
-Module 1 retains its detailed material. Modules 2–7 are short **Being built**
-outlines; their detailed outcomes and examples require development and human
-review. The owner approved release of this current version on October 25, 2026.
-The October 26 approval includes repository-wide MIT licensing and public
-distribution of the bundled teaching skills, superseding the earlier exclusion.
-The ledger, teaching log, sessions, learner identities, personal details,
-private source links, research archives, books and earlier course snapshots are
-outside the public repository and its history.
+Module 1 retains its agreed detailed material. On November 22, 2026, Modules 2–7
+were expanded from short outlines into detailed drafts and Module 8, a capstone
+on building and learning independently, was added. Modules 0 and 2–8 are marked
+**Draft — for review** until the course author reviews them. The owner approved
+release of this current version on October 25, 2026. The October 26 approval
+includes repository-wide MIT licensing and public distribution of the bundled
+teaching skills, superseding the earlier exclusion. The ledger, teaching log,
+sessions, learner identities, personal details, private source links, research
+archives, books and earlier course snapshots are outside the public repository
+and its history.
 
 ## One maintained curriculum source
 
@@ -43,7 +45,7 @@ npm run format
 npm run check
 ```
 
-The importer admits exactly thirteen named general files. It removes the private
+The importer admits exactly fourteen named general files. It removes the private
 research provenance section, rejects private references, adds website metadata,
 generalizes personal author-review references, adjusts one heading level and
 formats source-authored prompts as copyable text without changing their words.
