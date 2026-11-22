@@ -5,11 +5,20 @@ const { refinements } = require('../maintenance/course-refinements.json');
 
 // This positive allowlist excludes learner records, logs, research and archives.
 const pages = [
-  ['OVERVIEW.md', '/', 'Course outcomes and choices after workspace setup.'],
+  [
+    'OVERVIEW.md',
+    '/',
+    "Two tracks: build a useful work app by directing AI, or understand a team's code and changes.",
+  ],
+  [
+    'PLAN.md',
+    '/plan-your-app',
+    'Decide whether to build, on what and with which data, who will use it, and outline the first version.',
+  ],
   [
     'SETUP.md',
     '/setup',
-    'Fork, clone and open your workspace, then choose what is next.',
+    'Get the course workspace and a private project repository, then choose what is next.',
   ],
   [
     '00-project-and-git.md',
@@ -37,24 +46,24 @@ const pages = [
     'Define expected behavior and judge tests and the actual client outcome.',
   ],
   [
-    '02-error-handling-and-recovery.md',
+    '02-modeling-data-and-behavior.md',
+    '/modules/modeling-data-and-behavior',
+    'Describe identities, relationships, states and rules, and write a spec an agent can build from.',
+  ],
+  [
+    '03-error-handling-and-recovery.md',
     '/modules/error-handling-and-recovery',
     'Direct a diagnosis from evidence, and choose responses and recovery.',
   ],
   [
-    '03-persistence-and-shared-state.md',
+    '04-persistence-and-shared-state.md',
     '/modules/persistence-and-shared-state',
     'Explain storage, authoritative values, caching and preservation.',
   ],
   [
-    '04-modeling-data-and-behavior.md',
-    '/modules/modeling-data-and-behavior',
-    'Describe identities, relationships, states and rules.',
-  ],
-  [
     '05-typing-protocols-and-data-validation.md',
     '/modules/typing-protocols-and-data-validation',
-    'Express shapes and shared promises, and check actual data.',
+    'Check outside data at the boundary, and see what types and promises do and do not check.',
   ],
   [
     '06-structuring-a-program.md',
@@ -67,9 +76,14 @@ const pages = [
     'Reason about overlapping and repeated work and suitable controls.',
   ],
   [
-    '08-build-and-learn-on-your-own.md',
+    '08-share-run-and-maintain.md',
+    '/modules/share-run-and-maintain',
+    'Choose where your app runs, control who gets in, release safely, and keep it running or hand it off.',
+  ],
+  [
+    '09-build-and-learn-on-your-own.md',
     '/modules/build-and-learn-on-your-own',
-    'Run a capstone yourself, learn a new topic with an agent and set your next outcomes.',
+    'Plan, direct and ship a useful app yourself, learn a new topic with an agent and set your next outcomes.',
   ],
 ];
 

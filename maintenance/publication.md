@@ -13,7 +13,10 @@ this project.
 - `docs/course/OVERVIEW.md`, `CURRICULUM.md`, `PRACTICE.md` and `AI-TEACHER.md`:
   reviewed course outcomes, map and general practice/teaching context.
 - `docs/course/SETUP.md`: the current setup guide.
-- `docs/course/00-*.md` through `08-*.md`: the current module pages.
+- `docs/course/PLAN.md` and `00-*.md` through `09-*.md`: the build track's
+  current module pages.
+- `docs/understand-code/`, `docs/companions/` and the fictional fixtures in
+  `static/`: the Understand code and changes track, authored directly.
 - `AGENTS.md`, `CLAUDE.md`, `app/` guidance and build-agent instructions, the
   empty learning-log templates in `templates/learning/`, and the two bundled
   teaching skills in `skills/`, with regular byte-equal Codex/Claude discovery
@@ -22,10 +25,13 @@ this project.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
 On November 22, 2026, Modules 2–7 were expanded from short outlines into full
-modules and Module 8, a capstone on building and learning independently, was
-added. Published pages are the current version of the course and carry no draft
-labels; the owner directed this on November 22, 2026. The owner approved release
-of this current version on October 25, 2026. The October 26 approval includes
+modules and a capstone module (now Module 9) on building and learning on your
+own, was added. Later the same day the course gained Plan your app, a Module 8
+on sharing and maintenance, a reordering that moves modeling to Module 2, and
+the Understand code and changes track from the November 2 two-track release.
+Published pages are the current version of the course and carry no draft labels;
+the owner directed this on November 22, 2026. The owner approved release of this
+current version on October 25, 2026. The October 26 approval includes
 repository-wide MIT licensing and public distribution of the bundled teaching
 skills, superseding the earlier exclusion. The ledger, teaching log, sessions,
 learner identities, personal details, private source links, research archives,

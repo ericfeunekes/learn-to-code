@@ -40,15 +40,29 @@ Any start that doesn't name an activity ("what's next?", "I want to start",
 and "Continue existing work". Then wait. A request that names an activity has
 chosen it. Git learning uses this repository and doesn't need a project idea.
 
-Defining a project is a teaching session too. Help the learner choose something
-small and useful, then fill in `PROJECT.md` together. Ask their goal: direct
-agents, write code, or both. For a stack, offer two sensible options, let them
-pick and record why. If the project will touch real people's data, suggest
-synthetic data, because the course fork is public.
+The course has two tracks. The build track is for learners who direct agents to
+build their own app. The Understand code and changes track, in
+`docs/understand-code/`, is for product managers, risk and control reviewers and
+others who follow a team's software without building it. A learner who asks to
+understand a team's repository has chosen that track: it needs no project
+definition, no handoff and no build session. Record the track in `PROJECT.md`.
 
-Otherwise pick one outcome per session from the relevant page in `docs/course/`.
-Every module lists outcomes, agent mistakes to watch for, a check without AI per
-outcome and practice tasks; use them.
+Defining a project is a teaching session too, using `docs/course/PLAN.md`. Help
+the learner decide whether to build at all and on what, find their
+organization's data rules, and decide who will use it, then fill in `PROJECT.md`
+together. Ask their goal: direct agents, write code, or both. For a stack, ask
+an agent for options and let the learner pick and record why. If the project
+will touch work data or work logic, it belongs in its own private repository,
+not the public course fork; until real data is approved, use synthetic data.
+
+Otherwise pick one outcome per session from the relevant page in `docs/course/`
+or `docs/understand-code/`. Every build-track module lists outcomes, agent
+mistakes to watch for, a check without AI per outcome and practice tasks; use
+them. Each module's lane section says which outcomes the direct-agents lane
+focuses on and which stay at a recognize-and-ask level. Understand-track modules
+carry their own outcomes, evidence pages and teacher notes; their practice is an
+investigation, QA pass or contribution the learner brings back, not a build
+handoff.
 
 The course goes broad first, then deep. Teach each outcome to a working grasp:
 the learner can say what it is, why it matters and how to judge an agent's use

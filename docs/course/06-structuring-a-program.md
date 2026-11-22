@@ -16,7 +16,7 @@ project understandable to the next agent and to you.
 
 Returns to dependency injection (1.6) at greater depth: where dependencies
 should come from, and how that shapes a program. Also returns to the rough map
-from 2.1, the data paths from 3.2, rule ownership from 4.3, the contracts from
+from 3.1, the data paths from 4.2, rule ownership from 2.3, the contracts from
 5.3, and reading what changed (0.4) for larger diffs.
 
 ## Choose your lane
@@ -24,9 +24,11 @@ from 2.1, the data paths from 3.2, rule ownership from 4.3, the contracts from
 The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
 changes is the evidence.
 
-- **Direct agents:** you show it through a map of your app you can explain, a
-  change plan that names what must stay the same, and judgments about whether an
-  agent's restructuring was worth it.
+- **Direct agents:** focus on 6.1, 6.4 and 6.5: a rough map of your app you can
+  explain, a change plan that names what must stay the same, and a project the
+  next agent can pick up. For 6.2 and 6.3, recognize and ask: judge whether an
+  agent's restructuring was worth it by what it changed for you, not by its
+  vocabulary.
 - **Write code:** you also follow a call through the code from one file to the
   next, and read a multi-file diff and explain how the pieces fit.
 
@@ -42,8 +44,8 @@ By the end of this module, you should be able to:
 - Distinguish a part's responsibility from the file that contains it. Say where
   a failure could interrupt the flow or leave work half done.
 - Direct an agent to diagram this path, then check the diagram against the code
-  and the app's behavior. Connect it to where data lives (Module 3) and where
-  rules are enforced (Module 4).
+  and the app's behavior. Connect it to where data lives (Module 4) and where
+  rules are enforced (Module 2).
 
 ### 6.2 Assess cohesion, coupling and shared-rule ownership
 

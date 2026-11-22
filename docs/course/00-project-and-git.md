@@ -27,6 +27,11 @@ changes is the evidence.
 - **Write code:** you also read the change itself, trace what a few lines do,
   and make small edits by hand.
 
+On the [Understand code and changes](../understand-code/index.md) track, you
+won't brief build agents. Focus on 0.3 to 0.7: Git as a record, checking what
+changed, agent mistakes, keeping data out and reading a team's work on GitHub.
+0.1 and 0.2 are useful when you ask an agent to investigate for you.
+
 Each outcome ends with a **check without AI**: something you can do on your own,
 with the agent closed, to show the idea is yours.
 
@@ -122,12 +127,33 @@ can return to a concept when it becomes relevant.
 
 - Keep passwords, API keys and real personal data out of prompts, commits and
   logs. Your course fork is public, so practise with synthetic data.
+- At work, follow your organization's rules on which AI tools are approved and
+  what data may go into them. Confidential or personal work data never goes into
+  an unapproved agent, and a project that holds work data or work logic lives in
+  a private repository your organization approves.
 - Know what to do if a secret is committed: treat it as exposed, revoke or
   replace it, then clean up.
 - **Evidence:** you made a sound choice about what to share, or caught a secret
   or personal detail before it was committed.
 - **Check without AI:** list every place in your project where a secret or
   personal data could leak.
+
+### 0.7 Read a team's work on GitHub
+
+- Find your way around a repository's GitHub page: the files and README, the
+  history of commits, branches, issues, pull requests and releases.
+- Explain how they connect: an issue describes a problem or request, a pull
+  request proposes a change and links to it, reviewers comment and approve,
+  merging brings the change into the main branch, and a release is what users
+  actually get. Merged isn't the same as released.
+- Read one pull request as a record: what it says it changes, which files
+  changed, which checks ran and passed, who reviewed and approved it, and what
+  discussion happened.
+- **Evidence:** you explained one pull request in your own project, or a team's,
+  from its issue to its merge, including who approved it and what checks ran.
+- **Check without AI:** for one merged pull request, say what changed, why, who
+  approved it, what evidence it shipped with and whether it has reached users
+  yet.
 
 ## Notes for the learning AI
 

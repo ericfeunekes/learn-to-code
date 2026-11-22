@@ -36,10 +36,21 @@ test('production pages load without broken assets or browser errors', async ({
     ['practice/', 'Learn to Build Software — Practice and review'],
     ['modules/testing-and-qa/', 'Module 1 — Testing and QA'],
     ['modules/concurrency/', 'Module 7 — Concurrency'],
+    ['plan-your-app/', 'Plan your app'],
+    [
+      'modules/share-run-and-maintain/',
+      'Module 8 — Share, run and maintain your app',
+    ],
     [
       'modules/build-and-learn-on-your-own/',
-      'Module 8 — Build and learn on your own',
+      'Module 9 — Build and learn on your own',
     ],
+    ['understand-code/', 'Understand code and changes'],
+    [
+      'understand-code/work-with-engineers/',
+      '7. Work with engineers on GitHub',
+    ],
+    ['understand-code/review-questions/', 'Review questions for a change'],
     ['for-ai/', 'For AI'],
     ['search/', 'Find an idea.'],
   ]) {
@@ -102,8 +113,8 @@ test('navigation and theme work on desktop and phone', async ({
       .poll(() => table.evaluate((el) => el.scrollLeft))
       .toBeGreaterThan(0);
   }
-  await page.getByRole('link', { name: /Next 0\. Directing an agent/ }).click();
-  await expect(page).toHaveURL(new RegExp(`${base}modules/project-and-git/$`));
+  await page.getByRole('link', { name: /Next Plan your app/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${base}plan-your-app/$`));
   await page.getByRole('link', { name: /Next 1\. Testing and QA/ }).click();
   await expect(page).toHaveURL(new RegExp(`${base}modules/testing-and-qa/$`));
   if (isMobile)
@@ -146,7 +157,7 @@ test('search supports keyboard input, results and an empty state', async ({
   );
   const input = page.getByRole('searchbox', { name: 'Search words' });
   await input.focus();
-  await page.keyboard.type('Markdown');
+  await page.keyboard.type('file-reading');
   await expect(page.getByRole('status')).toHaveText('1 matching page.');
   await expect(
     page
@@ -160,7 +171,7 @@ test('search supports keyboard input, results and an empty state', async ({
   await input.fill('no-such-concept-xyz');
   await expect(page.getByRole('status')).toHaveText('0 matching pages.');
   await expect(page.locator('.search-results li')).toHaveCount(0);
-  await input.fill('Markdown');
+  await input.fill('file-reading');
   await page.keyboard.press('Tab');
   await page.keyboard.press('Enter');
   await expect(page).not.toHaveURL(/search\/$/);
@@ -198,14 +209,19 @@ test('served text exports come from the admitted Markdown', async ({
       'PRACTICE.md',
       'AI-TEACHER.md',
       '01-testing-and-qa.md',
-      '02-error-handling-and-recovery.md',
-      '03-persistence-and-shared-state.md',
-      '04-modeling-data-and-behavior.md',
+      'PLAN.md',
+      '02-modeling-data-and-behavior.md',
+      '03-error-handling-and-recovery.md',
+      '04-persistence-and-shared-state.md',
       '05-typing-protocols-and-data-validation.md',
       '06-structuring-a-program.md',
       '07-concurrency.md',
-      '08-build-and-learn-on-your-own.md',
+      '08-share-run-and-maintain.md',
+      '09-build-and-learn-on-your-own.md',
     ].map((name) => `course/${name}`),
+    'understand-code/index.md',
+    'understand-code/07-work-with-engineers.md',
+    'understand-code/review-questions.md',
   ];
   for (const file of files) {
     expect(text).toContain(`${base}raw/${file}`);
@@ -217,7 +233,7 @@ test('served text exports come from the admitted Markdown', async ({
   const search = await request.get('search-index.json');
   expect(search.status()).toBe(200);
   const entries = await search.json();
-  expect(entries).toHaveLength(15);
+  expect(entries).toHaveLength(38);
   for (const entry of entries) {
     const response = await request.get(entry.route);
     expect(response.status()).toBe(200);
@@ -264,8 +280,8 @@ test('setup exposes three separate choices and source-authored copyable prompts'
     main.getByRole('heading', { name: /^What's next\?/, level: 2 }),
   ).toBeVisible();
   await expect(
-    main.getByRole('link', { name: 'Define your project', exact: true }),
-  ).toHaveAttribute('href', `${base}#choose-and-outline-your-project`);
+    main.getByRole('link', { name: 'Plan your app', exact: true }),
+  ).toHaveAttribute('href', `${base}plan-your-app/`);
   await expect(
     main.getByRole('link', {
       name: 'Module 0 — Directing an agent',
@@ -276,14 +292,17 @@ test('setup exposes three separate choices and source-authored copyable prompts'
     main.getByText('Continue existing work:', { exact: true }),
   ).toBeVisible();
   const blocks = main.locator('.theme-code-block');
-  await expect(blocks).toHaveCount(5);
   const setup = await readFile('docs/course/SETUP.md', 'utf8');
   const expectedBlocks = sourceCodeBlocks(setup);
-  expect(expectedBlocks.slice(2)).toEqual([
-    'Help me choose a small useful app and define its first behavior.',
-    'Help me understand Git and GitHub using this repository.',
-    'I already have a project. Help me choose a useful next learning step.',
-  ]);
+  await expect(blocks).toHaveCount(expectedBlocks.length);
+  expect(expectedBlocks).toEqual(
+    expect.arrayContaining([
+      'Help me decide whether to build my idea, and on what.',
+      'Help me understand Git and GitHub using this repository.',
+      'I already have a project. Help me choose a useful next learning step.',
+      'Help me get to know a repository my team works on.',
+    ]),
+  );
   for (const [index, block] of (await blocks.all()).entries()) {
     const expected = expectedBlocks[index];
     const button = block.getByRole('button', {
@@ -360,4 +379,29 @@ test('copy failure is announced and repeated copy can recover without browser er
     expected,
   ]);
   expect(errors).toEqual([]);
+});
+
+test('understanding track guide reaches all seven modules without draft labels', async ({
+  page,
+}) => {
+  await page.goto('understand-code/');
+  const main = page.getByRole('main');
+  await expect(main).toContainText(/risk and control/);
+  await expect(main).not.toContainText(/draft module|second-track/i);
+  for (const route of [
+    'how-software-fits-together',
+    'find-your-way',
+    'follow-one-behavior',
+    'run-and-investigate',
+    'evidence-of-correctness',
+    'read-evolving-project',
+    'work-with-engineers',
+  ]) {
+    const response = await page.goto(`understand-code/${route}/`);
+    expect(response.status()).toBe(200);
+    await expect(page.getByRole('main')).not.toContainText(/draft module/i);
+  }
+  await expect(
+    page.getByRole('heading', { level: 2, name: /^Capstone/ }),
+  ).toBeVisible();
 });

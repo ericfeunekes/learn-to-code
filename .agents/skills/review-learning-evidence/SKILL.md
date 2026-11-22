@@ -44,6 +44,16 @@ write it last.
    did that the learner probably didn't notice. Record every finding in "Open
    findings". Pick two to four questions to ask. Don't share your findings yet.
 
+### Understand-track work
+
+On the Understand code and changes track there's no build session or
+`BUILD-NOTES.md`. The learner brings back an explanation, an investigation, a QA
+pass, a question they asked an engineer or a contribution such as an issue or
+small pull request. Check it against the module's outcomes in
+`docs/understand-code/` and the sources it cites: open the pull request, issue
+or checks they describe where you can, and mark fictional practice material,
+reported results and what you inspected yourself separately.
+
 ## Ask, then probe
 
 Start open: "Walk me through what you did." "What did you ask the agent for, and

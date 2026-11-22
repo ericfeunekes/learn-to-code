@@ -25,10 +25,9 @@ Read the relevant outcome and enough project or recent record context for the
 current request. Use [the map](CURRICULUM.md) to choose a topic or follow a
 connection. For workspace preparation use [the setup guide](SETUP.md). Finish
 setup with [What's next?](SETUP.md#whats-next), not an automatic lesson or
-project-definition exercise. Project definition in
-[the overview](OVERVIEW.md#choose-and-outline-your-project), Git/GitHub learning
-and resuming existing work are separate learner choices. Brief understanding can
-develop during setup without becoming its prerequisite.
+project-definition exercise. Project definition in [Plan your app](PLAN.md),
+Git/GitHub learning and resuming existing work are separate learner choices.
+Brief understanding can develop during setup without becoming its prerequisite.
 
 ## What evidence can show
 
@@ -52,8 +51,17 @@ the fork README describes the ignored local default. Do not publish learner
 records or transcripts.
 
 The public setup guide carries the pre-clone prompt and operational
-instructions. Module 0, Directing an agent, includes Git/GitHub learning. Every
-module, 0 to 8, has outcomes, checks without AI and practice tasks. Teach from
-them and judge evidence against them.
+instructions. Module 0, Directing an agent, includes Git/GitHub learning and is
+shared by both tracks. On the build track, Plan your app and every module, 0 to
+9, have outcomes, checks without AI and practice tasks. Teach from them and
+judge evidence against them.
+
+The [Understand code and changes](../understand-code/index.md) track is for
+product managers, risk and control reviewers and others who follow a team's
+software without building it. Its modules carry their own outcomes, evidence
+guides and teacher notes. There's no build session on that track: the learner
+investigates with approved agents and tools, then brings back their explanation
+or finding for review. Teach the general picture first, then a small supplied
+example, then application to a repository they're allowed to read.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

@@ -1,11 +1,13 @@
 ---
-title: Module 4 — Modeling data and behavior
-description: 'Describe identities, relationships, states and rules.'
+title: Module 2 — Modeling data and behavior
+description: >-
+  Describe identities, relationships, states and rules, and write a spec an
+  agent can build from.
 slug: /modules/modeling-data-and-behavior
-source_file: 04-modeling-data-and-behavior.md
+source_file: 02-modeling-data-and-behavior.md
 ---
 
-# Module 4 — Modeling data and behavior
+# Module 2 — Modeling data and behavior
 
 An agent can only build what you can describe. This module is about describing
 the things your app represents and the rules they follow, precisely enough that
@@ -14,8 +16,9 @@ spec. It's also how you judge an implementation: you compare what the app does
 with what you said it should do, not with what the code happens to do.
 
 Returns to briefing an agent (0.1), expected results from domain rules (1.2) and
-properties that must stay true (1.4). Uses the stored data you traced in
-Module 3.
+properties that must stay true (1.4). Builds on the spec and data notes from
+[Plan your app](PLAN.md). Module 4 comes back to this model when you look at how
+the data is saved.
 
 ## Choose your lane
 
@@ -32,7 +35,7 @@ changes is the evidence.
 
 By the end of this module, you should be able to:
 
-### 4.1 Model identities and relationships
+### 2.1 Model identities and relationships
 
 - Describe the real things the app represents, separately from table, class or
   variable names. Say what makes two records the same thing, how things relate,
@@ -45,7 +48,7 @@ By the end of this module, you should be able to:
   Decide whether the representation keeps your meaning, and defend keeping it or
   making a focused correction.
 
-### 4.2 Describe states and transitions
+### 2.2 Describe states and transitions
 
 - Choose a real lifecycle in your app, such as a task, an order or a form, and
   describe its states, the events that change them and who can cause each
@@ -56,7 +59,7 @@ By the end of this module, you should be able to:
 - Direct an agent to diagram the lifecycle and show one allowed and one
   forbidden change. Compare the result with your model.
 
-### 4.3 Define rules and compare the model with behavior
+### 2.3 Define rules and compare the model with behavior
 
 - State a rule that must stay true across every action, such as "a balance never
   goes negative" or "every task belongs to exactly one list". Distinguish that
@@ -69,7 +72,7 @@ By the end of this module, you should be able to:
   the model or the code needs to change. Defend sound existing behavior without
   inventing a change.
 
-### 4.4 Turn the model into a spec an agent can build from
+### 2.4 Turn the model into a spec an agent can build from
 
 - Write a short spec for a new behavior: the things involved, the states, the
   rules, the cases that must work, the cases that must be rejected and what must
@@ -102,10 +105,10 @@ Each check without AI is something the learner does with the agent closed.
 
 | Objective | Check without AI                                                                                                  | Write-code lane adds                                                                     |
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| 4.1       | Sketch the main things in your app and how they relate, and name two look-alike values that must not be mixed up. | Find the data structure for one of those things and compare it with your sketch.         |
-| 4.2       | Draw one lifecycle with its states, the events between them and one change that must be rejected.                 | Find the code that allows or rejects that change.                                        |
-| 4.3       | Write one rule that must always hold and three cases: one that keeps it and two that try to break it.             | Find every place in the code that could break the rule.                                  |
-| 4.4       | Write a one-page spec for a small feature and mark the decisions you made rather than left open.                  | Add the type or field names you expect, and check them against the agent's result later. |
+| 2.1       | Sketch the main things in your app and how they relate, and name two look-alike values that must not be mixed up. | Find the data structure for one of those things and compare it with your sketch.         |
+| 2.2       | Draw one lifecycle with its states, the events between them and one change that must be rejected.                 | Find the code that allows or rejects that change.                                        |
+| 2.3       | Write one rule that must always hold and three cases: one that keeps it and two that try to break it.             | Find every place in the code that could break the rule.                                  |
+| 2.4       | Write a one-page spec for a small feature and mark the decisions you made rather than left open.                  | Add the type or field names you expect, and check them against the agent's result later. |
 
 ## Practice tasks
 
@@ -120,7 +123,7 @@ Pick one that fits your app. Each runs through the
   off a check that tries it and expects a rejection, with the expected result
   coming from your model. Review: where was it stopped, and is every path
   covered?
-- **Spec gap hunt.** Give your 4.4 spec to a fresh agent and ask it only to list
+- **Spec gap hunt.** Give your 2.4 spec to a fresh agent and ask it only to list
   its questions and assumptions. Review the list and tighten the spec before any
   building.
 
@@ -133,7 +136,7 @@ Pick one that fits your app. Each runs through the
 - Keep the model independent of the implementation. Table names and current
   output help locate things but can't establish the intended rules.
 - Use a lifecycle the app really has. Invented states teach little.
-- 4.4 is the direct-agents lane's main deliverable from this module. A clear
+- 2.4 is the direct-agents lane's main deliverable from this module. A clear
   spec plus checks is how that learner directs a build without reading code.
 
 [Course overview](OVERVIEW.md) · [Practice and transcript review](PRACTICE.md)

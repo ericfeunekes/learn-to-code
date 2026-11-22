@@ -1,8 +1,14 @@
 # Learn to Code
 
 Learn to understand, question and improve software by directing AI. The course
-has nine modules, from directing an agent (Module 0) to a capstone on building
-and learning on your own (Module 8).
+has two tracks that share Module 0, Directing an agent:
+
+- **Build an app:** for business users who direct AI to build a useful work app.
+  Plan your app, then Modules 1 to 9, ending with sharing and maintaining the
+  app and a capstone.
+- **Understand code and changes:** for product managers and risk and control
+  reviewers who need to follow a team's software, work with its engineers, run
+  their own QA and contribute. Seven modules in `docs/understand-code/`.
 
 ## Set up your learning workspace
 

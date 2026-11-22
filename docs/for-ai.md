@@ -31,16 +31,22 @@ mentioned.
 
 ## Choose where to go next
 
-After [workspace setup](course/SETUP.md), offer the three
-[What's next? choices](course/SETUP.md#whats-next): define a project, learn
-Git/GitHub, or continue existing work. Wait for the learner's selection. A Git
-request uses the existing repository without requiring project definition or
-repeating setup. The [learning path](course/CURRICULUM.md) supplies the course
-map.
+The course has two tracks that share [Module 0](course/00-project-and-git.md).
+Pick the track from the learner's question:
 
-The fork bundles `use-learning-outcomes` and `review-learning-evidence` with
-Codex and Claude discovery copies. Read the actual relevant instructions; file
-presence and `llms.txt` access alone do not establish client instruction use.
+- **Build an app** by directing agents: start with
+  [workspace setup](course/SETUP.md), then offer the
+  [What's next? choices](course/SETUP.md#whats-next) and wait for the learner's
+  selection. The [learning path](course/CURRICULUM.md) supplies the course map.
+- **Understand code and changes** in a team's software:
+  [the track guide](understand-code/index.md). Don't require a project or setup.
+
+The course repository bundles `use-learning-outcomes` and
+`review-learning-evidence` with Codex and Claude discovery copies. Read the
+actual relevant instructions; file presence and `llms.txt` access alone do not
+establish client instruction use.
+
+Use [the evidence-return guide](course/PRACTICE.md#bring-work-back-for-review).
 Credit learner reasoning and decisions separately from AI-generated artifacts;
-retain partial progress and uncertainty. Passing tests alone does not establish
-learning.
+retain partial progress and uncertainty. Mark fictional, reported and inspected
+evidence separately. Passing tests alone does not establish learning.

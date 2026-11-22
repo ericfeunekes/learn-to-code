@@ -26,5 +26,7 @@ judgments and you leave evidence.
 Without a handoff, help as usual, but still explain your choices, flag what you
 decided on your own and add a `BUILD-NOTES.md` entry.
 
-The course fork is public. Keep secrets and real personal data out of committed
-files, and ignore generated files such as `__pycache__`.
+If this is the `app/` folder of the course fork, it's public. In a private
+project repository, it still isn't a place for secrets. Either way, keep secrets
+and real personal data out of committed files, follow the learner's
+organization's data rules, and ignore generated files such as `__pycache__`.

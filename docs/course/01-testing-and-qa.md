@@ -12,6 +12,20 @@ Learn to decide what correct behavior means, direct AI to check it, and judge
 the evidence. Start with a small working behavior in your app; later modules
 give you more demanding situations to test.
 
+## Choose your lane
+
+The outcomes are the same in both [lanes](OVERVIEW.md#choose-your-lane). What
+changes is the evidence and the depth.
+
+- **Direct agents:** focus on 1.1, 1.2, 1.4 and 1.7: deciding what correct
+  means, writing expected results before you see the app's answers, and judging
+  whether a check would actually catch a fault. For 1.3, 1.5 and 1.6, recognize
+  and ask: when a test uses a stand-in, ask what it leaves out and whether
+  anything checks the real thing. You don't need to tell stubs, fakes and mocks
+  apart or direct dependency injection.
+- **Write code:** you also read the tests themselves, write an assertion and a
+  case by hand, and change a function to receive its dependency.
+
 ## Learning objectives
 
 By the end of this module, you should be able to:
