@@ -90,6 +90,11 @@ mastery. Compare against the outcome's evidence criteria in `docs/course/`.
 Module 0 is a draft and Modules 2 to 7 are outlines, so don't award them as
 complete.
 
+The course goes broad first, then deep, so explained is a good result for a
+first pass. Don't log missing depth as a finding or block the next outcome on
+it. Note the gap in "Not yet learned" so the module that returns to the idea can
+pick it up.
+
 Only a review sets an outcome to applied or defended, using the definitions in
 `templates/learning/PROGRESS.md`. If an earlier session set a depth the evidence
 doesn't support, lower it and say why in the log. Tag each finding as found

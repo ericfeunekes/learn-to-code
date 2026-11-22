@@ -110,6 +110,12 @@ By the end of this module, you should be able to:
 
 ## Context and optional examples for the teaching AI
 
+- This module is a first pass, following the course's
+  [broad first, then deep](OVERVIEW.md#broad-first-then-deep) approach. Aim for
+  a working grasp of every objective rather than mastery of one. For 1.5 and 1.6
+  that means knowing what a fixture, test double or injected dependency is, why
+  an agent uses one, and judging one in the learner's project. Designing
+  interfaces and dependency direction come back in Modules 5 and 6.
 - These outcomes provide a first working foundation. Examples can help establish
   the distinctions; advanced case generation, protocols, persistence, and
   concurrency can be revisited when useful to the learner’s project.

@@ -22,6 +22,9 @@ Intended coverage:
 - Caching, freshness, and the costs of keeping copies current.
 - Changes to saved formats, compatibility, and recovering useful data.
 
+Returns to fixtures and disposable test data (1.5), and integration checks
+against real storage (1.3).
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.

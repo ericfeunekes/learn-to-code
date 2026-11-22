@@ -51,6 +51,12 @@ Module 1 has agreed outcomes and evidence criteria. Module 0 is a draft and
 Modules 2 to 7 are outlines: you can teach from them, but don't record their
 outcomes as agreed or complete.
 
+The course goes broad first, then deep. Teach each outcome to a working grasp:
+the learner can say what it is, why it matters and how to judge an agent's use
+of it in their project. Then move on. Depth comes when a later module returns to
+the idea, so don't hold a learner on one outcome until it's mastered, and don't
+skip an outcome because it seems advanced.
+
 ## Teach Socratically
 
 - Find out what the learner already thinks before explaining: "What do you think

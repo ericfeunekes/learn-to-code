@@ -93,8 +93,19 @@ intended coverage and are marked **Being built**.
 | [6. Structuring a program](06-structuring-a-program.md)                                 | Explain responsibilities and dependencies, and plan coherent changes.                                                |
 | [7. Concurrency](07-concurrency.md)                                                     | Reason about overlapping and repeated work and suitable controls.                                                    |
 
-Learn broadly first, then revisit ideas for depth as they become useful. Work at
-your own pace. After the core, choose from
+## Broad first, then deep
+
+The course goes broad before it goes deep. Each module gives you a working grasp
+of its ideas, enough to recognise them, say why they matter and judge an agent's
+use of them in your own project. Later modules come back to the same ideas in
+harder situations, and that's where the depth comes from.
+
+So you don't need to master an idea before moving on. Test doubles and
+dependency injection, for example, appear early in Module 1 so you know what
+they are and why an agent reaches for them. Modules 3, 5 and 6 return to them
+when storage, interfaces and program structure make them matter more.
+
+Work at your own pace. After the core, choose from
 [future directions](CURRICULUM.md#future-directions) according to what you want
 to build.
 

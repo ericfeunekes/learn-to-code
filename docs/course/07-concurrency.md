@@ -22,6 +22,9 @@ Intended coverage:
 - Locks, atomic operations, transactions, and the scope of their protection.
 - Retries, uncertain responses, and preventing unintended repeated effects.
 
+Returns to judging evidence (1.7): a passing test can miss a problem that only
+shows up when work overlaps.
+
 This is a broad outline for future development with the course author. Detailed
 objectives and examples still need to be developed together and reviewed by the
 course author before this module is ready to teach.

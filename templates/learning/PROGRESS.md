@@ -19,6 +19,10 @@ Depth rises only on evidence from the learner. Teach sessions can set
 **defended**, after inspecting the result. A reviewer may lower a depth that
 lacks evidence and notes why in `LOG.md`.
 
+The course goes broad first, then deep. Explained or applied is a good result
+for a first pass. Applied and defended usually come when a later module returns
+to the idea.
+
 - **introduced:** the idea was taught or discussed.
 - **explained:** the learner explained it in their own words or predicted a new
   case correctly.
