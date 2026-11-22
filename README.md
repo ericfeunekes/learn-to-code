@@ -1,9 +1,8 @@
 # Learn to Code
 
 Learn to understand, question and improve software by directing AI. The course
-has nine modules: agreed Module 1 outcomes, and detailed drafts for review of
-Module 0 (directing an agent), Modules 2–7 and a Module 8 capstone on building
-and learning on your own.
+has nine modules, from directing an agent (Module 0) to a capstone on building
+and learning on your own (Module 8).
 
 ## Set up your learning workspace
 
@@ -20,8 +19,8 @@ Once it is open, ask: “I'm set up. What's next?” Choose one:
   as the start of Module 0, Directing an agent.
 - Continue existing work and choose a useful next learning step with your AI.
 
-The AI should wait for your choice. Setup and Module 0 remain drafts for human
-review; they are not agreed learning-completion gates.
+The AI should wait for your choice. Setup and Module 0 are learning activities,
+not gates you must pass before anything else.
 
 Agents in this workspace teach and review; they don't build your project. Build
 in [`app/`](app/README.md) or your own project folder, in a separate session

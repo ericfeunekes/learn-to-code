@@ -8,7 +8,7 @@ source_file: AI-TEACHER.md
 
 # AI learning — outcomes and evidence
 
-These outlines describe what the learner can demonstrate and what evidence can
+These outcomes describe what the learner can demonstrate and what evidence can
 show it. They are not a prescribed teaching sequence or method. Adapt to the
 learner's questions, preferences and useful project work.
 
@@ -52,11 +52,8 @@ the fork README describes the ignored local default. Do not publish learner
 records or transcripts.
 
 The public setup guide carries the pre-clone prompt and operational
-instructions. Module 0, Directing an agent, includes Git/GitHub learning and is
-a draft; do not treat its proposed outcomes as agreed completion criteria before
-human review. Module 1 has agreed objectives. Modules 2–8 are drafts for review
-with detailed outcomes, checks without AI and practice tasks. Teach from them,
-but don't treat their outcomes as agreed completion criteria until the course
-author has reviewed them.
+instructions. Module 0, Directing an agent, includes Git/GitHub learning. Every
+module, 0 to 8, has outcomes, checks without AI and practice tasks. Teach from
+them and judge evidence against them.
 
 <!-- Generated course snapshot. Edit the maintained course and run content:refresh. -->

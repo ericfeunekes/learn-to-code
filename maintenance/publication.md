@@ -12,9 +12,8 @@ this project.
   retired.
 - `docs/course/OVERVIEW.md`, `CURRICULUM.md`, `PRACTICE.md` and `AI-TEACHER.md`:
   reviewed course outcomes, map and general practice/teaching context.
-- `docs/course/SETUP.md` and `00-project-and-git.md`: current setup and Module 0
-  drafts for human review.
-- `docs/course/01-*.md` through `08-*.md`: the current module pages.
+- `docs/course/SETUP.md`: the current setup guide.
+- `docs/course/00-*.md` through `08-*.md`: the current module pages.
 - `AGENTS.md`, `CLAUDE.md`, `app/` guidance and build-agent instructions, the
   empty learning-log templates in `templates/learning/`, and the two bundled
   teaching skills in `skills/`, with regular byte-equal Codex/Claude discovery
@@ -22,16 +21,16 @@ this project.
 - Website code, dependency lock, tests and contributor documentation.
 
 The website, search index, raw Markdown and `llms.txt` derive from these pages.
-Module 1 retains its agreed detailed material. On November 22, 2026, Modules 2–7
-were expanded from short outlines into detailed drafts and Module 8, a capstone
-on building and learning independently, was added. Modules 0 and 2–8 are marked
-**Draft — for review** until the course author reviews them. The owner approved
-release of this current version on October 25, 2026. The October 26 approval
-includes repository-wide MIT licensing and public distribution of the bundled
-teaching skills, superseding the earlier exclusion. The ledger, teaching log,
-sessions, learner identities, personal details, private source links, research
-archives, books and earlier course snapshots are outside the public repository
-and its history.
+On November 22, 2026, Modules 2–7 were expanded from short outlines into full
+modules and Module 8, a capstone on building and learning independently, was
+added. Published pages are the current version of the course and carry no draft
+labels; the owner directed this on November 22, 2026. The owner approved release
+of this current version on October 25, 2026. The October 26 approval includes
+repository-wide MIT licensing and public distribution of the bundled teaching
+skills, superseding the earlier exclusion. The ledger, teaching log, sessions,
+learner identities, personal details, private source links, research archives,
+books and earlier course snapshots are outside the public repository and its
+history.
 
 ## One maintained curriculum source
 

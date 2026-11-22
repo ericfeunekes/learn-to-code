@@ -1,16 +1,11 @@
 ---
 title: Module 3 — Persistence and shared state
-description: >-
-  Draft for review. Explain storage, authoritative values, caching and
-  preservation.
+description: 'Explain storage, authoritative values, caching and preservation.'
 slug: /modules/persistence-and-shared-state
 source_file: 03-persistence-and-shared-state.md
 ---
 
 # Module 3 — Persistence and shared state
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 3.
 
 "I refreshed and my data disappeared" is one of the most common surprises in an
 app an agent built. This module is about where your app keeps its data, which

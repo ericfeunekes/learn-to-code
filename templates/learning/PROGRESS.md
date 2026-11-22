@@ -43,8 +43,7 @@ to the idea.
 | 1.6 Simple dependency injection     | —     | —                              | —                       |
 | 1.7 Evidence and test sensitivity   | —     | —                              | —                       |
 
-Add rows for other modules when the learner works on them. Mark Module 0 and
-Modules 2 to 8 rows as draft outcomes.
+Add rows for other modules when the learner works on them.
 
 ## Open findings
 

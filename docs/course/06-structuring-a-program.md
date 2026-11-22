@@ -1,16 +1,12 @@
 ---
 title: Module 6 — Structuring a program
-description: >-
-  Draft for review. Explain responsibilities and dependencies, and plan coherent
-  changes.
+description:
+  'Explain responsibilities and dependencies, and plan coherent changes.'
 slug: /modules/structuring-a-program
 source_file: 06-structuring-a-program.md
 ---
 
 # Module 6 — Structuring a program
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 6.
 
 As your app grows, agents start making changes that touch several parts at once,
 and each new session starts without remembering the last one. This module is

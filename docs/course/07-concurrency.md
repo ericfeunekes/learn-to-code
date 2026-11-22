@@ -1,16 +1,11 @@
 ---
 title: Module 7 — Concurrency
-description: >-
-  Draft for review. Reason about overlapping and repeated work and suitable
-  controls.
+description: Reason about overlapping and repeated work and suitable controls.
 slug: /modules/concurrency
 source_file: 07-concurrency.md
 ---
 
 # Module 7 — Concurrency
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 7.
 
 Someone double-clicks Save. Two tabs edit the same record. A request times out
 and gets retried. These are everyday cases of work overlapping or repeating, and

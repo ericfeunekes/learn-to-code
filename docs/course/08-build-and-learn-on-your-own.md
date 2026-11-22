@@ -1,16 +1,13 @@
 ---
 title: Module 8 — Build and learn on your own
 description: >-
-  Draft for review. Run a capstone yourself, learn a new topic with an agent and
-  set your next outcomes.
+  Run a capstone yourself, learn a new topic with an agent and set your next
+  outcomes.
 slug: /modules/build-and-learn-on-your-own
 source_file: 08-build-and-learn-on-your-own.md
 ---
 
 # Module 8 — Build and learn on your own
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 8.
 
 This is where the course hands over to you. You've learned to brief an agent,
 check its work, and reason about tests, failures, data, rules, inputs, structure

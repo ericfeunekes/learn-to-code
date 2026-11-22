@@ -1,15 +1,11 @@
 ---
 title: Module 4 — Modeling data and behavior
-description:
-  'Draft for review. Describe identities, relationships, states and rules.'
+description: 'Describe identities, relationships, states and rules.'
 slug: /modules/modeling-data-and-behavior
 source_file: 04-modeling-data-and-behavior.md
 ---
 
 # Module 4 — Modeling data and behavior
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 4.
 
 An agent can only build what you can describe. This module is about describing
 the things your app represents and the rules they follow, precisely enough that

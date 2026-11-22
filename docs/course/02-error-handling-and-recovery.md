@@ -1,16 +1,12 @@
 ---
 title: 'Module 2 — Debugging, errors and recovery'
-description: >-
-  Draft for review. Direct a diagnosis from evidence, and choose responses and
-  recovery.
+description:
+  'Direct a diagnosis from evidence, and choose responses and recovery.'
 slug: /modules/error-handling-and-recovery
 source_file: 02-error-handling-and-recovery.md
 ---
 
 # Module 2 — Debugging, errors and recovery
-
-**Draft — for review.** These proposed outcomes need human review before being
-treated as the agreed Module 2.
 
 Something in your app will break. This module is about what you do next: find
 out why from evidence, decide how the app should respond, and recover without

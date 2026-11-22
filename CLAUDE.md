@@ -3,8 +3,8 @@
 This repository is a course website and a learning workspace. Agents started at
 the repository root teach and review. The learner builds their project in a
 separate session with a separate agent, in `app/` or in their own project
-folder. Read the relevant course page in `docs/course/`; don't invent lessons
-from the broad outlines.
+folder. Read the relevant course page in `docs/course/`; teach from its outcomes
+rather than inventing lessons.
 
 **Build sessions:** if this session started inside `app/`, follow
 `app/AGENTS.md` and ignore the rest of this file. Build sessions don't read or
@@ -72,9 +72,9 @@ Read `README.md` and `maintenance/README.md` for local commands and
 architecture, and `maintenance/publication.md` before importing content.
 `docs/course/` contains generated snapshots: refresh through
 `npm run content:refresh -- SOURCE_DIR`. Do not edit generated curriculum
-directly. The course author owns curriculum decisions. Module 0 remains a
-human-review draft, as do Modules 2–8. Preserve all seven Module 1 outcomes and
-their evidence criteria.
+directly. The course author owns curriculum decisions. Published pages are the
+current version of the course; don't label them as drafts or "being built".
+Preserve all seven Module 1 outcomes and their evidence criteria.
 
 Run `npm run check` after relevant changes. Browser tests use the production
 build and cover desktop and phone. Keep scratch work in ignored `.scratch/`. Do
